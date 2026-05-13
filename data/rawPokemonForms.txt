@@ -1,62 +1,61 @@
 Bulbasaur
 Ivysaur
-Mega Venusaur
 Venusaur
-Venusaur Gigantamax
+Mega Venusaur
+Gigantamax Venusaur
 Charmander
 Charmeleon
 Charizard
-Charizard Gigantamax
 Mega Charizard X
 Mega Charizard Y
+Gigantamax Charizard
 Squirtle
 Wartortle
 Blastoise
-Blastoise Gigantamax
 Mega Blastoise
+Gigantamax Blastoise
 Caterpie
 Metapod
 Butterfree
-Butterfree Gigantamax
+Gigantamax Butterfree
 Weedle
 Kakuna
 Beedrill
 Mega Beedrill
 Pidgey
 Pidgeotto
-Mega Pidgeot
 Pidgeot
-Alolan Rattata
+Mega Pidgeot
 Rattata
-Alolan Raticate
+Alolan Rattata
 Raticate
+Alolan Raticate
 Spearow
 Fearow
 Ekans
 Arbok
 Pikachu
-Pikachu Gigantamax
+Gigantamax Pikachu
+Raichu
 Alolan Raichu
 Mega Raichu X
 Mega Raichu Y
-Raichu
-Alolan Sandshrew
 Sandshrew
-Alolan Sandslash
+Alolan Sandshrew
 Sandslash
+Alolan Sandslash
 Nidoran?
 Nidorina
 Nidoqueen
-Nidoran?
 Nidorino
 Nidoking
 Clefairy
 Clefable
 Mega Clefable
-Alolan Vulpix
 Vulpix
-Alolan Ninetales
+Alolan Vulpix
 Ninetales
+Alolan Ninetales
 Jigglypuff
 Wigglytuff
 Zubat
@@ -68,16 +67,16 @@ Paras
 Parasect
 Venonat
 Venomoth
-Alolan Diglett
 Diglett
-Alolan Dugtrio
+Alolan Diglett
 Dugtrio
+Alolan Dugtrio
+Meowth
 Alolan Meowth
 Galarian Meowth
-Meowth
-Meowth Gigantamax
-Alolan Persian
+Gigantamax Meowth
 Persian
+Alolan Persian
 Psyduck
 Golduck
 Mankey
@@ -96,28 +95,28 @@ Mega Alakazam
 Machop
 Machoke
 Machamp
-Machamp Gigantamax
+Gigantamax Machamp
 Bellsprout
 Weepinbell
-Mega Victreebel
 Victreebel
+Mega Victreebel
 Tentacool
 Tentacruel
-Alolan Geodude
 Geodude
-Alolan Graveler
+Alolan Geodude
 Graveler
-Alolan Golem
+Alolan Graveler
 Golem
-Galarian Ponyta
+Alolan Golem
 Ponyta
-Galarian Rapidash
+Galarian Ponyta
 Rapidash
-Galarian Slowpoke
+Galarian Rapidash
 Slowpoke
+Galarian Slowpoke
+Slowbro
 Galarian Slowbro
 Mega Slowbro
-Slowbro
 Magnemite
 Magneton
 Farfetch’d
@@ -126,39 +125,39 @@ Doduo
 Dodrio
 Seel
 Dewgong
-Alolan Grimer
 Grimer
-Alolan Muk
+Alolan Grimer
 Muk
+Alolan Muk
 Shellder
 Cloyster
 Gastly
 Haunter
 Gengar
-Gengar Gigantamax
 Mega Gengar
+Gigantamax Gengar
 Onix
 Drowzee
 Hypno
 Krabby
 Kingler
-Kingler Gigantamax
-Hisuian Voltorb
+Gigantamax Kingler
 Voltorb
+Hisuian Voltorb
 Electrode
 Hisuian Electrode
 Exeggcute
-Alolan Exeggutor
 Exeggutor
+Alolan Exeggutor
 Cubone
-Alolan Marowak
 Marowak
+Alolan Marowak
 Hitmonlee
 Hitmonchan
 Lickitung
 Koffing
-Galarian Weezing
 Weezing
+Galarian Weezing
 Rhyhorn
 Rhydon
 Chansey
@@ -170,16 +169,16 @@ Seadra
 Goldeen
 Seaking
 Staryu
-Mega Starmie
 Starmie
-Galarian Mr. Mime
+Mega Starmie
 Mr. Mime
+Galarian Mr. Mime
 Scyther
 Jynx
 Electabuzz
 Magmar
-Mega Pinsir
 Pinsir
+Mega Pinsir
 Paldean Tauros (Aqua Breed)
 Paldean Tauros (Blaze Breed)
 Paldean Tauros (Combat Breed)
@@ -188,10 +187,10 @@ Magikarp
 Gyarados
 Mega Gyarados
 Lapras
-Lapras Gigantamax
+Gigantamax Lapras
 Ditto
 Eevee
-Eevee Gigantamax
+Gigantamax Eevee
 Vaporeon
 Jolteon
 Flareon
@@ -203,29 +202,29 @@ Kabutops
 Aerodactyl
 Mega Aerodactyl
 Snorlax
-Snorlax Gigantamax
+Gigantamax Snorlax
 Articuno
 Galarian Articuno
-Galarian Zapdos
 Zapdos
-Galarian Moltres
+Galarian Zapdos
 Moltres
+Galarian Moltres
 Dratini
 Dragonair
 Dragonite
 Mega Dragonite
+Mewtwo
 Mega Mewtwo X
 Mega Mewtwo Y
-Mewtwo
 Mew
 Chikorita
 Bayleef
-Mega Meganium
 Meganium
+Mega Meganium
 Cyndaquil
 Quilava
-Hisuian Typhlosion
 Typhlosion
+Hisuian Typhlosion
 Totodile
 Croconaw
 Feraligatr
@@ -264,14 +263,14 @@ Aipom
 Sunkern
 Sunflora
 Yanma
-Paldean Wooper
 Wooper
+Paldean Wooper
 Quagsire
 Espeon
 Umbreon
 Murkrow
-Galarian Slowking
 Slowking
+Galarian Slowking
 Misdreavus
 Unown !
 Unown ?
@@ -307,19 +306,19 @@ Pineco
 Forretress
 Dunsparce
 Gligar
-Mega Steelix
 Steelix
+Mega Steelix
 Snubbull
 Granbull
-Hisuian Qwilfish
 Qwilfish
-Mega Scizor
+Hisuian Qwilfish
 Scizor
+Mega Scizor
 Shuckle
 Heracross
 Mega Heracross
-Hisuian Sneasel
 Sneasel
+Hisuian Sneasel
 Teddiursa
 Ursaring
 Slugma
@@ -332,8 +331,8 @@ Remoraid
 Octillery
 Delibird
 Mantine
-Mega Skarmory
 Skarmory
+Mega Skarmory
 Houndour
 Houndoom
 Mega Houndoom
@@ -355,29 +354,29 @@ Entei
 Suicune
 Larvitar
 Pupitar
-Mega Tyranitar
 Tyranitar
+Mega Tyranitar
 Lugia
 Ho-Oh
 Celebi
 Treecko
 Grovyle
-Mega Sceptile
 Sceptile
+Mega Sceptile
 Torchic
 Combusken
 Blaziken
 Mega Blaziken
 Mudkip
 Marshtomp
-Mega Swampert
 Swampert
+Mega Swampert
 Poochyena
 Mightyena
-Galarian Zigzagoon
 Zigzagoon
-Galarian Linoone
+Galarian Zigzagoon
 Linoone
+Galarian Linoone
 Wurmple
 Silcoon
 Beautifly
@@ -416,8 +415,8 @@ Azurill
 Nosepass
 Skitty
 Delcatty
-Mega Sableye
 Sableye
+Mega Sableye
 Mawile
 Mega Mawile
 Aron
@@ -438,8 +437,8 @@ Roselia
 Gulpin
 Swalot
 Carvanha
-Mega Sharpedo
 Sharpedo
+Mega Sharpedo
 Wailmer
 Wailord
 Numel
@@ -503,12 +502,12 @@ Relicanth
 Luvdisc
 Bagon
 Shelgon
-Mega Salamence
 Salamence
+Mega Salamence
 Beldum
 Metang
-Mega Metagross
 Metagross
+Mega Metagross
 Regirock
 Regice
 Registeel
@@ -520,8 +519,8 @@ Kyogre
 Primal Kyogre
 Groudon
 Primal Groudon
-Mega Rayquaza
 Rayquaza
+Mega Rayquaza
 Jirachi
 Attack Deoxys
 Defense Deoxys
@@ -538,8 +537,8 @@ Prinplup
 Empoleon
 Starly
 Staravia
-Mega Staraptor
 Staraptor
+Mega Staraptor
 Bidoof
 Bibarel
 Kricketot
@@ -669,8 +668,8 @@ Emboar
 Mega Emboar
 Oshawott
 Dewott
-Hisuian Samurott
 Samurott
+Hisuian Samurott
 Patrat
 Watchog
 Lillipup
@@ -714,13 +713,13 @@ Swadloon
 Leavanny
 Venipede
 Whirlipede
-Mega Scolipede
 Scolipede
+Mega Scolipede
 Cottonee
 Whimsicott
 Petilil
-Hisuian Lilligant
 Lilligant
+Hisuian Lilligant
 Blue-Striped Basculin
 Red-Striped Basculin
 White-Striped Basculin
@@ -735,11 +734,11 @@ Maractus
 Dwebble
 Crustle
 Scraggy
-Mega Scrafty
 Scrafty
+Mega Scrafty
 Sigilyph
-Galarian Yamask
 Yamask
+Galarian Yamask
 Cofagrigus
 Tirtouga
 Carracosta
@@ -747,11 +746,11 @@ Archen
 Archeops
 Trubbish
 Garbodor
-Garbodor Gigantamax
-Hisuian Zorua
+Gigantamax Garbodor
 Zorua
-Hisuian Zoroark
+Hisuian Zorua
 Zoroark
+Hisuian Zoroark
 Minccino
 Cinccino
 Gothita
@@ -800,8 +799,8 @@ Beartic
 Cryogonal
 Shelmet
 Accelgor
-Galarian Stunfisk
 Stunfisk
+Galarian Stunfisk
 Mienfoo
 Mienshao
 Druddigon
@@ -908,8 +907,8 @@ Mega Hawlucha
 Dedenne
 Carbink
 Goomy
-Hisuian Sliggoo
 Sliggoo
+Hisuian Sliggoo
 Goodra
 Hisuian Goodra
 Klefki
@@ -1033,33 +1032,33 @@ Poipole
 Naganadel
 Stakataka
 Blacephalon
-Mega Zeraora
 Zeraora
+Mega Zeraora
 Meltan
 Melmetal
-Melmetal Gigantamax
+Gigantamax Melmetal
 Grookey
 Thwackey
 Rillaboom
-Rillaboom Gigantamax
+Gigantamax Rillaboom
 Scorbunny
 Raboot
 Cinderace
-Cinderace Gigantamax
+Gigantamax Cinderace
 Sobble
 Drizzile
 Inteleon
-Inteleon Gigantamax
+Gigantamax Inteleon
 Skwovet
 Greedent
 Rookidee
 Corvisquire
 Corviknight
-Corviknight Gigantamax
+Gigantamax Corviknight
 Blipbug
 Dottler
 Orbeetle
-Orbeetle Gigantamax
+Gigantamax Orbeetle
 Nickit
 Thievul
 Gossifleur
@@ -1068,31 +1067,31 @@ Wooloo
 Dubwool
 Chewtle
 Drednaw
-Drednaw Gigantamax
+Gigantamax Drednaw
 Yamper
 Boltund
 Rolycoly
 Carkol
 Coalossal
-Coalossal Gigantamax
+Gigantamax Coalossal
 Applin
 Flapple
-Flapple Gigantamax
+Gigantamax Flapple
 Appletun
-Appletun Gigantamax
+Gigantamax Appletun
 Silicobra
 Sandaconda
-Sandaconda Gigantamax
+Gigantamax Sandaconda
 Cramorant
 Arrokuda
 Barraskewda
 Toxel
 Amped Toxtricity
 Low Key Toxtricity
-Toxtricity Gigantamax
+Gigantamax Toxtricity
 Sizzlipede
 Centiskorch
-Centiskorch Gigantamax
+Gigantamax Centiskorch
 Clobbopus
 Grapploct
 Phony Sinistea
@@ -1100,11 +1099,11 @@ Phony Polteageist
 Hatenna
 Hattrem
 Hatterene
-Hatterene Gigantamax
+Gigantamax Hatterene
 Impidimp
 Morgrem
 Grimmsnarl
-Grimmsnarl Gigantamax
+Gigantamax Grimmsnarl
 Obstagoon
 Perrserker
 Cursola
@@ -1112,7 +1111,7 @@ Sirfetch’d
 Mr. Rime
 Runerigus
 Milcery
-Alcremie Gigantamax
+Gigantamax Alcremie
 Vanilla Cream Strawberry Sweet Alcremie
 Falinks
 Mega Falinks
@@ -1127,13 +1126,13 @@ Full Belly Morpeko
 Hangry Morpeko
 Cufant
 Copperajah
-Copperajah Gigantamax
+Gigantamax Copperajah
 Dracozolt
 Arctozolt
 Dracovish
 Arctovish
 Duraludon
-Duraludon Gigantamax
+Gigantamax Duraludon
 Dreepy
 Drakloak
 Dragapult
@@ -1144,7 +1143,7 @@ Eternatus
 Kubfu
 Rapid Strike Urshifu
 Single Strike Urshifu
-Urshifu Gigantamax
+Gigantamax Urshifu
 Zarude
 Regieleki
 Regidrago
@@ -1209,8 +1208,8 @@ Toedscool
 Toedscruel
 Klawf
 Capsakid
-Mega Scovillain
 Scovillain
+Mega Scovillain
 Rellor
 Rabsca
 Flittle

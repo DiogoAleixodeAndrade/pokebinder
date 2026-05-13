@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 import { pokemonForms } from "@/data/pokemonForms";
 
 type CollectionData = {
@@ -60,9 +60,9 @@ export function PokedexDashboard() {
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("todos");
   const [formTypeFilter, setFormTypeFilter] = useState("todos");
-  const [selectedPokemon, setSelectedPokemon] = useState<SelectedPokemon | null>(
-    null
-  );
+
+  const [selectedPokemon, setSelectedPokemon] =
+    useState<SelectedPokemon | null>(null);
 
   const [collection, setCollection] = useState<CollectionState>(() =>
     getInitialCollectionState()
@@ -108,6 +108,80 @@ export function PokedexDashboard() {
     }));
 
     setSelectedPokemon(null);
+  }
+
+  function exportCollection() {
+    const backup = {
+      exportedAt: new Date().toISOString(),
+      app: "PokéBinder",
+      version: 1,
+      collection,
+    };
+
+    const file = new Blob([JSON.stringify(backup, null, 2)], {
+      type: "application/json",
+    });
+
+    const url = URL.createObjectURL(file);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = `pokebinder-backup-${new Date()
+      .toISOString()
+      .slice(0, 10)}.json`;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+  }
+
+  function importCollection(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      try {
+        const result = reader.result;
+
+        if (typeof result !== "string") {
+          alert("Não consegui ler esse arquivo.");
+          return;
+        }
+
+        const parsedBackup = JSON.parse(result);
+
+        if (!parsedBackup.collection) {
+          alert("Esse arquivo não parece ser um backup válido do PokéBinder.");
+          return;
+        }
+
+        setCollection(parsedBackup.collection);
+        alert("Backup importado com sucesso!");
+      } catch {
+        alert("Erro ao importar backup. Verifique se o arquivo é um JSON válido.");
+      }
+    };
+
+    reader.readAsText(file);
+    event.target.value = "";
+  }
+
+  function resetCollection() {
+    const confirmed = window.confirm(
+      "Tem certeza que deseja apagar toda a coleção? Essa ação não pode ser desfeita."
+    );
+
+    if (!confirmed) return;
+
+    const emptyCollection = getInitialCollectionState();
+
+    setCollection(emptyCollection);
+    localStorage.setItem("pokebinder-collection", JSON.stringify(emptyCollection));
   }
 
   const mergedPokemonForms = useMemo(() => {
@@ -193,21 +267,25 @@ export function PokedexDashboard() {
 
         <section className="grid gap-4 md:grid-cols-5">
           <StatsCard title="Total da coleção" value={mergedPokemonForms.length} />
+
           <StatsCard
             title="Selecionados"
             value={selectedCards}
             valueClassName="text-sky-400"
           />
+
           <StatsCard
             title="Adquiridos"
             value={acquiredCards}
             valueClassName="text-emerald-400"
           />
+
           <StatsCard
             title="Faltantes"
             value={missingCards}
             valueClassName="text-red-400"
           />
+
           <StatsCard
             title="Completo"
             value={`${completionPercentage}%`}
@@ -221,11 +299,13 @@ export function PokedexDashboard() {
             value={formatCurrency(totalCollectionValue)}
             valueClassName="text-yellow-300 text-2xl"
           />
+
           <StatsCard
             title="Valor adquirido"
             value={formatCurrency(acquiredCollectionValue)}
             valueClassName="text-emerald-400 text-2xl"
           />
+
           <StatsCard
             title="Valor faltante"
             value={formatCurrency(missingCollectionValue)}
@@ -235,12 +315,44 @@ export function PokedexDashboard() {
 
         <section className="rounded-2xl border border-zinc-800 bg-zinc-900">
           <div className="flex flex-col gap-4 border-b border-zinc-800 p-5">
-            <div>
-              <h2 className="text-xl font-semibold">Minha Pokédex</h2>
-              <p className="text-sm text-zinc-400">
-                Clique em editar para escolher a carta desejada. O check só deve
-                ser marcado quando você já possuir a carta.
-              </p>
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+              <div>
+                <h2 className="text-xl font-semibold">Minha Pokédex</h2>
+
+                <p className="text-sm text-zinc-400">
+                  Clique em editar para escolher a carta desejada. O check só
+                  deve ser marcado quando você já possuir a carta.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={exportCollection}
+                  className="rounded-lg border border-emerald-400/40 px-3 py-2 text-sm font-semibold text-emerald-300 hover:bg-emerald-400/10"
+                >
+                  Exportar backup
+                </button>
+
+                <label className="cursor-pointer rounded-lg border border-sky-400/40 px-3 py-2 text-sm font-semibold text-sky-300 hover:bg-sky-400/10">
+                  Importar backup
+
+                  <input
+                    type="file"
+                    accept="application/json"
+                    onChange={importCollection}
+                    className="hidden"
+                  />
+                </label>
+
+                <button
+                  type="button"
+                  onClick={resetCollection}
+                  className="rounded-lg border border-red-400/40 px-3 py-2 text-sm font-semibold text-red-300 hover:bg-red-400/10"
+                >
+                  Limpar tudo
+                </button>
+              </div>
             </div>
 
             <div className="grid gap-3 md:grid-cols-3">
@@ -270,6 +382,7 @@ export function PokedexDashboard() {
                 className="rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-2 text-sm outline-none focus:border-yellow-400"
               >
                 <option value="todos">Todos os tipos</option>
+
                 {formTypes.map((formType) => (
                   <option key={formType} value={formType}>
                     {formType}
@@ -329,6 +442,7 @@ export function PokedexDashboard() {
 
                         <div>
                           <p className="font-medium">{pokemon.name}</p>
+
                           {pokemon.notes && (
                             <p className="mt-1 max-w-xs truncate text-xs text-zinc-500">
                               {pokemon.notes}
@@ -414,7 +528,9 @@ export function PokedexDashboard() {
                 <p className="text-sm text-zinc-500">
                   Editando #{String(selectedPokemon.id).padStart(4, "0")}
                 </p>
+
                 <h3 className="text-2xl font-bold">{selectedPokemon.name}</h3>
+
                 <p className="mt-1 text-sm text-zinc-400">
                   {selectedPokemon.formType}
                 </p>
@@ -433,6 +549,7 @@ export function PokedexDashboard() {
               <div className="flex flex-col gap-4">
                 <label className="flex flex-col gap-2">
                   <span className="text-sm text-zinc-400">Nome da carta</span>
+
                   <input
                     type="text"
                     value={collection[selectedPokemon.id]?.selectedCard || ""}
@@ -452,6 +569,7 @@ export function PokedexDashboard() {
                   <span className="text-sm text-zinc-400">
                     Link da Liga Pokémon
                   </span>
+
                   <input
                     type="url"
                     value={collection[selectedPokemon.id]?.ligaPokemonUrl || ""}
@@ -469,6 +587,7 @@ export function PokedexDashboard() {
 
                 <label className="flex flex-col gap-2">
                   <span className="text-sm text-zinc-400">URL da imagem</span>
+
                   <input
                     type="url"
                     value={collection[selectedPokemon.id]?.cardImageUrl || ""}
@@ -486,6 +605,7 @@ export function PokedexDashboard() {
 
                 <label className="flex flex-col gap-2">
                   <span className="text-sm text-zinc-400">Menor preço</span>
+
                   <input
                     type="number"
                     min="0"
@@ -505,6 +625,7 @@ export function PokedexDashboard() {
 
                 <label className="flex flex-col gap-2">
                   <span className="text-sm text-zinc-400">Observações</span>
+
                   <textarea
                     value={collection[selectedPokemon.id]?.notes || ""}
                     onChange={(event) =>
@@ -533,6 +654,7 @@ export function PokedexDashboard() {
                     }
                     className="h-5 w-5 accent-yellow-400"
                   />
+
                   <span className="text-sm text-zinc-300">
                     Já possuo essa carta na coleção
                   </span>
@@ -606,6 +728,7 @@ function StatsCard({ title, value, valueClassName = "" }: StatsCardProps) {
   return (
     <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-5">
       <p className="text-sm text-zinc-400">{title}</p>
+
       <strong className={`mt-2 block text-3xl ${valueClassName}`}>
         {value}
       </strong>
