@@ -6,6 +6,8 @@ import { EditCardModal } from "@/components/EditCardModal";
 import { StatsCard } from "@/components/ui/StatsCard";
 import { ValueCard } from "@/components/ui/ValueCard";
 import { StatusBadge } from "@/components/ui/StatusBadge";
+import { PokedexTable } from "@/components/PokedexTable";
+import { PokedexCardGrid } from "@/components/PokedexCardGrid";
 import type { CollectionData, CollectionState, SelectedPokemon, } from "@/types/collection";
 
 function formatCurrency(value: number) {
@@ -431,223 +433,21 @@ export function PokedexDashboard() {
             </div>
           </div>
 
-          {viewMode === "table" && (
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[1050px] border-collapse text-left">
-                <thead className="bg-zinc-950 text-sm text-zinc-400">
-                  <tr>
-                    <th className="px-5 py-4">ID</th>
-                    <th className="px-5 py-4">Pokémon/Forma</th>
-                    <th className="px-5 py-4">Tipo</th>
-                    <th className="px-5 py-4">Carta selecionada</th>
-                    <th className="px-5 py-4">Preço</th>
-                    <th className="px-5 py-4">Status</th>
-                    <th className="px-5 py-4">Ações</th>
-                  </tr>
-                </thead>
+        {viewMode === "table" && (
+  <PokedexTable
+    pokemonList={filteredPokemon}
+    onEdit={setSelectedPokemon}
+    formatCurrency={formatCurrency}
+  />
+)}
 
-                <tbody>
-                  {filteredPokemon.map((pokemon) => (
-                    <tr
-                      key={pokemon.id}
-                      className="border-t border-zinc-800 hover:bg-zinc-800/40"
-                    >
-                      <td className="px-5 py-4 text-zinc-400">
-                        {String(pokemon.id).padStart(4, "0")}
-                      </td>
-
-                      <td className="px-5 py-4">
-                        <div className="flex items-center gap-3">
-                          {pokemon.cardImageUrl ? (
-                            <div className="group relative">
-                              <img
-                                src={pokemon.cardImageUrl}
-                                alt={pokemon.selectedCard || pokemon.name}
-                                className="h-12 w-9 rounded object-cover"
-                              />
-
-                              <div className="pointer-events-none absolute left-0 top-14 z-20 hidden rounded-xl border border-zinc-700 bg-zinc-950 p-3 shadow-2xl group-hover:block">
-                                <img
-                                  src={pokemon.cardImageUrl}
-                                  alt={pokemon.selectedCard || pokemon.name}
-                                  className="h-80 w-auto rounded-lg object-contain"
-                                />
-                              </div>
-                            </div>
-                          ) : (
-                            <div className="flex h-12 w-9 items-center justify-center rounded border border-zinc-700 bg-zinc-950 text-xs text-zinc-500">
-                              ?
-                            </div>
-                          )}
-
-                          <div>
-                            <p className="font-medium">{pokemon.name}</p>
-                            {pokemon.notes && (
-                              <p className="mt-1 max-w-xs truncate text-xs text-zinc-500">
-                                {pokemon.notes}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </td>
-
-                      <td className="px-5 py-4">
-                        <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-xs text-zinc-300">
-                          {pokemon.formType}
-                        </span>
-                      </td>
-
-                      <td className="px-5 py-4 text-zinc-300">
-                        {pokemon.selectedCard || "Ainda não selecionado"}
-                      </td>
-
-                      <td className="px-5 py-4 text-zinc-300">
-                        {pokemon.lowestPrice > 0
-                          ? formatCurrency(pokemon.lowestPrice)
-                          : "-"}
-                      </td>
-
-                      <td className="px-5 py-4">
-                        {pokemon.owned ? (
-                          <StatusBadge status="Adquirido" variant="owned" />
-                        ) : pokemon.selectedCard ? (
-                          <StatusBadge status="Selecionado" variant="selected" />
-                        ) : (
-                          <StatusBadge status="Pendente" variant="pending" />
-                        )}
-                      </td>
-
-                      <td className="px-5 py-4">
-                        <div className="flex gap-2">
-                          <button
-                            type="button"
-                            onClick={() => setSelectedPokemon(pokemon)}
-                            className="rounded-lg bg-yellow-400 px-3 py-2 text-sm font-semibold text-zinc-950 hover:bg-yellow-300"
-                          >
-                            Editar
-                          </button>
-
-                          {pokemon.ligaPokemonUrl && (
-                            <a
-                              href={pokemon.ligaPokemonUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="rounded-lg border border-zinc-700 px-3 py-2 text-sm text-zinc-300 hover:border-yellow-400 hover:text-yellow-300"
-                            >
-                              Liga
-                            </a>
-                          )}
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-              {filteredPokemon.length === 0 && (
-                <div className="p-8 text-center text-zinc-400">
-                  Nenhum Pokémon encontrado com os filtros atuais.
-                </div>
-              )}
-            </div>
-          )}
-
-          {viewMode === "cards" && (
-            <div className="grid gap-4 p-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {filteredPokemon.map((pokemon) => (
-                <article
-                  key={pokemon.id}
-                  className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 transition hover:-translate-y-1 hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-950/20"
-                >
-                  <div className="flex h-72 items-center justify-center border-b border-zinc-800 bg-zinc-900 p-4">
-                    {pokemon.cardImageUrl ? (
-                      <img
-                        src={pokemon.cardImageUrl}
-                        alt={pokemon.selectedCard || pokemon.name}
-                        className="max-h-full rounded-xl object-contain transition group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center rounded-xl border border-dashed border-zinc-700 text-center text-sm text-zinc-500">
-                        Sem imagem
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex flex-col gap-4 p-4">
-                    <div>
-                      <div className="mb-2 flex items-start justify-between gap-3">
-                        <p className="text-xs text-zinc-500">
-                          #{String(pokemon.id).padStart(4, "0")}
-                        </p>
-
-                        {pokemon.owned ? (
-                          <StatusBadge status="Adquirido" variant="owned" />
-                        ) : pokemon.selectedCard ? (
-                          <StatusBadge
-                            status="Selecionado"
-                            variant="selected"
-                          />
-                        ) : (
-                          <StatusBadge status="Pendente" variant="pending" />
-                        )}
-                      </div>
-
-                      <h3 className="text-lg font-bold">{pokemon.name}</h3>
-
-                      <span className="mt-2 inline-flex rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-xs text-zinc-300">
-                        {pokemon.formType}
-                      </span>
-                    </div>
-
-                    <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-3">
-                      <p className="text-xs text-zinc-500">
-                        Carta selecionada
-                      </p>
-                      <p className="mt-1 min-h-5 text-sm text-zinc-300">
-                        {pokemon.selectedCard || "Ainda não selecionado"}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center justify-between gap-3">
-                      <div>
-                        <p className="text-xs text-zinc-500">Menor preço</p>
-                        <p className="text-sm font-semibold text-yellow-300">
-                          {pokemon.lowestPrice > 0
-                            ? formatCurrency(pokemon.lowestPrice)
-                            : "-"}
-                        </p>
-                      </div>
-
-                      <button
-                        type="button"
-                        onClick={() => setSelectedPokemon(pokemon)}
-                        className="rounded-lg bg-yellow-400 px-3 py-2 text-sm font-semibold text-zinc-950 hover:bg-yellow-300"
-                      >
-                        Editar
-                      </button>
-                    </div>
-
-                    {pokemon.ligaPokemonUrl && (
-                      <a
-                        href={pokemon.ligaPokemonUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="rounded-lg border border-zinc-700 px-3 py-2 text-center text-sm text-zinc-300 hover:border-yellow-400 hover:text-yellow-300"
-                      >
-                        Abrir na Liga Pokémon
-                      </a>
-                    )}
-                  </div>
-                </article>
-              ))}
-
-              {filteredPokemon.length === 0 && (
-                <div className="col-span-full rounded-2xl border border-zinc-800 bg-zinc-950 p-8 text-center text-zinc-400">
-                  Nenhum Pokémon encontrado com os filtros atuais.
-                </div>
-              )}
-            </div>
-          )}
+{viewMode === "cards" && (
+  <PokedexCardGrid
+    pokemonList={filteredPokemon}
+    onEdit={setSelectedPokemon}
+    formatCurrency={formatCurrency}
+  />
+)}
         </section>
       </section>
 

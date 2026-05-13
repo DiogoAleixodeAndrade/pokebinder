@@ -21,3 +21,5 @@ export type SelectedPokemon = {
   owned: boolean;
   notes: string;
 };
+
+export type PokemonCollectionItem = SelectedPokemon;
