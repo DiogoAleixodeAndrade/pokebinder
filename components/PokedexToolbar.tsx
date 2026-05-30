@@ -44,134 +44,189 @@ export function PokedexToolbar({
   onSyncCollection,
 }: PokedexToolbarProps) {
   return (
-    <div className="flex flex-col gap-4 border-b border-zinc-800 p-5">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-        <div>
-          <h2 className="text-xl font-semibold">Minha Pokédex</h2>
-          <p className="text-sm text-zinc-400">
-            Clique em editar para escolher a carta desejada. O check só deve ser
-            marcado quando você já possuir a carta.
-          </p>
+    <div className="border-b border-zinc-800/80 bg-zinc-950/35 p-5 backdrop-blur-xl md:p-6">
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-yellow-400/25 bg-yellow-400/10 text-xl">
+                📚
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-black tracking-tight text-white">
+                  Minha Pokédex
+                </h2>
+                <p className="mt-1 max-w-2xl text-sm leading-6 text-zinc-400">
+                  Escolha a carta desejada, marque como adquirida e acompanhe o
+                  progresso da sua coleção em tempo real.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={onSyncCollection}
+              disabled={isSyncing}
+              className="rounded-2xl border border-yellow-400/30 bg-yellow-400/10 px-4 py-3 text-sm font-bold text-yellow-300 transition hover:bg-yellow-400/15 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {isSyncing ? "Sincronizando..." : "Sincronizar agora"}
+            </button>
+
+            <button
+              type="button"
+              onClick={onExportCollection}
+              className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-sm font-bold text-emerald-300 transition hover:bg-emerald-400/15"
+            >
+              Exportar backup
+            </button>
+
+            <label className="cursor-pointer rounded-2xl border border-sky-400/30 bg-sky-400/10 px-4 py-3 text-sm font-bold text-sky-300 transition hover:bg-sky-400/15">
+              Importar meus Pokémon
+              <input
+                type="file"
+                accept=".xlsx,.xls,.csv,.txt"
+                onChange={onImportCollection}
+                className="hidden"
+              />
+            </label>
+
+            <button
+              type="button"
+              onClick={onResetCollection}
+              className="rounded-2xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm font-bold text-red-300 transition hover:bg-red-400/15"
+            >
+              Limpar tudo
+            </button>
+          </div>
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={onSyncCollection}
-            disabled={isSyncing}
-            className="rounded-lg border border-yellow-400/40 px-3 py-2 text-sm font-semibold text-yellow-300 hover:bg-yellow-400/10 disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {isSyncing ? "Sincronizando..." : "Sincronizar agora"}
-          </button>
+        <div className="grid gap-3 md:grid-cols-3">
+          <InfoPill
+            label="Exibindo"
+            value={`${filteredCount} de ${totalCount}`}
+            tone="neutral"
+          />
 
-          <button
-            type="button"
-            onClick={onExportCollection}
-            className="rounded-lg border border-emerald-400/40 px-3 py-2 text-sm font-semibold text-emerald-300 hover:bg-emerald-400/10"
-          >
-            Exportar backup
-          </button>
+          <InfoPill
+            label="Adquiridos"
+            value={acquiredCards}
+            tone="success"
+          />
 
-          <label className="cursor-pointer rounded-lg border border-sky-400/40 px-3 py-2 text-sm font-semibold text-sky-300 hover:bg-sky-400/10">
-            Importar meus Pokémon
+          <InfoPill label="Faltantes" value={missingCards} tone="danger" />
+        </div>
+
+        <div className="grid gap-3 lg:grid-cols-[1.4fr_1fr_1fr_auto]">
+          <div className="relative">
+            <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500">
+              🔎
+            </span>
+
             <input
-              type="file"
-              accept=".xlsx,.xls,.csv,.txt"
-              onChange={onImportCollection}
-              className="hidden"
+              type="text"
+              placeholder="Buscar Pokémon, forma, mega, gigantamax..."
+              value={search}
+              onChange={(event) => onSearchChange(event.target.value)}
+              className="premium-input w-full rounded-2xl py-3 pl-11 pr-4 text-sm placeholder:text-zinc-500"
             />
-          </label>
+          </div>
 
-          <button
-            type="button"
-            onClick={onResetCollection}
-            className="rounded-lg border border-red-400/40 px-3 py-2 text-sm font-semibold text-red-300 hover:bg-red-400/10"
+          <select
+            value={statusFilter}
+            onChange={(event) => onStatusFilterChange(event.target.value)}
+            className="premium-input rounded-2xl px-4 py-3 text-sm"
           >
-            Limpar tudo
-          </button>
+            <option value="todos">Todos os status</option>
+            <option value="adquiridos">Adquiridos</option>
+            <option value="faltantes">Faltantes</option>
+            <option value="selecionados">Com carta selecionada</option>
+            <option value="nao-selecionados">Sem carta selecionada</option>
+          </select>
+
+          <select
+            value={formTypeFilter}
+            onChange={(event) => onFormTypeFilterChange(event.target.value)}
+            className="premium-input rounded-2xl px-4 py-3 text-sm"
+          >
+            <option value="todos">Todos os tipos</option>
+            {formTypes.map((formType) => (
+              <option key={formType} value={formType}>
+                {formType}
+              </option>
+            ))}
+          </select>
+
+          <div className="flex rounded-2xl border border-zinc-700/80 bg-zinc-950/70 p-1">
+            <button
+              type="button"
+              onClick={() => onViewModeChange("table")}
+              className={`rounded-xl px-4 py-2.5 text-sm font-black transition ${
+                viewMode === "table"
+                  ? "bg-yellow-400 text-zinc-950 shadow-lg shadow-yellow-950/20"
+                  : "text-zinc-400 hover:text-white"
+              }`}
+            >
+              Tabela
+            </button>
+
+            <button
+              type="button"
+              onClick={() => onViewModeChange("cards")}
+              className={`rounded-xl px-4 py-2.5 text-sm font-black transition ${
+                viewMode === "cards"
+                  ? "bg-yellow-400 text-zinc-950 shadow-lg shadow-yellow-950/20"
+                  : "text-zinc-400 hover:text-white"
+              }`}
+            >
+              Cards
+            </button>
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-950/55 px-4 py-3 text-xs text-zinc-500">
+          Status:{" "}
+          <span
+            className={
+              syncStatus === "success"
+                ? "text-emerald-300"
+                : syncStatus === "error"
+                  ? "text-red-300"
+                  : syncStatus === "loading"
+                    ? "text-yellow-300"
+                    : "text-zinc-400"
+            }
+          >
+            {syncStatus === "loading" && "salvando alterações..."}
+            {syncStatus === "success" && "tudo salvo no Supabase"}
+            {syncStatus === "error" && "erro ao salvar no Supabase"}
+            {syncStatus === "idle" && "aguardando alterações"}
+          </span>
         </div>
       </div>
+    </div>
+  );
+}
 
-      <p className="text-xs text-zinc-500">
-        Status Supabase:{" "}
-        {syncStatus === "loading" && "carregando/sincronizando..."}
-        {syncStatus === "success" && "conectado"}
-        {syncStatus === "error" && "erro de conexão"}
-        {syncStatus === "idle" && "aguardando"}
-      </p>
+type InfoPillProps = {
+  label: string;
+  value: string | number;
+  tone: "neutral" | "success" | "danger";
+};
 
-      <div className="flex flex-wrap gap-2 text-sm">
-        <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-zinc-300">
-          Exibindo {filteredCount} de {totalCount}
-        </span>
+function InfoPill({ label, value, tone }: InfoPillProps) {
+  const tones = {
+    neutral: "border-zinc-700 bg-zinc-950/60 text-zinc-300",
+    success: "border-emerald-400/25 bg-emerald-400/10 text-emerald-300",
+    danger: "border-red-400/25 bg-red-400/10 text-red-300",
+  };
 
-        <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-emerald-300">
-          {acquiredCards} adquiridos
-        </span>
-
-        <span className="rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-red-300">
-          {missingCards} faltantes
-        </span>
-      </div>
-
-      <div className="grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto]">
-        <input
-          type="text"
-          placeholder="Buscar Pokémon..."
-          value={search}
-          onChange={(event) => onSearchChange(event.target.value)}
-          className="rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-2 text-sm outline-none placeholder:text-zinc-500 focus:border-yellow-400"
-        />
-
-        <select
-          value={statusFilter}
-          onChange={(event) => onStatusFilterChange(event.target.value)}
-          className="rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-2 text-sm outline-none focus:border-yellow-400"
-        >
-          <option value="todos">Todos os status</option>
-          <option value="adquiridos">Adquiridos</option>
-          <option value="faltantes">Faltantes</option>
-          <option value="selecionados">Com carta selecionada</option>
-          <option value="nao-selecionados">Sem carta selecionada</option>
-        </select>
-
-        <select
-          value={formTypeFilter}
-          onChange={(event) => onFormTypeFilterChange(event.target.value)}
-          className="rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-2 text-sm outline-none focus:border-yellow-400"
-        >
-          <option value="todos">Todos os tipos</option>
-          {formTypes.map((formType) => (
-            <option key={formType} value={formType}>
-              {formType}
-            </option>
-          ))}
-        </select>
-
-        <div className="flex rounded-xl border border-zinc-700 bg-zinc-950 p-1">
-          <button
-            type="button"
-            onClick={() => onViewModeChange("table")}
-            className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${viewMode === "table"
-              ? "bg-yellow-400 text-zinc-950"
-              : "text-zinc-400 hover:text-white"
-              }`}
-          >
-            Tabela
-          </button>
-
-          <button
-            type="button"
-            onClick={() => onViewModeChange("cards")}
-            className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${viewMode === "cards"
-              ? "bg-yellow-400 text-zinc-950"
-              : "text-zinc-400 hover:text-white"
-              }`}
-          >
-            Cards
-          </button>
-        </div>
-      </div>
+  return (
+    <div className={`rounded-2xl border px-4 py-3 ${tones[tone]}`}>
+      <p className="text-xs opacity-75">{label}</p>
+      <strong className="mt-1 block text-lg font-black">{value}</strong>
     </div>
   );
 }
