@@ -16,6 +16,7 @@ type AuthContextValue = {
   isLoadingAuth: boolean;
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string) => Promise<void>;
+  signInWithGoogle: () => Promise<void>;
   signOut: () => Promise<void>;
 };
 
@@ -76,6 +77,22 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }
 
+  async function signInWithGoogle() {
+    const origin =
+      typeof window !== "undefined" ? window.location.origin : "";
+
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: origin,
+      },
+    });
+
+    if (error) {
+      throw new Error(error.message);
+    }
+  }
+
   async function signOut() {
     const { error } = await supabase.auth.signOut();
 
@@ -92,6 +109,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       isLoadingAuth,
       signIn,
       signUp,
+      signInWithGoogle,
       signOut,
     }),
     [user, isLoadingAuth]

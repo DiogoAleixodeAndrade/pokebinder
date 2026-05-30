@@ -1,19 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { useAuth } from "@/context/AuthContext";
 
 export function AuthScreen() {
-  const { signIn, signUp } = useAuth();
+  const { signIn, signUp, signInWithGoogle } = useAuth();
 
   const [mode, setMode] = useState<"login" | "register">("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     try {
@@ -39,6 +40,22 @@ export function AuthScreen() {
     }
   }
 
+  async function handleGoogleLogin() {
+    try {
+      setIsGoogleLoading(true);
+      setMessage("");
+
+      await signInWithGoogle();
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Erro ao entrar com Google. Tente novamente."
+      );
+      setIsGoogleLoading(false);
+    }
+  }
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-zinc-950 px-6 text-white">
       <section className="w-full max-w-md rounded-3xl border border-zinc-800 bg-zinc-900 p-6 shadow-2xl">
@@ -54,6 +71,24 @@ export function AuthScreen() {
           <p className="mt-2 text-sm text-zinc-400">
             Salve sua coleção Pokémon TCG online e acesse de qualquer lugar.
           </p>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleGoogleLogin}
+          disabled={isGoogleLoading}
+          className="mb-4 flex w-full items-center justify-center gap-3 rounded-xl border border-zinc-700 bg-white px-4 py-3 text-sm font-bold text-zinc-950 hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-zinc-950 text-xs font-bold text-white">
+            G
+          </span>
+          {isGoogleLoading ? "Abrindo Google..." : "Entrar com Google"}
+        </button>
+
+        <div className="mb-4 flex items-center gap-3">
+          <div className="h-px flex-1 bg-zinc-800" />
+          <span className="text-xs text-zinc-500">ou</span>
+          <div className="h-px flex-1 bg-zinc-800" />
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
