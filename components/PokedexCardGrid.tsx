@@ -27,8 +27,16 @@ export function PokedexCardGrid({
                 className="max-h-full rounded-xl object-contain transition group-hover:scale-105"
               />
             ) : (
-              <div className="flex h-full w-full items-center justify-center rounded-xl border border-dashed border-zinc-700 text-center text-sm text-zinc-500">
-                Sem imagem
+              <div className="flex h-full w-full flex-col items-center justify-center rounded-xl border border-dashed border-zinc-700 bg-gradient-to-br from-zinc-900 to-zinc-950 p-4 text-center">
+                <p className="text-sm font-semibold text-zinc-300">
+                  {pokemon.name}
+                </p>
+                <p className="mt-2 text-xs text-zinc-500">
+                  {pokemon.formType}
+                </p>
+                <p className="mt-4 text-xs text-zinc-600">
+                  Sem imagem cadastrada
+                </p>
               </div>
             )}
           </div>

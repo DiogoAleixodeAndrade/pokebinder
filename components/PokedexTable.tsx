@@ -65,8 +65,8 @@ export function PokedexTable({
                       </div>
                     </div>
                   ) : (
-                    <div className="flex h-12 w-9 items-center justify-center rounded border border-zinc-700 bg-zinc-950 text-xs text-zinc-500">
-                      ?
+                    <div className="flex h-12 w-9 items-center justify-center rounded border border-zinc-700 bg-gradient-to-br from-zinc-900 to-zinc-950 text-[10px] text-zinc-500">
+                      Sem
                     </div>
                   )}
 

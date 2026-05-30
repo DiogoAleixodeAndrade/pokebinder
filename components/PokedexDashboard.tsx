@@ -260,36 +260,38 @@ export function PokedexDashboard() {
   }
 
   async function resetCollection() {
-    const confirmed = window.confirm(
-      "Tem certeza que deseja apagar toda a coleção? Essa ação não pode ser desfeita."
-    );
+  const confirmationText = window.prompt(
+    'Essa ação vai apagar toda a sua coleção. Para confirmar, digite "APAGAR".'
+  );
 
-    if (!confirmed) return;
+  if (confirmationText !== "APAGAR") {
+    return;
+  }
 
-    const emptyCollection = getInitialCollectionState();
+  const emptyCollection = getInitialCollectionState();
 
-    setCollection(emptyCollection);
-    saveCollectionToStorage(emptyCollection);
+  setCollection(emptyCollection);
+  saveCollectionToStorage(emptyCollection);
 
-    if (user) {
-      try {
-        setIsSyncing(true);
-        setSyncStatus("loading");
+  if (user) {
+    try {
+      setIsSyncing(true);
+      setSyncStatus("loading");
 
-        await deleteAllCollectionItemsFromSupabase(user.id);
+      await deleteAllCollectionItemsFromSupabase(user.id);
 
-        setSyncStatus("success");
-      } catch (error) {
-        console.error("Erro ao apagar coleção do Supabase:", error);
-        setSyncStatus("error");
-        alert(
-          "A coleção foi limpa localmente, mas não consegui apagar tudo do Supabase."
-        );
-      } finally {
-        setIsSyncing(false);
-      }
+      setSyncStatus("success");
+    } catch (error) {
+      console.error("Erro ao apagar coleção do Supabase:", error);
+      setSyncStatus("error");
+      alert(
+        "A coleção foi limpa localmente, mas não consegui apagar tudo do Supabase."
+      );
+    } finally {
+      setIsSyncing(false);
     }
   }
+}
 
   async function syncCollectionWithSupabase() {
     if (!user) {
