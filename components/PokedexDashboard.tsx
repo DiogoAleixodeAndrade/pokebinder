@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ChangeEvent } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { pokemonForms } from "@/data/pokemonForms";
 import { AuthScreen } from "@/components/AuthScreen";
 import { EditCardModal } from "@/components/EditCardModal";
@@ -11,10 +11,10 @@ import { StatsCard } from "@/components/ui/StatsCard";
 import { ValueCard } from "@/components/ui/ValueCard";
 import { useAuth } from "@/context/AuthContext";
 import { formatCurrency, normalizeText } from "@/lib/format";
-import { importOwnedPokemonFile } from "@/lib/importOwnedPokemon";
 import {
   downloadCollectionBackup,
   getInitialCollectionState,
+  importCollectionBackup,
   loadCollectionFromStorage,
   saveCollectionToStorage,
 } from "@/lib/collection";
@@ -218,80 +218,43 @@ export function PokedexDashboard() {
     downloadCollectionBackup(collection);
   }
 
-  async function importOwnedPokemonList(event: ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0];
-
-    if (!file) return;
-
-    try {
-      const result = await importOwnedPokemonFile(
-        file,
-        mergedPokemonForms,
-        collection
-      );
-
-      setCollection(result.updatedCollection);
-      saveCollectionToStorage(result.updatedCollection);
-
-      const notFoundPreview = result.notFoundNames.slice(0, 10).join(", ");
-
-      alert(
-        [
-          `Importação concluída!`,
-          `Pokémon marcados como adquiridos: ${result.matchedCount}`,
-          `Duplicados ignorados: ${result.duplicatedNames.length}`,
-          `Não encontrados: ${result.notFoundNames.length}`,
-          result.notFoundNames.length > 0
-            ? `Primeiros não encontrados: ${notFoundPreview}`
-            : "",
-        ]
-          .filter(Boolean)
-          .join("\n")
-      );
-    } catch (error) {
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Erro ao importar a planilha."
-      );
-    } finally {
-      event.target.value = "";
-    }
+  function importCollection(event: Parameters<typeof importCollectionBackup>[0]) {
+    importCollectionBackup(event, setCollection);
   }
 
   async function resetCollection() {
-  const confirmationText = window.prompt(
-    'Essa ação vai apagar toda a sua coleção. Para confirmar, digite "APAGAR".'
-  );
+    const confirmationText = window.prompt(
+      'Essa ação vai apagar toda a sua coleção. Para confirmar, digite "APAGAR".'
+    );
 
-  if (confirmationText !== "APAGAR") {
-    return;
-  }
+    if (confirmationText !== "APAGAR") {
+      return;
+    }
 
-  const emptyCollection = getInitialCollectionState();
+    const emptyCollection = getInitialCollectionState();
 
-  setCollection(emptyCollection);
-  saveCollectionToStorage(emptyCollection);
+    setCollection(emptyCollection);
+    saveCollectionToStorage(emptyCollection);
 
-  if (user) {
-    try {
-      setIsSyncing(true);
-      setSyncStatus("loading");
+    if (user) {
+      try {
+        setIsSyncing(true);
+        setSyncStatus("loading");
 
-      await deleteAllCollectionItemsFromSupabase(user.id);
+        await deleteAllCollectionItemsFromSupabase(user.id);
 
-      setSyncStatus("success");
-    } catch (error) {
-      console.error("Erro ao apagar coleção do Supabase:", error);
-      setSyncStatus("error");
-      alert(
-        "A coleção foi limpa localmente, mas não consegui apagar tudo do Supabase."
-      );
-    } finally {
-      setIsSyncing(false);
+        setSyncStatus("success");
+      } catch (error) {
+        console.error("Erro ao apagar coleção do Supabase:", error);
+        setSyncStatus("error");
+        alert(
+          "A coleção foi limpa localmente, mas não consegui apagar tudo do Supabase."
+        );
+      } finally {
+        setIsSyncing(false);
+      }
     }
   }
-}
 
   async function syncCollectionWithSupabase() {
     if (!user) {
@@ -401,7 +364,7 @@ export function PokedexDashboard() {
   if (isLoadingAuth) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-zinc-950 text-white">
-        <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-center">
+        <div className="premium-card rounded-2xl p-6 text-center">
           <p className="text-sm text-zinc-400">Carregando autenticação...</p>
         </div>
       </main>
@@ -413,86 +376,130 @@ export function PokedexDashboard() {
   }
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-white">
+    <main className="min-h-screen text-white">
       <section className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-8">
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-wrap gap-2">
-            <span className="w-fit rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-1 text-sm text-yellow-300">
-              Pokémon TCG Collection Tracker
-            </span>
+        <header className="premium-card overflow-hidden rounded-[2rem]">
+          <div className="relative p-6 md:p-8">
+            <div className="pointer-events-none absolute right-0 top-0 h-40 w-40 rounded-full bg-yellow-400/10 blur-3xl" />
+            <div className="pointer-events-none absolute bottom-0 left-1/3 h-36 w-36 rounded-full bg-blue-500/10 blur-3xl" />
 
-            <span className="w-fit rounded-full border border-zinc-700 bg-zinc-900 px-4 py-1 text-sm text-zinc-400">
-              Base:{" "}
-              {isLoadingPokemonForms
-                ? "carregando..."
-                : pokemonFormsSource === "supabase"
-                  ? "Supabase"
-                  : "Local"}
-            </span>
+            <div className="relative flex flex-col gap-8">
+              <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                <div className="flex flex-wrap gap-2">
+                  <span className="w-fit rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-1.5 text-sm font-semibold text-yellow-300">
+                    Pokémon TCG Collection Tracker
+                  </span>
 
-            <span className="w-fit rounded-full border border-zinc-700 bg-zinc-900 px-4 py-1 text-sm text-zinc-400">
-              Supabase:{" "}
-              {syncStatus === "loading" && "carregando..."}
-              {syncStatus === "success" && "conectado"}
-              {syncStatus === "error" && "erro"}
-              {syncStatus === "idle" && "aguardando"}
-            </span>
-          </div>
+                  <span className="w-fit rounded-full border border-blue-400/25 bg-blue-400/10 px-4 py-1.5 text-sm text-blue-200">
+                    Base:{" "}
+                    {isLoadingPokemonForms
+                      ? "carregando..."
+                      : pokemonFormsSource === "supabase"
+                        ? "Supabase"
+                        : "Local"}
+                  </span>
 
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-                PokéBinder
-              </h1>
+                  <span
+                    className={`w-fit rounded-full border px-4 py-1.5 text-sm ${
+                      syncStatus === "success"
+                        ? "border-emerald-400/25 bg-emerald-400/10 text-emerald-300"
+                        : syncStatus === "error"
+                          ? "border-red-400/25 bg-red-400/10 text-red-300"
+                          : syncStatus === "loading"
+                            ? "border-yellow-400/25 bg-yellow-400/10 text-yellow-300"
+                            : "border-zinc-700 bg-zinc-900 text-zinc-400"
+                    }`}
+                  >
+                    {syncStatus === "loading" && "Sincronizando..."}
+                    {syncStatus === "success" && "Salvo no Supabase"}
+                    {syncStatus === "error" && "Erro ao salvar"}
+                    {syncStatus === "idle" && "Aguardando alterações"}
+                  </span>
+                </div>
 
-              <p className="mt-3 max-w-2xl text-zinc-400">
-                Controle sua coleção de cartas Pokémon por Pokédex, formas
-                regionais, mega evoluções, gigantamax e variações especiais.
-              </p>
-
-              <p className="mt-2 text-sm text-zinc-500">
-                Logado como: {user.email}
-              </p>
-            </div>
-
-            <button
-              type="button"
-              onClick={signOut}
-              className="w-fit rounded-xl border border-red-400/40 px-4 py-3 text-sm font-semibold text-red-300 hover:bg-red-400/10"
-            >
-              Sair
-            </button>
-          </div>
-        </div>
-
-        <section className="grid gap-4 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div className="rounded-2xl border border-yellow-400/20 bg-gradient-to-br from-zinc-900 to-zinc-950 p-5 shadow-2xl shadow-yellow-950/10">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-sm text-zinc-400">Progresso da coleção</p>
-                <strong className="mt-2 block text-4xl text-yellow-300">
-                  {completionPercentage}%
-                </strong>
+                <button
+                  type="button"
+                  onClick={signOut}
+                  className="w-fit rounded-2xl border border-red-400/30 bg-red-400/10 px-5 py-3 text-sm font-bold text-red-200 transition hover:border-red-300 hover:bg-red-400/15"
+                >
+                  Sair
+                </button>
               </div>
 
-              <div className="rounded-full border border-yellow-400/30 bg-yellow-400/10 px-3 py-1 text-xs font-semibold text-yellow-300">
-                PokéBinder
+              <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+                <div>
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-400/10 text-2xl shadow-2xl shadow-yellow-950/30">
+                    ⚡
+                  </div>
+
+                  <h1 className="text-5xl font-black tracking-tight text-white md:text-7xl">
+                    Poké<span className="text-yellow-300">Binder</span>
+                  </h1>
+
+                  <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300 md:text-lg">
+                    Seu binder digital para controlar cartas Pokémon TCG por
+                    Pokédex, formas regionais, mega evoluções, gigantamax e
+                    variações especiais.
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap gap-3 text-sm text-zinc-400">
+                    <span className="rounded-full border border-zinc-700 bg-zinc-950/60 px-4 py-2">
+                      Conta: {user.email}
+                    </span>
+
+                    <span className="rounded-full border border-zinc-700 bg-zinc-950/60 px-4 py-2">
+                      {mergedPokemonForms.length} formas cadastradas
+                    </span>
+
+                    <span className="rounded-full border border-zinc-700 bg-zinc-950/60 px-4 py-2">
+                      {acquiredCards} adquiridas
+                    </span>
+                  </div>
+                </div>
+
+                <div className="rounded-[1.5rem] border border-zinc-800 bg-zinc-950/70 p-5">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-sm text-zinc-400">Progresso geral</p>
+                      <strong className="mt-1 block text-4xl font-black text-yellow-300">
+                        {completionPercentage}%
+                      </strong>
+                    </div>
+
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full border border-yellow-400/30 bg-yellow-400/10 text-sm font-bold text-yellow-300">
+                      {acquiredCards}/{mergedPokemonForms.length}
+                    </div>
+                  </div>
+
+                  <div className="mt-5 h-4 overflow-hidden rounded-full bg-zinc-800">
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 transition-all duration-500"
+                      style={{ width: `${completionPercentage}%` }}
+                    />
+                  </div>
+
+                  <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                    <div className="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-3">
+                      <p className="text-emerald-300">Adquiridos</p>
+                      <strong className="mt-1 block text-xl text-white">
+                        {acquiredCards}
+                      </strong>
+                    </div>
+
+                    <div className="rounded-2xl border border-red-400/20 bg-red-400/10 p-3">
+                      <p className="text-red-300">Faltantes</p>
+                      <strong className="mt-1 block text-xl text-white">
+                        {missingCards}
+                      </strong>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div className="mt-5 h-4 overflow-hidden rounded-full bg-zinc-800">
-              <div
-                className="h-full rounded-full bg-yellow-400 transition-all duration-500"
-                style={{ width: `${completionPercentage}%` }}
-              />
-            </div>
-
-            <div className="mt-3 flex justify-between text-xs text-zinc-500">
-              <span>{acquiredCards} adquiridos</span>
-              <span>{mergedPokemonForms.length} total</span>
-            </div>
           </div>
+        </header>
 
+        <section className="grid gap-4 md:grid-cols-3">
           <StatsCard title="Total da coleção" value={mergedPokemonForms.length} />
 
           <StatsCard
@@ -531,7 +538,7 @@ export function PokedexDashboard() {
           />
         </section>
 
-        <section className="rounded-2xl border border-zinc-800 bg-zinc-900">
+        <section className="premium-card overflow-hidden rounded-[2rem]">
           <PokedexToolbar
             search={search}
             statusFilter={statusFilter}
@@ -549,7 +556,7 @@ export function PokedexDashboard() {
             onFormTypeFilterChange={setFormTypeFilter}
             onViewModeChange={setViewMode}
             onExportCollection={exportCollection}
-            onImportCollection={importOwnedPokemonList}
+            onImportCollection={importCollection}
             onResetCollection={resetCollection}
             onSyncCollection={syncCollectionWithSupabase}
           />
