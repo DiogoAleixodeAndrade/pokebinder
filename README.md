@@ -6,12 +6,12 @@ O projeto foi desenvolvido com foco em uma experiência moderna, visual premium 
 
 ## Preview
 
-Adicione aqui prints do projeto: (Ainda vou adicionar)
+Adicione aqui prints do projeto:
 
 ```md
-![Tela inicial](./public/preview-dashboard.png)
-![Tela de login](./public/preview-login.png)
-![Cards da coleção](./public/preview-cards.png)
+![Tela inicial](./public/screenshots/dashboard.png)
+![Tela de login](./public/screenshots/login.png)
+![Cards da coleção](./public/screenshots/cards.png)
 ```
 
 ## Funcionalidades

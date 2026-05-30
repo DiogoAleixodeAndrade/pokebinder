@@ -3,9 +3,9 @@ import { AuthProvider } from "@/context/AuthContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PokéBinder",
+  title: "PokéBinder | Pokémon TCG Collection Tracker",
   description:
-    "Controle de coleção Pokémon TCG com Pokédex, cartas adquiridas, wishlist, progresso e valores.",
+    "Controle sua coleção Pokémon TCG por Pokédex, formas regionais, mega evoluções, gigantamax, progresso e valores.",
 };
 
 export default function RootLayout({
