@@ -23,3 +23,10 @@ export type SelectedPokemon = {
 };
 
 export type PokemonCollectionItem = SelectedPokemon;
+
+export type PokemonFormFromDatabase = {
+  id: number;
+  name: string;
+  form_type: string;
+  search_name: string;
+};

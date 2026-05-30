@@ -8,6 +8,7 @@ import { PokedexCardGrid } from "@/components/PokedexCardGrid";
 import { PokedexToolbar } from "@/components/PokedexToolbar";
 import { StatsCard } from "@/components/ui/StatsCard";
 import { ValueCard } from "@/components/ui/ValueCard";
+import { getPokemonFormsFromSupabase } from "@/lib/supabase/pokemonForms";
 import { formatCurrency, normalizeText } from "@/lib/format";
 import {
   downloadCollectionBackup,
@@ -19,6 +20,7 @@ import {
 import type {
   CollectionData,
   CollectionState,
+  PokemonFormFromDatabase,
   SelectedPokemon,
 } from "@/types/collection";
 
@@ -31,9 +33,37 @@ export function PokedexDashboard() {
     null
   );
 
+  const [databasePokemonForms, setDatabasePokemonForms] = useState<
+    PokemonFormFromDatabase[]
+  >([]);
+  const [isLoadingPokemonForms, setIsLoadingPokemonForms] = useState(true);
+  const [pokemonFormsSource, setPokemonFormsSource] = useState<
+    "supabase" | "local"
+  >("local");
+
   const [collection, setCollection] = useState<CollectionState>(() =>
     getInitialCollectionState()
   );
+
+  useEffect(() => {
+    async function loadPokemonForms() {
+      try {
+        const data = await getPokemonFormsFromSupabase();
+
+        if (data.length > 0) {
+          setDatabasePokemonForms(data);
+          setPokemonFormsSource("supabase");
+        }
+      } catch (error) {
+        console.error("Erro ao carregar Pokémon/Formas do Supabase:", error);
+        setPokemonFormsSource("local");
+      } finally {
+        setIsLoadingPokemonForms(false);
+      }
+    }
+
+    loadPokemonForms();
+  }, []);
 
   useEffect(() => {
     const savedCollection = loadCollectionFromStorage();
@@ -98,12 +128,30 @@ export function PokedexDashboard() {
     saveCollectionToStorage(emptyCollection);
   }
 
+  const basePokemonForms = useMemo(() => {
+    if (databasePokemonForms.length > 0) {
+      return databasePokemonForms.map((pokemon) => ({
+        id: pokemon.id,
+        name: pokemon.name,
+        formType: pokemon.form_type,
+        searchName: pokemon.search_name,
+        selectedCard: "",
+        cardImageUrl: "",
+        ligaPokemonUrl: "",
+        lowestPrice: 0,
+        owned: false,
+      }));
+    }
+
+    return pokemonForms;
+  }, [databasePokemonForms]);
+
   const mergedPokemonForms = useMemo(() => {
-    return pokemonForms.map((pokemon) => ({
+    return basePokemonForms.map((pokemon) => ({
       ...pokemon,
       ...collection[pokemon.id],
     }));
-  }, [collection]);
+  }, [basePokemonForms, collection]);
 
   const acquiredCards = mergedPokemonForms.filter(
     (pokemon) => pokemon.owned
@@ -134,8 +182,8 @@ export function PokedexDashboard() {
       : 0;
 
   const formTypes = useMemo(() => {
-    return Array.from(new Set(pokemonForms.map((pokemon) => pokemon.formType)));
-  }, []);
+    return Array.from(new Set(basePokemonForms.map((pokemon) => pokemon.formType)));
+  }, [basePokemonForms]);
 
   const filteredPokemon = useMemo(() => {
     const normalizedSearch = normalizeText(search);
@@ -163,9 +211,20 @@ export function PokedexDashboard() {
     <main className="min-h-screen bg-zinc-950 text-white">
       <section className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-8">
         <div className="flex flex-col gap-3">
-          <span className="w-fit rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-1 text-sm text-yellow-300">
-            Pokémon TCG Collection Tracker
-          </span>
+          <div className="flex flex-wrap gap-2">
+            <span className="w-fit rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-1 text-sm text-yellow-300">
+              Pokémon TCG Collection Tracker
+            </span>
+
+            <span className="w-fit rounded-full border border-zinc-700 bg-zinc-900 px-4 py-1 text-sm text-zinc-400">
+              Base:{" "}
+              {isLoadingPokemonForms
+                ? "carregando..."
+                : pokemonFormsSource === "supabase"
+                  ? "Supabase"
+                  : "Local"}
+            </span>
+          </div>
 
           <div>
             <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
@@ -247,41 +306,41 @@ export function PokedexDashboard() {
 
         <section className="rounded-2xl border border-zinc-800 bg-zinc-900">
           <section className="rounded-2xl border border-zinc-800 bg-zinc-900">
-  <PokedexToolbar
-    search={search}
-    statusFilter={statusFilter}
-    formTypeFilter={formTypeFilter}
-    viewMode={viewMode}
-    formTypes={formTypes}
-    filteredCount={filteredPokemon.length}
-    totalCount={mergedPokemonForms.length}
-    acquiredCards={acquiredCards}
-    missingCards={missingCards}
-    onSearchChange={setSearch}
-    onStatusFilterChange={setStatusFilter}
-    onFormTypeFilterChange={setFormTypeFilter}
-    onViewModeChange={setViewMode}
-    onExportCollection={exportCollection}
-    onImportCollection={importCollection}
-    onResetCollection={resetCollection}
-  />
+            <PokedexToolbar
+              search={search}
+              statusFilter={statusFilter}
+              formTypeFilter={formTypeFilter}
+              viewMode={viewMode}
+              formTypes={formTypes}
+              filteredCount={filteredPokemon.length}
+              totalCount={mergedPokemonForms.length}
+              acquiredCards={acquiredCards}
+              missingCards={missingCards}
+              onSearchChange={setSearch}
+              onStatusFilterChange={setStatusFilter}
+              onFormTypeFilterChange={setFormTypeFilter}
+              onViewModeChange={setViewMode}
+              onExportCollection={exportCollection}
+              onImportCollection={importCollection}
+              onResetCollection={resetCollection}
+            />
 
-  {viewMode === "table" && (
-    <PokedexTable
-      pokemonList={filteredPokemon}
-      onEdit={setSelectedPokemon}
-      formatCurrency={formatCurrency}
-    />
-  )}
+            {viewMode === "table" && (
+              <PokedexTable
+                pokemonList={filteredPokemon}
+                onEdit={setSelectedPokemon}
+                formatCurrency={formatCurrency}
+              />
+            )}
 
-  {viewMode === "cards" && (
-    <PokedexCardGrid
-      pokemonList={filteredPokemon}
-      onEdit={setSelectedPokemon}
-      formatCurrency={formatCurrency}
-    />
-  )}
-</section>
+            {viewMode === "cards" && (
+              <PokedexCardGrid
+                pokemonList={filteredPokemon}
+                onEdit={setSelectedPokemon}
+                formatCurrency={formatCurrency}
+              />
+            )}
+          </section>
         </section>
       </section>
 
