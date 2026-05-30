@@ -4,7 +4,7 @@ type EditCardModalProps = {
   selectedPokemon: SelectedPokemon;
   collection: CollectionState;
   onClose: () => void;
-  onClear: (pokemonId: number) => void;
+  onClear: (pokemonId: number) => void | Promise<void>;
   onUpdate: (
     pokemonId: number,
     field: keyof CollectionData,

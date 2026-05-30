@@ -78,3 +78,29 @@ export async function saveCollectionItemsToSupabase(
     throw new Error(error.message);
   }
 }
+
+export async function deleteCollectionItemFromSupabase(
+  userId: string,
+  pokemonFormId: number
+) {
+  const { error } = await supabase
+    .from("collection_items")
+    .delete()
+    .eq("user_id", userId)
+    .eq("pokemon_form_id", pokemonFormId);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+}
+
+export async function deleteAllCollectionItemsFromSupabase(userId: string) {
+  const { error } = await supabase
+    .from("collection_items")
+    .delete()
+    .eq("user_id", userId);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+}

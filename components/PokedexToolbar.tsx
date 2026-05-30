@@ -18,7 +18,7 @@ type PokedexToolbarProps = {
   onViewModeChange: (value: "table" | "cards") => void;
   onExportCollection: () => void;
   onImportCollection: (event: ChangeEvent<HTMLInputElement>) => void;
-  onResetCollection: () => void;
+  onResetCollection: () => void | Promise<void>;
   onSyncCollection: () => void;
 };
 

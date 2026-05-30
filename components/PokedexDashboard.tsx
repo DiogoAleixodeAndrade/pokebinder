@@ -19,6 +19,8 @@ import {
   saveCollectionToStorage,
 } from "@/lib/collection";
 import {
+  deleteAllCollectionItemsFromSupabase,
+  deleteCollectionItemFromSupabase,
   getCollectionItemsFromSupabase,
   saveCollectionItemsToSupabase,
 } from "@/lib/supabase/collectionItems";
@@ -132,6 +134,10 @@ export function PokedexDashboard() {
   }, [user]);
 
   useEffect(() => {
+    saveCollectionToStorage(collection);
+  }, [collection]);
+
+  useEffect(() => {
     if (!user || !hasLoadedCollection) return;
 
     const timeout = window.setTimeout(async () => {
@@ -169,7 +175,13 @@ export function PokedexDashboard() {
     }));
   }
 
-  function clearPokemonData(pokemonId: number) {
+  async function clearPokemonData(pokemonId: number) {
+    const confirmed = window.confirm(
+      "Tem certeza que deseja limpar o cadastro dessa carta?"
+    );
+
+    if (!confirmed) return;
+
     setCollection((currentCollection) => ({
       ...currentCollection,
       [pokemonId]: {
@@ -182,6 +194,23 @@ export function PokedexDashboard() {
       },
     }));
 
+    if (user) {
+      try {
+        setIsSyncing(true);
+        setSyncStatus("loading");
+
+        await deleteCollectionItemFromSupabase(user.id, pokemonId);
+
+        setSyncStatus("success");
+      } catch (error) {
+        console.error("Erro ao apagar carta do Supabase:", error);
+        setSyncStatus("error");
+        alert("A carta foi limpa localmente, mas não consegui apagar do Supabase.");
+      } finally {
+        setIsSyncing(false);
+      }
+    }
+
     setSelectedPokemon(null);
   }
 
@@ -193,7 +222,7 @@ export function PokedexDashboard() {
     importCollectionBackup(event, setCollection);
   }
 
-  function resetCollection() {
+  async function resetCollection() {
     const confirmed = window.confirm(
       "Tem certeza que deseja apagar toda a coleção? Essa ação não pode ser desfeita."
     );
@@ -204,6 +233,25 @@ export function PokedexDashboard() {
 
     setCollection(emptyCollection);
     saveCollectionToStorage(emptyCollection);
+
+    if (user) {
+      try {
+        setIsSyncing(true);
+        setSyncStatus("loading");
+
+        await deleteAllCollectionItemsFromSupabase(user.id);
+
+        setSyncStatus("success");
+      } catch (error) {
+        console.error("Erro ao apagar coleção do Supabase:", error);
+        setSyncStatus("error");
+        alert(
+          "A coleção foi limpa localmente, mas não consegui apagar tudo do Supabase."
+        );
+      } finally {
+        setIsSyncing(false);
+      }
+    }
   }
 
   async function syncCollectionWithSupabase() {
@@ -241,6 +289,7 @@ export function PokedexDashboard() {
         ligaPokemonUrl: "",
         lowestPrice: 0,
         owned: false,
+        notes: "",
       }));
     }
 
