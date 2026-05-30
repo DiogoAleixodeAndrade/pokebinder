@@ -37,6 +37,62 @@ function getSearchName(name) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
+function getBaseName(name) {
+  return name
+    .replace(/^Mega\s+/i, "")
+    .replace(/^Alolan\s+/i, "")
+    .replace(/^Galarian\s+/i, "")
+    .replace(/^Hisuian\s+/i, "")
+    .replace(/^Paldean\s+/i, "")
+    .replace(/\s+Gigantamax$/i, "")
+    .replace(/\s+X$/i, "")
+    .replace(/\s+Y$/i, "")
+    .replace(/\s+Z$/i, "")
+    .trim();
+}
+
+function getFormPriority(name) {
+  const lowerName = name.toLowerCase();
+
+  // Ordem desejada:
+  // 1. Pokémon normal
+  // 2. Forma regional
+  // 3. Mega evolução
+  // 4. Gigantamax
+  // 5. Outras formas/variações
+
+  if (lowerName.includes("gigantamax")) return 4;
+  if (lowerName.includes("mega")) return 3;
+
+  if (
+    lowerName.includes("alolan") ||
+    lowerName.includes("galarian") ||
+    lowerName.includes("hisuian") ||
+    lowerName.includes("paldean")
+  ) {
+    return 2;
+  }
+
+  const isSpecial =
+    lowerName.includes("origin") ||
+    lowerName.includes("primal") ||
+    lowerName.includes("terastal") ||
+    lowerName.includes("stellar") ||
+    lowerName.includes("eternamax") ||
+    lowerName.includes("incarnate") ||
+    lowerName.includes("complete") ||
+    lowerName.includes("dawn") ||
+    lowerName.includes("dusk") ||
+    lowerName.includes("mask") ||
+    lowerName.includes("form") ||
+    lowerName.includes("forme") ||
+    lowerName.includes("(");
+
+  if (isSpecial) return 5;
+
+  return 1;
+}
+
 const rawContent = fs.readFileSync(rawPath, "utf-8");
 
 const names = rawContent
@@ -44,16 +100,44 @@ const names = rawContent
   .map((line) => line.trim())
   .filter(Boolean);
 
-const pokemonForms = names.map((name, index) => ({
-  id: index + 1,
+const decoratedNames = names.map((name, originalIndex) => ({
   name,
-  formType: getFormType(name),
-  searchName: getSearchName(name),
+  originalIndex,
+  baseName: getBaseName(name),
+  priority: getFormPriority(name),
+}));
+
+decoratedNames.sort((a, b) => {
+  const firstBaseIndexA = decoratedNames.find(
+    (item) => item.baseName === a.baseName
+  )?.originalIndex;
+
+  const firstBaseIndexB = decoratedNames.find(
+    (item) => item.baseName === b.baseName
+  )?.originalIndex;
+
+  if (firstBaseIndexA !== firstBaseIndexB) {
+    return Number(firstBaseIndexA) - Number(firstBaseIndexB);
+  }
+
+  if (a.priority !== b.priority) {
+    return a.priority - b.priority;
+  }
+
+  return a.originalIndex - b.originalIndex;
+});
+
+const pokemonForms = decoratedNames.map((item, index) => ({
+  id: index + 1,
+  name: item.name,
+  formType: getFormType(item.name),
+  searchName: getSearchName(item.name),
   selectedCard: "",
   cardImageUrl: "",
   ligaPokemonUrl: "",
   lowestPrice: 0,
   owned: false,
+  notes: "",
 }));
 
 const fileContent = `export type PokemonForm = {
@@ -66,6 +150,7 @@ const fileContent = `export type PokemonForm = {
   ligaPokemonUrl: string;
   lowestPrice: number;
   owned: boolean;
+  notes: string;
 };
 
 export const pokemonForms: PokemonForm[] = ${JSON.stringify(
