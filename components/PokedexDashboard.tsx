@@ -42,6 +42,7 @@ export function PokedexDashboard() {
   const [syncStatus, setSyncStatus] = useState<
     "idle" | "success" | "error" | "loading"
   >("idle");
+  const [hasLoadedCollection, setHasLoadedCollection] = useState(false);
 
   const [databasePokemonForms, setDatabasePokemonForms] = useState<
     PokemonFormFromDatabase[]
@@ -81,7 +82,12 @@ export function PokedexDashboard() {
 
   useEffect(() => {
     async function loadCollection() {
-      if (!user) return;
+      if (!user) {
+        setHasLoadedCollection(false);
+        return;
+      }
+
+      setHasLoadedCollection(false);
 
       try {
         setSyncStatus("loading");
@@ -117,6 +123,8 @@ export function PokedexDashboard() {
         }
 
         setSyncStatus("error");
+      } finally {
+        setHasLoadedCollection(true);
       }
     }
 
@@ -124,8 +132,28 @@ export function PokedexDashboard() {
   }, [user]);
 
   useEffect(() => {
-    saveCollectionToStorage(collection);
-  }, [collection]);
+    if (!user || !hasLoadedCollection) return;
+
+    const timeout = window.setTimeout(async () => {
+      try {
+        setIsSyncing(true);
+        setSyncStatus("loading");
+
+        await saveCollectionItemsToSupabase(user.id, collection);
+
+        setSyncStatus("success");
+      } catch (error) {
+        console.error("Erro ao sincronizar coleção automaticamente:", error);
+        setSyncStatus("error");
+      } finally {
+        setIsSyncing(false);
+      }
+    }, 1500);
+
+    return () => {
+      window.clearTimeout(timeout);
+    };
+  }, [collection, user, hasLoadedCollection]);
 
   function updatePokemonData(
     pokemonId: number,

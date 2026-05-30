@@ -61,7 +61,7 @@ export function PokedexToolbar({
             disabled={isSyncing}
             className="rounded-lg border border-yellow-400/40 px-3 py-2 text-sm font-semibold text-yellow-300 hover:bg-yellow-400/10 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {isSyncing ? "Sincronizando..." : "Sincronizar Supabase"}
+            {isSyncing ? "Sincronizando..." : "Sincronizar agora"}
           </button>
 
           <button
