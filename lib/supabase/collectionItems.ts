@@ -1,5 +1,5 @@
 import { supabase } from "@/lib/supabase/client";
-import type { CollectionData, CollectionState } from "@/types/collection";
+import type { CollectionState } from "@/types/collection";
 
 type CollectionItemFromDatabase = {
   pokemon_form_id: number;
@@ -11,12 +11,13 @@ type CollectionItemFromDatabase = {
   notes: string | null;
 };
 
-export async function getCollectionItemsFromSupabase() {
+export async function getCollectionItemsFromSupabase(userId: string) {
   const { data, error } = await supabase
     .from("collection_items")
     .select(
       "pokemon_form_id, selected_card, card_image_url, liga_pokemon_url, lowest_price, owned, notes"
-    );
+    )
+    .eq("user_id", userId);
 
   if (error) {
     throw new Error(error.message);
@@ -39,6 +40,7 @@ export async function getCollectionItemsFromSupabase() {
 }
 
 export async function saveCollectionItemsToSupabase(
+  userId: string,
   collection: CollectionState
 ) {
   const rows = Object.entries(collection)
@@ -53,6 +55,7 @@ export async function saveCollectionItemsToSupabase(
       );
     })
     .map(([pokemonFormId, item]) => ({
+      user_id: userId,
       pokemon_form_id: Number(pokemonFormId),
       selected_card: item.selectedCard,
       card_image_url: item.cardImageUrl,
@@ -67,11 +70,9 @@ export async function saveCollectionItemsToSupabase(
     return;
   }
 
-  const { error } = await supabase
-    .from("collection_items")
-    .upsert(rows, {
-      onConflict: "pokemon_form_id",
-    });
+  const { error } = await supabase.from("collection_items").upsert(rows, {
+    onConflict: "user_id,pokemon_form_id",
+  });
 
   if (error) {
     throw new Error(error.message);

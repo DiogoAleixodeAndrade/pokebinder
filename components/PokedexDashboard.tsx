@@ -2,18 +2,15 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { pokemonForms } from "@/data/pokemonForms";
+import { AuthScreen } from "@/components/AuthScreen";
 import { EditCardModal } from "@/components/EditCardModal";
-import { PokedexTable } from "@/components/PokedexTable";
 import { PokedexCardGrid } from "@/components/PokedexCardGrid";
+import { PokedexTable } from "@/components/PokedexTable";
 import { PokedexToolbar } from "@/components/PokedexToolbar";
 import { StatsCard } from "@/components/ui/StatsCard";
 import { ValueCard } from "@/components/ui/ValueCard";
-import { getPokemonFormsFromSupabase } from "@/lib/supabase/pokemonForms";
+import { useAuth } from "@/context/AuthContext";
 import { formatCurrency, normalizeText } from "@/lib/format";
-import {
-  getCollectionItemsFromSupabase,
-  saveCollectionItemsToSupabase,
-} from "@/lib/supabase/collectionItems";
 import {
   downloadCollectionBackup,
   getInitialCollectionState,
@@ -21,6 +18,11 @@ import {
   loadCollectionFromStorage,
   saveCollectionToStorage,
 } from "@/lib/collection";
+import {
+  getCollectionItemsFromSupabase,
+  saveCollectionItemsToSupabase,
+} from "@/lib/supabase/collectionItems";
+import { getPokemonFormsFromSupabase } from "@/lib/supabase/pokemonForms";
 import type {
   CollectionData,
   CollectionState,
@@ -29,13 +31,17 @@ import type {
 } from "@/types/collection";
 
 export function PokedexDashboard() {
+  const { user, isLoadingAuth, signOut } = useAuth();
+
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("todos");
   const [formTypeFilter, setFormTypeFilter] = useState("todos");
   const [viewMode, setViewMode] = useState<"table" | "cards">("table");
-  const [selectedPokemon, setSelectedPokemon] = useState<SelectedPokemon | null>(
-    null
-  );
+
+  const [isSyncing, setIsSyncing] = useState(false);
+  const [syncStatus, setSyncStatus] = useState<
+    "idle" | "success" | "error" | "loading"
+  >("idle");
 
   const [databasePokemonForms, setDatabasePokemonForms] = useState<
     PokemonFormFromDatabase[]
@@ -45,14 +51,13 @@ export function PokedexDashboard() {
     "supabase" | "local"
   >("local");
 
+  const [selectedPokemon, setSelectedPokemon] = useState<SelectedPokemon | null>(
+    null
+  );
+
   const [collection, setCollection] = useState<CollectionState>(() =>
     getInitialCollectionState()
   );
-
-  const [isSyncing, setIsSyncing] = useState(false);
-  const [syncStatus, setSyncStatus] = useState<
-    "idle" | "success" | "error" | "loading"
-  >("idle");
 
   useEffect(() => {
     async function loadPokemonForms() {
@@ -76,22 +81,21 @@ export function PokedexDashboard() {
 
   useEffect(() => {
     async function loadCollection() {
+      if (!user) return;
+
       try {
         setSyncStatus("loading");
 
-        const supabaseCollection = await getCollectionItemsFromSupabase();
+        const supabaseCollection = await getCollectionItemsFromSupabase(user.id);
 
         if (Object.keys(supabaseCollection).length > 0) {
-          setCollection((currentCollection) => ({
-            ...currentCollection,
-            ...supabaseCollection,
-          }));
-
-          saveCollectionToStorage({
+          const mergedCollection = {
             ...getInitialCollectionState(),
             ...supabaseCollection,
-          });
+          };
 
+          setCollection(mergedCollection);
+          saveCollectionToStorage(mergedCollection);
           setSyncStatus("success");
           return;
         }
@@ -117,7 +121,7 @@ export function PokedexDashboard() {
     }
 
     loadCollection();
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     saveCollectionToStorage(collection);
@@ -175,11 +179,16 @@ export function PokedexDashboard() {
   }
 
   async function syncCollectionWithSupabase() {
+    if (!user) {
+      alert("Você precisa estar logado para sincronizar.");
+      return;
+    }
+
     try {
       setIsSyncing(true);
       setSyncStatus("loading");
 
-      await saveCollectionItemsToSupabase(collection);
+      await saveCollectionItemsToSupabase(user.id, collection);
 
       setSyncStatus("success");
       alert("Coleção sincronizada com o Supabase!");
@@ -246,7 +255,9 @@ export function PokedexDashboard() {
       : 0;
 
   const formTypes = useMemo(() => {
-    return Array.from(new Set(basePokemonForms.map((pokemon) => pokemon.formType)));
+    return Array.from(
+      new Set(basePokemonForms.map((pokemon) => pokemon.formType))
+    );
   }, [basePokemonForms]);
 
   const filteredPokemon = useMemo(() => {
@@ -271,6 +282,20 @@ export function PokedexDashboard() {
     });
   }, [search, statusFilter, formTypeFilter, mergedPokemonForms]);
 
+  if (isLoadingAuth) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-zinc-950 text-white">
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-center">
+          <p className="text-sm text-zinc-400">Carregando autenticação...</p>
+        </div>
+      </main>
+    );
+  }
+
+  if (!user) {
+    return <AuthScreen />;
+  }
+
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
       <section className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-8">
@@ -288,17 +313,39 @@ export function PokedexDashboard() {
                   ? "Supabase"
                   : "Local"}
             </span>
+
+            <span className="w-fit rounded-full border border-zinc-700 bg-zinc-900 px-4 py-1 text-sm text-zinc-400">
+              Supabase:{" "}
+              {syncStatus === "loading" && "carregando..."}
+              {syncStatus === "success" && "conectado"}
+              {syncStatus === "error" && "erro"}
+              {syncStatus === "idle" && "aguardando"}
+            </span>
           </div>
 
-          <div>
-            <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-              PokéBinder
-            </h1>
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
+                PokéBinder
+              </h1>
 
-            <p className="mt-3 max-w-2xl text-zinc-400">
-              Controle sua coleção de cartas Pokémon por Pokédex, formas
-              regionais, mega evoluções, gigantamax e variações especiais.
-            </p>
+              <p className="mt-3 max-w-2xl text-zinc-400">
+                Controle sua coleção de cartas Pokémon por Pokédex, formas
+                regionais, mega evoluções, gigantamax e variações especiais.
+              </p>
+
+              <p className="mt-2 text-sm text-zinc-500">
+                Logado como: {user.email}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={signOut}
+              className="w-fit rounded-xl border border-red-400/40 px-4 py-3 text-sm font-semibold text-red-300 hover:bg-red-400/10"
+            >
+              Sair
+            </button>
           </div>
         </div>
 
@@ -369,45 +416,43 @@ export function PokedexDashboard() {
         </section>
 
         <section className="rounded-2xl border border-zinc-800 bg-zinc-900">
-          <section className="rounded-2xl border border-zinc-800 bg-zinc-900">
-            <PokedexToolbar
-              search={search}
-              statusFilter={statusFilter}
-              formTypeFilter={formTypeFilter}
-              viewMode={viewMode}
-              formTypes={formTypes}
-              filteredCount={filteredPokemon.length}
-              totalCount={mergedPokemonForms.length}
-              acquiredCards={acquiredCards}
-              missingCards={missingCards}
-              isSyncing={isSyncing}
-              syncStatus={syncStatus}
-              onSearchChange={setSearch}
-              onStatusFilterChange={setStatusFilter}
-              onFormTypeFilterChange={setFormTypeFilter}
-              onViewModeChange={setViewMode}
-              onExportCollection={exportCollection}
-              onImportCollection={importCollection}
-              onResetCollection={resetCollection}
-              onSyncCollection={syncCollectionWithSupabase}
+          <PokedexToolbar
+            search={search}
+            statusFilter={statusFilter}
+            formTypeFilter={formTypeFilter}
+            viewMode={viewMode}
+            formTypes={formTypes}
+            filteredCount={filteredPokemon.length}
+            totalCount={mergedPokemonForms.length}
+            acquiredCards={acquiredCards}
+            missingCards={missingCards}
+            isSyncing={isSyncing}
+            syncStatus={syncStatus}
+            onSearchChange={setSearch}
+            onStatusFilterChange={setStatusFilter}
+            onFormTypeFilterChange={setFormTypeFilter}
+            onViewModeChange={setViewMode}
+            onExportCollection={exportCollection}
+            onImportCollection={importCollection}
+            onResetCollection={resetCollection}
+            onSyncCollection={syncCollectionWithSupabase}
+          />
+
+          {viewMode === "table" && (
+            <PokedexTable
+              pokemonList={filteredPokemon}
+              onEdit={setSelectedPokemon}
+              formatCurrency={formatCurrency}
             />
+          )}
 
-            {viewMode === "table" && (
-              <PokedexTable
-                pokemonList={filteredPokemon}
-                onEdit={setSelectedPokemon}
-                formatCurrency={formatCurrency}
-              />
-            )}
-
-            {viewMode === "cards" && (
-              <PokedexCardGrid
-                pokemonList={filteredPokemon}
-                onEdit={setSelectedPokemon}
-                formatCurrency={formatCurrency}
-              />
-            )}
-          </section>
+          {viewMode === "cards" && (
+            <PokedexCardGrid
+              pokemonList={filteredPokemon}
+              onEdit={setSelectedPokemon}
+              formatCurrency={formatCurrency}
+            />
+          )}
         </section>
       </section>
 
