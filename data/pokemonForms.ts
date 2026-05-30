@@ -566,9 +566,9 @@ export const pokemonForms: PokemonForm[] = [
   },
   {
     "id": 47,
-    "name": "Nidoran?",
+    "name": "Nidoran♀",
     "formType": "Padrão",
-    "searchName": "nidoran?",
+    "searchName": "nidoran♀",
     "selectedCard": "",
     "cardImageUrl": "",
     "ligaPokemonUrl": "",
@@ -602,6 +602,18 @@ export const pokemonForms: PokemonForm[] = [
   },
   {
     "id": 50,
+    "name": "Nidoran♂",
+    "formType": "Padrão",
+    "searchName": "nidoran♂",
+    "selectedCard": "",
+    "cardImageUrl": "",
+    "ligaPokemonUrl": "",
+    "lowestPrice": 0,
+    "owned": false,
+    "notes": ""
+  },
+  {
+    "id": 51,
     "name": "Nidorino",
     "formType": "Padrão",
     "searchName": "nidorino",
@@ -613,7 +625,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 51,
+    "id": 52,
     "name": "Nidoking",
     "formType": "Padrão",
     "searchName": "nidoking",
@@ -625,7 +637,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 52,
+    "id": 53,
     "name": "Clefairy",
     "formType": "Padrão",
     "searchName": "clefairy",
@@ -637,7 +649,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 53,
+    "id": 54,
     "name": "Clefable",
     "formType": "Padrão",
     "searchName": "clefable",
@@ -649,7 +661,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 54,
+    "id": 55,
     "name": "Mega Clefable",
     "formType": "Mega Evolução",
     "searchName": "mega clefable",
@@ -661,7 +673,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 55,
+    "id": 56,
     "name": "Vulpix",
     "formType": "Padrão",
     "searchName": "vulpix",
@@ -673,7 +685,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 56,
+    "id": 57,
     "name": "Alolan Vulpix",
     "formType": "Forma Regional",
     "searchName": "alolan vulpix",
@@ -685,7 +697,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 57,
+    "id": 58,
     "name": "Ninetales",
     "formType": "Padrão",
     "searchName": "ninetales",
@@ -697,7 +709,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 58,
+    "id": 59,
     "name": "Alolan Ninetales",
     "formType": "Forma Regional",
     "searchName": "alolan ninetales",
@@ -709,7 +721,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 59,
+    "id": 60,
     "name": "Jigglypuff",
     "formType": "Padrão",
     "searchName": "jigglypuff",
@@ -721,7 +733,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 60,
+    "id": 61,
     "name": "Wigglytuff",
     "formType": "Padrão",
     "searchName": "wigglytuff",
@@ -733,7 +745,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 61,
+    "id": 62,
     "name": "Zubat",
     "formType": "Padrão",
     "searchName": "zubat",
@@ -745,7 +757,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 62,
+    "id": 63,
     "name": "Golbat",
     "formType": "Padrão",
     "searchName": "golbat",
@@ -757,7 +769,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 63,
+    "id": 64,
     "name": "Oddish",
     "formType": "Padrão",
     "searchName": "oddish",
@@ -769,7 +781,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 64,
+    "id": 65,
     "name": "Gloom",
     "formType": "Padrão",
     "searchName": "gloom",
@@ -781,7 +793,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 65,
+    "id": 66,
     "name": "Vileplume",
     "formType": "Padrão",
     "searchName": "vileplume",
@@ -793,7 +805,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 66,
+    "id": 67,
     "name": "Paras",
     "formType": "Padrão",
     "searchName": "paras",
@@ -805,7 +817,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 67,
+    "id": 68,
     "name": "Parasect",
     "formType": "Padrão",
     "searchName": "parasect",
@@ -817,7 +829,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 68,
+    "id": 69,
     "name": "Venonat",
     "formType": "Padrão",
     "searchName": "venonat",
@@ -829,7 +841,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 69,
+    "id": 70,
     "name": "Venomoth",
     "formType": "Padrão",
     "searchName": "venomoth",
@@ -841,7 +853,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 70,
+    "id": 71,
     "name": "Diglett",
     "formType": "Padrão",
     "searchName": "diglett",
@@ -853,7 +865,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 71,
+    "id": 72,
     "name": "Alolan Diglett",
     "formType": "Forma Regional",
     "searchName": "alolan diglett",
@@ -865,7 +877,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 72,
+    "id": 73,
     "name": "Dugtrio",
     "formType": "Padrão",
     "searchName": "dugtrio",
@@ -877,7 +889,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 73,
+    "id": 74,
     "name": "Alolan Dugtrio",
     "formType": "Forma Regional",
     "searchName": "alolan dugtrio",
@@ -889,7 +901,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 74,
+    "id": 75,
     "name": "Meowth",
     "formType": "Padrão",
     "searchName": "meowth",
@@ -901,7 +913,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 75,
+    "id": 76,
     "name": "Alolan Meowth",
     "formType": "Forma Regional",
     "searchName": "alolan meowth",
@@ -913,7 +925,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 76,
+    "id": 77,
     "name": "Galarian Meowth",
     "formType": "Forma Regional",
     "searchName": "galarian meowth",
@@ -925,7 +937,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 77,
+    "id": 78,
     "name": "Gigantamax Meowth",
     "formType": "Gigantamax",
     "searchName": "gigantamax meowth",
@@ -937,7 +949,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 78,
+    "id": 79,
     "name": "Persian",
     "formType": "Padrão",
     "searchName": "persian",
@@ -949,7 +961,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 79,
+    "id": 80,
     "name": "Alolan Persian",
     "formType": "Forma Regional",
     "searchName": "alolan persian",
@@ -961,7 +973,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 80,
+    "id": 81,
     "name": "Psyduck",
     "formType": "Padrão",
     "searchName": "psyduck",
@@ -973,7 +985,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 81,
+    "id": 82,
     "name": "Golduck",
     "formType": "Padrão",
     "searchName": "golduck",
@@ -985,7 +997,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 82,
+    "id": 83,
     "name": "Mankey",
     "formType": "Padrão",
     "searchName": "mankey",
@@ -997,7 +1009,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 83,
+    "id": 84,
     "name": "Primeape",
     "formType": "Padrão",
     "searchName": "primeape",
@@ -1009,7 +1021,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 84,
+    "id": 85,
     "name": "Growlithe",
     "formType": "Padrão",
     "searchName": "growlithe",
@@ -1021,7 +1033,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 85,
+    "id": 86,
     "name": "Hisuian Growlithe",
     "formType": "Forma Regional",
     "searchName": "hisuian growlithe",
@@ -1033,7 +1045,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 86,
+    "id": 87,
     "name": "Arcanine",
     "formType": "Padrão",
     "searchName": "arcanine",
@@ -1045,7 +1057,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 87,
+    "id": 88,
     "name": "Hisuian Arcanine",
     "formType": "Forma Regional",
     "searchName": "hisuian arcanine",
@@ -1057,7 +1069,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 88,
+    "id": 89,
     "name": "Poliwag",
     "formType": "Padrão",
     "searchName": "poliwag",
@@ -1069,7 +1081,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 89,
+    "id": 90,
     "name": "Poliwhirl",
     "formType": "Padrão",
     "searchName": "poliwhirl",
@@ -1081,7 +1093,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 90,
+    "id": 91,
     "name": "Poliwrath",
     "formType": "Padrão",
     "searchName": "poliwrath",
@@ -1093,7 +1105,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 91,
+    "id": 92,
     "name": "Abra",
     "formType": "Padrão",
     "searchName": "abra",
@@ -1105,7 +1117,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 92,
+    "id": 93,
     "name": "Kadabra",
     "formType": "Padrão",
     "searchName": "kadabra",
@@ -1117,7 +1129,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 93,
+    "id": 94,
     "name": "Alakazam",
     "formType": "Padrão",
     "searchName": "alakazam",
@@ -1129,7 +1141,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 94,
+    "id": 95,
     "name": "Mega Alakazam",
     "formType": "Mega Evolução",
     "searchName": "mega alakazam",
@@ -1141,7 +1153,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 95,
+    "id": 96,
     "name": "Machop",
     "formType": "Padrão",
     "searchName": "machop",
@@ -1153,7 +1165,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 96,
+    "id": 97,
     "name": "Machoke",
     "formType": "Padrão",
     "searchName": "machoke",
@@ -1165,7 +1177,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 97,
+    "id": 98,
     "name": "Machamp",
     "formType": "Padrão",
     "searchName": "machamp",
@@ -1177,7 +1189,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 98,
+    "id": 99,
     "name": "Gigantamax Machamp",
     "formType": "Gigantamax",
     "searchName": "gigantamax machamp",
@@ -1189,7 +1201,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 99,
+    "id": 100,
     "name": "Bellsprout",
     "formType": "Padrão",
     "searchName": "bellsprout",
@@ -1201,7 +1213,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 100,
+    "id": 101,
     "name": "Weepinbell",
     "formType": "Padrão",
     "searchName": "weepinbell",
@@ -1213,7 +1225,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 101,
+    "id": 102,
     "name": "Victreebel",
     "formType": "Padrão",
     "searchName": "victreebel",
@@ -1225,7 +1237,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 102,
+    "id": 103,
     "name": "Mega Victreebel",
     "formType": "Mega Evolução",
     "searchName": "mega victreebel",
@@ -1237,7 +1249,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 103,
+    "id": 104,
     "name": "Tentacool",
     "formType": "Padrão",
     "searchName": "tentacool",
@@ -1249,7 +1261,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 104,
+    "id": 105,
     "name": "Tentacruel",
     "formType": "Padrão",
     "searchName": "tentacruel",
@@ -1261,7 +1273,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 105,
+    "id": 106,
     "name": "Geodude",
     "formType": "Padrão",
     "searchName": "geodude",
@@ -1273,7 +1285,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 106,
+    "id": 107,
     "name": "Alolan Geodude",
     "formType": "Forma Regional",
     "searchName": "alolan geodude",
@@ -1285,7 +1297,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 107,
+    "id": 108,
     "name": "Graveler",
     "formType": "Padrão",
     "searchName": "graveler",
@@ -1297,7 +1309,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 108,
+    "id": 109,
     "name": "Alolan Graveler",
     "formType": "Forma Regional",
     "searchName": "alolan graveler",
@@ -1309,7 +1321,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 109,
+    "id": 110,
     "name": "Golem",
     "formType": "Padrão",
     "searchName": "golem",
@@ -1321,7 +1333,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 110,
+    "id": 111,
     "name": "Alolan Golem",
     "formType": "Forma Regional",
     "searchName": "alolan golem",
@@ -1333,7 +1345,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 111,
+    "id": 112,
     "name": "Ponyta",
     "formType": "Padrão",
     "searchName": "ponyta",
@@ -1345,7 +1357,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 112,
+    "id": 113,
     "name": "Galarian Ponyta",
     "formType": "Forma Regional",
     "searchName": "galarian ponyta",
@@ -1357,7 +1369,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 113,
+    "id": 114,
     "name": "Rapidash",
     "formType": "Padrão",
     "searchName": "rapidash",
@@ -1369,7 +1381,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 114,
+    "id": 115,
     "name": "Galarian Rapidash",
     "formType": "Forma Regional",
     "searchName": "galarian rapidash",
@@ -1381,7 +1393,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 115,
+    "id": 116,
     "name": "Slowpoke",
     "formType": "Padrão",
     "searchName": "slowpoke",
@@ -1393,7 +1405,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 116,
+    "id": 117,
     "name": "Galarian Slowpoke",
     "formType": "Forma Regional",
     "searchName": "galarian slowpoke",
@@ -1405,7 +1417,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 117,
+    "id": 118,
     "name": "Slowbro",
     "formType": "Padrão",
     "searchName": "slowbro",
@@ -1417,7 +1429,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 118,
+    "id": 119,
     "name": "Galarian Slowbro",
     "formType": "Forma Regional",
     "searchName": "galarian slowbro",
@@ -1429,7 +1441,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 119,
+    "id": 120,
     "name": "Mega Slowbro",
     "formType": "Mega Evolução",
     "searchName": "mega slowbro",
@@ -1441,7 +1453,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 120,
+    "id": 121,
     "name": "Magnemite",
     "formType": "Padrão",
     "searchName": "magnemite",
@@ -1453,7 +1465,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 121,
+    "id": 122,
     "name": "Magneton",
     "formType": "Padrão",
     "searchName": "magneton",
@@ -1465,7 +1477,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 122,
+    "id": 123,
     "name": "Farfetch’d",
     "formType": "Padrão",
     "searchName": "farfetch’d",
@@ -1477,7 +1489,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 123,
+    "id": 124,
     "name": "Galarian Farfetch’d",
     "formType": "Forma Regional",
     "searchName": "galarian farfetch’d",
@@ -1489,7 +1501,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 124,
+    "id": 125,
     "name": "Doduo",
     "formType": "Padrão",
     "searchName": "doduo",
@@ -1501,7 +1513,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 125,
+    "id": 126,
     "name": "Dodrio",
     "formType": "Padrão",
     "searchName": "dodrio",
@@ -1513,7 +1525,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 126,
+    "id": 127,
     "name": "Seel",
     "formType": "Padrão",
     "searchName": "seel",
@@ -1525,7 +1537,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 127,
+    "id": 128,
     "name": "Dewgong",
     "formType": "Padrão",
     "searchName": "dewgong",
@@ -1537,7 +1549,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 128,
+    "id": 129,
     "name": "Grimer",
     "formType": "Padrão",
     "searchName": "grimer",
@@ -1549,7 +1561,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 129,
+    "id": 130,
     "name": "Alolan Grimer",
     "formType": "Forma Regional",
     "searchName": "alolan grimer",
@@ -1561,7 +1573,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 130,
+    "id": 131,
     "name": "Muk",
     "formType": "Padrão",
     "searchName": "muk",
@@ -1573,7 +1585,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 131,
+    "id": 132,
     "name": "Alolan Muk",
     "formType": "Forma Regional",
     "searchName": "alolan muk",
@@ -1585,7 +1597,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 132,
+    "id": 133,
     "name": "Shellder",
     "formType": "Padrão",
     "searchName": "shellder",
@@ -1597,7 +1609,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 133,
+    "id": 134,
     "name": "Cloyster",
     "formType": "Padrão",
     "searchName": "cloyster",
@@ -1609,7 +1621,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 134,
+    "id": 135,
     "name": "Gastly",
     "formType": "Padrão",
     "searchName": "gastly",
@@ -1621,7 +1633,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 135,
+    "id": 136,
     "name": "Haunter",
     "formType": "Padrão",
     "searchName": "haunter",
@@ -1633,7 +1645,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 136,
+    "id": 137,
     "name": "Gengar",
     "formType": "Padrão",
     "searchName": "gengar",
@@ -1645,7 +1657,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 137,
+    "id": 138,
     "name": "Mega Gengar",
     "formType": "Mega Evolução",
     "searchName": "mega gengar",
@@ -1657,7 +1669,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 138,
+    "id": 139,
     "name": "Gigantamax Gengar",
     "formType": "Gigantamax",
     "searchName": "gigantamax gengar",
@@ -1669,7 +1681,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 139,
+    "id": 140,
     "name": "Onix",
     "formType": "Padrão",
     "searchName": "onix",
@@ -1681,7 +1693,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 140,
+    "id": 141,
     "name": "Drowzee",
     "formType": "Padrão",
     "searchName": "drowzee",
@@ -1693,7 +1705,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 141,
+    "id": 142,
     "name": "Hypno",
     "formType": "Padrão",
     "searchName": "hypno",
@@ -1705,7 +1717,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 142,
+    "id": 143,
     "name": "Krabby",
     "formType": "Padrão",
     "searchName": "krabby",
@@ -1717,7 +1729,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 143,
+    "id": 144,
     "name": "Kingler",
     "formType": "Padrão",
     "searchName": "kingler",
@@ -1729,7 +1741,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 144,
+    "id": 145,
     "name": "Gigantamax Kingler",
     "formType": "Gigantamax",
     "searchName": "gigantamax kingler",
@@ -1741,7 +1753,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 145,
+    "id": 146,
     "name": "Voltorb",
     "formType": "Padrão",
     "searchName": "voltorb",
@@ -1753,7 +1765,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 146,
+    "id": 147,
     "name": "Hisuian Voltorb",
     "formType": "Forma Regional",
     "searchName": "hisuian voltorb",
@@ -1765,7 +1777,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 147,
+    "id": 148,
     "name": "Electrode",
     "formType": "Padrão",
     "searchName": "electrode",
@@ -1777,7 +1789,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 148,
+    "id": 149,
     "name": "Hisuian Electrode",
     "formType": "Forma Regional",
     "searchName": "hisuian electrode",
@@ -1789,7 +1801,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 149,
+    "id": 150,
     "name": "Exeggcute",
     "formType": "Padrão",
     "searchName": "exeggcute",
@@ -1801,7 +1813,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 150,
+    "id": 151,
     "name": "Exeggutor",
     "formType": "Padrão",
     "searchName": "exeggutor",
@@ -1813,7 +1825,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 151,
+    "id": 152,
     "name": "Alolan Exeggutor",
     "formType": "Forma Regional",
     "searchName": "alolan exeggutor",
@@ -1825,7 +1837,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 152,
+    "id": 153,
     "name": "Cubone",
     "formType": "Padrão",
     "searchName": "cubone",
@@ -1837,7 +1849,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 153,
+    "id": 154,
     "name": "Marowak",
     "formType": "Padrão",
     "searchName": "marowak",
@@ -1849,7 +1861,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 154,
+    "id": 155,
     "name": "Alolan Marowak",
     "formType": "Forma Regional",
     "searchName": "alolan marowak",
@@ -1861,7 +1873,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 155,
+    "id": 156,
     "name": "Hitmonlee",
     "formType": "Padrão",
     "searchName": "hitmonlee",
@@ -1873,7 +1885,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 156,
+    "id": 157,
     "name": "Hitmonchan",
     "formType": "Padrão",
     "searchName": "hitmonchan",
@@ -1885,7 +1897,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 157,
+    "id": 158,
     "name": "Lickitung",
     "formType": "Padrão",
     "searchName": "lickitung",
@@ -1897,7 +1909,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 158,
+    "id": 159,
     "name": "Koffing",
     "formType": "Padrão",
     "searchName": "koffing",
@@ -1909,7 +1921,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 159,
+    "id": 160,
     "name": "Weezing",
     "formType": "Padrão",
     "searchName": "weezing",
@@ -1921,7 +1933,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 160,
+    "id": 161,
     "name": "Galarian Weezing",
     "formType": "Forma Regional",
     "searchName": "galarian weezing",
@@ -1933,7 +1945,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 161,
+    "id": 162,
     "name": "Rhyhorn",
     "formType": "Padrão",
     "searchName": "rhyhorn",
@@ -1945,7 +1957,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 162,
+    "id": 163,
     "name": "Rhydon",
     "formType": "Padrão",
     "searchName": "rhydon",
@@ -1957,7 +1969,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 163,
+    "id": 164,
     "name": "Chansey",
     "formType": "Padrão",
     "searchName": "chansey",
@@ -1969,7 +1981,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 164,
+    "id": 165,
     "name": "Tangela",
     "formType": "Padrão",
     "searchName": "tangela",
@@ -1981,7 +1993,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 165,
+    "id": 166,
     "name": "Kangaskhan",
     "formType": "Padrão",
     "searchName": "kangaskhan",
@@ -1993,7 +2005,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 166,
+    "id": 167,
     "name": "Mega Kangaskhan",
     "formType": "Mega Evolução",
     "searchName": "mega kangaskhan",
@@ -2005,7 +2017,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 167,
+    "id": 168,
     "name": "Horsea",
     "formType": "Padrão",
     "searchName": "horsea",
@@ -2017,7 +2029,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 168,
+    "id": 169,
     "name": "Seadra",
     "formType": "Padrão",
     "searchName": "seadra",
@@ -2029,7 +2041,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 169,
+    "id": 170,
     "name": "Goldeen",
     "formType": "Padrão",
     "searchName": "goldeen",
@@ -2041,7 +2053,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 170,
+    "id": 171,
     "name": "Seaking",
     "formType": "Padrão",
     "searchName": "seaking",
@@ -2053,7 +2065,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 171,
+    "id": 172,
     "name": "Staryu",
     "formType": "Padrão",
     "searchName": "staryu",
@@ -2065,7 +2077,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 172,
+    "id": 173,
     "name": "Starmie",
     "formType": "Padrão",
     "searchName": "starmie",
@@ -2077,7 +2089,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 173,
+    "id": 174,
     "name": "Mega Starmie",
     "formType": "Mega Evolução",
     "searchName": "mega starmie",
@@ -2089,7 +2101,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 174,
+    "id": 175,
     "name": "Mr. Mime",
     "formType": "Padrão",
     "searchName": "mr. mime",
@@ -2101,7 +2113,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 175,
+    "id": 176,
     "name": "Galarian Mr. Mime",
     "formType": "Forma Regional",
     "searchName": "galarian mr. mime",
@@ -2113,7 +2125,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 176,
+    "id": 177,
     "name": "Scyther",
     "formType": "Padrão",
     "searchName": "scyther",
@@ -2125,7 +2137,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 177,
+    "id": 178,
     "name": "Jynx",
     "formType": "Padrão",
     "searchName": "jynx",
@@ -2137,7 +2149,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 178,
+    "id": 179,
     "name": "Electabuzz",
     "formType": "Padrão",
     "searchName": "electabuzz",
@@ -2149,7 +2161,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 179,
+    "id": 180,
     "name": "Magmar",
     "formType": "Padrão",
     "searchName": "magmar",
@@ -2161,7 +2173,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 180,
+    "id": 181,
     "name": "Pinsir",
     "formType": "Padrão",
     "searchName": "pinsir",
@@ -2173,7 +2185,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 181,
+    "id": 182,
     "name": "Mega Pinsir",
     "formType": "Mega Evolução",
     "searchName": "mega pinsir",
@@ -2185,7 +2197,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 182,
+    "id": 183,
     "name": "Paldean Tauros (Aqua Breed)",
     "formType": "Forma Regional",
     "searchName": "paldean tauros (aqua breed)",
@@ -2197,7 +2209,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 183,
+    "id": 184,
     "name": "Paldean Tauros (Blaze Breed)",
     "formType": "Forma Regional",
     "searchName": "paldean tauros (blaze breed)",
@@ -2209,7 +2221,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 184,
+    "id": 185,
     "name": "Paldean Tauros (Combat Breed)",
     "formType": "Forma Regional",
     "searchName": "paldean tauros (combat breed)",
@@ -2221,7 +2233,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 185,
+    "id": 186,
     "name": "Tauros",
     "formType": "Padrão",
     "searchName": "tauros",
@@ -2233,7 +2245,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 186,
+    "id": 187,
     "name": "Magikarp",
     "formType": "Padrão",
     "searchName": "magikarp",
@@ -2245,7 +2257,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 187,
+    "id": 188,
     "name": "Gyarados",
     "formType": "Padrão",
     "searchName": "gyarados",
@@ -2257,7 +2269,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 188,
+    "id": 189,
     "name": "Mega Gyarados",
     "formType": "Mega Evolução",
     "searchName": "mega gyarados",
@@ -2269,7 +2281,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 189,
+    "id": 190,
     "name": "Lapras",
     "formType": "Padrão",
     "searchName": "lapras",
@@ -2281,7 +2293,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 190,
+    "id": 191,
     "name": "Gigantamax Lapras",
     "formType": "Gigantamax",
     "searchName": "gigantamax lapras",
@@ -2293,7 +2305,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 191,
+    "id": 192,
     "name": "Ditto",
     "formType": "Padrão",
     "searchName": "ditto",
@@ -2305,7 +2317,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 192,
+    "id": 193,
     "name": "Eevee",
     "formType": "Padrão",
     "searchName": "eevee",
@@ -2317,7 +2329,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 193,
+    "id": 194,
     "name": "Gigantamax Eevee",
     "formType": "Gigantamax",
     "searchName": "gigantamax eevee",
@@ -2329,7 +2341,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 194,
+    "id": 195,
     "name": "Vaporeon",
     "formType": "Padrão",
     "searchName": "vaporeon",
@@ -2341,7 +2353,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 195,
+    "id": 196,
     "name": "Jolteon",
     "formType": "Padrão",
     "searchName": "jolteon",
@@ -2353,7 +2365,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 196,
+    "id": 197,
     "name": "Flareon",
     "formType": "Padrão",
     "searchName": "flareon",
@@ -2365,7 +2377,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 197,
+    "id": 198,
     "name": "Porygon",
     "formType": "Padrão",
     "searchName": "porygon",
@@ -2377,7 +2389,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 198,
+    "id": 199,
     "name": "Omanyte",
     "formType": "Padrão",
     "searchName": "omanyte",
@@ -2389,7 +2401,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 199,
+    "id": 200,
     "name": "Omastar",
     "formType": "Padrão",
     "searchName": "omastar",
@@ -2401,7 +2413,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 200,
+    "id": 201,
     "name": "Kabuto",
     "formType": "Padrão",
     "searchName": "kabuto",
@@ -2413,7 +2425,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 201,
+    "id": 202,
     "name": "Kabutops",
     "formType": "Padrão",
     "searchName": "kabutops",
@@ -2425,7 +2437,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 202,
+    "id": 203,
     "name": "Aerodactyl",
     "formType": "Padrão",
     "searchName": "aerodactyl",
@@ -2437,7 +2449,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 203,
+    "id": 204,
     "name": "Mega Aerodactyl",
     "formType": "Mega Evolução",
     "searchName": "mega aerodactyl",
@@ -2449,7 +2461,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 204,
+    "id": 205,
     "name": "Snorlax",
     "formType": "Padrão",
     "searchName": "snorlax",
@@ -2461,7 +2473,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 205,
+    "id": 206,
     "name": "Gigantamax Snorlax",
     "formType": "Gigantamax",
     "searchName": "gigantamax snorlax",
@@ -2473,7 +2485,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 206,
+    "id": 207,
     "name": "Articuno",
     "formType": "Padrão",
     "searchName": "articuno",
@@ -2485,7 +2497,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 207,
+    "id": 208,
     "name": "Galarian Articuno",
     "formType": "Forma Regional",
     "searchName": "galarian articuno",
@@ -2497,7 +2509,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 208,
+    "id": 209,
     "name": "Zapdos",
     "formType": "Padrão",
     "searchName": "zapdos",
@@ -2509,7 +2521,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 209,
+    "id": 210,
     "name": "Galarian Zapdos",
     "formType": "Forma Regional",
     "searchName": "galarian zapdos",
@@ -2521,7 +2533,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 210,
+    "id": 211,
     "name": "Moltres",
     "formType": "Padrão",
     "searchName": "moltres",
@@ -2533,7 +2545,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 211,
+    "id": 212,
     "name": "Galarian Moltres",
     "formType": "Forma Regional",
     "searchName": "galarian moltres",
@@ -2545,7 +2557,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 212,
+    "id": 213,
     "name": "Dratini",
     "formType": "Padrão",
     "searchName": "dratini",
@@ -2557,7 +2569,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 213,
+    "id": 214,
     "name": "Dragonair",
     "formType": "Padrão",
     "searchName": "dragonair",
@@ -2569,7 +2581,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 214,
+    "id": 215,
     "name": "Dragonite",
     "formType": "Padrão",
     "searchName": "dragonite",
@@ -2581,7 +2593,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 215,
+    "id": 216,
     "name": "Mega Dragonite",
     "formType": "Mega Evolução",
     "searchName": "mega dragonite",
@@ -2593,7 +2605,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 216,
+    "id": 217,
     "name": "Mewtwo",
     "formType": "Padrão",
     "searchName": "mewtwo",
@@ -2605,7 +2617,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 217,
+    "id": 218,
     "name": "Mega Mewtwo X",
     "formType": "Mega Evolução",
     "searchName": "mega mewtwo x",
@@ -2617,7 +2629,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 218,
+    "id": 219,
     "name": "Mega Mewtwo Y",
     "formType": "Mega Evolução",
     "searchName": "mega mewtwo y",
@@ -2629,7 +2641,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 219,
+    "id": 220,
     "name": "Mew",
     "formType": "Padrão",
     "searchName": "mew",
@@ -2641,7 +2653,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 220,
+    "id": 221,
     "name": "Chikorita",
     "formType": "Padrão",
     "searchName": "chikorita",
@@ -2653,7 +2665,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 221,
+    "id": 222,
     "name": "Bayleef",
     "formType": "Padrão",
     "searchName": "bayleef",
@@ -2665,7 +2677,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 222,
+    "id": 223,
     "name": "Meganium",
     "formType": "Mega Evolução",
     "searchName": "meganium",
@@ -2677,7 +2689,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 223,
+    "id": 224,
     "name": "Mega Meganium",
     "formType": "Mega Evolução",
     "searchName": "mega meganium",
@@ -2689,7 +2701,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 224,
+    "id": 225,
     "name": "Cyndaquil",
     "formType": "Padrão",
     "searchName": "cyndaquil",
@@ -2701,7 +2713,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 225,
+    "id": 226,
     "name": "Quilava",
     "formType": "Padrão",
     "searchName": "quilava",
@@ -2713,7 +2725,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 226,
+    "id": 227,
     "name": "Typhlosion",
     "formType": "Padrão",
     "searchName": "typhlosion",
@@ -2725,7 +2737,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 227,
+    "id": 228,
     "name": "Hisuian Typhlosion",
     "formType": "Forma Regional",
     "searchName": "hisuian typhlosion",
@@ -2737,7 +2749,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 228,
+    "id": 229,
     "name": "Totodile",
     "formType": "Padrão",
     "searchName": "totodile",
@@ -2749,7 +2761,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 229,
+    "id": 230,
     "name": "Croconaw",
     "formType": "Padrão",
     "searchName": "croconaw",
@@ -2761,7 +2773,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 230,
+    "id": 231,
     "name": "Feraligatr",
     "formType": "Padrão",
     "searchName": "feraligatr",
@@ -2773,7 +2785,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 231,
+    "id": 232,
     "name": "Mega Feraligatr",
     "formType": "Mega Evolução",
     "searchName": "mega feraligatr",
@@ -2785,7 +2797,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 232,
+    "id": 233,
     "name": "Sentret",
     "formType": "Padrão",
     "searchName": "sentret",
@@ -2797,7 +2809,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 233,
+    "id": 234,
     "name": "Furret",
     "formType": "Padrão",
     "searchName": "furret",
@@ -2809,7 +2821,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 234,
+    "id": 235,
     "name": "Hoothoot",
     "formType": "Padrão",
     "searchName": "hoothoot",
@@ -2821,7 +2833,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 235,
+    "id": 236,
     "name": "Noctowl",
     "formType": "Padrão",
     "searchName": "noctowl",
@@ -2833,7 +2845,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 236,
+    "id": 237,
     "name": "Ledyba",
     "formType": "Padrão",
     "searchName": "ledyba",
@@ -2845,7 +2857,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 237,
+    "id": 238,
     "name": "Ledian",
     "formType": "Padrão",
     "searchName": "ledian",
@@ -2857,7 +2869,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 238,
+    "id": 239,
     "name": "Spinarak",
     "formType": "Padrão",
     "searchName": "spinarak",
@@ -2869,7 +2881,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 239,
+    "id": 240,
     "name": "Ariados",
     "formType": "Padrão",
     "searchName": "ariados",
@@ -2881,7 +2893,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 240,
+    "id": 241,
     "name": "Crobat",
     "formType": "Padrão",
     "searchName": "crobat",
@@ -2893,7 +2905,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 241,
+    "id": 242,
     "name": "Chinchou",
     "formType": "Padrão",
     "searchName": "chinchou",
@@ -2905,7 +2917,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 242,
+    "id": 243,
     "name": "Lanturn",
     "formType": "Padrão",
     "searchName": "lanturn",
@@ -2917,7 +2929,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 243,
+    "id": 244,
     "name": "Pichu",
     "formType": "Padrão",
     "searchName": "pichu",
@@ -2929,7 +2941,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 244,
+    "id": 245,
     "name": "Cleffa",
     "formType": "Padrão",
     "searchName": "cleffa",
@@ -2941,7 +2953,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 245,
+    "id": 246,
     "name": "Igglybuff",
     "formType": "Padrão",
     "searchName": "igglybuff",
@@ -2953,7 +2965,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 246,
+    "id": 247,
     "name": "Togepi",
     "formType": "Padrão",
     "searchName": "togepi",
@@ -2965,7 +2977,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 247,
+    "id": 248,
     "name": "Togetic",
     "formType": "Padrão",
     "searchName": "togetic",
@@ -2977,7 +2989,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 248,
+    "id": 249,
     "name": "Natu",
     "formType": "Padrão",
     "searchName": "natu",
@@ -2989,7 +3001,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 249,
+    "id": 250,
     "name": "Xatu",
     "formType": "Padrão",
     "searchName": "xatu",
@@ -3001,7 +3013,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 250,
+    "id": 251,
     "name": "Mareep",
     "formType": "Padrão",
     "searchName": "mareep",
@@ -3013,7 +3025,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 251,
+    "id": 252,
     "name": "Flaaffy",
     "formType": "Padrão",
     "searchName": "flaaffy",
@@ -3025,7 +3037,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 252,
+    "id": 253,
     "name": "Ampharos",
     "formType": "Padrão",
     "searchName": "ampharos",
@@ -3037,7 +3049,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 253,
+    "id": 254,
     "name": "Mega Ampharos",
     "formType": "Mega Evolução",
     "searchName": "mega ampharos",
@@ -3049,7 +3061,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 254,
+    "id": 255,
     "name": "Bellossom",
     "formType": "Padrão",
     "searchName": "bellossom",
@@ -3061,7 +3073,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 255,
+    "id": 256,
     "name": "Marill",
     "formType": "Padrão",
     "searchName": "marill",
@@ -3073,7 +3085,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 256,
+    "id": 257,
     "name": "Azumarill",
     "formType": "Padrão",
     "searchName": "azumarill",
@@ -3085,7 +3097,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 257,
+    "id": 258,
     "name": "Sudowoodo",
     "formType": "Padrão",
     "searchName": "sudowoodo",
@@ -3097,7 +3109,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 258,
+    "id": 259,
     "name": "Politoed",
     "formType": "Padrão",
     "searchName": "politoed",
@@ -3109,7 +3121,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 259,
+    "id": 260,
     "name": "Hoppip",
     "formType": "Padrão",
     "searchName": "hoppip",
@@ -3121,7 +3133,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 260,
+    "id": 261,
     "name": "Skiploom",
     "formType": "Padrão",
     "searchName": "skiploom",
@@ -3133,7 +3145,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 261,
+    "id": 262,
     "name": "Jumpluff",
     "formType": "Padrão",
     "searchName": "jumpluff",
@@ -3145,7 +3157,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 262,
+    "id": 263,
     "name": "Aipom",
     "formType": "Padrão",
     "searchName": "aipom",
@@ -3157,7 +3169,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 263,
+    "id": 264,
     "name": "Sunkern",
     "formType": "Padrão",
     "searchName": "sunkern",
@@ -3169,7 +3181,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 264,
+    "id": 265,
     "name": "Sunflora",
     "formType": "Padrão",
     "searchName": "sunflora",
@@ -3181,7 +3193,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 265,
+    "id": 266,
     "name": "Yanma",
     "formType": "Padrão",
     "searchName": "yanma",
@@ -3193,7 +3205,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 266,
+    "id": 267,
     "name": "Wooper",
     "formType": "Padrão",
     "searchName": "wooper",
@@ -3205,7 +3217,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 267,
+    "id": 268,
     "name": "Paldean Wooper",
     "formType": "Forma Regional",
     "searchName": "paldean wooper",
@@ -3217,7 +3229,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 268,
+    "id": 269,
     "name": "Quagsire",
     "formType": "Padrão",
     "searchName": "quagsire",
@@ -3229,7 +3241,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 269,
+    "id": 270,
     "name": "Espeon",
     "formType": "Padrão",
     "searchName": "espeon",
@@ -3241,7 +3253,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 270,
+    "id": 271,
     "name": "Umbreon",
     "formType": "Padrão",
     "searchName": "umbreon",
@@ -3253,7 +3265,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 271,
+    "id": 272,
     "name": "Murkrow",
     "formType": "Padrão",
     "searchName": "murkrow",
@@ -3265,7 +3277,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 272,
+    "id": 273,
     "name": "Slowking",
     "formType": "Padrão",
     "searchName": "slowking",
@@ -3277,7 +3289,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 273,
+    "id": 274,
     "name": "Galarian Slowking",
     "formType": "Forma Regional",
     "searchName": "galarian slowking",
@@ -3289,7 +3301,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 274,
+    "id": 275,
     "name": "Misdreavus",
     "formType": "Padrão",
     "searchName": "misdreavus",
@@ -3301,7 +3313,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 275,
+    "id": 276,
     "name": "Unown !",
     "formType": "Padrão",
     "searchName": "unown !",
@@ -3313,7 +3325,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 276,
+    "id": 277,
     "name": "Unown ?",
     "formType": "Padrão",
     "searchName": "unown ?",
@@ -3325,7 +3337,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 277,
+    "id": 278,
     "name": "Unown A",
     "formType": "Padrão",
     "searchName": "unown a",
@@ -3337,7 +3349,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 278,
+    "id": 279,
     "name": "Unown B",
     "formType": "Padrão",
     "searchName": "unown b",
@@ -3349,7 +3361,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 279,
+    "id": 280,
     "name": "Unown C",
     "formType": "Padrão",
     "searchName": "unown c",
@@ -3361,7 +3373,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 280,
+    "id": 281,
     "name": "Unown D",
     "formType": "Padrão",
     "searchName": "unown d",
@@ -3373,7 +3385,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 281,
+    "id": 282,
     "name": "Unown E",
     "formType": "Padrão",
     "searchName": "unown e",
@@ -3385,7 +3397,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 282,
+    "id": 283,
     "name": "Unown F",
     "formType": "Padrão",
     "searchName": "unown f",
@@ -3397,7 +3409,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 283,
+    "id": 284,
     "name": "Unown G",
     "formType": "Padrão",
     "searchName": "unown g",
@@ -3409,7 +3421,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 284,
+    "id": 285,
     "name": "Unown H",
     "formType": "Padrão",
     "searchName": "unown h",
@@ -3421,7 +3433,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 285,
+    "id": 286,
     "name": "Unown I",
     "formType": "Padrão",
     "searchName": "unown i",
@@ -3433,7 +3445,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 286,
+    "id": 287,
     "name": "Unown J",
     "formType": "Padrão",
     "searchName": "unown j",
@@ -3445,7 +3457,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 287,
+    "id": 288,
     "name": "Unown K",
     "formType": "Padrão",
     "searchName": "unown k",
@@ -3457,7 +3469,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 288,
+    "id": 289,
     "name": "Unown L",
     "formType": "Padrão",
     "searchName": "unown l",
@@ -3469,7 +3481,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 289,
+    "id": 290,
     "name": "Unown M",
     "formType": "Padrão",
     "searchName": "unown m",
@@ -3481,7 +3493,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 290,
+    "id": 291,
     "name": "Unown N",
     "formType": "Padrão",
     "searchName": "unown n",
@@ -3493,7 +3505,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 291,
+    "id": 292,
     "name": "Unown O",
     "formType": "Padrão",
     "searchName": "unown o",
@@ -3505,7 +3517,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 292,
+    "id": 293,
     "name": "Unown P",
     "formType": "Padrão",
     "searchName": "unown p",
@@ -3517,7 +3529,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 293,
+    "id": 294,
     "name": "Unown Q",
     "formType": "Padrão",
     "searchName": "unown q",
@@ -3529,7 +3541,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 294,
+    "id": 295,
     "name": "Unown R",
     "formType": "Padrão",
     "searchName": "unown r",
@@ -3541,7 +3553,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 295,
+    "id": 296,
     "name": "Unown S",
     "formType": "Padrão",
     "searchName": "unown s",
@@ -3553,7 +3565,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 296,
+    "id": 297,
     "name": "Unown T",
     "formType": "Padrão",
     "searchName": "unown t",
@@ -3565,7 +3577,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 297,
+    "id": 298,
     "name": "Unown U",
     "formType": "Padrão",
     "searchName": "unown u",
@@ -3577,7 +3589,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 298,
+    "id": 299,
     "name": "Unown V",
     "formType": "Padrão",
     "searchName": "unown v",
@@ -3589,7 +3601,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 299,
+    "id": 300,
     "name": "Unown W",
     "formType": "Padrão",
     "searchName": "unown w",
@@ -3601,7 +3613,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 300,
+    "id": 301,
     "name": "Unown X",
     "formType": "Padrão",
     "searchName": "unown x",
@@ -3613,7 +3625,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 301,
+    "id": 302,
     "name": "Unown Y",
     "formType": "Padrão",
     "searchName": "unown y",
@@ -3625,7 +3637,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 302,
+    "id": 303,
     "name": "Unown Z",
     "formType": "Padrão",
     "searchName": "unown z",
@@ -3637,7 +3649,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 303,
+    "id": 304,
     "name": "Wobbuffet",
     "formType": "Padrão",
     "searchName": "wobbuffet",
@@ -3649,7 +3661,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 304,
+    "id": 305,
     "name": "Girafarig",
     "formType": "Padrão",
     "searchName": "girafarig",
@@ -3661,7 +3673,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 305,
+    "id": 306,
     "name": "Pineco",
     "formType": "Padrão",
     "searchName": "pineco",
@@ -3673,7 +3685,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 306,
+    "id": 307,
     "name": "Forretress",
     "formType": "Padrão",
     "searchName": "forretress",
@@ -3685,7 +3697,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 307,
+    "id": 308,
     "name": "Dunsparce",
     "formType": "Padrão",
     "searchName": "dunsparce",
@@ -3697,7 +3709,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 308,
+    "id": 309,
     "name": "Gligar",
     "formType": "Padrão",
     "searchName": "gligar",
@@ -3709,7 +3721,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 309,
+    "id": 310,
     "name": "Steelix",
     "formType": "Padrão",
     "searchName": "steelix",
@@ -3721,7 +3733,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 310,
+    "id": 311,
     "name": "Mega Steelix",
     "formType": "Mega Evolução",
     "searchName": "mega steelix",
@@ -3733,7 +3745,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 311,
+    "id": 312,
     "name": "Snubbull",
     "formType": "Padrão",
     "searchName": "snubbull",
@@ -3745,7 +3757,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 312,
+    "id": 313,
     "name": "Granbull",
     "formType": "Padrão",
     "searchName": "granbull",
@@ -3757,7 +3769,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 313,
+    "id": 314,
     "name": "Qwilfish",
     "formType": "Padrão",
     "searchName": "qwilfish",
@@ -3769,7 +3781,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 314,
+    "id": 315,
     "name": "Hisuian Qwilfish",
     "formType": "Forma Regional",
     "searchName": "hisuian qwilfish",
@@ -3781,7 +3793,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 315,
+    "id": 316,
     "name": "Scizor",
     "formType": "Padrão",
     "searchName": "scizor",
@@ -3793,7 +3805,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 316,
+    "id": 317,
     "name": "Mega Scizor",
     "formType": "Mega Evolução",
     "searchName": "mega scizor",
@@ -3805,7 +3817,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 317,
+    "id": 318,
     "name": "Shuckle",
     "formType": "Padrão",
     "searchName": "shuckle",
@@ -3817,7 +3829,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 318,
+    "id": 319,
     "name": "Heracross",
     "formType": "Padrão",
     "searchName": "heracross",
@@ -3829,7 +3841,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 319,
+    "id": 320,
     "name": "Mega Heracross",
     "formType": "Mega Evolução",
     "searchName": "mega heracross",
@@ -3841,7 +3853,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 320,
+    "id": 321,
     "name": "Sneasel",
     "formType": "Padrão",
     "searchName": "sneasel",
@@ -3853,7 +3865,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 321,
+    "id": 322,
     "name": "Hisuian Sneasel",
     "formType": "Forma Regional",
     "searchName": "hisuian sneasel",
@@ -3865,7 +3877,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 322,
+    "id": 323,
     "name": "Teddiursa",
     "formType": "Padrão",
     "searchName": "teddiursa",
@@ -3877,7 +3889,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 323,
+    "id": 324,
     "name": "Ursaring",
     "formType": "Padrão",
     "searchName": "ursaring",
@@ -3889,7 +3901,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 324,
+    "id": 325,
     "name": "Slugma",
     "formType": "Padrão",
     "searchName": "slugma",
@@ -3901,7 +3913,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 325,
+    "id": 326,
     "name": "Magcargo",
     "formType": "Padrão",
     "searchName": "magcargo",
@@ -3913,7 +3925,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 326,
+    "id": 327,
     "name": "Swinub",
     "formType": "Padrão",
     "searchName": "swinub",
@@ -3925,7 +3937,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 327,
+    "id": 328,
     "name": "Piloswine",
     "formType": "Padrão",
     "searchName": "piloswine",
@@ -3937,7 +3949,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 328,
+    "id": 329,
     "name": "Corsola",
     "formType": "Padrão",
     "searchName": "corsola",
@@ -3949,7 +3961,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 329,
+    "id": 330,
     "name": "Galarian Corsola",
     "formType": "Forma Regional",
     "searchName": "galarian corsola",
@@ -3961,7 +3973,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 330,
+    "id": 331,
     "name": "Remoraid",
     "formType": "Padrão",
     "searchName": "remoraid",
@@ -3973,7 +3985,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 331,
+    "id": 332,
     "name": "Octillery",
     "formType": "Padrão",
     "searchName": "octillery",
@@ -3985,7 +3997,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 332,
+    "id": 333,
     "name": "Delibird",
     "formType": "Padrão",
     "searchName": "delibird",
@@ -3997,7 +4009,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 333,
+    "id": 334,
     "name": "Mantine",
     "formType": "Padrão",
     "searchName": "mantine",
@@ -4009,7 +4021,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 334,
+    "id": 335,
     "name": "Skarmory",
     "formType": "Padrão",
     "searchName": "skarmory",
@@ -4021,7 +4033,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 335,
+    "id": 336,
     "name": "Mega Skarmory",
     "formType": "Mega Evolução",
     "searchName": "mega skarmory",
@@ -4033,7 +4045,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 336,
+    "id": 337,
     "name": "Houndour",
     "formType": "Padrão",
     "searchName": "houndour",
@@ -4045,7 +4057,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 337,
+    "id": 338,
     "name": "Houndoom",
     "formType": "Padrão",
     "searchName": "houndoom",
@@ -4057,7 +4069,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 338,
+    "id": 339,
     "name": "Mega Houndoom",
     "formType": "Mega Evolução",
     "searchName": "mega houndoom",
@@ -4069,7 +4081,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 339,
+    "id": 340,
     "name": "Kingdra",
     "formType": "Padrão",
     "searchName": "kingdra",
@@ -4081,7 +4093,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 340,
+    "id": 341,
     "name": "Phanpy",
     "formType": "Padrão",
     "searchName": "phanpy",
@@ -4093,7 +4105,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 341,
+    "id": 342,
     "name": "Donphan",
     "formType": "Padrão",
     "searchName": "donphan",
@@ -4105,7 +4117,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 342,
+    "id": 343,
     "name": "Porygon2",
     "formType": "Padrão",
     "searchName": "porygon2",
@@ -4117,7 +4129,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 343,
+    "id": 344,
     "name": "Stantler",
     "formType": "Padrão",
     "searchName": "stantler",
@@ -4129,7 +4141,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 344,
+    "id": 345,
     "name": "Smeargle",
     "formType": "Padrão",
     "searchName": "smeargle",
@@ -4141,7 +4153,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 345,
+    "id": 346,
     "name": "Tyrogue",
     "formType": "Padrão",
     "searchName": "tyrogue",
@@ -4153,7 +4165,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 346,
+    "id": 347,
     "name": "Hitmontop",
     "formType": "Padrão",
     "searchName": "hitmontop",
@@ -4165,7 +4177,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 347,
+    "id": 348,
     "name": "Smoochum",
     "formType": "Padrão",
     "searchName": "smoochum",
@@ -4177,7 +4189,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 348,
+    "id": 349,
     "name": "Elekid",
     "formType": "Padrão",
     "searchName": "elekid",
@@ -4189,7 +4201,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 349,
+    "id": 350,
     "name": "Magby",
     "formType": "Padrão",
     "searchName": "magby",
@@ -4201,7 +4213,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 350,
+    "id": 351,
     "name": "Miltank",
     "formType": "Padrão",
     "searchName": "miltank",
@@ -4213,7 +4225,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 351,
+    "id": 352,
     "name": "Blissey",
     "formType": "Padrão",
     "searchName": "blissey",
@@ -4225,7 +4237,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 352,
+    "id": 353,
     "name": "Raikou",
     "formType": "Padrão",
     "searchName": "raikou",
@@ -4237,7 +4249,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 353,
+    "id": 354,
     "name": "Entei",
     "formType": "Padrão",
     "searchName": "entei",
@@ -4249,7 +4261,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 354,
+    "id": 355,
     "name": "Suicune",
     "formType": "Padrão",
     "searchName": "suicune",
@@ -4261,7 +4273,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 355,
+    "id": 356,
     "name": "Larvitar",
     "formType": "Padrão",
     "searchName": "larvitar",
@@ -4273,7 +4285,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 356,
+    "id": 357,
     "name": "Pupitar",
     "formType": "Padrão",
     "searchName": "pupitar",
@@ -4285,7 +4297,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 357,
+    "id": 358,
     "name": "Tyranitar",
     "formType": "Padrão",
     "searchName": "tyranitar",
@@ -4297,7 +4309,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 358,
+    "id": 359,
     "name": "Mega Tyranitar",
     "formType": "Mega Evolução",
     "searchName": "mega tyranitar",
@@ -4309,7 +4321,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 359,
+    "id": 360,
     "name": "Lugia",
     "formType": "Padrão",
     "searchName": "lugia",
@@ -4321,7 +4333,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 360,
+    "id": 361,
     "name": "Ho-Oh",
     "formType": "Padrão",
     "searchName": "ho-oh",
@@ -4333,7 +4345,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 361,
+    "id": 362,
     "name": "Celebi",
     "formType": "Padrão",
     "searchName": "celebi",
@@ -4345,7 +4357,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 362,
+    "id": 363,
     "name": "Treecko",
     "formType": "Padrão",
     "searchName": "treecko",
@@ -4357,7 +4369,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 363,
+    "id": 364,
     "name": "Grovyle",
     "formType": "Padrão",
     "searchName": "grovyle",
@@ -4369,7 +4381,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 364,
+    "id": 365,
     "name": "Sceptile",
     "formType": "Padrão",
     "searchName": "sceptile",
@@ -4381,7 +4393,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 365,
+    "id": 366,
     "name": "Mega Sceptile",
     "formType": "Mega Evolução",
     "searchName": "mega sceptile",
@@ -4393,7 +4405,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 366,
+    "id": 367,
     "name": "Torchic",
     "formType": "Padrão",
     "searchName": "torchic",
@@ -4405,7 +4417,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 367,
+    "id": 368,
     "name": "Combusken",
     "formType": "Padrão",
     "searchName": "combusken",
@@ -4417,7 +4429,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 368,
+    "id": 369,
     "name": "Blaziken",
     "formType": "Padrão",
     "searchName": "blaziken",
@@ -4429,7 +4441,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 369,
+    "id": 370,
     "name": "Mega Blaziken",
     "formType": "Mega Evolução",
     "searchName": "mega blaziken",
@@ -4441,7 +4453,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 370,
+    "id": 371,
     "name": "Mudkip",
     "formType": "Padrão",
     "searchName": "mudkip",
@@ -4453,7 +4465,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 371,
+    "id": 372,
     "name": "Marshtomp",
     "formType": "Padrão",
     "searchName": "marshtomp",
@@ -4465,7 +4477,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 372,
+    "id": 373,
     "name": "Swampert",
     "formType": "Padrão",
     "searchName": "swampert",
@@ -4477,7 +4489,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 373,
+    "id": 374,
     "name": "Mega Swampert",
     "formType": "Mega Evolução",
     "searchName": "mega swampert",
@@ -4489,7 +4501,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 374,
+    "id": 375,
     "name": "Poochyena",
     "formType": "Padrão",
     "searchName": "poochyena",
@@ -4501,7 +4513,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 375,
+    "id": 376,
     "name": "Mightyena",
     "formType": "Padrão",
     "searchName": "mightyena",
@@ -4513,7 +4525,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 376,
+    "id": 377,
     "name": "Zigzagoon",
     "formType": "Padrão",
     "searchName": "zigzagoon",
@@ -4525,7 +4537,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 377,
+    "id": 378,
     "name": "Galarian Zigzagoon",
     "formType": "Forma Regional",
     "searchName": "galarian zigzagoon",
@@ -4537,7 +4549,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 378,
+    "id": 379,
     "name": "Linoone",
     "formType": "Padrão",
     "searchName": "linoone",
@@ -4549,7 +4561,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 379,
+    "id": 380,
     "name": "Galarian Linoone",
     "formType": "Forma Regional",
     "searchName": "galarian linoone",
@@ -4561,7 +4573,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 380,
+    "id": 381,
     "name": "Wurmple",
     "formType": "Padrão",
     "searchName": "wurmple",
@@ -4573,7 +4585,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 381,
+    "id": 382,
     "name": "Silcoon",
     "formType": "Padrão",
     "searchName": "silcoon",
@@ -4585,7 +4597,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 382,
+    "id": 383,
     "name": "Beautifly",
     "formType": "Padrão",
     "searchName": "beautifly",
@@ -4597,7 +4609,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 383,
+    "id": 384,
     "name": "Cascoon",
     "formType": "Padrão",
     "searchName": "cascoon",
@@ -4609,7 +4621,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 384,
+    "id": 385,
     "name": "Dustox",
     "formType": "Padrão",
     "searchName": "dustox",
@@ -4621,7 +4633,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 385,
+    "id": 386,
     "name": "Lotad",
     "formType": "Padrão",
     "searchName": "lotad",
@@ -4633,7 +4645,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 386,
+    "id": 387,
     "name": "Lombre",
     "formType": "Padrão",
     "searchName": "lombre",
@@ -4645,7 +4657,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 387,
+    "id": 388,
     "name": "Ludicolo",
     "formType": "Padrão",
     "searchName": "ludicolo",
@@ -4657,7 +4669,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 388,
+    "id": 389,
     "name": "Seedot",
     "formType": "Padrão",
     "searchName": "seedot",
@@ -4669,7 +4681,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 389,
+    "id": 390,
     "name": "Nuzleaf",
     "formType": "Padrão",
     "searchName": "nuzleaf",
@@ -4681,7 +4693,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 390,
+    "id": 391,
     "name": "Shiftry",
     "formType": "Padrão",
     "searchName": "shiftry",
@@ -4693,7 +4705,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 391,
+    "id": 392,
     "name": "Taillow",
     "formType": "Padrão",
     "searchName": "taillow",
@@ -4705,7 +4717,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 392,
+    "id": 393,
     "name": "Swellow",
     "formType": "Padrão",
     "searchName": "swellow",
@@ -4717,7 +4729,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 393,
+    "id": 394,
     "name": "Wingull",
     "formType": "Padrão",
     "searchName": "wingull",
@@ -4729,7 +4741,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 394,
+    "id": 395,
     "name": "Pelipper",
     "formType": "Padrão",
     "searchName": "pelipper",
@@ -4741,7 +4753,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 395,
+    "id": 396,
     "name": "Ralts",
     "formType": "Padrão",
     "searchName": "ralts",
@@ -4753,7 +4765,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 396,
+    "id": 397,
     "name": "Kirlia",
     "formType": "Padrão",
     "searchName": "kirlia",
@@ -4765,7 +4777,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 397,
+    "id": 398,
     "name": "Gardevoir",
     "formType": "Padrão",
     "searchName": "gardevoir",
@@ -4777,7 +4789,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 398,
+    "id": 399,
     "name": "Mega Gardevoir",
     "formType": "Mega Evolução",
     "searchName": "mega gardevoir",
@@ -4789,7 +4801,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 399,
+    "id": 400,
     "name": "Surskit",
     "formType": "Padrão",
     "searchName": "surskit",
@@ -4801,7 +4813,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 400,
+    "id": 401,
     "name": "Masquerain",
     "formType": "Padrão",
     "searchName": "masquerain",
@@ -4813,7 +4825,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 401,
+    "id": 402,
     "name": "Shroomish",
     "formType": "Padrão",
     "searchName": "shroomish",
@@ -4825,7 +4837,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 402,
+    "id": 403,
     "name": "Breloom",
     "formType": "Padrão",
     "searchName": "breloom",
@@ -4837,7 +4849,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 403,
+    "id": 404,
     "name": "Slakoth",
     "formType": "Padrão",
     "searchName": "slakoth",
@@ -4849,7 +4861,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 404,
+    "id": 405,
     "name": "Vigoroth",
     "formType": "Padrão",
     "searchName": "vigoroth",
@@ -4861,7 +4873,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 405,
+    "id": 406,
     "name": "Slaking",
     "formType": "Padrão",
     "searchName": "slaking",
@@ -4873,7 +4885,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 406,
+    "id": 407,
     "name": "Nincada",
     "formType": "Padrão",
     "searchName": "nincada",
@@ -4885,7 +4897,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 407,
+    "id": 408,
     "name": "Ninjask",
     "formType": "Padrão",
     "searchName": "ninjask",
@@ -4897,7 +4909,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 408,
+    "id": 409,
     "name": "Shedinja",
     "formType": "Padrão",
     "searchName": "shedinja",
@@ -4909,7 +4921,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 409,
+    "id": 410,
     "name": "Whismur",
     "formType": "Padrão",
     "searchName": "whismur",
@@ -4921,7 +4933,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 410,
+    "id": 411,
     "name": "Loudred",
     "formType": "Padrão",
     "searchName": "loudred",
@@ -4933,7 +4945,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 411,
+    "id": 412,
     "name": "Exploud",
     "formType": "Padrão",
     "searchName": "exploud",
@@ -4945,7 +4957,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 412,
+    "id": 413,
     "name": "Makuhita",
     "formType": "Padrão",
     "searchName": "makuhita",
@@ -4957,7 +4969,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 413,
+    "id": 414,
     "name": "Hariyama",
     "formType": "Padrão",
     "searchName": "hariyama",
@@ -4969,7 +4981,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 414,
+    "id": 415,
     "name": "Azurill",
     "formType": "Padrão",
     "searchName": "azurill",
@@ -4981,7 +4993,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 415,
+    "id": 416,
     "name": "Nosepass",
     "formType": "Padrão",
     "searchName": "nosepass",
@@ -4993,7 +5005,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 416,
+    "id": 417,
     "name": "Skitty",
     "formType": "Padrão",
     "searchName": "skitty",
@@ -5005,7 +5017,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 417,
+    "id": 418,
     "name": "Delcatty",
     "formType": "Padrão",
     "searchName": "delcatty",
@@ -5017,7 +5029,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 418,
+    "id": 419,
     "name": "Sableye",
     "formType": "Padrão",
     "searchName": "sableye",
@@ -5029,7 +5041,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 419,
+    "id": 420,
     "name": "Mega Sableye",
     "formType": "Mega Evolução",
     "searchName": "mega sableye",
@@ -5041,7 +5053,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 420,
+    "id": 421,
     "name": "Mawile",
     "formType": "Padrão",
     "searchName": "mawile",
@@ -5053,7 +5065,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 421,
+    "id": 422,
     "name": "Mega Mawile",
     "formType": "Mega Evolução",
     "searchName": "mega mawile",
@@ -5065,7 +5077,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 422,
+    "id": 423,
     "name": "Aron",
     "formType": "Padrão",
     "searchName": "aron",
@@ -5077,7 +5089,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 423,
+    "id": 424,
     "name": "Lairon",
     "formType": "Padrão",
     "searchName": "lairon",
@@ -5089,7 +5101,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 424,
+    "id": 425,
     "name": "Aggron",
     "formType": "Padrão",
     "searchName": "aggron",
@@ -5101,7 +5113,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 425,
+    "id": 426,
     "name": "Mega Aggron",
     "formType": "Mega Evolução",
     "searchName": "mega aggron",
@@ -5113,7 +5125,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 426,
+    "id": 427,
     "name": "Meditite",
     "formType": "Padrão",
     "searchName": "meditite",
@@ -5125,7 +5137,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 427,
+    "id": 428,
     "name": "Medicham",
     "formType": "Padrão",
     "searchName": "medicham",
@@ -5137,7 +5149,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 428,
+    "id": 429,
     "name": "Mega Medicham",
     "formType": "Mega Evolução",
     "searchName": "mega medicham",
@@ -5149,7 +5161,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 429,
+    "id": 430,
     "name": "Electrike",
     "formType": "Padrão",
     "searchName": "electrike",
@@ -5161,7 +5173,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 430,
+    "id": 431,
     "name": "Manectric",
     "formType": "Padrão",
     "searchName": "manectric",
@@ -5173,7 +5185,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 431,
+    "id": 432,
     "name": "Mega Manectric",
     "formType": "Mega Evolução",
     "searchName": "mega manectric",
@@ -5185,7 +5197,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 432,
+    "id": 433,
     "name": "Plusle",
     "formType": "Padrão",
     "searchName": "plusle",
@@ -5197,7 +5209,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 433,
+    "id": 434,
     "name": "Minun",
     "formType": "Padrão",
     "searchName": "minun",
@@ -5209,7 +5221,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 434,
+    "id": 435,
     "name": "Volbeat",
     "formType": "Padrão",
     "searchName": "volbeat",
@@ -5221,7 +5233,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 435,
+    "id": 436,
     "name": "Illumise",
     "formType": "Padrão",
     "searchName": "illumise",
@@ -5233,7 +5245,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 436,
+    "id": 437,
     "name": "Roselia",
     "formType": "Padrão",
     "searchName": "roselia",
@@ -5245,7 +5257,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 437,
+    "id": 438,
     "name": "Gulpin",
     "formType": "Padrão",
     "searchName": "gulpin",
@@ -5257,7 +5269,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 438,
+    "id": 439,
     "name": "Swalot",
     "formType": "Padrão",
     "searchName": "swalot",
@@ -5269,7 +5281,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 439,
+    "id": 440,
     "name": "Carvanha",
     "formType": "Padrão",
     "searchName": "carvanha",
@@ -5281,7 +5293,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 440,
+    "id": 441,
     "name": "Sharpedo",
     "formType": "Padrão",
     "searchName": "sharpedo",
@@ -5293,7 +5305,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 441,
+    "id": 442,
     "name": "Mega Sharpedo",
     "formType": "Mega Evolução",
     "searchName": "mega sharpedo",
@@ -5305,7 +5317,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 442,
+    "id": 443,
     "name": "Wailmer",
     "formType": "Padrão",
     "searchName": "wailmer",
@@ -5317,7 +5329,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 443,
+    "id": 444,
     "name": "Wailord",
     "formType": "Padrão",
     "searchName": "wailord",
@@ -5329,7 +5341,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 444,
+    "id": 445,
     "name": "Numel",
     "formType": "Padrão",
     "searchName": "numel",
@@ -5341,7 +5353,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 445,
+    "id": 446,
     "name": "Camerupt",
     "formType": "Padrão",
     "searchName": "camerupt",
@@ -5353,7 +5365,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 446,
+    "id": 447,
     "name": "Mega Camerupt",
     "formType": "Mega Evolução",
     "searchName": "mega camerupt",
@@ -5365,7 +5377,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 447,
+    "id": 448,
     "name": "Torkoal",
     "formType": "Padrão",
     "searchName": "torkoal",
@@ -5377,7 +5389,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 448,
+    "id": 449,
     "name": "Spoink",
     "formType": "Padrão",
     "searchName": "spoink",
@@ -5389,7 +5401,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 449,
+    "id": 450,
     "name": "Grumpig",
     "formType": "Padrão",
     "searchName": "grumpig",
@@ -5401,7 +5413,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 450,
+    "id": 451,
     "name": "Spinda",
     "formType": "Padrão",
     "searchName": "spinda",
@@ -5413,7 +5425,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 451,
+    "id": 452,
     "name": "Trapinch",
     "formType": "Padrão",
     "searchName": "trapinch",
@@ -5425,7 +5437,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 452,
+    "id": 453,
     "name": "Vibrava",
     "formType": "Padrão",
     "searchName": "vibrava",
@@ -5437,7 +5449,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 453,
+    "id": 454,
     "name": "Flygon",
     "formType": "Padrão",
     "searchName": "flygon",
@@ -5449,7 +5461,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 454,
+    "id": 455,
     "name": "Cacnea",
     "formType": "Padrão",
     "searchName": "cacnea",
@@ -5461,7 +5473,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 455,
+    "id": 456,
     "name": "Cacturne",
     "formType": "Padrão",
     "searchName": "cacturne",
@@ -5473,7 +5485,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 456,
+    "id": 457,
     "name": "Swablu",
     "formType": "Padrão",
     "searchName": "swablu",
@@ -5485,7 +5497,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 457,
+    "id": 458,
     "name": "Altaria",
     "formType": "Padrão",
     "searchName": "altaria",
@@ -5497,7 +5509,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 458,
+    "id": 459,
     "name": "Mega Altaria",
     "formType": "Mega Evolução",
     "searchName": "mega altaria",
@@ -5509,7 +5521,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 459,
+    "id": 460,
     "name": "Zangoose",
     "formType": "Padrão",
     "searchName": "zangoose",
@@ -5521,7 +5533,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 460,
+    "id": 461,
     "name": "Seviper",
     "formType": "Padrão",
     "searchName": "seviper",
@@ -5533,7 +5545,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 461,
+    "id": 462,
     "name": "Lunatone",
     "formType": "Padrão",
     "searchName": "lunatone",
@@ -5545,7 +5557,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 462,
+    "id": 463,
     "name": "Solrock",
     "formType": "Padrão",
     "searchName": "solrock",
@@ -5557,7 +5569,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 463,
+    "id": 464,
     "name": "Barboach",
     "formType": "Padrão",
     "searchName": "barboach",
@@ -5569,7 +5581,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 464,
+    "id": 465,
     "name": "Whiscash",
     "formType": "Padrão",
     "searchName": "whiscash",
@@ -5581,7 +5593,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 465,
+    "id": 466,
     "name": "Corphish",
     "formType": "Padrão",
     "searchName": "corphish",
@@ -5593,7 +5605,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 466,
+    "id": 467,
     "name": "Crawdaunt",
     "formType": "Padrão",
     "searchName": "crawdaunt",
@@ -5605,7 +5617,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 467,
+    "id": 468,
     "name": "Baltoy",
     "formType": "Padrão",
     "searchName": "baltoy",
@@ -5617,7 +5629,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 468,
+    "id": 469,
     "name": "Claydol",
     "formType": "Padrão",
     "searchName": "claydol",
@@ -5629,7 +5641,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 469,
+    "id": 470,
     "name": "Lileep",
     "formType": "Padrão",
     "searchName": "lileep",
@@ -5641,7 +5653,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 470,
+    "id": 471,
     "name": "Cradily",
     "formType": "Padrão",
     "searchName": "cradily",
@@ -5653,7 +5665,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 471,
+    "id": 472,
     "name": "Anorith",
     "formType": "Padrão",
     "searchName": "anorith",
@@ -5665,7 +5677,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 472,
+    "id": 473,
     "name": "Armaldo",
     "formType": "Padrão",
     "searchName": "armaldo",
@@ -5677,7 +5689,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 473,
+    "id": 474,
     "name": "Feebas",
     "formType": "Padrão",
     "searchName": "feebas",
@@ -5689,7 +5701,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 474,
+    "id": 475,
     "name": "Milotic",
     "formType": "Padrão",
     "searchName": "milotic",
@@ -5701,7 +5713,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 475,
+    "id": 476,
     "name": "Castform (Normal)",
     "formType": "Forma Especial",
     "searchName": "castform (normal)",
@@ -5713,7 +5725,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 476,
+    "id": 477,
     "name": "Rainy Castform",
     "formType": "Forma Especial",
     "searchName": "rainy castform",
@@ -5725,7 +5737,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 477,
+    "id": 478,
     "name": "Snowy Castform",
     "formType": "Forma Especial",
     "searchName": "snowy castform",
@@ -5737,7 +5749,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 478,
+    "id": 479,
     "name": "Sunny Castform",
     "formType": "Forma Especial",
     "searchName": "sunny castform",
@@ -5749,7 +5761,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 479,
+    "id": 480,
     "name": "Kecleon",
     "formType": "Padrão",
     "searchName": "kecleon",
@@ -5761,7 +5773,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 480,
+    "id": 481,
     "name": "Shuppet",
     "formType": "Padrão",
     "searchName": "shuppet",
@@ -5773,7 +5785,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 481,
+    "id": 482,
     "name": "Banette",
     "formType": "Padrão",
     "searchName": "banette",
@@ -5785,7 +5797,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 482,
+    "id": 483,
     "name": "Mega Banette",
     "formType": "Mega Evolução",
     "searchName": "mega banette",
@@ -5797,7 +5809,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 483,
+    "id": 484,
     "name": "Duskull",
     "formType": "Forma Especial",
     "searchName": "duskull",
@@ -5809,7 +5821,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 484,
+    "id": 485,
     "name": "Dusclops",
     "formType": "Padrão",
     "searchName": "dusclops",
@@ -5821,7 +5833,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 485,
+    "id": 486,
     "name": "Tropius",
     "formType": "Padrão",
     "searchName": "tropius",
@@ -5833,7 +5845,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 486,
+    "id": 487,
     "name": "Chimecho",
     "formType": "Padrão",
     "searchName": "chimecho",
@@ -5845,7 +5857,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 487,
+    "id": 488,
     "name": "Mega Chimecho",
     "formType": "Mega Evolução",
     "searchName": "mega chimecho",
@@ -5857,7 +5869,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 488,
+    "id": 489,
     "name": "Absol",
     "formType": "Padrão",
     "searchName": "absol",
@@ -5869,7 +5881,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 489,
+    "id": 490,
     "name": "Mega Absol",
     "formType": "Mega Evolução",
     "searchName": "mega absol",
@@ -5881,7 +5893,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 490,
+    "id": 491,
     "name": "Mega Absol Z",
     "formType": "Mega Evolução",
     "searchName": "mega absol z",
@@ -5893,7 +5905,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 491,
+    "id": 492,
     "name": "Wynaut",
     "formType": "Padrão",
     "searchName": "wynaut",
@@ -5905,7 +5917,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 492,
+    "id": 493,
     "name": "Snorunt",
     "formType": "Padrão",
     "searchName": "snorunt",
@@ -5917,7 +5929,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 493,
+    "id": 494,
     "name": "Glalie",
     "formType": "Padrão",
     "searchName": "glalie",
@@ -5929,7 +5941,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 494,
+    "id": 495,
     "name": "Mega Glalie",
     "formType": "Mega Evolução",
     "searchName": "mega glalie",
@@ -5941,7 +5953,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 495,
+    "id": 496,
     "name": "Spheal",
     "formType": "Padrão",
     "searchName": "spheal",
@@ -5953,7 +5965,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 496,
+    "id": 497,
     "name": "Sealeo",
     "formType": "Padrão",
     "searchName": "sealeo",
@@ -5965,7 +5977,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 497,
+    "id": 498,
     "name": "Walrein",
     "formType": "Padrão",
     "searchName": "walrein",
@@ -5977,7 +5989,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 498,
+    "id": 499,
     "name": "Clamperl",
     "formType": "Padrão",
     "searchName": "clamperl",
@@ -5989,7 +6001,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 499,
+    "id": 500,
     "name": "Huntail",
     "formType": "Padrão",
     "searchName": "huntail",
@@ -6001,7 +6013,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 500,
+    "id": 501,
     "name": "Gorebyss",
     "formType": "Padrão",
     "searchName": "gorebyss",
@@ -6013,7 +6025,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 501,
+    "id": 502,
     "name": "Relicanth",
     "formType": "Padrão",
     "searchName": "relicanth",
@@ -6025,7 +6037,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 502,
+    "id": 503,
     "name": "Luvdisc",
     "formType": "Padrão",
     "searchName": "luvdisc",
@@ -6037,7 +6049,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 503,
+    "id": 504,
     "name": "Bagon",
     "formType": "Padrão",
     "searchName": "bagon",
@@ -6049,7 +6061,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 504,
+    "id": 505,
     "name": "Shelgon",
     "formType": "Padrão",
     "searchName": "shelgon",
@@ -6061,7 +6073,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 505,
+    "id": 506,
     "name": "Salamence",
     "formType": "Padrão",
     "searchName": "salamence",
@@ -6073,7 +6085,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 506,
+    "id": 507,
     "name": "Mega Salamence",
     "formType": "Mega Evolução",
     "searchName": "mega salamence",
@@ -6085,7 +6097,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 507,
+    "id": 508,
     "name": "Beldum",
     "formType": "Padrão",
     "searchName": "beldum",
@@ -6097,7 +6109,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 508,
+    "id": 509,
     "name": "Metang",
     "formType": "Padrão",
     "searchName": "metang",
@@ -6109,7 +6121,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 509,
+    "id": 510,
     "name": "Metagross",
     "formType": "Padrão",
     "searchName": "metagross",
@@ -6121,7 +6133,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 510,
+    "id": 511,
     "name": "Mega Metagross",
     "formType": "Mega Evolução",
     "searchName": "mega metagross",
@@ -6133,7 +6145,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 511,
+    "id": 512,
     "name": "Regirock",
     "formType": "Padrão",
     "searchName": "regirock",
@@ -6145,7 +6157,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 512,
+    "id": 513,
     "name": "Regice",
     "formType": "Padrão",
     "searchName": "regice",
@@ -6157,7 +6169,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 513,
+    "id": 514,
     "name": "Registeel",
     "formType": "Padrão",
     "searchName": "registeel",
@@ -6169,7 +6181,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 514,
+    "id": 515,
     "name": "Latias",
     "formType": "Padrão",
     "searchName": "latias",
@@ -6181,7 +6193,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 515,
+    "id": 516,
     "name": "Mega Latias",
     "formType": "Mega Evolução",
     "searchName": "mega latias",
@@ -6193,7 +6205,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 516,
+    "id": 517,
     "name": "Latios",
     "formType": "Padrão",
     "searchName": "latios",
@@ -6205,7 +6217,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 517,
+    "id": 518,
     "name": "Mega Latios",
     "formType": "Mega Evolução",
     "searchName": "mega latios",
@@ -6217,7 +6229,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 518,
+    "id": 519,
     "name": "Kyogre",
     "formType": "Padrão",
     "searchName": "kyogre",
@@ -6229,7 +6241,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 519,
+    "id": 520,
     "name": "Primal Kyogre",
     "formType": "Forma Especial",
     "searchName": "primal kyogre",
@@ -6241,7 +6253,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 520,
+    "id": 521,
     "name": "Groudon",
     "formType": "Padrão",
     "searchName": "groudon",
@@ -6253,7 +6265,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 521,
+    "id": 522,
     "name": "Primal Groudon",
     "formType": "Forma Especial",
     "searchName": "primal groudon",
@@ -6265,7 +6277,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 522,
+    "id": 523,
     "name": "Rayquaza",
     "formType": "Padrão",
     "searchName": "rayquaza",
@@ -6277,7 +6289,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 523,
+    "id": 524,
     "name": "Mega Rayquaza",
     "formType": "Mega Evolução",
     "searchName": "mega rayquaza",
@@ -6289,7 +6301,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 524,
+    "id": 525,
     "name": "Jirachi",
     "formType": "Padrão",
     "searchName": "jirachi",
@@ -6301,7 +6313,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 525,
+    "id": 526,
     "name": "Attack Deoxys",
     "formType": "Padrão",
     "searchName": "attack deoxys",
@@ -6313,7 +6325,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 526,
+    "id": 527,
     "name": "Defense Deoxys",
     "formType": "Padrão",
     "searchName": "defense deoxys",
@@ -6325,7 +6337,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 527,
+    "id": 528,
     "name": "Normal Deoxys",
     "formType": "Padrão",
     "searchName": "normal deoxys",
@@ -6337,7 +6349,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 528,
+    "id": 529,
     "name": "Speed Deoxys",
     "formType": "Padrão",
     "searchName": "speed deoxys",
@@ -6349,7 +6361,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 529,
+    "id": 530,
     "name": "Turtwig",
     "formType": "Padrão",
     "searchName": "turtwig",
@@ -6361,7 +6373,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 530,
+    "id": 531,
     "name": "Grotle",
     "formType": "Padrão",
     "searchName": "grotle",
@@ -6373,7 +6385,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 531,
+    "id": 532,
     "name": "Torterra",
     "formType": "Padrão",
     "searchName": "torterra",
@@ -6385,7 +6397,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 532,
+    "id": 533,
     "name": "Chimchar",
     "formType": "Padrão",
     "searchName": "chimchar",
@@ -6397,7 +6409,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 533,
+    "id": 534,
     "name": "Monferno",
     "formType": "Padrão",
     "searchName": "monferno",
@@ -6409,7 +6421,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 534,
+    "id": 535,
     "name": "Infernape",
     "formType": "Padrão",
     "searchName": "infernape",
@@ -6421,7 +6433,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 535,
+    "id": 536,
     "name": "Piplup",
     "formType": "Padrão",
     "searchName": "piplup",
@@ -6433,7 +6445,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 536,
+    "id": 537,
     "name": "Prinplup",
     "formType": "Padrão",
     "searchName": "prinplup",
@@ -6445,7 +6457,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 537,
+    "id": 538,
     "name": "Empoleon",
     "formType": "Padrão",
     "searchName": "empoleon",
@@ -6457,7 +6469,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 538,
+    "id": 539,
     "name": "Starly",
     "formType": "Padrão",
     "searchName": "starly",
@@ -6469,7 +6481,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 539,
+    "id": 540,
     "name": "Staravia",
     "formType": "Padrão",
     "searchName": "staravia",
@@ -6481,7 +6493,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 540,
+    "id": 541,
     "name": "Staraptor",
     "formType": "Padrão",
     "searchName": "staraptor",
@@ -6493,7 +6505,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 541,
+    "id": 542,
     "name": "Mega Staraptor",
     "formType": "Mega Evolução",
     "searchName": "mega staraptor",
@@ -6505,7 +6517,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 542,
+    "id": 543,
     "name": "Bidoof",
     "formType": "Padrão",
     "searchName": "bidoof",
@@ -6517,7 +6529,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 543,
+    "id": 544,
     "name": "Bibarel",
     "formType": "Padrão",
     "searchName": "bibarel",
@@ -6529,7 +6541,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 544,
+    "id": 545,
     "name": "Kricketot",
     "formType": "Padrão",
     "searchName": "kricketot",
@@ -6541,7 +6553,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 545,
+    "id": 546,
     "name": "Kricketune",
     "formType": "Padrão",
     "searchName": "kricketune",
@@ -6553,7 +6565,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 546,
+    "id": 547,
     "name": "Shinx",
     "formType": "Padrão",
     "searchName": "shinx",
@@ -6565,7 +6577,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 547,
+    "id": 548,
     "name": "Luxio",
     "formType": "Padrão",
     "searchName": "luxio",
@@ -6577,7 +6589,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 548,
+    "id": 549,
     "name": "Luxray",
     "formType": "Padrão",
     "searchName": "luxray",
@@ -6589,7 +6601,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 549,
+    "id": 550,
     "name": "Budew",
     "formType": "Padrão",
     "searchName": "budew",
@@ -6601,7 +6613,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 550,
+    "id": 551,
     "name": "Roserade",
     "formType": "Padrão",
     "searchName": "roserade",
@@ -6613,7 +6625,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 551,
+    "id": 552,
     "name": "Cranidos",
     "formType": "Padrão",
     "searchName": "cranidos",
@@ -6625,7 +6637,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 552,
+    "id": 553,
     "name": "Rampardos",
     "formType": "Padrão",
     "searchName": "rampardos",
@@ -6637,7 +6649,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 553,
+    "id": 554,
     "name": "Shieldon",
     "formType": "Padrão",
     "searchName": "shieldon",
@@ -6649,7 +6661,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 554,
+    "id": 555,
     "name": "Bastiodon",
     "formType": "Padrão",
     "searchName": "bastiodon",
@@ -6661,7 +6673,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 555,
+    "id": 556,
     "name": "Plant Burmy",
     "formType": "Padrão",
     "searchName": "plant burmy",
@@ -6673,7 +6685,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 556,
+    "id": 557,
     "name": "Sandy Burmy",
     "formType": "Padrão",
     "searchName": "sandy burmy",
@@ -6685,7 +6697,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 557,
+    "id": 558,
     "name": "Trash Burmy",
     "formType": "Padrão",
     "searchName": "trash burmy",
@@ -6697,7 +6709,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 558,
+    "id": 559,
     "name": "Plant Wormadam",
     "formType": "Padrão",
     "searchName": "plant wormadam",
@@ -6709,7 +6721,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 559,
+    "id": 560,
     "name": "Sandy Wormadam",
     "formType": "Padrão",
     "searchName": "sandy wormadam",
@@ -6721,7 +6733,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 560,
+    "id": 561,
     "name": "Trash Wormadam",
     "formType": "Padrão",
     "searchName": "trash wormadam",
@@ -6733,7 +6745,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 561,
+    "id": 562,
     "name": "Mothim",
     "formType": "Padrão",
     "searchName": "mothim",
@@ -6745,7 +6757,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 562,
+    "id": 563,
     "name": "Combee",
     "formType": "Padrão",
     "searchName": "combee",
@@ -6757,7 +6769,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 563,
+    "id": 564,
     "name": "Vespiquen",
     "formType": "Padrão",
     "searchName": "vespiquen",
@@ -6769,7 +6781,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 564,
+    "id": 565,
     "name": "Pachirisu",
     "formType": "Padrão",
     "searchName": "pachirisu",
@@ -6781,7 +6793,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 565,
+    "id": 566,
     "name": "Buizel",
     "formType": "Padrão",
     "searchName": "buizel",
@@ -6793,7 +6805,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 566,
+    "id": 567,
     "name": "Floatzel",
     "formType": "Padrão",
     "searchName": "floatzel",
@@ -6805,7 +6817,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 567,
+    "id": 568,
     "name": "Cherubi",
     "formType": "Padrão",
     "searchName": "cherubi",
@@ -6817,7 +6829,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 568,
+    "id": 569,
     "name": "Overcast Cherrim",
     "formType": "Padrão",
     "searchName": "overcast cherrim",
@@ -6829,7 +6841,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 569,
+    "id": 570,
     "name": "Sunshine Cherrim",
     "formType": "Padrão",
     "searchName": "sunshine cherrim",
@@ -6841,7 +6853,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 570,
+    "id": 571,
     "name": "West Shellos",
     "formType": "Padrão",
     "searchName": "west shellos",
@@ -6853,7 +6865,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 571,
+    "id": 572,
     "name": "West Gastrodon",
     "formType": "Padrão",
     "searchName": "west gastrodon",
@@ -6865,7 +6877,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 572,
+    "id": 573,
     "name": "Ambipom",
     "formType": "Padrão",
     "searchName": "ambipom",
@@ -6877,7 +6889,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 573,
+    "id": 574,
     "name": "Drifloon",
     "formType": "Padrão",
     "searchName": "drifloon",
@@ -6889,7 +6901,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 574,
+    "id": 575,
     "name": "Drifblim",
     "formType": "Padrão",
     "searchName": "drifblim",
@@ -6901,7 +6913,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 575,
+    "id": 576,
     "name": "Buneary",
     "formType": "Padrão",
     "searchName": "buneary",
@@ -6913,7 +6925,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 576,
+    "id": 577,
     "name": "Lopunny",
     "formType": "Padrão",
     "searchName": "lopunny",
@@ -6925,7 +6937,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 577,
+    "id": 578,
     "name": "Mega Lopunny",
     "formType": "Mega Evolução",
     "searchName": "mega lopunny",
@@ -6937,7 +6949,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 578,
+    "id": 579,
     "name": "Mismagius",
     "formType": "Padrão",
     "searchName": "mismagius",
@@ -6949,7 +6961,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 579,
+    "id": 580,
     "name": "Honchkrow",
     "formType": "Padrão",
     "searchName": "honchkrow",
@@ -6961,7 +6973,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 580,
+    "id": 581,
     "name": "Glameow",
     "formType": "Padrão",
     "searchName": "glameow",
@@ -6973,7 +6985,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 581,
+    "id": 582,
     "name": "Purugly",
     "formType": "Padrão",
     "searchName": "purugly",
@@ -6985,7 +6997,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 582,
+    "id": 583,
     "name": "Chingling",
     "formType": "Padrão",
     "searchName": "chingling",
@@ -6997,7 +7009,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 583,
+    "id": 584,
     "name": "Stunky",
     "formType": "Padrão",
     "searchName": "stunky",
@@ -7009,7 +7021,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 584,
+    "id": 585,
     "name": "Skuntank",
     "formType": "Padrão",
     "searchName": "skuntank",
@@ -7021,7 +7033,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 585,
+    "id": 586,
     "name": "Bronzor",
     "formType": "Padrão",
     "searchName": "bronzor",
@@ -7033,7 +7045,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 586,
+    "id": 587,
     "name": "Bronzong",
     "formType": "Padrão",
     "searchName": "bronzong",
@@ -7045,7 +7057,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 587,
+    "id": 588,
     "name": "Bonsly",
     "formType": "Padrão",
     "searchName": "bonsly",
@@ -7057,7 +7069,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 588,
+    "id": 589,
     "name": "Mime Jr.",
     "formType": "Padrão",
     "searchName": "mime jr.",
@@ -7069,7 +7081,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 589,
+    "id": 590,
     "name": "Happiny",
     "formType": "Padrão",
     "searchName": "happiny",
@@ -7081,7 +7093,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 590,
+    "id": 591,
     "name": "Chatot",
     "formType": "Padrão",
     "searchName": "chatot",
@@ -7093,7 +7105,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 591,
+    "id": 592,
     "name": "Spiritomb",
     "formType": "Padrão",
     "searchName": "spiritomb",
@@ -7105,7 +7117,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 592,
+    "id": 593,
     "name": "Gible",
     "formType": "Padrão",
     "searchName": "gible",
@@ -7117,7 +7129,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 593,
+    "id": 594,
     "name": "Gabite",
     "formType": "Padrão",
     "searchName": "gabite",
@@ -7129,7 +7141,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 594,
+    "id": 595,
     "name": "Garchomp",
     "formType": "Padrão",
     "searchName": "garchomp",
@@ -7141,7 +7153,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 595,
+    "id": 596,
     "name": "Mega Garchomp",
     "formType": "Mega Evolução",
     "searchName": "mega garchomp",
@@ -7153,7 +7165,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 596,
+    "id": 597,
     "name": "Mega Garchomp Z",
     "formType": "Mega Evolução",
     "searchName": "mega garchomp z",
@@ -7165,7 +7177,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 597,
+    "id": 598,
     "name": "Munchlax",
     "formType": "Padrão",
     "searchName": "munchlax",
@@ -7177,7 +7189,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 598,
+    "id": 599,
     "name": "Riolu",
     "formType": "Padrão",
     "searchName": "riolu",
@@ -7189,7 +7201,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 599,
+    "id": 600,
     "name": "Lucario",
     "formType": "Padrão",
     "searchName": "lucario",
@@ -7201,7 +7213,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 600,
+    "id": 601,
     "name": "Mega Lucario",
     "formType": "Mega Evolução",
     "searchName": "mega lucario",
@@ -7213,7 +7225,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 601,
+    "id": 602,
     "name": "Mega Lucario Z",
     "formType": "Mega Evolução",
     "searchName": "mega lucario z",
@@ -7225,7 +7237,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 602,
+    "id": 603,
     "name": "Hippopotas",
     "formType": "Padrão",
     "searchName": "hippopotas",
@@ -7237,7 +7249,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 603,
+    "id": 604,
     "name": "Hippowdon",
     "formType": "Padrão",
     "searchName": "hippowdon",
@@ -7249,7 +7261,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 604,
+    "id": 605,
     "name": "Skorupi",
     "formType": "Padrão",
     "searchName": "skorupi",
@@ -7261,7 +7273,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 605,
+    "id": 606,
     "name": "Drapion",
     "formType": "Padrão",
     "searchName": "drapion",
@@ -7273,7 +7285,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 606,
+    "id": 607,
     "name": "Croagunk",
     "formType": "Padrão",
     "searchName": "croagunk",
@@ -7285,7 +7297,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 607,
+    "id": 608,
     "name": "Toxicroak",
     "formType": "Padrão",
     "searchName": "toxicroak",
@@ -7297,7 +7309,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 608,
+    "id": 609,
     "name": "Carnivine",
     "formType": "Padrão",
     "searchName": "carnivine",
@@ -7309,7 +7321,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 609,
+    "id": 610,
     "name": "Finneon",
     "formType": "Padrão",
     "searchName": "finneon",
@@ -7321,7 +7333,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 610,
+    "id": 611,
     "name": "Lumineon",
     "formType": "Padrão",
     "searchName": "lumineon",
@@ -7333,7 +7345,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 611,
+    "id": 612,
     "name": "Mantyke",
     "formType": "Padrão",
     "searchName": "mantyke",
@@ -7345,7 +7357,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 612,
+    "id": 613,
     "name": "Snover",
     "formType": "Padrão",
     "searchName": "snover",
@@ -7357,7 +7369,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 613,
+    "id": 614,
     "name": "Abomasnow",
     "formType": "Padrão",
     "searchName": "abomasnow",
@@ -7369,7 +7381,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 614,
+    "id": 615,
     "name": "Mega Abomasnow",
     "formType": "Mega Evolução",
     "searchName": "mega abomasnow",
@@ -7381,7 +7393,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 615,
+    "id": 616,
     "name": "Weavile",
     "formType": "Padrão",
     "searchName": "weavile",
@@ -7393,7 +7405,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 616,
+    "id": 617,
     "name": "Magnezone",
     "formType": "Padrão",
     "searchName": "magnezone",
@@ -7405,7 +7417,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 617,
+    "id": 618,
     "name": "Lickilicky",
     "formType": "Padrão",
     "searchName": "lickilicky",
@@ -7417,7 +7429,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 618,
+    "id": 619,
     "name": "Rhyperior",
     "formType": "Padrão",
     "searchName": "rhyperior",
@@ -7429,7 +7441,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 619,
+    "id": 620,
     "name": "Tangrowth",
     "formType": "Padrão",
     "searchName": "tangrowth",
@@ -7441,7 +7453,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 620,
+    "id": 621,
     "name": "Electivire",
     "formType": "Padrão",
     "searchName": "electivire",
@@ -7453,7 +7465,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 621,
+    "id": 622,
     "name": "Magmortar",
     "formType": "Padrão",
     "searchName": "magmortar",
@@ -7465,7 +7477,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 622,
+    "id": 623,
     "name": "Togekiss",
     "formType": "Padrão",
     "searchName": "togekiss",
@@ -7477,7 +7489,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 623,
+    "id": 624,
     "name": "Yanmega",
     "formType": "Mega Evolução",
     "searchName": "yanmega",
@@ -7489,7 +7501,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 624,
+    "id": 625,
     "name": "Leafeon",
     "formType": "Padrão",
     "searchName": "leafeon",
@@ -7501,7 +7513,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 625,
+    "id": 626,
     "name": "Glaceon",
     "formType": "Padrão",
     "searchName": "glaceon",
@@ -7513,7 +7525,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 626,
+    "id": 627,
     "name": "Gliscor",
     "formType": "Padrão",
     "searchName": "gliscor",
@@ -7525,7 +7537,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 627,
+    "id": 628,
     "name": "Mamoswine",
     "formType": "Padrão",
     "searchName": "mamoswine",
@@ -7537,7 +7549,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 628,
+    "id": 629,
     "name": "Porygon-Z",
     "formType": "Padrão",
     "searchName": "porygon-z",
@@ -7549,7 +7561,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 629,
+    "id": 630,
     "name": "Gallade",
     "formType": "Padrão",
     "searchName": "gallade",
@@ -7561,7 +7573,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 630,
+    "id": 631,
     "name": "Mega Gallade",
     "formType": "Mega Evolução",
     "searchName": "mega gallade",
@@ -7573,7 +7585,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 631,
+    "id": 632,
     "name": "Probopass",
     "formType": "Padrão",
     "searchName": "probopass",
@@ -7585,7 +7597,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 632,
+    "id": 633,
     "name": "Dusknoir",
     "formType": "Forma Especial",
     "searchName": "dusknoir",
@@ -7597,7 +7609,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 633,
+    "id": 634,
     "name": "Froslass",
     "formType": "Padrão",
     "searchName": "froslass",
@@ -7609,7 +7621,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 634,
+    "id": 635,
     "name": "Mega Froslass",
     "formType": "Mega Evolução",
     "searchName": "mega froslass",
@@ -7621,7 +7633,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 635,
+    "id": 636,
     "name": "Fan Rotom",
     "formType": "Padrão",
     "searchName": "fan rotom",
@@ -7633,7 +7645,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 636,
+    "id": 637,
     "name": "Frost Rotom",
     "formType": "Padrão",
     "searchName": "frost rotom",
@@ -7645,7 +7657,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 637,
+    "id": 638,
     "name": "Heat Rotom",
     "formType": "Padrão",
     "searchName": "heat rotom",
@@ -7657,7 +7669,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 638,
+    "id": 639,
     "name": "Mow Rotom",
     "formType": "Padrão",
     "searchName": "mow rotom",
@@ -7669,7 +7681,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 639,
+    "id": 640,
     "name": "Rotom",
     "formType": "Padrão",
     "searchName": "rotom",
@@ -7681,7 +7693,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 640,
+    "id": 641,
     "name": "Wash Rotom",
     "formType": "Padrão",
     "searchName": "wash rotom",
@@ -7693,7 +7705,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 641,
+    "id": 642,
     "name": "Uxie",
     "formType": "Padrão",
     "searchName": "uxie",
@@ -7705,7 +7717,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 642,
+    "id": 643,
     "name": "Mesprit",
     "formType": "Padrão",
     "searchName": "mesprit",
@@ -7717,7 +7729,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 643,
+    "id": 644,
     "name": "Azelf",
     "formType": "Padrão",
     "searchName": "azelf",
@@ -7729,7 +7741,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 644,
+    "id": 645,
     "name": "Dialga",
     "formType": "Padrão",
     "searchName": "dialga",
@@ -7741,7 +7753,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 645,
+    "id": 646,
     "name": "Origin Dialga",
     "formType": "Forma Especial",
     "searchName": "origin dialga",
@@ -7753,7 +7765,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 646,
+    "id": 647,
     "name": "Origin Palkia",
     "formType": "Forma Especial",
     "searchName": "origin palkia",
@@ -7765,7 +7777,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 647,
+    "id": 648,
     "name": "Palkia",
     "formType": "Padrão",
     "searchName": "palkia",
@@ -7777,7 +7789,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 648,
+    "id": 649,
     "name": "Heatran",
     "formType": "Padrão",
     "searchName": "heatran",
@@ -7789,7 +7801,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 649,
+    "id": 650,
     "name": "Mega Heatran",
     "formType": "Mega Evolução",
     "searchName": "mega heatran",
@@ -7801,7 +7813,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 650,
+    "id": 651,
     "name": "Regigigas",
     "formType": "Padrão",
     "searchName": "regigigas",
@@ -7813,7 +7825,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 651,
+    "id": 652,
     "name": "Altered Giratina",
     "formType": "Padrão",
     "searchName": "altered giratina",
@@ -7825,7 +7837,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 652,
+    "id": 653,
     "name": "Origin Giratina",
     "formType": "Forma Especial",
     "searchName": "origin giratina",
@@ -7837,7 +7849,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 653,
+    "id": 654,
     "name": "Cresselia",
     "formType": "Padrão",
     "searchName": "cresselia",
@@ -7849,7 +7861,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 654,
+    "id": 655,
     "name": "Phione",
     "formType": "Padrão",
     "searchName": "phione",
@@ -7861,7 +7873,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 655,
+    "id": 656,
     "name": "Manaphy",
     "formType": "Padrão",
     "searchName": "manaphy",
@@ -7873,7 +7885,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 656,
+    "id": 657,
     "name": "Darkrai",
     "formType": "Padrão",
     "searchName": "darkrai",
@@ -7885,7 +7897,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 657,
+    "id": 658,
     "name": "Mega Darkrai",
     "formType": "Mega Evolução",
     "searchName": "mega darkrai",
@@ -7897,7 +7909,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 658,
+    "id": 659,
     "name": "Land Shaymin",
     "formType": "Padrão",
     "searchName": "land shaymin",
@@ -7909,7 +7921,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 659,
+    "id": 660,
     "name": "Sky Shaymin",
     "formType": "Padrão",
     "searchName": "sky shaymin",
@@ -7921,7 +7933,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 660,
+    "id": 661,
     "name": "Normal Arceus",
     "formType": "Padrão",
     "searchName": "normal arceus",
@@ -7933,7 +7945,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 661,
+    "id": 662,
     "name": "Victini",
     "formType": "Padrão",
     "searchName": "victini",
@@ -7945,7 +7957,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 662,
+    "id": 663,
     "name": "Snivy",
     "formType": "Padrão",
     "searchName": "snivy",
@@ -7957,7 +7969,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 663,
+    "id": 664,
     "name": "Servine",
     "formType": "Padrão",
     "searchName": "servine",
@@ -7969,7 +7981,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 664,
+    "id": 665,
     "name": "Serperior",
     "formType": "Padrão",
     "searchName": "serperior",
@@ -7981,7 +7993,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 665,
+    "id": 666,
     "name": "Tepig",
     "formType": "Padrão",
     "searchName": "tepig",
@@ -7993,7 +8005,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 666,
+    "id": 667,
     "name": "Pignite",
     "formType": "Padrão",
     "searchName": "pignite",
@@ -8005,7 +8017,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 667,
+    "id": 668,
     "name": "Emboar",
     "formType": "Padrão",
     "searchName": "emboar",
@@ -8017,7 +8029,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 668,
+    "id": 669,
     "name": "Mega Emboar",
     "formType": "Mega Evolução",
     "searchName": "mega emboar",
@@ -8029,7 +8041,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 669,
+    "id": 670,
     "name": "Oshawott",
     "formType": "Padrão",
     "searchName": "oshawott",
@@ -8041,7 +8053,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 670,
+    "id": 671,
     "name": "Dewott",
     "formType": "Padrão",
     "searchName": "dewott",
@@ -8053,7 +8065,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 671,
+    "id": 672,
     "name": "Samurott",
     "formType": "Padrão",
     "searchName": "samurott",
@@ -8065,7 +8077,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 672,
+    "id": 673,
     "name": "Hisuian Samurott",
     "formType": "Forma Regional",
     "searchName": "hisuian samurott",
@@ -8077,7 +8089,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 673,
+    "id": 674,
     "name": "Patrat",
     "formType": "Padrão",
     "searchName": "patrat",
@@ -8089,7 +8101,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 674,
+    "id": 675,
     "name": "Watchog",
     "formType": "Padrão",
     "searchName": "watchog",
@@ -8101,7 +8113,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 675,
+    "id": 676,
     "name": "Lillipup",
     "formType": "Padrão",
     "searchName": "lillipup",
@@ -8113,7 +8125,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 676,
+    "id": 677,
     "name": "Herdier",
     "formType": "Padrão",
     "searchName": "herdier",
@@ -8125,7 +8137,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 677,
+    "id": 678,
     "name": "Stoutland",
     "formType": "Padrão",
     "searchName": "stoutland",
@@ -8137,7 +8149,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 678,
+    "id": 679,
     "name": "Purrloin",
     "formType": "Padrão",
     "searchName": "purrloin",
@@ -8149,7 +8161,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 679,
+    "id": 680,
     "name": "Liepard",
     "formType": "Padrão",
     "searchName": "liepard",
@@ -8161,7 +8173,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 680,
+    "id": 681,
     "name": "Pansage",
     "formType": "Padrão",
     "searchName": "pansage",
@@ -8173,7 +8185,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 681,
+    "id": 682,
     "name": "Simisage",
     "formType": "Padrão",
     "searchName": "simisage",
@@ -8185,7 +8197,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 682,
+    "id": 683,
     "name": "Pansear",
     "formType": "Padrão",
     "searchName": "pansear",
@@ -8197,7 +8209,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 683,
+    "id": 684,
     "name": "Simisear",
     "formType": "Padrão",
     "searchName": "simisear",
@@ -8209,7 +8221,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 684,
+    "id": 685,
     "name": "Panpour",
     "formType": "Padrão",
     "searchName": "panpour",
@@ -8221,7 +8233,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 685,
+    "id": 686,
     "name": "Simipour",
     "formType": "Padrão",
     "searchName": "simipour",
@@ -8233,7 +8245,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 686,
+    "id": 687,
     "name": "Munna",
     "formType": "Padrão",
     "searchName": "munna",
@@ -8245,7 +8257,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 687,
+    "id": 688,
     "name": "Musharna",
     "formType": "Padrão",
     "searchName": "musharna",
@@ -8257,7 +8269,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 688,
+    "id": 689,
     "name": "Pidove",
     "formType": "Padrão",
     "searchName": "pidove",
@@ -8269,7 +8281,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 689,
+    "id": 690,
     "name": "Tranquill",
     "formType": "Padrão",
     "searchName": "tranquill",
@@ -8281,7 +8293,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 690,
+    "id": 691,
     "name": "Unfezant",
     "formType": "Padrão",
     "searchName": "unfezant",
@@ -8293,7 +8305,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 691,
+    "id": 692,
     "name": "Blitzle",
     "formType": "Padrão",
     "searchName": "blitzle",
@@ -8305,7 +8317,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 692,
+    "id": 693,
     "name": "Zebstrika",
     "formType": "Padrão",
     "searchName": "zebstrika",
@@ -8317,7 +8329,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 693,
+    "id": 694,
     "name": "Roggenrola",
     "formType": "Padrão",
     "searchName": "roggenrola",
@@ -8329,7 +8341,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 694,
+    "id": 695,
     "name": "Boldore",
     "formType": "Padrão",
     "searchName": "boldore",
@@ -8341,7 +8353,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 695,
+    "id": 696,
     "name": "Gigalith",
     "formType": "Padrão",
     "searchName": "gigalith",
@@ -8353,7 +8365,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 696,
+    "id": 697,
     "name": "Woobat",
     "formType": "Padrão",
     "searchName": "woobat",
@@ -8365,7 +8377,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 697,
+    "id": 698,
     "name": "Swoobat",
     "formType": "Padrão",
     "searchName": "swoobat",
@@ -8377,7 +8389,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 698,
+    "id": 699,
     "name": "Drilbur",
     "formType": "Padrão",
     "searchName": "drilbur",
@@ -8389,7 +8401,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 699,
+    "id": 700,
     "name": "Excadrill",
     "formType": "Padrão",
     "searchName": "excadrill",
@@ -8401,7 +8413,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 700,
+    "id": 701,
     "name": "Mega Excadrill",
     "formType": "Mega Evolução",
     "searchName": "mega excadrill",
@@ -8413,7 +8425,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 701,
+    "id": 702,
     "name": "Audino",
     "formType": "Padrão",
     "searchName": "audino",
@@ -8425,7 +8437,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 702,
+    "id": 703,
     "name": "Mega Audino",
     "formType": "Mega Evolução",
     "searchName": "mega audino",
@@ -8437,7 +8449,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 703,
+    "id": 704,
     "name": "Timburr",
     "formType": "Padrão",
     "searchName": "timburr",
@@ -8449,7 +8461,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 704,
+    "id": 705,
     "name": "Gurdurr",
     "formType": "Padrão",
     "searchName": "gurdurr",
@@ -8461,7 +8473,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 705,
+    "id": 706,
     "name": "Conkeldurr",
     "formType": "Padrão",
     "searchName": "conkeldurr",
@@ -8473,7 +8485,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 706,
+    "id": 707,
     "name": "Tympole",
     "formType": "Padrão",
     "searchName": "tympole",
@@ -8485,7 +8497,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 707,
+    "id": 708,
     "name": "Palpitoad",
     "formType": "Padrão",
     "searchName": "palpitoad",
@@ -8497,7 +8509,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 708,
+    "id": 709,
     "name": "Seismitoad",
     "formType": "Padrão",
     "searchName": "seismitoad",
@@ -8509,7 +8521,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 709,
+    "id": 710,
     "name": "Throh",
     "formType": "Padrão",
     "searchName": "throh",
@@ -8521,7 +8533,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 710,
+    "id": 711,
     "name": "Sawk",
     "formType": "Padrão",
     "searchName": "sawk",
@@ -8533,7 +8545,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 711,
+    "id": 712,
     "name": "Sewaddle",
     "formType": "Padrão",
     "searchName": "sewaddle",
@@ -8545,7 +8557,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 712,
+    "id": 713,
     "name": "Swadloon",
     "formType": "Padrão",
     "searchName": "swadloon",
@@ -8557,7 +8569,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 713,
+    "id": 714,
     "name": "Leavanny",
     "formType": "Padrão",
     "searchName": "leavanny",
@@ -8569,7 +8581,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 714,
+    "id": 715,
     "name": "Venipede",
     "formType": "Padrão",
     "searchName": "venipede",
@@ -8581,7 +8593,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 715,
+    "id": 716,
     "name": "Whirlipede",
     "formType": "Padrão",
     "searchName": "whirlipede",
@@ -8593,7 +8605,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 716,
+    "id": 717,
     "name": "Scolipede",
     "formType": "Padrão",
     "searchName": "scolipede",
@@ -8605,7 +8617,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 717,
+    "id": 718,
     "name": "Mega Scolipede",
     "formType": "Mega Evolução",
     "searchName": "mega scolipede",
@@ -8617,7 +8629,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 718,
+    "id": 719,
     "name": "Cottonee",
     "formType": "Padrão",
     "searchName": "cottonee",
@@ -8629,7 +8641,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 719,
+    "id": 720,
     "name": "Whimsicott",
     "formType": "Padrão",
     "searchName": "whimsicott",
@@ -8641,7 +8653,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 720,
+    "id": 721,
     "name": "Petilil",
     "formType": "Padrão",
     "searchName": "petilil",
@@ -8653,7 +8665,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 721,
+    "id": 722,
     "name": "Lilligant",
     "formType": "Padrão",
     "searchName": "lilligant",
@@ -8665,7 +8677,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 722,
+    "id": 723,
     "name": "Hisuian Lilligant",
     "formType": "Forma Regional",
     "searchName": "hisuian lilligant",
@@ -8677,7 +8689,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 723,
+    "id": 724,
     "name": "Blue-Striped Basculin",
     "formType": "Padrão",
     "searchName": "blue-striped basculin",
@@ -8689,7 +8701,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 724,
+    "id": 725,
     "name": "Red-Striped Basculin",
     "formType": "Padrão",
     "searchName": "red-striped basculin",
@@ -8701,7 +8713,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 725,
+    "id": 726,
     "name": "White-Striped Basculin",
     "formType": "Padrão",
     "searchName": "white-striped basculin",
@@ -8713,7 +8725,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 726,
+    "id": 727,
     "name": "Sandile",
     "formType": "Padrão",
     "searchName": "sandile",
@@ -8725,7 +8737,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 727,
+    "id": 728,
     "name": "Krokorok",
     "formType": "Padrão",
     "searchName": "krokorok",
@@ -8737,7 +8749,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 728,
+    "id": 729,
     "name": "Krookodile",
     "formType": "Padrão",
     "searchName": "krookodile",
@@ -8749,7 +8761,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 729,
+    "id": 730,
     "name": "Darumaka",
     "formType": "Padrão",
     "searchName": "darumaka",
@@ -8761,7 +8773,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 730,
+    "id": 731,
     "name": "Galarian Darumaka",
     "formType": "Forma Regional",
     "searchName": "galarian darumaka",
@@ -8773,7 +8785,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 731,
+    "id": 732,
     "name": "Standard Darmanitan",
     "formType": "Padrão",
     "searchName": "standard darmanitan",
@@ -8785,7 +8797,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 732,
+    "id": 733,
     "name": "Standard Galarian Darmanitan",
     "formType": "Forma Regional",
     "searchName": "standard galarian darmanitan",
@@ -8797,7 +8809,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 733,
+    "id": 734,
     "name": "Maractus",
     "formType": "Padrão",
     "searchName": "maractus",
@@ -8809,7 +8821,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 734,
+    "id": 735,
     "name": "Dwebble",
     "formType": "Padrão",
     "searchName": "dwebble",
@@ -8821,7 +8833,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 735,
+    "id": 736,
     "name": "Crustle",
     "formType": "Padrão",
     "searchName": "crustle",
@@ -8833,7 +8845,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 736,
+    "id": 737,
     "name": "Scraggy",
     "formType": "Padrão",
     "searchName": "scraggy",
@@ -8845,7 +8857,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 737,
+    "id": 738,
     "name": "Scrafty",
     "formType": "Padrão",
     "searchName": "scrafty",
@@ -8857,7 +8869,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 738,
+    "id": 739,
     "name": "Mega Scrafty",
     "formType": "Mega Evolução",
     "searchName": "mega scrafty",
@@ -8869,7 +8881,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 739,
+    "id": 740,
     "name": "Sigilyph",
     "formType": "Padrão",
     "searchName": "sigilyph",
@@ -8881,7 +8893,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 740,
+    "id": 741,
     "name": "Galarian Yamask",
     "formType": "Forma Regional",
     "searchName": "galarian yamask",
@@ -8893,7 +8905,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 741,
+    "id": 742,
     "name": "Yamask",
     "formType": "Forma Especial",
     "searchName": "yamask",
@@ -8905,7 +8917,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 742,
+    "id": 743,
     "name": "Cofagrigus",
     "formType": "Padrão",
     "searchName": "cofagrigus",
@@ -8917,7 +8929,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 743,
+    "id": 744,
     "name": "Tirtouga",
     "formType": "Padrão",
     "searchName": "tirtouga",
@@ -8929,7 +8941,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 744,
+    "id": 745,
     "name": "Carracosta",
     "formType": "Padrão",
     "searchName": "carracosta",
@@ -8941,7 +8953,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 745,
+    "id": 746,
     "name": "Archen",
     "formType": "Padrão",
     "searchName": "archen",
@@ -8953,7 +8965,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 746,
+    "id": 747,
     "name": "Archeops",
     "formType": "Padrão",
     "searchName": "archeops",
@@ -8965,7 +8977,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 747,
+    "id": 748,
     "name": "Trubbish",
     "formType": "Padrão",
     "searchName": "trubbish",
@@ -8977,7 +8989,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 748,
+    "id": 749,
     "name": "Garbodor",
     "formType": "Padrão",
     "searchName": "garbodor",
@@ -8989,7 +9001,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 749,
+    "id": 750,
     "name": "Gigantamax Garbodor",
     "formType": "Gigantamax",
     "searchName": "gigantamax garbodor",
@@ -9001,7 +9013,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 750,
+    "id": 751,
     "name": "Zorua",
     "formType": "Padrão",
     "searchName": "zorua",
@@ -9013,7 +9025,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 751,
+    "id": 752,
     "name": "Hisuian Zorua",
     "formType": "Forma Regional",
     "searchName": "hisuian zorua",
@@ -9025,7 +9037,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 752,
+    "id": 753,
     "name": "Zoroark",
     "formType": "Padrão",
     "searchName": "zoroark",
@@ -9037,7 +9049,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 753,
+    "id": 754,
     "name": "Hisuian Zoroark",
     "formType": "Forma Regional",
     "searchName": "hisuian zoroark",
@@ -9049,7 +9061,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 754,
+    "id": 755,
     "name": "Minccino",
     "formType": "Padrão",
     "searchName": "minccino",
@@ -9061,7 +9073,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 755,
+    "id": 756,
     "name": "Cinccino",
     "formType": "Padrão",
     "searchName": "cinccino",
@@ -9073,7 +9085,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 756,
+    "id": 757,
     "name": "Gothita",
     "formType": "Padrão",
     "searchName": "gothita",
@@ -9085,7 +9097,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 757,
+    "id": 758,
     "name": "Gothorita",
     "formType": "Padrão",
     "searchName": "gothorita",
@@ -9097,7 +9109,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 758,
+    "id": 759,
     "name": "Gothitelle",
     "formType": "Padrão",
     "searchName": "gothitelle",
@@ -9109,7 +9121,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 759,
+    "id": 760,
     "name": "Solosis",
     "formType": "Padrão",
     "searchName": "solosis",
@@ -9121,7 +9133,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 760,
+    "id": 761,
     "name": "Duosion",
     "formType": "Padrão",
     "searchName": "duosion",
@@ -9133,7 +9145,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 761,
+    "id": 762,
     "name": "Reuniclus",
     "formType": "Padrão",
     "searchName": "reuniclus",
@@ -9145,7 +9157,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 762,
+    "id": 763,
     "name": "Ducklett",
     "formType": "Padrão",
     "searchName": "ducklett",
@@ -9157,7 +9169,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 763,
+    "id": 764,
     "name": "Swanna",
     "formType": "Padrão",
     "searchName": "swanna",
@@ -9169,7 +9181,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 764,
+    "id": 765,
     "name": "Vanillite",
     "formType": "Padrão",
     "searchName": "vanillite",
@@ -9181,7 +9193,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 765,
+    "id": 766,
     "name": "Vanillish",
     "formType": "Padrão",
     "searchName": "vanillish",
@@ -9193,7 +9205,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 766,
+    "id": 767,
     "name": "Vanilluxe",
     "formType": "Padrão",
     "searchName": "vanilluxe",
@@ -9205,7 +9217,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 767,
+    "id": 768,
     "name": "Summer Deerling",
     "formType": "Padrão",
     "searchName": "summer deerling",
@@ -9217,7 +9229,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 768,
+    "id": 769,
     "name": "Summer Sawsbuck",
     "formType": "Padrão",
     "searchName": "summer sawsbuck",
@@ -9229,7 +9241,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 769,
+    "id": 770,
     "name": "Emolga",
     "formType": "Padrão",
     "searchName": "emolga",
@@ -9241,7 +9253,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 770,
+    "id": 771,
     "name": "Karrablast",
     "formType": "Padrão",
     "searchName": "karrablast",
@@ -9253,7 +9265,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 771,
+    "id": 772,
     "name": "Escavalier",
     "formType": "Padrão",
     "searchName": "escavalier",
@@ -9265,7 +9277,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 772,
+    "id": 773,
     "name": "Foongus",
     "formType": "Padrão",
     "searchName": "foongus",
@@ -9277,7 +9289,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 773,
+    "id": 774,
     "name": "Amoonguss",
     "formType": "Padrão",
     "searchName": "amoonguss",
@@ -9289,7 +9301,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 774,
+    "id": 775,
     "name": "Male Frillish",
     "formType": "Padrão",
     "searchName": "male frillish",
@@ -9301,7 +9313,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 775,
+    "id": 776,
     "name": "Male Jellicent",
     "formType": "Padrão",
     "searchName": "male jellicent",
@@ -9313,7 +9325,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 776,
+    "id": 777,
     "name": "Alomomola",
     "formType": "Padrão",
     "searchName": "alomomola",
@@ -9325,7 +9337,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 777,
+    "id": 778,
     "name": "Joltik",
     "formType": "Padrão",
     "searchName": "joltik",
@@ -9337,7 +9349,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 778,
+    "id": 779,
     "name": "Galvantula",
     "formType": "Padrão",
     "searchName": "galvantula",
@@ -9349,7 +9361,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 779,
+    "id": 780,
     "name": "Ferroseed",
     "formType": "Padrão",
     "searchName": "ferroseed",
@@ -9361,7 +9373,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 780,
+    "id": 781,
     "name": "Ferrothorn",
     "formType": "Padrão",
     "searchName": "ferrothorn",
@@ -9373,7 +9385,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 781,
+    "id": 782,
     "name": "Klink",
     "formType": "Padrão",
     "searchName": "klink",
@@ -9385,7 +9397,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 782,
+    "id": 783,
     "name": "Klang",
     "formType": "Padrão",
     "searchName": "klang",
@@ -9397,7 +9409,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 783,
+    "id": 784,
     "name": "Klinklang",
     "formType": "Padrão",
     "searchName": "klinklang",
@@ -9409,7 +9421,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 784,
+    "id": 785,
     "name": "Tynamo",
     "formType": "Padrão",
     "searchName": "tynamo",
@@ -9421,7 +9433,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 785,
+    "id": 786,
     "name": "Eelektrik",
     "formType": "Padrão",
     "searchName": "eelektrik",
@@ -9433,7 +9445,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 786,
+    "id": 787,
     "name": "Eelektross",
     "formType": "Padrão",
     "searchName": "eelektross",
@@ -9445,7 +9457,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 787,
+    "id": 788,
     "name": "Mega Eelektross",
     "formType": "Mega Evolução",
     "searchName": "mega eelektross",
@@ -9457,7 +9469,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 788,
+    "id": 789,
     "name": "Elgyem",
     "formType": "Padrão",
     "searchName": "elgyem",
@@ -9469,7 +9481,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 789,
+    "id": 790,
     "name": "Beheeyem",
     "formType": "Padrão",
     "searchName": "beheeyem",
@@ -9481,7 +9493,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 790,
+    "id": 791,
     "name": "Litwick",
     "formType": "Padrão",
     "searchName": "litwick",
@@ -9493,7 +9505,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 791,
+    "id": 792,
     "name": "Lampent",
     "formType": "Padrão",
     "searchName": "lampent",
@@ -9505,7 +9517,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 792,
+    "id": 793,
     "name": "Chandelure",
     "formType": "Padrão",
     "searchName": "chandelure",
@@ -9517,7 +9529,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 793,
+    "id": 794,
     "name": "Mega Chandelure",
     "formType": "Mega Evolução",
     "searchName": "mega chandelure",
@@ -9529,7 +9541,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 794,
+    "id": 795,
     "name": "Axew",
     "formType": "Padrão",
     "searchName": "axew",
@@ -9541,7 +9553,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 795,
+    "id": 796,
     "name": "Fraxure",
     "formType": "Padrão",
     "searchName": "fraxure",
@@ -9553,7 +9565,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 796,
+    "id": 797,
     "name": "Haxorus",
     "formType": "Padrão",
     "searchName": "haxorus",
@@ -9565,7 +9577,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 797,
+    "id": 798,
     "name": "Cubchoo",
     "formType": "Padrão",
     "searchName": "cubchoo",
@@ -9577,7 +9589,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 798,
+    "id": 799,
     "name": "Beartic",
     "formType": "Padrão",
     "searchName": "beartic",
@@ -9589,7 +9601,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 799,
+    "id": 800,
     "name": "Cryogonal",
     "formType": "Padrão",
     "searchName": "cryogonal",
@@ -9601,7 +9613,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 800,
+    "id": 801,
     "name": "Shelmet",
     "formType": "Padrão",
     "searchName": "shelmet",
@@ -9613,7 +9625,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 801,
+    "id": 802,
     "name": "Accelgor",
     "formType": "Padrão",
     "searchName": "accelgor",
@@ -9625,7 +9637,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 802,
+    "id": 803,
     "name": "Stunfisk",
     "formType": "Padrão",
     "searchName": "stunfisk",
@@ -9637,7 +9649,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 803,
+    "id": 804,
     "name": "Galarian Stunfisk",
     "formType": "Forma Regional",
     "searchName": "galarian stunfisk",
@@ -9649,7 +9661,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 804,
+    "id": 805,
     "name": "Mienfoo",
     "formType": "Padrão",
     "searchName": "mienfoo",
@@ -9661,7 +9673,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 805,
+    "id": 806,
     "name": "Mienshao",
     "formType": "Padrão",
     "searchName": "mienshao",
@@ -9673,7 +9685,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 806,
+    "id": 807,
     "name": "Druddigon",
     "formType": "Padrão",
     "searchName": "druddigon",
@@ -9685,7 +9697,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 807,
+    "id": 808,
     "name": "Golett",
     "formType": "Padrão",
     "searchName": "golett",
@@ -9697,7 +9709,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 808,
+    "id": 809,
     "name": "Golurk",
     "formType": "Padrão",
     "searchName": "golurk",
@@ -9709,7 +9721,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 809,
+    "id": 810,
     "name": "Mega Golurk",
     "formType": "Mega Evolução",
     "searchName": "mega golurk",
@@ -9721,7 +9733,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 810,
+    "id": 811,
     "name": "Pawniard",
     "formType": "Padrão",
     "searchName": "pawniard",
@@ -9733,7 +9745,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 811,
+    "id": 812,
     "name": "Bisharp",
     "formType": "Padrão",
     "searchName": "bisharp",
@@ -9745,7 +9757,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 812,
+    "id": 813,
     "name": "Bouffalant",
     "formType": "Padrão",
     "searchName": "bouffalant",
@@ -9757,7 +9769,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 813,
+    "id": 814,
     "name": "Rufflet",
     "formType": "Padrão",
     "searchName": "rufflet",
@@ -9769,7 +9781,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 814,
+    "id": 815,
     "name": "Braviary",
     "formType": "Padrão",
     "searchName": "braviary",
@@ -9781,7 +9793,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 815,
+    "id": 816,
     "name": "Hisuian Braviary",
     "formType": "Forma Regional",
     "searchName": "hisuian braviary",
@@ -9793,7 +9805,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 816,
+    "id": 817,
     "name": "Vullaby",
     "formType": "Padrão",
     "searchName": "vullaby",
@@ -9805,7 +9817,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 817,
+    "id": 818,
     "name": "Mandibuzz",
     "formType": "Padrão",
     "searchName": "mandibuzz",
@@ -9817,7 +9829,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 818,
+    "id": 819,
     "name": "Heatmor",
     "formType": "Padrão",
     "searchName": "heatmor",
@@ -9829,7 +9841,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 819,
+    "id": 820,
     "name": "Durant",
     "formType": "Padrão",
     "searchName": "durant",
@@ -9841,7 +9853,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 820,
+    "id": 821,
     "name": "Deino",
     "formType": "Padrão",
     "searchName": "deino",
@@ -9853,7 +9865,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 821,
+    "id": 822,
     "name": "Zweilous",
     "formType": "Padrão",
     "searchName": "zweilous",
@@ -9865,7 +9877,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 822,
+    "id": 823,
     "name": "Hydreigon",
     "formType": "Padrão",
     "searchName": "hydreigon",
@@ -9877,7 +9889,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 823,
+    "id": 824,
     "name": "Larvesta",
     "formType": "Padrão",
     "searchName": "larvesta",
@@ -9889,7 +9901,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 824,
+    "id": 825,
     "name": "Volcarona",
     "formType": "Padrão",
     "searchName": "volcarona",
@@ -9901,7 +9913,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 825,
+    "id": 826,
     "name": "Cobalion",
     "formType": "Padrão",
     "searchName": "cobalion",
@@ -9913,7 +9925,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 826,
+    "id": 827,
     "name": "Terrakion",
     "formType": "Padrão",
     "searchName": "terrakion",
@@ -9925,7 +9937,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 827,
+    "id": 828,
     "name": "Virizion",
     "formType": "Padrão",
     "searchName": "virizion",
@@ -9937,7 +9949,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 828,
+    "id": 829,
     "name": "Incarnate Tornadus",
     "formType": "Forma Especial",
     "searchName": "incarnate tornadus",
@@ -9949,7 +9961,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 829,
+    "id": 830,
     "name": "Incarnate Thundurus",
     "formType": "Forma Especial",
     "searchName": "incarnate thundurus",
@@ -9961,7 +9973,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 830,
+    "id": 831,
     "name": "Reshiram",
     "formType": "Padrão",
     "searchName": "reshiram",
@@ -9973,7 +9985,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 831,
+    "id": 832,
     "name": "Zekrom",
     "formType": "Padrão",
     "searchName": "zekrom",
@@ -9985,7 +9997,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 832,
+    "id": 833,
     "name": "Incarnate Landorus",
     "formType": "Forma Especial",
     "searchName": "incarnate landorus",
@@ -9997,7 +10009,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 833,
+    "id": 834,
     "name": "Black Kyurem",
     "formType": "Padrão",
     "searchName": "black kyurem",
@@ -10009,7 +10021,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 834,
+    "id": 835,
     "name": "Kyurem",
     "formType": "Padrão",
     "searchName": "kyurem",
@@ -10021,7 +10033,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 835,
+    "id": 836,
     "name": "White Kyurem",
     "formType": "Padrão",
     "searchName": "white kyurem",
@@ -10033,7 +10045,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 836,
+    "id": 837,
     "name": "Ordinary Keldeo",
     "formType": "Padrão",
     "searchName": "ordinary keldeo",
@@ -10045,7 +10057,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 837,
+    "id": 838,
     "name": "Resolute Keldeo",
     "formType": "Padrão",
     "searchName": "resolute keldeo",
@@ -10057,7 +10069,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 838,
+    "id": 839,
     "name": "Aria Meloetta",
     "formType": "Padrão",
     "searchName": "aria meloetta",
@@ -10069,7 +10081,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 839,
+    "id": 840,
     "name": "Pirouette Meloetta",
     "formType": "Padrão",
     "searchName": "pirouette meloetta",
@@ -10081,7 +10093,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 840,
+    "id": 841,
     "name": "Genesect",
     "formType": "Padrão",
     "searchName": "genesect",
@@ -10093,7 +10105,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 841,
+    "id": 842,
     "name": "Chespin",
     "formType": "Padrão",
     "searchName": "chespin",
@@ -10105,7 +10117,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 842,
+    "id": 843,
     "name": "Quilladin",
     "formType": "Padrão",
     "searchName": "quilladin",
@@ -10117,7 +10129,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 843,
+    "id": 844,
     "name": "Chesnaught",
     "formType": "Padrão",
     "searchName": "chesnaught",
@@ -10129,7 +10141,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 844,
+    "id": 845,
     "name": "Mega Chesnaught",
     "formType": "Mega Evolução",
     "searchName": "mega chesnaught",
@@ -10141,7 +10153,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 845,
+    "id": 846,
     "name": "Fennekin",
     "formType": "Padrão",
     "searchName": "fennekin",
@@ -10153,7 +10165,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 846,
+    "id": 847,
     "name": "Braixen",
     "formType": "Padrão",
     "searchName": "braixen",
@@ -10165,7 +10177,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 847,
+    "id": 848,
     "name": "Delphox",
     "formType": "Padrão",
     "searchName": "delphox",
@@ -10177,7 +10189,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 848,
+    "id": 849,
     "name": "Mega Delphox",
     "formType": "Mega Evolução",
     "searchName": "mega delphox",
@@ -10189,7 +10201,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 849,
+    "id": 850,
     "name": "Froakie",
     "formType": "Padrão",
     "searchName": "froakie",
@@ -10201,7 +10213,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 850,
+    "id": 851,
     "name": "Frogadier",
     "formType": "Padrão",
     "searchName": "frogadier",
@@ -10213,7 +10225,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 851,
+    "id": 852,
     "name": "Greninja",
     "formType": "Padrão",
     "searchName": "greninja",
@@ -10225,7 +10237,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 852,
+    "id": 853,
     "name": "Mega Greninja",
     "formType": "Mega Evolução",
     "searchName": "mega greninja",
@@ -10237,7 +10249,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 853,
+    "id": 854,
     "name": "Bunnelby",
     "formType": "Padrão",
     "searchName": "bunnelby",
@@ -10249,7 +10261,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 854,
+    "id": 855,
     "name": "Diggersby",
     "formType": "Padrão",
     "searchName": "diggersby",
@@ -10261,7 +10273,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 855,
+    "id": 856,
     "name": "Fletchling",
     "formType": "Padrão",
     "searchName": "fletchling",
@@ -10273,7 +10285,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 856,
+    "id": 857,
     "name": "Fletchinder",
     "formType": "Padrão",
     "searchName": "fletchinder",
@@ -10285,7 +10297,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 857,
+    "id": 858,
     "name": "Talonflame",
     "formType": "Padrão",
     "searchName": "talonflame",
@@ -10297,7 +10309,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 858,
+    "id": 859,
     "name": "Scatterbug",
     "formType": "Padrão",
     "searchName": "scatterbug",
@@ -10309,7 +10321,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 859,
+    "id": 860,
     "name": "Spewpa",
     "formType": "Padrão",
     "searchName": "spewpa",
@@ -10321,7 +10333,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 860,
+    "id": 861,
     "name": "Poké Ball Vivillon",
     "formType": "Padrão",
     "searchName": "poke ball vivillon",
@@ -10333,7 +10345,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 861,
+    "id": 862,
     "name": "Litleo",
     "formType": "Padrão",
     "searchName": "litleo",
@@ -10345,7 +10357,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 862,
+    "id": 863,
     "name": "Female Pyroar",
     "formType": "Padrão",
     "searchName": "female pyroar",
@@ -10357,7 +10369,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 863,
+    "id": 864,
     "name": "Male Pyroar",
     "formType": "Padrão",
     "searchName": "male pyroar",
@@ -10369,7 +10381,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 864,
+    "id": 865,
     "name": "Mega Pyroar",
     "formType": "Mega Evolução",
     "searchName": "mega pyroar",
@@ -10381,7 +10393,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 865,
+    "id": 866,
     "name": "Red Flabébé",
     "formType": "Padrão",
     "searchName": "red flabebe",
@@ -10393,7 +10405,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 866,
+    "id": 867,
     "name": "Eternal Floette",
     "formType": "Padrão",
     "searchName": "eternal floette",
@@ -10405,7 +10417,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 867,
+    "id": 868,
     "name": "Mega Floette",
     "formType": "Mega Evolução",
     "searchName": "mega floette",
@@ -10417,7 +10429,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 868,
+    "id": 869,
     "name": "Red Floette",
     "formType": "Padrão",
     "searchName": "red floette",
@@ -10429,7 +10441,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 869,
+    "id": 870,
     "name": "Red Florges",
     "formType": "Padrão",
     "searchName": "red florges",
@@ -10441,7 +10453,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 870,
+    "id": 871,
     "name": "Skiddo",
     "formType": "Padrão",
     "searchName": "skiddo",
@@ -10453,7 +10465,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 871,
+    "id": 872,
     "name": "Gogoat",
     "formType": "Padrão",
     "searchName": "gogoat",
@@ -10465,7 +10477,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 872,
+    "id": 873,
     "name": "Pancham",
     "formType": "Padrão",
     "searchName": "pancham",
@@ -10477,7 +10489,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 873,
+    "id": 874,
     "name": "Pangoro",
     "formType": "Padrão",
     "searchName": "pangoro",
@@ -10489,7 +10501,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 874,
+    "id": 875,
     "name": "Natural Furfrou",
     "formType": "Padrão",
     "searchName": "natural furfrou",
@@ -10501,7 +10513,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 875,
+    "id": 876,
     "name": "Espurr",
     "formType": "Padrão",
     "searchName": "espurr",
@@ -10513,7 +10525,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 876,
+    "id": 877,
     "name": "Female Meowstic",
     "formType": "Padrão",
     "searchName": "female meowstic",
@@ -10525,7 +10537,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 877,
+    "id": 878,
     "name": "Male Meowstic",
     "formType": "Padrão",
     "searchName": "male meowstic",
@@ -10537,7 +10549,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 878,
+    "id": 879,
     "name": "Mega Meowstic",
     "formType": "Mega Evolução",
     "searchName": "mega meowstic",
@@ -10549,7 +10561,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 879,
+    "id": 880,
     "name": "Honedge",
     "formType": "Padrão",
     "searchName": "honedge",
@@ -10561,7 +10573,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 880,
+    "id": 881,
     "name": "Doublade",
     "formType": "Padrão",
     "searchName": "doublade",
@@ -10573,7 +10585,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 881,
+    "id": 882,
     "name": "Blade Aegislash",
     "formType": "Padrão",
     "searchName": "blade aegislash",
@@ -10585,7 +10597,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 882,
+    "id": 883,
     "name": "Shield Aegislash",
     "formType": "Padrão",
     "searchName": "shield aegislash",
@@ -10597,7 +10609,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 883,
+    "id": 884,
     "name": "Spritzee",
     "formType": "Padrão",
     "searchName": "spritzee",
@@ -10609,7 +10621,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 884,
+    "id": 885,
     "name": "Aromatisse",
     "formType": "Padrão",
     "searchName": "aromatisse",
@@ -10621,7 +10633,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 885,
+    "id": 886,
     "name": "Swirlix",
     "formType": "Padrão",
     "searchName": "swirlix",
@@ -10633,7 +10645,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 886,
+    "id": 887,
     "name": "Slurpuff",
     "formType": "Padrão",
     "searchName": "slurpuff",
@@ -10645,7 +10657,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 887,
+    "id": 888,
     "name": "Inkay",
     "formType": "Padrão",
     "searchName": "inkay",
@@ -10657,7 +10669,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 888,
+    "id": 889,
     "name": "Malamar",
     "formType": "Padrão",
     "searchName": "malamar",
@@ -10669,7 +10681,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 889,
+    "id": 890,
     "name": "Mega Malamar",
     "formType": "Mega Evolução",
     "searchName": "mega malamar",
@@ -10681,7 +10693,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 890,
+    "id": 891,
     "name": "Binacle",
     "formType": "Padrão",
     "searchName": "binacle",
@@ -10693,7 +10705,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 891,
+    "id": 892,
     "name": "Barbaracle",
     "formType": "Padrão",
     "searchName": "barbaracle",
@@ -10705,7 +10717,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 892,
+    "id": 893,
     "name": "Mega Barbaracle",
     "formType": "Mega Evolução",
     "searchName": "mega barbaracle",
@@ -10717,7 +10729,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 893,
+    "id": 894,
     "name": "Skrelp",
     "formType": "Padrão",
     "searchName": "skrelp",
@@ -10729,7 +10741,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 894,
+    "id": 895,
     "name": "Dragalge",
     "formType": "Padrão",
     "searchName": "dragalge",
@@ -10741,7 +10753,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 895,
+    "id": 896,
     "name": "Mega Dragalge",
     "formType": "Mega Evolução",
     "searchName": "mega dragalge",
@@ -10753,7 +10765,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 896,
+    "id": 897,
     "name": "Clauncher",
     "formType": "Padrão",
     "searchName": "clauncher",
@@ -10765,7 +10777,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 897,
+    "id": 898,
     "name": "Clawitzer",
     "formType": "Padrão",
     "searchName": "clawitzer",
@@ -10777,7 +10789,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 898,
+    "id": 899,
     "name": "Helioptile",
     "formType": "Padrão",
     "searchName": "helioptile",
@@ -10789,7 +10801,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 899,
+    "id": 900,
     "name": "Heliolisk",
     "formType": "Padrão",
     "searchName": "heliolisk",
@@ -10801,7 +10813,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 900,
+    "id": 901,
     "name": "Tyrunt",
     "formType": "Padrão",
     "searchName": "tyrunt",
@@ -10813,7 +10825,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 901,
+    "id": 902,
     "name": "Tyrantrum",
     "formType": "Padrão",
     "searchName": "tyrantrum",
@@ -10825,7 +10837,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 902,
+    "id": 903,
     "name": "Amaura",
     "formType": "Padrão",
     "searchName": "amaura",
@@ -10837,7 +10849,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 903,
+    "id": 904,
     "name": "Aurorus",
     "formType": "Padrão",
     "searchName": "aurorus",
@@ -10849,7 +10861,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 904,
+    "id": 905,
     "name": "Sylveon",
     "formType": "Padrão",
     "searchName": "sylveon",
@@ -10861,7 +10873,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 905,
+    "id": 906,
     "name": "Hawlucha",
     "formType": "Padrão",
     "searchName": "hawlucha",
@@ -10873,7 +10885,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 906,
+    "id": 907,
     "name": "Mega Hawlucha",
     "formType": "Mega Evolução",
     "searchName": "mega hawlucha",
@@ -10885,7 +10897,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 907,
+    "id": 908,
     "name": "Dedenne",
     "formType": "Padrão",
     "searchName": "dedenne",
@@ -10897,7 +10909,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 908,
+    "id": 909,
     "name": "Carbink",
     "formType": "Padrão",
     "searchName": "carbink",
@@ -10909,7 +10921,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 909,
+    "id": 910,
     "name": "Goomy",
     "formType": "Padrão",
     "searchName": "goomy",
@@ -10921,7 +10933,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 910,
+    "id": 911,
     "name": "Sliggoo",
     "formType": "Padrão",
     "searchName": "sliggoo",
@@ -10933,7 +10945,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 911,
+    "id": 912,
     "name": "Hisuian Sliggoo",
     "formType": "Forma Regional",
     "searchName": "hisuian sliggoo",
@@ -10945,7 +10957,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 912,
+    "id": 913,
     "name": "Goodra",
     "formType": "Padrão",
     "searchName": "goodra",
@@ -10957,7 +10969,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 913,
+    "id": 914,
     "name": "Hisuian Goodra",
     "formType": "Forma Regional",
     "searchName": "hisuian goodra",
@@ -10969,7 +10981,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 914,
+    "id": 915,
     "name": "Klefki",
     "formType": "Padrão",
     "searchName": "klefki",
@@ -10981,7 +10993,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 915,
+    "id": 916,
     "name": "Phantump",
     "formType": "Padrão",
     "searchName": "phantump",
@@ -10993,7 +11005,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 916,
+    "id": 917,
     "name": "Trevenant",
     "formType": "Padrão",
     "searchName": "trevenant",
@@ -11005,7 +11017,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 917,
+    "id": 918,
     "name": "Average Pumpkaboo",
     "formType": "Padrão",
     "searchName": "average pumpkaboo",
@@ -11017,7 +11029,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 918,
+    "id": 919,
     "name": "Average Gourgeist",
     "formType": "Padrão",
     "searchName": "average gourgeist",
@@ -11029,7 +11041,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 919,
+    "id": 920,
     "name": "Bergmite",
     "formType": "Padrão",
     "searchName": "bergmite",
@@ -11041,7 +11053,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 920,
+    "id": 921,
     "name": "Avalugg",
     "formType": "Padrão",
     "searchName": "avalugg",
@@ -11053,7 +11065,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 921,
+    "id": 922,
     "name": "Hisuian Avalugg",
     "formType": "Forma Regional",
     "searchName": "hisuian avalugg",
@@ -11065,7 +11077,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 922,
+    "id": 923,
     "name": "Noibat",
     "formType": "Padrão",
     "searchName": "noibat",
@@ -11077,7 +11089,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 923,
+    "id": 924,
     "name": "Noivern",
     "formType": "Padrão",
     "searchName": "noivern",
@@ -11089,7 +11101,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 924,
+    "id": 925,
     "name": "Neutral Xerneas",
     "formType": "Padrão",
     "searchName": "neutral xerneas",
@@ -11101,7 +11113,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 925,
+    "id": 926,
     "name": "Yveltal",
     "formType": "Padrão",
     "searchName": "yveltal",
@@ -11113,7 +11125,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 926,
+    "id": 927,
     "name": "20% Zygarde",
     "formType": "Padrão",
     "searchName": "20% zygarde",
@@ -11125,7 +11137,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 927,
+    "id": 928,
     "name": "50% Zygarde",
     "formType": "Padrão",
     "searchName": "50% zygarde",
@@ -11137,7 +11149,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 928,
+    "id": 929,
     "name": "Complete Zygarde",
     "formType": "Forma Especial",
     "searchName": "complete zygarde",
@@ -11149,7 +11161,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 929,
+    "id": 930,
     "name": "Mega Zygarde",
     "formType": "Mega Evolução",
     "searchName": "mega zygarde",
@@ -11161,7 +11173,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 930,
+    "id": 931,
     "name": "Zygarde (50% Forme)",
     "formType": "Forma Especial",
     "searchName": "zygarde (50% forme)",
@@ -11173,7 +11185,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 931,
+    "id": 932,
     "name": "Diancie",
     "formType": "Padrão",
     "searchName": "diancie",
@@ -11185,7 +11197,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 932,
+    "id": 933,
     "name": "Mega Diancie",
     "formType": "Mega Evolução",
     "searchName": "mega diancie",
@@ -11197,7 +11209,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 933,
+    "id": 934,
     "name": "Confined Hoopa",
     "formType": "Padrão",
     "searchName": "confined hoopa",
@@ -11209,7 +11221,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 934,
+    "id": 935,
     "name": "Hoopa Unbound",
     "formType": "Padrão",
     "searchName": "hoopa unbound",
@@ -11221,7 +11233,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 935,
+    "id": 936,
     "name": "Volcanion",
     "formType": "Padrão",
     "searchName": "volcanion",
@@ -11233,7 +11245,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 936,
+    "id": 937,
     "name": "Rowlet",
     "formType": "Padrão",
     "searchName": "rowlet",
@@ -11245,7 +11257,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 937,
+    "id": 938,
     "name": "Dartrix",
     "formType": "Padrão",
     "searchName": "dartrix",
@@ -11257,7 +11269,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 938,
+    "id": 939,
     "name": "Decidueye",
     "formType": "Padrão",
     "searchName": "decidueye",
@@ -11269,7 +11281,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 939,
+    "id": 940,
     "name": "Hisuian Decidueye",
     "formType": "Forma Regional",
     "searchName": "hisuian decidueye",
@@ -11281,7 +11293,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 940,
+    "id": 941,
     "name": "Litten",
     "formType": "Padrão",
     "searchName": "litten",
@@ -11293,7 +11305,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 941,
+    "id": 942,
     "name": "Torracat",
     "formType": "Padrão",
     "searchName": "torracat",
@@ -11305,7 +11317,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 942,
+    "id": 943,
     "name": "Incineroar",
     "formType": "Padrão",
     "searchName": "incineroar",
@@ -11317,7 +11329,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 943,
+    "id": 944,
     "name": "Popplio",
     "formType": "Padrão",
     "searchName": "popplio",
@@ -11329,7 +11341,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 944,
+    "id": 945,
     "name": "Brionne",
     "formType": "Padrão",
     "searchName": "brionne",
@@ -11341,7 +11353,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 945,
+    "id": 946,
     "name": "Primarina",
     "formType": "Padrão",
     "searchName": "primarina",
@@ -11353,7 +11365,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 946,
+    "id": 947,
     "name": "Pikipek",
     "formType": "Padrão",
     "searchName": "pikipek",
@@ -11365,7 +11377,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 947,
+    "id": 948,
     "name": "Trumbeak",
     "formType": "Padrão",
     "searchName": "trumbeak",
@@ -11377,7 +11389,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 948,
+    "id": 949,
     "name": "Toucannon",
     "formType": "Padrão",
     "searchName": "toucannon",
@@ -11389,7 +11401,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 949,
+    "id": 950,
     "name": "Yungoos",
     "formType": "Padrão",
     "searchName": "yungoos",
@@ -11401,7 +11413,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 950,
+    "id": 951,
     "name": "Gumshoos",
     "formType": "Padrão",
     "searchName": "gumshoos",
@@ -11413,7 +11425,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 951,
+    "id": 952,
     "name": "Grubbin",
     "formType": "Padrão",
     "searchName": "grubbin",
@@ -11425,7 +11437,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 952,
+    "id": 953,
     "name": "Charjabug",
     "formType": "Padrão",
     "searchName": "charjabug",
@@ -11437,7 +11449,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 953,
+    "id": 954,
     "name": "Vikavolt",
     "formType": "Padrão",
     "searchName": "vikavolt",
@@ -11449,7 +11461,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 954,
+    "id": 955,
     "name": "Crabrawler",
     "formType": "Padrão",
     "searchName": "crabrawler",
@@ -11461,7 +11473,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 955,
+    "id": 956,
     "name": "Crabominable",
     "formType": "Padrão",
     "searchName": "crabominable",
@@ -11473,7 +11485,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 956,
+    "id": 957,
     "name": "Mega Crabominable",
     "formType": "Mega Evolução",
     "searchName": "mega crabominable",
@@ -11485,7 +11497,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 957,
+    "id": 958,
     "name": "Baile Oricorio",
     "formType": "Padrão",
     "searchName": "baile oricorio",
@@ -11497,7 +11509,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 958,
+    "id": 959,
     "name": "Pa’u Oricorio",
     "formType": "Padrão",
     "searchName": "pa’u oricorio",
@@ -11509,7 +11521,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 959,
+    "id": 960,
     "name": "Pom-pom Oricorio",
     "formType": "Padrão",
     "searchName": "pom-pom oricorio",
@@ -11521,7 +11533,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 960,
+    "id": 961,
     "name": "Sensu Oricorio",
     "formType": "Padrão",
     "searchName": "sensu oricorio",
@@ -11533,7 +11545,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 961,
+    "id": 962,
     "name": "Cutiefly",
     "formType": "Padrão",
     "searchName": "cutiefly",
@@ -11545,7 +11557,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 962,
+    "id": 963,
     "name": "Ribombee",
     "formType": "Padrão",
     "searchName": "ribombee",
@@ -11557,7 +11569,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 963,
+    "id": 964,
     "name": "Rockruff",
     "formType": "Padrão",
     "searchName": "rockruff",
@@ -11569,7 +11581,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 964,
+    "id": 965,
     "name": "Dusk Lycanroc",
     "formType": "Forma Especial",
     "searchName": "dusk lycanroc",
@@ -11581,7 +11593,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 965,
+    "id": 966,
     "name": "Midday Lycanroc",
     "formType": "Padrão",
     "searchName": "midday lycanroc",
@@ -11593,7 +11605,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 966,
+    "id": 967,
     "name": "Midnight Lycanroc",
     "formType": "Padrão",
     "searchName": "midnight lycanroc",
@@ -11605,7 +11617,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 967,
+    "id": 968,
     "name": "School Wishiwashi",
     "formType": "Padrão",
     "searchName": "school wishiwashi",
@@ -11617,7 +11629,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 968,
+    "id": 969,
     "name": "Solo Wishiwashi",
     "formType": "Padrão",
     "searchName": "solo wishiwashi",
@@ -11629,7 +11641,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 969,
+    "id": 970,
     "name": "Mareanie",
     "formType": "Padrão",
     "searchName": "mareanie",
@@ -11641,7 +11653,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 970,
+    "id": 971,
     "name": "Toxapex",
     "formType": "Padrão",
     "searchName": "toxapex",
@@ -11653,7 +11665,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 971,
+    "id": 972,
     "name": "Mudbray",
     "formType": "Padrão",
     "searchName": "mudbray",
@@ -11665,7 +11677,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 972,
+    "id": 973,
     "name": "Mudsdale",
     "formType": "Padrão",
     "searchName": "mudsdale",
@@ -11677,7 +11689,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 973,
+    "id": 974,
     "name": "Dewpider",
     "formType": "Padrão",
     "searchName": "dewpider",
@@ -11689,7 +11701,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 974,
+    "id": 975,
     "name": "Araquanid",
     "formType": "Padrão",
     "searchName": "araquanid",
@@ -11701,7 +11713,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 975,
+    "id": 976,
     "name": "Fomantis",
     "formType": "Padrão",
     "searchName": "fomantis",
@@ -11713,7 +11725,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 976,
+    "id": 977,
     "name": "Lurantis",
     "formType": "Padrão",
     "searchName": "lurantis",
@@ -11725,7 +11737,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 977,
+    "id": 978,
     "name": "Morelull",
     "formType": "Padrão",
     "searchName": "morelull",
@@ -11737,7 +11749,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 978,
+    "id": 979,
     "name": "Shiinotic",
     "formType": "Padrão",
     "searchName": "shiinotic",
@@ -11749,7 +11761,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 979,
+    "id": 980,
     "name": "Salandit",
     "formType": "Padrão",
     "searchName": "salandit",
@@ -11761,7 +11773,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 980,
+    "id": 981,
     "name": "Salazzle",
     "formType": "Padrão",
     "searchName": "salazzle",
@@ -11773,7 +11785,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 981,
+    "id": 982,
     "name": "Stufful",
     "formType": "Padrão",
     "searchName": "stufful",
@@ -11785,7 +11797,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 982,
+    "id": 983,
     "name": "Bewear",
     "formType": "Padrão",
     "searchName": "bewear",
@@ -11797,7 +11809,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 983,
+    "id": 984,
     "name": "Bounsweet",
     "formType": "Padrão",
     "searchName": "bounsweet",
@@ -11809,7 +11821,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 984,
+    "id": 985,
     "name": "Steenee",
     "formType": "Padrão",
     "searchName": "steenee",
@@ -11821,7 +11833,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 985,
+    "id": 986,
     "name": "Tsareena",
     "formType": "Padrão",
     "searchName": "tsareena",
@@ -11833,7 +11845,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 986,
+    "id": 987,
     "name": "Comfey",
     "formType": "Padrão",
     "searchName": "comfey",
@@ -11845,7 +11857,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 987,
+    "id": 988,
     "name": "Oranguru",
     "formType": "Padrão",
     "searchName": "oranguru",
@@ -11857,7 +11869,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 988,
+    "id": 989,
     "name": "Passimian",
     "formType": "Padrão",
     "searchName": "passimian",
@@ -11869,7 +11881,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 989,
+    "id": 990,
     "name": "Wimpod",
     "formType": "Padrão",
     "searchName": "wimpod",
@@ -11881,7 +11893,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 990,
+    "id": 991,
     "name": "Golisopod",
     "formType": "Padrão",
     "searchName": "golisopod",
@@ -11893,7 +11905,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 991,
+    "id": 992,
     "name": "Mega Golisopod",
     "formType": "Mega Evolução",
     "searchName": "mega golisopod",
@@ -11905,7 +11917,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 992,
+    "id": 993,
     "name": "Sandygast",
     "formType": "Padrão",
     "searchName": "sandygast",
@@ -11917,7 +11929,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 993,
+    "id": 994,
     "name": "Palossand",
     "formType": "Padrão",
     "searchName": "palossand",
@@ -11929,7 +11941,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 994,
+    "id": 995,
     "name": "Pyukumuku",
     "formType": "Padrão",
     "searchName": "pyukumuku",
@@ -11941,7 +11953,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 995,
+    "id": 996,
     "name": "Type: Null",
     "formType": "Padrão",
     "searchName": "type: null",
@@ -11953,7 +11965,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 996,
+    "id": 997,
     "name": "Silvally (Type: Normal)",
     "formType": "Variação",
     "searchName": "silvally (type: normal)",
@@ -11965,7 +11977,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 997,
+    "id": 998,
     "name": "Red Meteor Minior",
     "formType": "Padrão",
     "searchName": "red meteor minior",
@@ -11977,7 +11989,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 998,
+    "id": 999,
     "name": "Komala",
     "formType": "Padrão",
     "searchName": "komala",
@@ -11989,7 +12001,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 999,
+    "id": 1000,
     "name": "Turtonator",
     "formType": "Padrão",
     "searchName": "turtonator",
@@ -12001,7 +12013,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1000,
+    "id": 1001,
     "name": "Togedemaru",
     "formType": "Padrão",
     "searchName": "togedemaru",
@@ -12013,7 +12025,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1001,
+    "id": 1002,
     "name": "Disguised Mimikyu",
     "formType": "Padrão",
     "searchName": "disguised mimikyu",
@@ -12025,7 +12037,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1002,
+    "id": 1003,
     "name": "Bruxish",
     "formType": "Padrão",
     "searchName": "bruxish",
@@ -12037,7 +12049,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1003,
+    "id": 1004,
     "name": "Drampa",
     "formType": "Padrão",
     "searchName": "drampa",
@@ -12049,7 +12061,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1004,
+    "id": 1005,
     "name": "Mega Drampa",
     "formType": "Mega Evolução",
     "searchName": "mega drampa",
@@ -12061,7 +12073,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1005,
+    "id": 1006,
     "name": "Dhelmise",
     "formType": "Padrão",
     "searchName": "dhelmise",
@@ -12073,7 +12085,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1006,
+    "id": 1007,
     "name": "Jangmo-o",
     "formType": "Padrão",
     "searchName": "jangmo-o",
@@ -12085,7 +12097,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1007,
+    "id": 1008,
     "name": "Hakamo-o",
     "formType": "Padrão",
     "searchName": "hakamo-o",
@@ -12097,7 +12109,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1008,
+    "id": 1009,
     "name": "Kommo-o",
     "formType": "Padrão",
     "searchName": "kommo-o",
@@ -12109,7 +12121,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1009,
+    "id": 1010,
     "name": "Tapu Koko",
     "formType": "Padrão",
     "searchName": "tapu koko",
@@ -12121,7 +12133,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1010,
+    "id": 1011,
     "name": "Tapu Lele",
     "formType": "Padrão",
     "searchName": "tapu lele",
@@ -12133,7 +12145,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1011,
+    "id": 1012,
     "name": "Tapu Bulu",
     "formType": "Padrão",
     "searchName": "tapu bulu",
@@ -12145,7 +12157,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1012,
+    "id": 1013,
     "name": "Tapu Fini",
     "formType": "Padrão",
     "searchName": "tapu fini",
@@ -12157,7 +12169,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1013,
+    "id": 1014,
     "name": "Cosmog",
     "formType": "Padrão",
     "searchName": "cosmog",
@@ -12169,7 +12181,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1014,
+    "id": 1015,
     "name": "Cosmoem",
     "formType": "Padrão",
     "searchName": "cosmoem",
@@ -12181,7 +12193,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1015,
+    "id": 1016,
     "name": "Solgaleo",
     "formType": "Padrão",
     "searchName": "solgaleo",
@@ -12193,7 +12205,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1016,
+    "id": 1017,
     "name": "Lunala",
     "formType": "Padrão",
     "searchName": "lunala",
@@ -12205,7 +12217,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1017,
+    "id": 1018,
     "name": "Nihilego",
     "formType": "Padrão",
     "searchName": "nihilego",
@@ -12217,7 +12229,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1018,
+    "id": 1019,
     "name": "Buzzwole",
     "formType": "Padrão",
     "searchName": "buzzwole",
@@ -12229,7 +12241,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1019,
+    "id": 1020,
     "name": "Pheromosa",
     "formType": "Padrão",
     "searchName": "pheromosa",
@@ -12241,7 +12253,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1020,
+    "id": 1021,
     "name": "Xurkitree",
     "formType": "Padrão",
     "searchName": "xurkitree",
@@ -12253,7 +12265,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1021,
+    "id": 1022,
     "name": "Celesteela",
     "formType": "Padrão",
     "searchName": "celesteela",
@@ -12265,7 +12277,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1022,
+    "id": 1023,
     "name": "Kartana",
     "formType": "Padrão",
     "searchName": "kartana",
@@ -12277,7 +12289,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1023,
+    "id": 1024,
     "name": "Guzzlord",
     "formType": "Padrão",
     "searchName": "guzzlord",
@@ -12289,7 +12301,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1024,
+    "id": 1025,
     "name": "Dawn Necrozma",
     "formType": "Forma Especial",
     "searchName": "dawn necrozma",
@@ -12301,7 +12313,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1025,
+    "id": 1026,
     "name": "Dusk Necrozma",
     "formType": "Forma Especial",
     "searchName": "dusk necrozma",
@@ -12313,7 +12325,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1026,
+    "id": 1027,
     "name": "Necrozma",
     "formType": "Padrão",
     "searchName": "necrozma",
@@ -12325,7 +12337,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1027,
+    "id": 1028,
     "name": "Ultra Necrozma",
     "formType": "Padrão",
     "searchName": "ultra necrozma",
@@ -12337,7 +12349,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1028,
+    "id": 1029,
     "name": "Magearna",
     "formType": "Padrão",
     "searchName": "magearna",
@@ -12349,7 +12361,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1029,
+    "id": 1030,
     "name": "Mega Magearna",
     "formType": "Mega Evolução",
     "searchName": "mega magearna",
@@ -12361,7 +12373,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1030,
+    "id": 1031,
     "name": "Marshadow",
     "formType": "Padrão",
     "searchName": "marshadow",
@@ -12373,7 +12385,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1031,
+    "id": 1032,
     "name": "Poipole",
     "formType": "Padrão",
     "searchName": "poipole",
@@ -12385,7 +12397,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1032,
+    "id": 1033,
     "name": "Naganadel",
     "formType": "Padrão",
     "searchName": "naganadel",
@@ -12397,7 +12409,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1033,
+    "id": 1034,
     "name": "Stakataka",
     "formType": "Padrão",
     "searchName": "stakataka",
@@ -12409,7 +12421,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1034,
+    "id": 1035,
     "name": "Blacephalon",
     "formType": "Padrão",
     "searchName": "blacephalon",
@@ -12421,7 +12433,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1035,
+    "id": 1036,
     "name": "Zeraora",
     "formType": "Padrão",
     "searchName": "zeraora",
@@ -12433,7 +12445,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1036,
+    "id": 1037,
     "name": "Mega Zeraora",
     "formType": "Mega Evolução",
     "searchName": "mega zeraora",
@@ -12445,7 +12457,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1037,
+    "id": 1038,
     "name": "Meltan",
     "formType": "Padrão",
     "searchName": "meltan",
@@ -12457,7 +12469,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1038,
+    "id": 1039,
     "name": "Melmetal",
     "formType": "Padrão",
     "searchName": "melmetal",
@@ -12469,7 +12481,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1039,
+    "id": 1040,
     "name": "Gigantamax Melmetal",
     "formType": "Gigantamax",
     "searchName": "gigantamax melmetal",
@@ -12481,7 +12493,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1040,
+    "id": 1041,
     "name": "Grookey",
     "formType": "Padrão",
     "searchName": "grookey",
@@ -12493,7 +12505,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1041,
+    "id": 1042,
     "name": "Thwackey",
     "formType": "Padrão",
     "searchName": "thwackey",
@@ -12505,7 +12517,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1042,
+    "id": 1043,
     "name": "Rillaboom",
     "formType": "Padrão",
     "searchName": "rillaboom",
@@ -12517,7 +12529,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1043,
+    "id": 1044,
     "name": "Gigantamax Rillaboom",
     "formType": "Gigantamax",
     "searchName": "gigantamax rillaboom",
@@ -12529,7 +12541,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1044,
+    "id": 1045,
     "name": "Scorbunny",
     "formType": "Padrão",
     "searchName": "scorbunny",
@@ -12541,7 +12553,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1045,
+    "id": 1046,
     "name": "Raboot",
     "formType": "Padrão",
     "searchName": "raboot",
@@ -12553,7 +12565,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1046,
+    "id": 1047,
     "name": "Cinderace",
     "formType": "Padrão",
     "searchName": "cinderace",
@@ -12565,7 +12577,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1047,
+    "id": 1048,
     "name": "Gigantamax Cinderace",
     "formType": "Gigantamax",
     "searchName": "gigantamax cinderace",
@@ -12577,7 +12589,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1048,
+    "id": 1049,
     "name": "Sobble",
     "formType": "Padrão",
     "searchName": "sobble",
@@ -12589,7 +12601,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1049,
+    "id": 1050,
     "name": "Drizzile",
     "formType": "Padrão",
     "searchName": "drizzile",
@@ -12601,7 +12613,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1050,
+    "id": 1051,
     "name": "Inteleon",
     "formType": "Padrão",
     "searchName": "inteleon",
@@ -12613,7 +12625,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1051,
+    "id": 1052,
     "name": "Gigantamax Inteleon",
     "formType": "Gigantamax",
     "searchName": "gigantamax inteleon",
@@ -12625,7 +12637,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1052,
+    "id": 1053,
     "name": "Skwovet",
     "formType": "Padrão",
     "searchName": "skwovet",
@@ -12637,7 +12649,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1053,
+    "id": 1054,
     "name": "Greedent",
     "formType": "Padrão",
     "searchName": "greedent",
@@ -12649,7 +12661,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1054,
+    "id": 1055,
     "name": "Rookidee",
     "formType": "Padrão",
     "searchName": "rookidee",
@@ -12661,7 +12673,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1055,
+    "id": 1056,
     "name": "Corvisquire",
     "formType": "Padrão",
     "searchName": "corvisquire",
@@ -12673,7 +12685,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1056,
+    "id": 1057,
     "name": "Corviknight",
     "formType": "Padrão",
     "searchName": "corviknight",
@@ -12685,7 +12697,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1057,
+    "id": 1058,
     "name": "Gigantamax Corviknight",
     "formType": "Gigantamax",
     "searchName": "gigantamax corviknight",
@@ -12697,7 +12709,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1058,
+    "id": 1059,
     "name": "Blipbug",
     "formType": "Padrão",
     "searchName": "blipbug",
@@ -12709,7 +12721,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1059,
+    "id": 1060,
     "name": "Dottler",
     "formType": "Padrão",
     "searchName": "dottler",
@@ -12721,7 +12733,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1060,
+    "id": 1061,
     "name": "Orbeetle",
     "formType": "Padrão",
     "searchName": "orbeetle",
@@ -12733,7 +12745,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1061,
+    "id": 1062,
     "name": "Gigantamax Orbeetle",
     "formType": "Gigantamax",
     "searchName": "gigantamax orbeetle",
@@ -12745,7 +12757,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1062,
+    "id": 1063,
     "name": "Nickit",
     "formType": "Padrão",
     "searchName": "nickit",
@@ -12757,7 +12769,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1063,
+    "id": 1064,
     "name": "Thievul",
     "formType": "Padrão",
     "searchName": "thievul",
@@ -12769,7 +12781,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1064,
+    "id": 1065,
     "name": "Gossifleur",
     "formType": "Padrão",
     "searchName": "gossifleur",
@@ -12781,7 +12793,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1065,
+    "id": 1066,
     "name": "Eldegoss",
     "formType": "Padrão",
     "searchName": "eldegoss",
@@ -12793,7 +12805,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1066,
+    "id": 1067,
     "name": "Wooloo",
     "formType": "Padrão",
     "searchName": "wooloo",
@@ -12805,7 +12817,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1067,
+    "id": 1068,
     "name": "Dubwool",
     "formType": "Padrão",
     "searchName": "dubwool",
@@ -12817,7 +12829,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1068,
+    "id": 1069,
     "name": "Chewtle",
     "formType": "Padrão",
     "searchName": "chewtle",
@@ -12829,7 +12841,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1069,
+    "id": 1070,
     "name": "Drednaw",
     "formType": "Padrão",
     "searchName": "drednaw",
@@ -12841,7 +12853,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1070,
+    "id": 1071,
     "name": "Gigantamax Drednaw",
     "formType": "Gigantamax",
     "searchName": "gigantamax drednaw",
@@ -12853,7 +12865,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1071,
+    "id": 1072,
     "name": "Yamper",
     "formType": "Padrão",
     "searchName": "yamper",
@@ -12865,7 +12877,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1072,
+    "id": 1073,
     "name": "Boltund",
     "formType": "Padrão",
     "searchName": "boltund",
@@ -12877,7 +12889,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1073,
+    "id": 1074,
     "name": "Rolycoly",
     "formType": "Padrão",
     "searchName": "rolycoly",
@@ -12889,7 +12901,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1074,
+    "id": 1075,
     "name": "Carkol",
     "formType": "Padrão",
     "searchName": "carkol",
@@ -12901,7 +12913,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1075,
+    "id": 1076,
     "name": "Coalossal",
     "formType": "Padrão",
     "searchName": "coalossal",
@@ -12913,7 +12925,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1076,
+    "id": 1077,
     "name": "Gigantamax Coalossal",
     "formType": "Gigantamax",
     "searchName": "gigantamax coalossal",
@@ -12925,7 +12937,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1077,
+    "id": 1078,
     "name": "Applin",
     "formType": "Padrão",
     "searchName": "applin",
@@ -12937,7 +12949,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1078,
+    "id": 1079,
     "name": "Flapple",
     "formType": "Padrão",
     "searchName": "flapple",
@@ -12949,7 +12961,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1079,
+    "id": 1080,
     "name": "Gigantamax Flapple",
     "formType": "Gigantamax",
     "searchName": "gigantamax flapple",
@@ -12961,7 +12973,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1080,
+    "id": 1081,
     "name": "Appletun",
     "formType": "Padrão",
     "searchName": "appletun",
@@ -12973,7 +12985,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1081,
+    "id": 1082,
     "name": "Gigantamax Appletun",
     "formType": "Gigantamax",
     "searchName": "gigantamax appletun",
@@ -12985,7 +12997,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1082,
+    "id": 1083,
     "name": "Silicobra",
     "formType": "Padrão",
     "searchName": "silicobra",
@@ -12997,7 +13009,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1083,
+    "id": 1084,
     "name": "Sandaconda",
     "formType": "Padrão",
     "searchName": "sandaconda",
@@ -13009,7 +13021,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1084,
+    "id": 1085,
     "name": "Gigantamax Sandaconda",
     "formType": "Gigantamax",
     "searchName": "gigantamax sandaconda",
@@ -13021,7 +13033,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1085,
+    "id": 1086,
     "name": "Cramorant",
     "formType": "Padrão",
     "searchName": "cramorant",
@@ -13033,7 +13045,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1086,
+    "id": 1087,
     "name": "Arrokuda",
     "formType": "Padrão",
     "searchName": "arrokuda",
@@ -13045,7 +13057,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1087,
+    "id": 1088,
     "name": "Barraskewda",
     "formType": "Padrão",
     "searchName": "barraskewda",
@@ -13057,7 +13069,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1088,
+    "id": 1089,
     "name": "Toxel",
     "formType": "Padrão",
     "searchName": "toxel",
@@ -13069,7 +13081,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1089,
+    "id": 1090,
     "name": "Amped Toxtricity",
     "formType": "Padrão",
     "searchName": "amped toxtricity",
@@ -13081,7 +13093,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1090,
+    "id": 1091,
     "name": "Low Key Toxtricity",
     "formType": "Padrão",
     "searchName": "low key toxtricity",
@@ -13093,7 +13105,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1091,
+    "id": 1092,
     "name": "Gigantamax Toxtricity",
     "formType": "Gigantamax",
     "searchName": "gigantamax toxtricity",
@@ -13105,7 +13117,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1092,
+    "id": 1093,
     "name": "Sizzlipede",
     "formType": "Padrão",
     "searchName": "sizzlipede",
@@ -13117,7 +13129,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1093,
+    "id": 1094,
     "name": "Centiskorch",
     "formType": "Padrão",
     "searchName": "centiskorch",
@@ -13129,7 +13141,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1094,
+    "id": 1095,
     "name": "Gigantamax Centiskorch",
     "formType": "Gigantamax",
     "searchName": "gigantamax centiskorch",
@@ -13141,7 +13153,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1095,
+    "id": 1096,
     "name": "Clobbopus",
     "formType": "Padrão",
     "searchName": "clobbopus",
@@ -13153,7 +13165,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1096,
+    "id": 1097,
     "name": "Grapploct",
     "formType": "Padrão",
     "searchName": "grapploct",
@@ -13165,7 +13177,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1097,
+    "id": 1098,
     "name": "Phony Sinistea",
     "formType": "Padrão",
     "searchName": "phony sinistea",
@@ -13177,7 +13189,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1098,
+    "id": 1099,
     "name": "Phony Polteageist",
     "formType": "Padrão",
     "searchName": "phony polteageist",
@@ -13189,7 +13201,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1099,
+    "id": 1100,
     "name": "Hatenna",
     "formType": "Padrão",
     "searchName": "hatenna",
@@ -13201,7 +13213,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1100,
+    "id": 1101,
     "name": "Hattrem",
     "formType": "Padrão",
     "searchName": "hattrem",
@@ -13213,7 +13225,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1101,
+    "id": 1102,
     "name": "Hatterene",
     "formType": "Padrão",
     "searchName": "hatterene",
@@ -13225,7 +13237,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1102,
+    "id": 1103,
     "name": "Gigantamax Hatterene",
     "formType": "Gigantamax",
     "searchName": "gigantamax hatterene",
@@ -13237,7 +13249,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1103,
+    "id": 1104,
     "name": "Impidimp",
     "formType": "Padrão",
     "searchName": "impidimp",
@@ -13249,7 +13261,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1104,
+    "id": 1105,
     "name": "Morgrem",
     "formType": "Padrão",
     "searchName": "morgrem",
@@ -13261,7 +13273,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1105,
+    "id": 1106,
     "name": "Grimmsnarl",
     "formType": "Padrão",
     "searchName": "grimmsnarl",
@@ -13273,7 +13285,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1106,
+    "id": 1107,
     "name": "Gigantamax Grimmsnarl",
     "formType": "Gigantamax",
     "searchName": "gigantamax grimmsnarl",
@@ -13285,7 +13297,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1107,
+    "id": 1108,
     "name": "Obstagoon",
     "formType": "Padrão",
     "searchName": "obstagoon",
@@ -13297,7 +13309,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1108,
+    "id": 1109,
     "name": "Perrserker",
     "formType": "Padrão",
     "searchName": "perrserker",
@@ -13309,7 +13321,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1109,
+    "id": 1110,
     "name": "Cursola",
     "formType": "Padrão",
     "searchName": "cursola",
@@ -13321,7 +13333,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1110,
+    "id": 1111,
     "name": "Sirfetch’d",
     "formType": "Padrão",
     "searchName": "sirfetch’d",
@@ -13333,7 +13345,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1111,
+    "id": 1112,
     "name": "Mr. Rime",
     "formType": "Padrão",
     "searchName": "mr. rime",
@@ -13345,7 +13357,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1112,
+    "id": 1113,
     "name": "Runerigus",
     "formType": "Padrão",
     "searchName": "runerigus",
@@ -13357,7 +13369,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1113,
+    "id": 1114,
     "name": "Milcery",
     "formType": "Padrão",
     "searchName": "milcery",
@@ -13369,7 +13381,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1114,
+    "id": 1115,
     "name": "Gigantamax Alcremie",
     "formType": "Gigantamax",
     "searchName": "gigantamax alcremie",
@@ -13381,7 +13393,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1115,
+    "id": 1116,
     "name": "Vanilla Cream Strawberry Sweet Alcremie",
     "formType": "Padrão",
     "searchName": "vanilla cream strawberry sweet alcremie",
@@ -13393,7 +13405,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1116,
+    "id": 1117,
     "name": "Falinks",
     "formType": "Padrão",
     "searchName": "falinks",
@@ -13405,7 +13417,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1117,
+    "id": 1118,
     "name": "Mega Falinks",
     "formType": "Mega Evolução",
     "searchName": "mega falinks",
@@ -13417,7 +13429,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1118,
+    "id": 1119,
     "name": "Pincurchin",
     "formType": "Padrão",
     "searchName": "pincurchin",
@@ -13429,7 +13441,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1119,
+    "id": 1120,
     "name": "Snom",
     "formType": "Padrão",
     "searchName": "snom",
@@ -13441,7 +13453,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1120,
+    "id": 1121,
     "name": "Frosmoth",
     "formType": "Padrão",
     "searchName": "frosmoth",
@@ -13453,7 +13465,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1121,
+    "id": 1122,
     "name": "Stonjourner",
     "formType": "Padrão",
     "searchName": "stonjourner",
@@ -13465,7 +13477,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1122,
+    "id": 1123,
     "name": "Ice Eiscue",
     "formType": "Padrão",
     "searchName": "ice eiscue",
@@ -13477,7 +13489,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1123,
+    "id": 1124,
     "name": "Female Indeedee",
     "formType": "Padrão",
     "searchName": "female indeedee",
@@ -13489,7 +13501,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1124,
+    "id": 1125,
     "name": "Male Indeedee",
     "formType": "Padrão",
     "searchName": "male indeedee",
@@ -13501,7 +13513,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1125,
+    "id": 1126,
     "name": "Full Belly Morpeko",
     "formType": "Padrão",
     "searchName": "full belly morpeko",
@@ -13513,7 +13525,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1126,
+    "id": 1127,
     "name": "Hangry Morpeko",
     "formType": "Padrão",
     "searchName": "hangry morpeko",
@@ -13525,7 +13537,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1127,
+    "id": 1128,
     "name": "Cufant",
     "formType": "Padrão",
     "searchName": "cufant",
@@ -13537,7 +13549,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1128,
+    "id": 1129,
     "name": "Copperajah",
     "formType": "Padrão",
     "searchName": "copperajah",
@@ -13549,7 +13561,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1129,
+    "id": 1130,
     "name": "Gigantamax Copperajah",
     "formType": "Gigantamax",
     "searchName": "gigantamax copperajah",
@@ -13561,7 +13573,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1130,
+    "id": 1131,
     "name": "Dracozolt",
     "formType": "Padrão",
     "searchName": "dracozolt",
@@ -13573,7 +13585,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1131,
+    "id": 1132,
     "name": "Arctozolt",
     "formType": "Padrão",
     "searchName": "arctozolt",
@@ -13585,7 +13597,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1132,
+    "id": 1133,
     "name": "Dracovish",
     "formType": "Padrão",
     "searchName": "dracovish",
@@ -13597,7 +13609,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1133,
+    "id": 1134,
     "name": "Arctovish",
     "formType": "Padrão",
     "searchName": "arctovish",
@@ -13609,7 +13621,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1134,
+    "id": 1135,
     "name": "Duraludon",
     "formType": "Padrão",
     "searchName": "duraludon",
@@ -13621,7 +13633,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1135,
+    "id": 1136,
     "name": "Gigantamax Duraludon",
     "formType": "Gigantamax",
     "searchName": "gigantamax duraludon",
@@ -13633,7 +13645,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1136,
+    "id": 1137,
     "name": "Dreepy",
     "formType": "Padrão",
     "searchName": "dreepy",
@@ -13645,7 +13657,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1137,
+    "id": 1138,
     "name": "Drakloak",
     "formType": "Padrão",
     "searchName": "drakloak",
@@ -13657,7 +13669,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1138,
+    "id": 1139,
     "name": "Dragapult",
     "formType": "Padrão",
     "searchName": "dragapult",
@@ -13669,7 +13681,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1139,
+    "id": 1140,
     "name": "Zacian",
     "formType": "Padrão",
     "searchName": "zacian",
@@ -13681,7 +13693,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1140,
+    "id": 1141,
     "name": "Zamazenta",
     "formType": "Padrão",
     "searchName": "zamazenta",
@@ -13693,7 +13705,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1141,
+    "id": 1142,
     "name": "Eternamax Eternatus",
     "formType": "Forma Especial",
     "searchName": "eternamax eternatus",
@@ -13705,7 +13717,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1142,
+    "id": 1143,
     "name": "Eternatus",
     "formType": "Padrão",
     "searchName": "eternatus",
@@ -13717,7 +13729,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1143,
+    "id": 1144,
     "name": "Kubfu",
     "formType": "Padrão",
     "searchName": "kubfu",
@@ -13729,7 +13741,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1144,
+    "id": 1145,
     "name": "Rapid Strike Urshifu",
     "formType": "Padrão",
     "searchName": "rapid strike urshifu",
@@ -13741,7 +13753,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1145,
+    "id": 1146,
     "name": "Single Strike Urshifu",
     "formType": "Padrão",
     "searchName": "single strike urshifu",
@@ -13753,7 +13765,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1146,
+    "id": 1147,
     "name": "Gigantamax Urshifu",
     "formType": "Gigantamax",
     "searchName": "gigantamax urshifu",
@@ -13765,7 +13777,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1147,
+    "id": 1148,
     "name": "Zarude",
     "formType": "Padrão",
     "searchName": "zarude",
@@ -13777,7 +13789,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1148,
+    "id": 1149,
     "name": "Regieleki",
     "formType": "Padrão",
     "searchName": "regieleki",
@@ -13789,7 +13801,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1149,
+    "id": 1150,
     "name": "Regidrago",
     "formType": "Padrão",
     "searchName": "regidrago",
@@ -13801,7 +13813,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1150,
+    "id": 1151,
     "name": "Glastrier",
     "formType": "Padrão",
     "searchName": "glastrier",
@@ -13813,7 +13825,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1151,
+    "id": 1152,
     "name": "Spectrier",
     "formType": "Padrão",
     "searchName": "spectrier",
@@ -13825,7 +13837,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1152,
+    "id": 1153,
     "name": "Calyrex",
     "formType": "Padrão",
     "searchName": "calyrex",
@@ -13837,7 +13849,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1153,
+    "id": 1154,
     "name": "Ice Calyrex",
     "formType": "Padrão",
     "searchName": "ice calyrex",
@@ -13849,7 +13861,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1154,
+    "id": 1155,
     "name": "Shadow Calyrex",
     "formType": "Padrão",
     "searchName": "shadow calyrex",
@@ -13861,7 +13873,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1155,
+    "id": 1156,
     "name": "Wyrdeer",
     "formType": "Padrão",
     "searchName": "wyrdeer",
@@ -13873,7 +13885,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1156,
+    "id": 1157,
     "name": "Kleavor",
     "formType": "Padrão",
     "searchName": "kleavor",
@@ -13885,7 +13897,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1157,
+    "id": 1158,
     "name": "Bloodmoon Ursaluna",
     "formType": "Padrão",
     "searchName": "bloodmoon ursaluna",
@@ -13897,7 +13909,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1158,
+    "id": 1159,
     "name": "Ursaluna",
     "formType": "Padrão",
     "searchName": "ursaluna",
@@ -13909,7 +13921,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1159,
+    "id": 1160,
     "name": "Male Basculegion",
     "formType": "Padrão",
     "searchName": "male basculegion",
@@ -13921,7 +13933,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1160,
+    "id": 1161,
     "name": "Sneasler",
     "formType": "Padrão",
     "searchName": "sneasler",
@@ -13933,7 +13945,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1161,
+    "id": 1162,
     "name": "Overqwil",
     "formType": "Padrão",
     "searchName": "overqwil",
@@ -13945,7 +13957,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1162,
+    "id": 1163,
     "name": "Incarnate Enamorus",
     "formType": "Forma Especial",
     "searchName": "incarnate enamorus",
@@ -13957,7 +13969,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1163,
+    "id": 1164,
     "name": "Sprigatito",
     "formType": "Padrão",
     "searchName": "sprigatito",
@@ -13969,7 +13981,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1164,
+    "id": 1165,
     "name": "Floragato",
     "formType": "Padrão",
     "searchName": "floragato",
@@ -13981,7 +13993,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1165,
+    "id": 1166,
     "name": "Meowscarada",
     "formType": "Padrão",
     "searchName": "meowscarada",
@@ -13993,7 +14005,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1166,
+    "id": 1167,
     "name": "Fuecoco",
     "formType": "Padrão",
     "searchName": "fuecoco",
@@ -14005,7 +14017,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1167,
+    "id": 1168,
     "name": "Crocalor",
     "formType": "Padrão",
     "searchName": "crocalor",
@@ -14017,7 +14029,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1168,
+    "id": 1169,
     "name": "Skeledirge",
     "formType": "Padrão",
     "searchName": "skeledirge",
@@ -14029,7 +14041,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1169,
+    "id": 1170,
     "name": "Quaxly",
     "formType": "Padrão",
     "searchName": "quaxly",
@@ -14041,7 +14053,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1170,
+    "id": 1171,
     "name": "Quaxwell",
     "formType": "Padrão",
     "searchName": "quaxwell",
@@ -14053,7 +14065,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1171,
+    "id": 1172,
     "name": "Quaquaval",
     "formType": "Padrão",
     "searchName": "quaquaval",
@@ -14065,7 +14077,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1172,
+    "id": 1173,
     "name": "Lechonk",
     "formType": "Padrão",
     "searchName": "lechonk",
@@ -14077,7 +14089,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1173,
+    "id": 1174,
     "name": "Female Oinkologne",
     "formType": "Padrão",
     "searchName": "female oinkologne",
@@ -14089,7 +14101,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1174,
+    "id": 1175,
     "name": "Male Oinkologne",
     "formType": "Padrão",
     "searchName": "male oinkologne",
@@ -14101,7 +14113,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1175,
+    "id": 1176,
     "name": "Tarountula",
     "formType": "Padrão",
     "searchName": "tarountula",
@@ -14113,7 +14125,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1176,
+    "id": 1177,
     "name": "Spidops",
     "formType": "Padrão",
     "searchName": "spidops",
@@ -14125,7 +14137,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1177,
+    "id": 1178,
     "name": "Nymble",
     "formType": "Padrão",
     "searchName": "nymble",
@@ -14137,7 +14149,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1178,
+    "id": 1179,
     "name": "Lokix",
     "formType": "Padrão",
     "searchName": "lokix",
@@ -14149,7 +14161,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1179,
+    "id": 1180,
     "name": "Pawmi",
     "formType": "Padrão",
     "searchName": "pawmi",
@@ -14161,7 +14173,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1180,
+    "id": 1181,
     "name": "Pawmo",
     "formType": "Padrão",
     "searchName": "pawmo",
@@ -14173,7 +14185,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1181,
+    "id": 1182,
     "name": "Pawmot",
     "formType": "Padrão",
     "searchName": "pawmot",
@@ -14185,7 +14197,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1182,
+    "id": 1183,
     "name": "Tandemaus",
     "formType": "Padrão",
     "searchName": "tandemaus",
@@ -14197,7 +14209,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1183,
+    "id": 1184,
     "name": "Maushold (Family of Four)",
     "formType": "Variação",
     "searchName": "maushold (family of four)",
@@ -14209,7 +14221,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1184,
+    "id": 1185,
     "name": "Maushold (Family of Three)",
     "formType": "Variação",
     "searchName": "maushold (family of three)",
@@ -14221,7 +14233,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1185,
+    "id": 1186,
     "name": "Fidough",
     "formType": "Padrão",
     "searchName": "fidough",
@@ -14233,7 +14245,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1186,
+    "id": 1187,
     "name": "Dachsbun",
     "formType": "Padrão",
     "searchName": "dachsbun",
@@ -14245,7 +14257,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1187,
+    "id": 1188,
     "name": "Smoliv",
     "formType": "Padrão",
     "searchName": "smoliv",
@@ -14257,7 +14269,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1188,
+    "id": 1189,
     "name": "Dolliv",
     "formType": "Padrão",
     "searchName": "dolliv",
@@ -14269,7 +14281,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1189,
+    "id": 1190,
     "name": "Arboliva",
     "formType": "Padrão",
     "searchName": "arboliva",
@@ -14281,7 +14293,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1190,
+    "id": 1191,
     "name": "Green Plumage Squawkabilly",
     "formType": "Padrão",
     "searchName": "green plumage squawkabilly",
@@ -14293,7 +14305,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1191,
+    "id": 1192,
     "name": "Nacli",
     "formType": "Padrão",
     "searchName": "nacli",
@@ -14305,7 +14317,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1192,
+    "id": 1193,
     "name": "Naclstack",
     "formType": "Padrão",
     "searchName": "naclstack",
@@ -14317,7 +14329,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1193,
+    "id": 1194,
     "name": "Garganacl",
     "formType": "Padrão",
     "searchName": "garganacl",
@@ -14329,7 +14341,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1194,
+    "id": 1195,
     "name": "Charcadet",
     "formType": "Padrão",
     "searchName": "charcadet",
@@ -14341,7 +14353,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1195,
+    "id": 1196,
     "name": "Armarouge",
     "formType": "Padrão",
     "searchName": "armarouge",
@@ -14353,7 +14365,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1196,
+    "id": 1197,
     "name": "Ceruledge",
     "formType": "Padrão",
     "searchName": "ceruledge",
@@ -14365,7 +14377,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1197,
+    "id": 1198,
     "name": "Tadbulb",
     "formType": "Padrão",
     "searchName": "tadbulb",
@@ -14377,7 +14389,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1198,
+    "id": 1199,
     "name": "Bellibolt",
     "formType": "Padrão",
     "searchName": "bellibolt",
@@ -14389,7 +14401,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1199,
+    "id": 1200,
     "name": "Wattrel",
     "formType": "Padrão",
     "searchName": "wattrel",
@@ -14401,7 +14413,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1200,
+    "id": 1201,
     "name": "Kilowattrel",
     "formType": "Padrão",
     "searchName": "kilowattrel",
@@ -14413,7 +14425,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1201,
+    "id": 1202,
     "name": "Maschiff",
     "formType": "Padrão",
     "searchName": "maschiff",
@@ -14425,7 +14437,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1202,
+    "id": 1203,
     "name": "Mabosstiff",
     "formType": "Padrão",
     "searchName": "mabosstiff",
@@ -14437,7 +14449,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1203,
+    "id": 1204,
     "name": "Shroodle",
     "formType": "Padrão",
     "searchName": "shroodle",
@@ -14449,7 +14461,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1204,
+    "id": 1205,
     "name": "Grafaiai",
     "formType": "Padrão",
     "searchName": "grafaiai",
@@ -14461,7 +14473,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1205,
+    "id": 1206,
     "name": "Bramblin",
     "formType": "Padrão",
     "searchName": "bramblin",
@@ -14473,7 +14485,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1206,
+    "id": 1207,
     "name": "Brambleghast",
     "formType": "Padrão",
     "searchName": "brambleghast",
@@ -14485,7 +14497,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1207,
+    "id": 1208,
     "name": "Toedscool",
     "formType": "Padrão",
     "searchName": "toedscool",
@@ -14497,7 +14509,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1208,
+    "id": 1209,
     "name": "Toedscruel",
     "formType": "Padrão",
     "searchName": "toedscruel",
@@ -14509,7 +14521,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1209,
+    "id": 1210,
     "name": "Klawf",
     "formType": "Padrão",
     "searchName": "klawf",
@@ -14521,7 +14533,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1210,
+    "id": 1211,
     "name": "Capsakid",
     "formType": "Padrão",
     "searchName": "capsakid",
@@ -14533,7 +14545,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1211,
+    "id": 1212,
     "name": "Scovillain",
     "formType": "Padrão",
     "searchName": "scovillain",
@@ -14545,7 +14557,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1212,
+    "id": 1213,
     "name": "Mega Scovillain",
     "formType": "Mega Evolução",
     "searchName": "mega scovillain",
@@ -14557,7 +14569,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1213,
+    "id": 1214,
     "name": "Rellor",
     "formType": "Padrão",
     "searchName": "rellor",
@@ -14569,7 +14581,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1214,
+    "id": 1215,
     "name": "Rabsca",
     "formType": "Padrão",
     "searchName": "rabsca",
@@ -14581,7 +14593,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1215,
+    "id": 1216,
     "name": "Flittle",
     "formType": "Padrão",
     "searchName": "flittle",
@@ -14593,7 +14605,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1216,
+    "id": 1217,
     "name": "Espathra",
     "formType": "Padrão",
     "searchName": "espathra",
@@ -14605,7 +14617,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1217,
+    "id": 1218,
     "name": "Tinkatink",
     "formType": "Padrão",
     "searchName": "tinkatink",
@@ -14617,7 +14629,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1218,
+    "id": 1219,
     "name": "Tinkatuff",
     "formType": "Padrão",
     "searchName": "tinkatuff",
@@ -14629,7 +14641,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1219,
+    "id": 1220,
     "name": "Tinkaton",
     "formType": "Padrão",
     "searchName": "tinkaton",
@@ -14641,7 +14653,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1220,
+    "id": 1221,
     "name": "Wiglett",
     "formType": "Padrão",
     "searchName": "wiglett",
@@ -14653,7 +14665,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1221,
+    "id": 1222,
     "name": "Wugtrio",
     "formType": "Padrão",
     "searchName": "wugtrio",
@@ -14665,7 +14677,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1222,
+    "id": 1223,
     "name": "Bombirdier",
     "formType": "Padrão",
     "searchName": "bombirdier",
@@ -14677,7 +14689,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1223,
+    "id": 1224,
     "name": "Finizen",
     "formType": "Padrão",
     "searchName": "finizen",
@@ -14689,7 +14701,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1224,
+    "id": 1225,
     "name": "Hero Form Palafin",
     "formType": "Forma Especial",
     "searchName": "hero form palafin",
@@ -14701,7 +14713,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1225,
+    "id": 1226,
     "name": "Zero Form Palafin",
     "formType": "Forma Especial",
     "searchName": "zero form palafin",
@@ -14713,7 +14725,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1226,
+    "id": 1227,
     "name": "Varoom",
     "formType": "Padrão",
     "searchName": "varoom",
@@ -14725,7 +14737,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1227,
+    "id": 1228,
     "name": "Revavroom",
     "formType": "Padrão",
     "searchName": "revavroom",
@@ -14737,7 +14749,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1228,
+    "id": 1229,
     "name": "Cyclizar",
     "formType": "Padrão",
     "searchName": "cyclizar",
@@ -14749,7 +14761,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1229,
+    "id": 1230,
     "name": "Orthworm",
     "formType": "Padrão",
     "searchName": "orthworm",
@@ -14761,7 +14773,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1230,
+    "id": 1231,
     "name": "Glimmet",
     "formType": "Padrão",
     "searchName": "glimmet",
@@ -14773,7 +14785,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1231,
+    "id": 1232,
     "name": "Glimmora",
     "formType": "Padrão",
     "searchName": "glimmora",
@@ -14785,7 +14797,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1232,
+    "id": 1233,
     "name": "Mega Glimmora",
     "formType": "Mega Evolução",
     "searchName": "mega glimmora",
@@ -14797,7 +14809,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1233,
+    "id": 1234,
     "name": "Greavard",
     "formType": "Padrão",
     "searchName": "greavard",
@@ -14809,7 +14821,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1234,
+    "id": 1235,
     "name": "Houndstone",
     "formType": "Padrão",
     "searchName": "houndstone",
@@ -14821,7 +14833,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1235,
+    "id": 1236,
     "name": "Flamigo",
     "formType": "Padrão",
     "searchName": "flamigo",
@@ -14833,7 +14845,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1236,
+    "id": 1237,
     "name": "Cetoddle",
     "formType": "Padrão",
     "searchName": "cetoddle",
@@ -14845,7 +14857,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1237,
+    "id": 1238,
     "name": "Cetitan",
     "formType": "Padrão",
     "searchName": "cetitan",
@@ -14857,7 +14869,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1238,
+    "id": 1239,
     "name": "Veluza",
     "formType": "Padrão",
     "searchName": "veluza",
@@ -14869,7 +14881,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1239,
+    "id": 1240,
     "name": "Dondozo",
     "formType": "Padrão",
     "searchName": "dondozo",
@@ -14881,7 +14893,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1240,
+    "id": 1241,
     "name": "Curly Form Tatsugiri",
     "formType": "Forma Especial",
     "searchName": "curly form tatsugiri",
@@ -14893,7 +14905,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1241,
+    "id": 1242,
     "name": "Mega Curly Tatsugiri",
     "formType": "Mega Evolução",
     "searchName": "mega curly tatsugiri",
@@ -14905,7 +14917,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1242,
+    "id": 1243,
     "name": "Annihilape",
     "formType": "Padrão",
     "searchName": "annihilape",
@@ -14917,7 +14929,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1243,
+    "id": 1244,
     "name": "Clodsire",
     "formType": "Padrão",
     "searchName": "clodsire",
@@ -14929,7 +14941,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1244,
+    "id": 1245,
     "name": "Farigiraf",
     "formType": "Padrão",
     "searchName": "farigiraf",
@@ -14941,7 +14953,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1245,
+    "id": 1246,
     "name": "Two-Segment Form Dudunsparce",
     "formType": "Forma Especial",
     "searchName": "two-segment form dudunsparce",
@@ -14953,7 +14965,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1246,
+    "id": 1247,
     "name": "Kingambit",
     "formType": "Padrão",
     "searchName": "kingambit",
@@ -14965,7 +14977,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1247,
+    "id": 1248,
     "name": "Great Tusk",
     "formType": "Padrão",
     "searchName": "great tusk",
@@ -14977,7 +14989,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1248,
+    "id": 1249,
     "name": "Scream Tail",
     "formType": "Padrão",
     "searchName": "scream tail",
@@ -14989,7 +15001,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1249,
+    "id": 1250,
     "name": "Brute Bonnet",
     "formType": "Padrão",
     "searchName": "brute bonnet",
@@ -15001,7 +15013,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1250,
+    "id": 1251,
     "name": "Flutter Mane",
     "formType": "Padrão",
     "searchName": "flutter mane",
@@ -15013,7 +15025,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1251,
+    "id": 1252,
     "name": "Slither Wing",
     "formType": "Padrão",
     "searchName": "slither wing",
@@ -15025,7 +15037,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1252,
+    "id": 1253,
     "name": "Sandy Shocks",
     "formType": "Padrão",
     "searchName": "sandy shocks",
@@ -15037,7 +15049,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1253,
+    "id": 1254,
     "name": "Iron Treads",
     "formType": "Padrão",
     "searchName": "iron treads",
@@ -15049,7 +15061,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1254,
+    "id": 1255,
     "name": "Iron Bundle",
     "formType": "Padrão",
     "searchName": "iron bundle",
@@ -15061,7 +15073,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1255,
+    "id": 1256,
     "name": "Iron Hands",
     "formType": "Padrão",
     "searchName": "iron hands",
@@ -15073,7 +15085,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1256,
+    "id": 1257,
     "name": "Iron Jugulis",
     "formType": "Padrão",
     "searchName": "iron jugulis",
@@ -15085,7 +15097,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1257,
+    "id": 1258,
     "name": "Iron Moth",
     "formType": "Padrão",
     "searchName": "iron moth",
@@ -15097,7 +15109,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1258,
+    "id": 1259,
     "name": "Iron Thorns",
     "formType": "Padrão",
     "searchName": "iron thorns",
@@ -15109,7 +15121,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1259,
+    "id": 1260,
     "name": "Frigibax",
     "formType": "Padrão",
     "searchName": "frigibax",
@@ -15121,7 +15133,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1260,
+    "id": 1261,
     "name": "Arctibax",
     "formType": "Padrão",
     "searchName": "arctibax",
@@ -15133,7 +15145,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1261,
+    "id": 1262,
     "name": "Baxcalibur",
     "formType": "Padrão",
     "searchName": "baxcalibur",
@@ -15145,7 +15157,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1262,
+    "id": 1263,
     "name": "Mega Baxcalibur",
     "formType": "Mega Evolução",
     "searchName": "mega baxcalibur",
@@ -15157,7 +15169,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1263,
+    "id": 1264,
     "name": "Chest Form Gimmighoul",
     "formType": "Forma Especial",
     "searchName": "chest form gimmighoul",
@@ -15169,7 +15181,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1264,
+    "id": 1265,
     "name": "Gholdengo",
     "formType": "Padrão",
     "searchName": "gholdengo",
@@ -15181,7 +15193,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1265,
+    "id": 1266,
     "name": "Wo-Chien",
     "formType": "Padrão",
     "searchName": "wo-chien",
@@ -15193,7 +15205,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1266,
+    "id": 1267,
     "name": "Chien-Pao",
     "formType": "Padrão",
     "searchName": "chien-pao",
@@ -15205,7 +15217,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1267,
+    "id": 1268,
     "name": "Ting-Lu",
     "formType": "Padrão",
     "searchName": "ting-lu",
@@ -15217,7 +15229,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1268,
+    "id": 1269,
     "name": "Chi-Yu",
     "formType": "Padrão",
     "searchName": "chi-yu",
@@ -15229,7 +15241,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1269,
+    "id": 1270,
     "name": "Roaring Moon",
     "formType": "Padrão",
     "searchName": "roaring moon",
@@ -15241,7 +15253,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1270,
+    "id": 1271,
     "name": "Iron Valiant",
     "formType": "Padrão",
     "searchName": "iron valiant",
@@ -15253,7 +15265,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1271,
+    "id": 1272,
     "name": "Koraidon (Apex Build)",
     "formType": "Variação",
     "searchName": "koraidon (apex build)",
@@ -15265,7 +15277,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1272,
+    "id": 1273,
     "name": "Miraidon (Ultimate Mode)",
     "formType": "Variação",
     "searchName": "miraidon (ultimate mode)",
@@ -15277,7 +15289,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1273,
+    "id": 1274,
     "name": "Walking Wake",
     "formType": "Padrão",
     "searchName": "walking wake",
@@ -15289,7 +15301,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1274,
+    "id": 1275,
     "name": "Iron Leaves",
     "formType": "Padrão",
     "searchName": "iron leaves",
@@ -15301,7 +15313,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1275,
+    "id": 1276,
     "name": "Dipplin",
     "formType": "Padrão",
     "searchName": "dipplin",
@@ -15313,7 +15325,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1276,
+    "id": 1277,
     "name": "Artisan Form Poltchageist",
     "formType": "Forma Especial",
     "searchName": "artisan form poltchageist",
@@ -15325,7 +15337,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1277,
+    "id": 1278,
     "name": "Masterpiece Form Sinistcha",
     "formType": "Forma Especial",
     "searchName": "masterpiece form sinistcha",
@@ -15337,7 +15349,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1278,
+    "id": 1279,
     "name": "Okidogi",
     "formType": "Padrão",
     "searchName": "okidogi",
@@ -15349,7 +15361,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1279,
+    "id": 1280,
     "name": "Munkidori",
     "formType": "Padrão",
     "searchName": "munkidori",
@@ -15361,7 +15373,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1280,
+    "id": 1281,
     "name": "Fezandipiti",
     "formType": "Padrão",
     "searchName": "fezandipiti",
@@ -15373,7 +15385,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1281,
+    "id": 1282,
     "name": "Cornerstone Mask Ogerpon",
     "formType": "Forma Especial",
     "searchName": "cornerstone mask ogerpon",
@@ -15385,7 +15397,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1282,
+    "id": 1283,
     "name": "Hearthflame Mask Ogerpon",
     "formType": "Forma Especial",
     "searchName": "hearthflame mask ogerpon",
@@ -15397,7 +15409,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1283,
+    "id": 1284,
     "name": "Teal Mask Ogerpon",
     "formType": "Forma Especial",
     "searchName": "teal mask ogerpon",
@@ -15409,7 +15421,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1284,
+    "id": 1285,
     "name": "Wellspring Mask Ogerpon",
     "formType": "Forma Especial",
     "searchName": "wellspring mask ogerpon",
@@ -15421,7 +15433,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1285,
+    "id": 1286,
     "name": "Archaludon",
     "formType": "Padrão",
     "searchName": "archaludon",
@@ -15433,7 +15445,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1286,
+    "id": 1287,
     "name": "Hydrapple",
     "formType": "Padrão",
     "searchName": "hydrapple",
@@ -15445,7 +15457,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1287,
+    "id": 1288,
     "name": "Gouging Fire",
     "formType": "Padrão",
     "searchName": "gouging fire",
@@ -15457,7 +15469,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1288,
+    "id": 1289,
     "name": "Raging Bolt",
     "formType": "Padrão",
     "searchName": "raging bolt",
@@ -15469,7 +15481,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1289,
+    "id": 1290,
     "name": "Iron Boulder",
     "formType": "Padrão",
     "searchName": "iron boulder",
@@ -15481,7 +15493,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1290,
+    "id": 1291,
     "name": "Iron Crown",
     "formType": "Padrão",
     "searchName": "iron crown",
@@ -15493,7 +15505,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1291,
+    "id": 1292,
     "name": "Stellar Form Terapagos",
     "formType": "Forma Especial",
     "searchName": "stellar form terapagos",
@@ -15505,7 +15517,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1292,
+    "id": 1293,
     "name": "Terastal Form Terapagos",
     "formType": "Forma Especial",
     "searchName": "terastal form terapagos",
@@ -15517,7 +15529,7 @@ export const pokemonForms: PokemonForm[] = [
     "notes": ""
   },
   {
-    "id": 1293,
+    "id": 1294,
     "name": "Pecharunt",
     "formType": "Padrão",
     "searchName": "pecharunt",
