@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import type { PokemonCollectionItem } from "@/types/collection";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 
@@ -8,6 +9,11 @@ type PokedexTableProps = {
   pokemonList: PokemonCollectionItem[];
   onEdit: (pokemon: PokemonCollectionItem) => void;
   formatCurrency: (value: number) => string;
+};
+
+type PreviewPosition = {
+  x: number;
+  y: number;
 };
 
 export function PokedexTable({
@@ -18,8 +24,50 @@ export function PokedexTable({
   const [previewPokemon, setPreviewPokemon] =
     useState<PokemonCollectionItem | null>(null);
 
+  const [previewPosition, setPreviewPosition] = useState<PreviewPosition>({
+    x: 0,
+    y: 0,
+  });
+
+  const [isMounted, setIsMounted] = useState(false);
+  const [imageFailed, setImageFailed] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  function showPreview(
+    element: HTMLButtonElement,
+    pokemon: PokemonCollectionItem
+  ) {
+    const rect = element.getBoundingClientRect();
+
+    const previewWidth = 320;
+    const previewHeight = 500;
+    const gap = 18;
+
+    let x = rect.right + gap;
+    let y = rect.top - 80;
+
+    if (x + previewWidth > window.innerWidth) {
+      x = rect.left - previewWidth - gap;
+    }
+
+    if (y + previewHeight > window.innerHeight) {
+      y = window.innerHeight - previewHeight - gap;
+    }
+
+    if (y < gap) {
+      y = gap;
+    }
+
+    setImageFailed(false);
+    setPreviewPokemon(pokemon);
+    setPreviewPosition({ x, y });
+  }
+
   return (
-    <div className="relative">
+    <>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[1080px] border-collapse text-left">
           <thead>
@@ -49,10 +97,17 @@ export function PokedexTable({
                     {pokemon.cardImageUrl ? (
                       <button
                         type="button"
-                        onMouseEnter={() => setPreviewPokemon(pokemon)}
+                        onMouseEnter={(event) =>
+                          showPreview(event.currentTarget, pokemon)
+                        }
                         onMouseLeave={() => setPreviewPokemon(null)}
+                        onFocus={(event) =>
+                          showPreview(event.currentTarget, pokemon)
+                        }
+                        onBlur={() => setPreviewPokemon(null)}
+                        onClick={() => onEdit(pokemon)}
                         className="h-14 w-10 overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950 shadow-lg transition hover:border-yellow-400/60"
-                        aria-label={`Prévia de ${pokemon.name}`}
+                        aria-label={`Abrir ${pokemon.name}`}
                       >
                         <img
                           src={pokemon.cardImageUrl}
@@ -61,15 +116,24 @@ export function PokedexTable({
                         />
                       </button>
                     ) : (
-                      <div className="flex h-14 w-10 items-center justify-center rounded-xl border border-zinc-700 bg-gradient-to-br from-zinc-900 to-zinc-950 text-[10px] font-bold text-zinc-500 shadow-lg">
+                      <button
+                        type="button"
+                        onClick={() => onEdit(pokemon)}
+                        className="flex h-14 w-10 items-center justify-center rounded-xl border border-zinc-700 bg-gradient-to-br from-zinc-900 to-zinc-950 text-[10px] font-bold text-zinc-500 shadow-lg transition hover:border-yellow-400/60"
+                        aria-label={`Abrir ${pokemon.name}`}
+                      >
                         Sem
-                      </div>
+                      </button>
                     )}
 
                     <div>
-                      <p className="font-bold text-zinc-100 transition group-hover:text-yellow-200">
+                      <button
+                        type="button"
+                        onClick={() => onEdit(pokemon)}
+                        className="text-left font-bold text-zinc-100 transition hover:text-yellow-200"
+                      >
                         {pokemon.name}
-                      </p>
+                      </button>
 
                       {pokemon.notes && (
                         <p className="mt-1 max-w-xs truncate text-xs text-zinc-500">
@@ -157,18 +221,35 @@ export function PokedexTable({
         )}
       </div>
 
-      {previewPokemon?.cardImageUrl && (
-        <div className="pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center p-6">
-          <div className="absolute inset-0 bg-black/35 backdrop-blur-[2px]" />
+      {isMounted &&
+        previewPokemon?.cardImageUrl &&
+        createPortal(
+          <div
+            className="pointer-events-none fixed z-[999999] w-[320px] rounded-[1.5rem] border border-yellow-400/40 bg-zinc-950 p-3 shadow-2xl shadow-black/80"
+            style={{
+              left: previewPosition.x,
+              top: previewPosition.y,
+            }}
+          >
+            {!imageFailed ? (
+              <img
+                src={previewPokemon.cardImageUrl}
+                alt={previewPokemon.selectedCard || previewPokemon.name}
+                onError={() => setImageFailed(true)}
+                className="mx-auto max-h-[440px] w-full rounded-2xl object-contain"
+              />
+            ) : (
+              <div className="flex h-[420px] flex-col items-center justify-center rounded-2xl border border-dashed border-red-400/30 bg-red-400/10 p-4 text-center">
+                <p className="text-sm font-bold text-red-300">
+                  Não consegui carregar essa imagem.
+                </p>
+                <p className="mt-2 text-xs text-red-200/70">
+                  A URL pode estar bloqueando visualização fora do site original.
+                </p>
+              </div>
+            )}
 
-          <div className="premium-card relative w-full max-w-[340px] rounded-[2rem] border-yellow-400/30 p-4 shadow-2xl shadow-black/70">
-            <img
-              src={previewPokemon.cardImageUrl}
-              alt={previewPokemon.selectedCard || previewPokemon.name}
-              className="mx-auto max-h-[500px] w-full rounded-2xl object-contain"
-            />
-
-            <div className="mt-4 text-center">
+            <div className="mt-3 text-center">
               <p className="text-sm font-black text-white">
                 {previewPokemon.selectedCard || previewPokemon.name}
               </p>
@@ -177,9 +258,9 @@ export function PokedexTable({
                 {previewPokemon.name}
               </p>
             </div>
-          </div>
-        </div>
-      )}
-    </div>
+          </div>,
+          document.body
+        )}
+    </>
   );
 }
