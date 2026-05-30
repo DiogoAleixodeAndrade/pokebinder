@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 import { pokemonForms } from "@/data/pokemonForms";
 import { AuthScreen } from "@/components/AuthScreen";
 import { EditCardModal } from "@/components/EditCardModal";
@@ -11,10 +11,10 @@ import { StatsCard } from "@/components/ui/StatsCard";
 import { ValueCard } from "@/components/ui/ValueCard";
 import { useAuth } from "@/context/AuthContext";
 import { formatCurrency, normalizeText } from "@/lib/format";
+import { importOwnedPokemonFile } from "@/lib/importOwnedPokemon";
 import {
   downloadCollectionBackup,
   getInitialCollectionState,
-  importCollectionBackup,
   loadCollectionFromStorage,
   saveCollectionToStorage,
 } from "@/lib/collection";
@@ -218,8 +218,45 @@ export function PokedexDashboard() {
     downloadCollectionBackup(collection);
   }
 
-  function importCollection(event: Parameters<typeof importCollectionBackup>[0]) {
-    importCollectionBackup(event, setCollection);
+  async function importOwnedPokemonList(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+
+    if (!file) return;
+
+    try {
+      const result = await importOwnedPokemonFile(
+        file,
+        mergedPokemonForms,
+        collection
+      );
+
+      setCollection(result.updatedCollection);
+      saveCollectionToStorage(result.updatedCollection);
+
+      const notFoundPreview = result.notFoundNames.slice(0, 10).join(", ");
+
+      alert(
+        [
+          `Importação concluída!`,
+          `Pokémon marcados como adquiridos: ${result.matchedCount}`,
+          `Duplicados ignorados: ${result.duplicatedNames.length}`,
+          `Não encontrados: ${result.notFoundNames.length}`,
+          result.notFoundNames.length > 0
+            ? `Primeiros não encontrados: ${notFoundPreview}`
+            : "",
+        ]
+          .filter(Boolean)
+          .join("\n")
+      );
+    } catch (error) {
+      alert(
+        error instanceof Error
+          ? error.message
+          : "Erro ao importar a planilha."
+      );
+    } finally {
+      event.target.value = "";
+    }
   }
 
   async function resetCollection() {
@@ -510,7 +547,7 @@ export function PokedexDashboard() {
             onFormTypeFilterChange={setFormTypeFilter}
             onViewModeChange={setViewMode}
             onExportCollection={exportCollection}
-            onImportCollection={importCollection}
+            onImportCollection={importOwnedPokemonList}
             onResetCollection={resetCollection}
             onSyncCollection={syncCollectionWithSupabase}
           />

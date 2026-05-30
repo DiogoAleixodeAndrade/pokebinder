@@ -73,10 +73,10 @@ export function PokedexToolbar({
           </button>
 
           <label className="cursor-pointer rounded-lg border border-sky-400/40 px-3 py-2 text-sm font-semibold text-sky-300 hover:bg-sky-400/10">
-            Importar backup
+            Importar meus Pokémon
             <input
               type="file"
-              accept="application/json"
+              accept=".xlsx,.xls,.csv,.txt"
               onChange={onImportCollection}
               className="hidden"
             />
@@ -93,12 +93,12 @@ export function PokedexToolbar({
       </div>
 
       <p className="text-xs text-zinc-500">
-  Status Supabase:{" "}
-  {syncStatus === "loading" && "carregando/sincronizando..."}
-  {syncStatus === "success" && "conectado"}
-  {syncStatus === "error" && "erro de conexão"}
-  {syncStatus === "idle" && "aguardando"}
-</p>
+        Status Supabase:{" "}
+        {syncStatus === "loading" && "carregando/sincronizando..."}
+        {syncStatus === "success" && "conectado"}
+        {syncStatus === "error" && "erro de conexão"}
+        {syncStatus === "idle" && "aguardando"}
+      </p>
 
       <div className="flex flex-wrap gap-2 text-sm">
         <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-zinc-300">
@@ -153,8 +153,8 @@ export function PokedexToolbar({
             type="button"
             onClick={() => onViewModeChange("table")}
             className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${viewMode === "table"
-                ? "bg-yellow-400 text-zinc-950"
-                : "text-zinc-400 hover:text-white"
+              ? "bg-yellow-400 text-zinc-950"
+              : "text-zinc-400 hover:text-white"
               }`}
           >
             Tabela
@@ -164,8 +164,8 @@ export function PokedexToolbar({
             type="button"
             onClick={() => onViewModeChange("cards")}
             className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${viewMode === "cards"
-                ? "bg-yellow-400 text-zinc-950"
-                : "text-zinc-400 hover:text-white"
+              ? "bg-yellow-400 text-zinc-950"
+              : "text-zinc-400 hover:text-white"
               }`}
           >
             Cards
