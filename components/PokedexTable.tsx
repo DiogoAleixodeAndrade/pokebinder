@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import type { PokemonCollectionItem } from "@/types/collection";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 
@@ -12,8 +15,11 @@ export function PokedexTable({
   onEdit,
   formatCurrency,
 }: PokedexTableProps) {
+  const [previewPokemon, setPreviewPokemon] =
+    useState<PokemonCollectionItem | null>(null);
+
   return (
-    <div className="overflow-x-auto">
+    <div className="relative overflow-x-auto">
       <table className="w-full min-w-[1080px] border-collapse text-left">
         <thead>
           <tr className="border-b border-zinc-800 bg-zinc-950/60 text-xs uppercase tracking-[0.18em] text-zinc-500">
@@ -40,32 +46,19 @@ export function PokedexTable({
               <td className="px-6 py-5">
                 <div className="flex items-center gap-4">
                   {pokemon.cardImageUrl ? (
-                    <div className="group/preview relative">
-                      <div className="h-14 w-10 overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950 shadow-lg">
-                        <img
-                          src={pokemon.cardImageUrl}
-                          alt={pokemon.selectedCard || pokemon.name}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-
-                      <div className="pointer-events-none fixed left-1/2 top-1/2 z-[9999] hidden w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-[1.5rem] border border-zinc-700 bg-zinc-950 p-3 shadow-2xl shadow-black/60 group-hover/preview:block">
-                        <img
-                          src={pokemon.cardImageUrl}
-                          alt={pokemon.selectedCard || pokemon.name}
-                          className="h-auto max-h-[400px] w-full rounded-2xl object-contain"
-                        />
-
-                        <div className="mt-4 text-center">
-                          <p className="text-sm font-bold text-white">
-                            {pokemon.selectedCard || pokemon.name}
-                          </p>
-                          <p className="mt-1 text-xs text-zinc-500">
-                            {pokemon.name}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    <button
+                      type="button"
+                      onMouseEnter={() => setPreviewPokemon(pokemon)}
+                      onMouseLeave={() => setPreviewPokemon(null)}
+                      className="h-14 w-10 overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950 shadow-lg transition hover:border-yellow-400/60"
+                      aria-label={`Prévia de ${pokemon.name}`}
+                    >
+                      <img
+                        src={pokemon.cardImageUrl}
+                        alt={pokemon.selectedCard || pokemon.name}
+                        className="h-full w-full object-cover"
+                      />
+                    </button>
                   ) : (
                     <div className="flex h-14 w-10 items-center justify-center rounded-xl border border-zinc-700 bg-gradient-to-br from-zinc-900 to-zinc-950 text-[10px] font-bold text-zinc-500 shadow-lg">
                       Sem
@@ -158,6 +151,28 @@ export function PokedexTable({
             <p className="mt-2 text-sm text-zinc-500">
               Tente limpar os filtros ou buscar por outro nome.
             </p>
+          </div>
+        </div>
+      )}
+
+      {previewPokemon?.cardImageUrl && (
+        <div className="pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-6 backdrop-blur-sm">
+          <div className="premium-card w-full max-w-[320px] rounded-[2rem] p-4 shadow-2xl">
+            <img
+              src={previewPokemon.cardImageUrl}
+              alt={previewPokemon.selectedCard || previewPokemon.name}
+              className="mx-auto max-h-[460px] w-full rounded-2xl object-contain"
+            />
+
+            <div className="mt-4 text-center">
+              <p className="text-sm font-black text-white">
+                {previewPokemon.selectedCard || previewPokemon.name}
+              </p>
+
+              <p className="mt-1 text-xs text-zinc-500">
+                {previewPokemon.name}
+              </p>
+            </div>
           </div>
         </div>
       )}
