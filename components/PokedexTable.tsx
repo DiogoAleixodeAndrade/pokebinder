@@ -14,16 +14,16 @@ export function PokedexTable({
 }: PokedexTableProps) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full min-w-[1050px] border-collapse text-left">
-        <thead className="bg-zinc-950 text-sm text-zinc-400">
-          <tr>
-            <th className="px-5 py-4">ID</th>
-            <th className="px-5 py-4">Pokémon/Forma</th>
-            <th className="px-5 py-4">Tipo</th>
-            <th className="px-5 py-4">Carta selecionada</th>
-            <th className="px-5 py-4">Preço</th>
-            <th className="px-5 py-4">Status</th>
-            <th className="px-5 py-4">Ações</th>
+      <table className="w-full min-w-[1080px] border-collapse text-left">
+        <thead>
+          <tr className="border-b border-zinc-800 bg-zinc-950/60 text-xs uppercase tracking-[0.18em] text-zinc-500">
+            <th className="px-6 py-5">ID</th>
+            <th className="px-6 py-5">Pokémon/Forma</th>
+            <th className="px-6 py-5">Tipo</th>
+            <th className="px-6 py-5">Carta selecionada</th>
+            <th className="px-6 py-5">Preço</th>
+            <th className="px-6 py-5">Status</th>
+            <th className="px-6 py-5">Ações</th>
           </tr>
         </thead>
 
@@ -31,31 +31,33 @@ export function PokedexTable({
           {pokemonList.map((pokemon) => (
             <tr
               key={pokemon.id}
-              className="border-t border-zinc-800 hover:bg-zinc-800/40"
+              className="group border-b border-zinc-800/70 transition hover:bg-yellow-400/[0.035]"
             >
-              <td className="px-5 py-4 text-zinc-400">
-                {String(pokemon.id).padStart(4, "0")}
+              <td className="px-6 py-5 text-sm font-semibold text-zinc-500">
+                #{String(pokemon.id).padStart(4, "0")}
               </td>
 
-              <td className="px-5 py-4">
-                <div className="flex items-center gap-3">
+              <td className="px-6 py-5">
+                <div className="flex items-center gap-4">
                   {pokemon.cardImageUrl ? (
-                    <div className="group relative">
-                      <img
-                        src={pokemon.cardImageUrl}
-                        alt={pokemon.selectedCard || pokemon.name}
-                        className="h-12 w-9 rounded object-cover"
-                      />
-
-                      <div className="pointer-events-none fixed left-1/2 top-1/2 z-[9999] hidden w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-zinc-700 bg-zinc-950 p-3 shadow-2xl group-hover:block">
+                    <div className="group/preview relative">
+                      <div className="h-14 w-10 overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950 shadow-lg">
                         <img
                           src={pokemon.cardImageUrl}
                           alt={pokemon.selectedCard || pokemon.name}
-                          className="h-auto max-h-[380px] w-full rounded-xl object-contain"
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+
+                      <div className="pointer-events-none fixed left-1/2 top-1/2 z-[9999] hidden w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-[1.5rem] border border-zinc-700 bg-zinc-950 p-3 shadow-2xl shadow-black/60 group-hover/preview:block">
+                        <img
+                          src={pokemon.cardImageUrl}
+                          alt={pokemon.selectedCard || pokemon.name}
+                          className="h-auto max-h-[400px] w-full rounded-2xl object-contain"
                         />
 
-                        <div className="mt-3 text-center">
-                          <p className="text-sm font-semibold text-white">
+                        <div className="mt-4 text-center">
+                          <p className="text-sm font-bold text-white">
                             {pokemon.selectedCard || pokemon.name}
                           </p>
                           <p className="mt-1 text-xs text-zinc-500">
@@ -65,13 +67,16 @@ export function PokedexTable({
                       </div>
                     </div>
                   ) : (
-                    <div className="flex h-12 w-9 items-center justify-center rounded border border-zinc-700 bg-gradient-to-br from-zinc-900 to-zinc-950 text-[10px] text-zinc-500">
+                    <div className="flex h-14 w-10 items-center justify-center rounded-xl border border-zinc-700 bg-gradient-to-br from-zinc-900 to-zinc-950 text-[10px] font-bold text-zinc-500 shadow-lg">
                       Sem
                     </div>
                   )}
 
                   <div>
-                    <p className="font-medium">{pokemon.name}</p>
+                    <p className="font-bold text-zinc-100 transition group-hover:text-yellow-200">
+                      {pokemon.name}
+                    </p>
+
                     {pokemon.notes && (
                       <p className="mt-1 max-w-xs truncate text-xs text-zinc-500">
                         {pokemon.notes}
@@ -81,23 +86,33 @@ export function PokedexTable({
                 </div>
               </td>
 
-              <td className="px-5 py-4">
-                <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-xs text-zinc-300">
+              <td className="px-6 py-5">
+                <span className="rounded-full border border-zinc-700 bg-zinc-950/70 px-3 py-1 text-xs font-semibold text-zinc-300">
                   {pokemon.formType}
                 </span>
               </td>
 
-              <td className="px-5 py-4 text-zinc-300">
-                {pokemon.selectedCard || "Ainda não selecionado"}
+              <td className="px-6 py-5">
+                <div className="max-w-xs">
+                  <p
+                    className={`truncate text-sm ${
+                      pokemon.selectedCard ? "text-zinc-200" : "text-zinc-500"
+                    }`}
+                  >
+                    {pokemon.selectedCard || "Ainda não selecionado"}
+                  </p>
+                </div>
               </td>
 
-              <td className="px-5 py-4 text-zinc-300">
-                {pokemon.lowestPrice > 0
-                  ? formatCurrency(pokemon.lowestPrice)
-                  : "-"}
+              <td className="px-6 py-5">
+                <p className="text-sm font-black text-yellow-300">
+                  {pokemon.lowestPrice > 0
+                    ? formatCurrency(pokemon.lowestPrice)
+                    : "-"}
+                </p>
               </td>
 
-              <td className="px-5 py-4">
+              <td className="px-6 py-5">
                 {pokemon.owned ? (
                   <StatusBadge status="Adquirido" variant="owned" />
                 ) : pokemon.selectedCard ? (
@@ -107,12 +122,12 @@ export function PokedexTable({
                 )}
               </td>
 
-              <td className="px-5 py-4">
+              <td className="px-6 py-5">
                 <div className="flex gap-2">
                   <button
                     type="button"
                     onClick={() => onEdit(pokemon)}
-                    className="rounded-lg bg-yellow-400 px-3 py-2 text-sm font-semibold text-zinc-950 hover:bg-yellow-300"
+                    className="premium-button rounded-2xl px-4 py-2.5 text-sm"
                   >
                     Editar
                   </button>
@@ -122,7 +137,7 @@ export function PokedexTable({
                       href={pokemon.ligaPokemonUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-lg border border-zinc-700 px-3 py-2 text-sm text-zinc-300 hover:border-yellow-400 hover:text-yellow-300"
+                      className="rounded-2xl border border-zinc-700 bg-zinc-950/70 px-4 py-2.5 text-sm font-bold text-zinc-300 transition hover:border-yellow-400/50 hover:text-yellow-300"
                     >
                       Liga
                     </a>
@@ -135,8 +150,15 @@ export function PokedexTable({
       </table>
 
       {pokemonList.length === 0 && (
-        <div className="p-8 text-center text-zinc-400">
-          Nenhum Pokémon encontrado com os filtros atuais.
+        <div className="p-10 text-center">
+          <div className="mx-auto max-w-md rounded-[1.5rem] border border-zinc-800 bg-zinc-950/60 p-8">
+            <p className="text-lg font-bold text-zinc-300">
+              Nenhum Pokémon encontrado
+            </p>
+            <p className="mt-2 text-sm text-zinc-500">
+              Tente limpar os filtros ou buscar por outro nome.
+            </p>
+          </div>
         </div>
       )}
     </div>
