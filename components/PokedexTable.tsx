@@ -47,12 +47,21 @@ export function PokedexTable({
                         className="h-12 w-9 rounded object-cover"
                       />
 
-                      <div className="pointer-events-none absolute left-0 top-14 z-20 hidden rounded-xl border border-zinc-700 bg-zinc-950 p-3 shadow-2xl group-hover:block">
+                      <div className="pointer-events-none fixed left-1/2 top-1/2 z-[9999] hidden w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-zinc-700 bg-zinc-950 p-3 shadow-2xl group-hover:block">
                         <img
                           src={pokemon.cardImageUrl}
                           alt={pokemon.selectedCard || pokemon.name}
-                          className="h-80 w-auto rounded-lg object-contain"
+                          className="h-auto max-h-[380px] w-full rounded-xl object-contain"
                         />
+
+                        <div className="mt-3 text-center">
+                          <p className="text-sm font-semibold text-white">
+                            {pokemon.selectedCard || pokemon.name}
+                          </p>
+                          <p className="mt-1 text-xs text-zinc-500">
+                            {pokemon.name}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   ) : (
