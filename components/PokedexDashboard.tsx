@@ -11,6 +11,10 @@ import { ValueCard } from "@/components/ui/ValueCard";
 import { getPokemonFormsFromSupabase } from "@/lib/supabase/pokemonForms";
 import { formatCurrency, normalizeText } from "@/lib/format";
 import {
+  getCollectionItemsFromSupabase,
+  saveCollectionItemsToSupabase,
+} from "@/lib/supabase/collectionItems";
+import {
   downloadCollectionBackup,
   getInitialCollectionState,
   importCollectionBackup,
@@ -45,6 +49,11 @@ export function PokedexDashboard() {
     getInitialCollectionState()
   );
 
+  const [isSyncing, setIsSyncing] = useState(false);
+  const [syncStatus, setSyncStatus] = useState<
+    "idle" | "success" | "error" | "loading"
+  >("idle");
+
   useEffect(() => {
     async function loadPokemonForms() {
       try {
@@ -66,11 +75,48 @@ export function PokedexDashboard() {
   }, []);
 
   useEffect(() => {
-    const savedCollection = loadCollectionFromStorage();
+    async function loadCollection() {
+      try {
+        setSyncStatus("loading");
 
-    if (savedCollection) {
-      setCollection(savedCollection);
+        const supabaseCollection = await getCollectionItemsFromSupabase();
+
+        if (Object.keys(supabaseCollection).length > 0) {
+          setCollection((currentCollection) => ({
+            ...currentCollection,
+            ...supabaseCollection,
+          }));
+
+          saveCollectionToStorage({
+            ...getInitialCollectionState(),
+            ...supabaseCollection,
+          });
+
+          setSyncStatus("success");
+          return;
+        }
+
+        const savedCollection = loadCollectionFromStorage();
+
+        if (savedCollection) {
+          setCollection(savedCollection);
+        }
+
+        setSyncStatus("idle");
+      } catch (error) {
+        console.error("Erro ao carregar coleção do Supabase:", error);
+
+        const savedCollection = loadCollectionFromStorage();
+
+        if (savedCollection) {
+          setCollection(savedCollection);
+        }
+
+        setSyncStatus("error");
+      }
     }
+
+    loadCollection();
   }, []);
 
   useEffect(() => {
@@ -126,6 +172,24 @@ export function PokedexDashboard() {
 
     setCollection(emptyCollection);
     saveCollectionToStorage(emptyCollection);
+  }
+
+  async function syncCollectionWithSupabase() {
+    try {
+      setIsSyncing(true);
+      setSyncStatus("loading");
+
+      await saveCollectionItemsToSupabase(collection);
+
+      setSyncStatus("success");
+      alert("Coleção sincronizada com o Supabase!");
+    } catch (error) {
+      console.error("Erro ao sincronizar coleção:", error);
+      setSyncStatus("error");
+      alert("Erro ao sincronizar com Supabase. Veja o console.");
+    } finally {
+      setIsSyncing(false);
+    }
   }
 
   const basePokemonForms = useMemo(() => {
@@ -316,6 +380,8 @@ export function PokedexDashboard() {
               totalCount={mergedPokemonForms.length}
               acquiredCards={acquiredCards}
               missingCards={missingCards}
+              isSyncing={isSyncing}
+              syncStatus={syncStatus}
               onSearchChange={setSearch}
               onStatusFilterChange={setStatusFilter}
               onFormTypeFilterChange={setFormTypeFilter}
@@ -323,6 +389,7 @@ export function PokedexDashboard() {
               onExportCollection={exportCollection}
               onImportCollection={importCollection}
               onResetCollection={resetCollection}
+              onSyncCollection={syncCollectionWithSupabase}
             />
 
             {viewMode === "table" && (

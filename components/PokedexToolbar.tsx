@@ -10,6 +10,8 @@ type PokedexToolbarProps = {
   totalCount: number;
   acquiredCards: number;
   missingCards: number;
+  isSyncing: boolean;
+  syncStatus: "idle" | "success" | "error" | "loading";
   onSearchChange: (value: string) => void;
   onStatusFilterChange: (value: string) => void;
   onFormTypeFilterChange: (value: string) => void;
@@ -17,6 +19,7 @@ type PokedexToolbarProps = {
   onExportCollection: () => void;
   onImportCollection: (event: ChangeEvent<HTMLInputElement>) => void;
   onResetCollection: () => void;
+  onSyncCollection: () => void;
 };
 
 export function PokedexToolbar({
@@ -29,6 +32,8 @@ export function PokedexToolbar({
   totalCount,
   acquiredCards,
   missingCards,
+  isSyncing,
+  syncStatus,
   onSearchChange,
   onStatusFilterChange,
   onFormTypeFilterChange,
@@ -36,6 +41,7 @@ export function PokedexToolbar({
   onExportCollection,
   onImportCollection,
   onResetCollection,
+  onSyncCollection,
 }: PokedexToolbarProps) {
   return (
     <div className="flex flex-col gap-4 border-b border-zinc-800 p-5">
@@ -49,6 +55,15 @@ export function PokedexToolbar({
         </div>
 
         <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={onSyncCollection}
+            disabled={isSyncing}
+            className="rounded-lg border border-yellow-400/40 px-3 py-2 text-sm font-semibold text-yellow-300 hover:bg-yellow-400/10 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {isSyncing ? "Sincronizando..." : "Sincronizar Supabase"}
+          </button>
+
           <button
             type="button"
             onClick={onExportCollection}
@@ -76,6 +91,14 @@ export function PokedexToolbar({
           </button>
         </div>
       </div>
+
+      <p className="text-xs text-zinc-500">
+  Status Supabase:{" "}
+  {syncStatus === "loading" && "carregando/sincronizando..."}
+  {syncStatus === "success" && "conectado"}
+  {syncStatus === "error" && "erro de conexão"}
+  {syncStatus === "idle" && "aguardando"}
+</p>
 
       <div className="flex flex-wrap gap-2 text-sm">
         <span className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1 text-zinc-300">
@@ -129,11 +152,10 @@ export function PokedexToolbar({
           <button
             type="button"
             onClick={() => onViewModeChange("table")}
-            className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${
-              viewMode === "table"
+            className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${viewMode === "table"
                 ? "bg-yellow-400 text-zinc-950"
                 : "text-zinc-400 hover:text-white"
-            }`}
+              }`}
           >
             Tabela
           </button>
@@ -141,11 +163,10 @@ export function PokedexToolbar({
           <button
             type="button"
             onClick={() => onViewModeChange("cards")}
-            className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${
-              viewMode === "cards"
+            className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${viewMode === "cards"
                 ? "bg-yellow-400 text-zinc-950"
                 : "text-zinc-400 hover:text-white"
-            }`}
+              }`}
           >
             Cards
           </button>
