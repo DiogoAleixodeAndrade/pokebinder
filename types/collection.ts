@@ -3,6 +3,10 @@ export type CollectionData = {
   cardImageUrl: string;
   ligaPokemonUrl: string;
   lowestPrice: number;
+  purchasePrice: number;
+  marketPrice: number;
+  marketCondition: string;
+  marketUpdatedAt: string;
   owned: boolean;
   notes: string;
 };
@@ -18,6 +22,10 @@ export type SelectedPokemon = {
   cardImageUrl: string;
   ligaPokemonUrl: string;
   lowestPrice: number;
+  purchasePrice: number;
+  marketPrice: number;
+  marketCondition: string;
+  marketUpdatedAt: string;
   owned: boolean;
   notes: string;
 };

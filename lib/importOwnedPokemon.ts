@@ -18,7 +18,13 @@ function normalizeImportedName(value: string) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\s+/g, " ");
+    .replace(/[♀]/g, " femea")
+    .replace(/[♂]/g, " macho")
+    .replace(/[’']/g, "")
+    .replace(/[:.]/g, "")
+    .replace(/[-_]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 async function extractNamesFromExcel(file: File) {
@@ -74,6 +80,14 @@ async function extractPokemonNames(file: File) {
   throw new Error("Formato inválido. Use .xlsx, .xls, .csv ou .txt.");
 }
 
+function addNameAlias(
+  map: Map<string, PokemonCollectionItem>,
+  alias: string,
+  pokemon: PokemonCollectionItem
+) {
+  map.set(normalizeImportedName(alias), pokemon);
+}
+
 export async function importOwnedPokemonFile(
   file: File,
   pokemonList: PokemonCollectionItem[],
@@ -86,6 +100,57 @@ export async function importOwnedPokemonFile(
   pokemonList.forEach((pokemon) => {
     pokemonByName.set(normalizeImportedName(pokemon.name), pokemon);
     pokemonByName.set(normalizeImportedName(pokemon.searchName), pokemon);
+
+    const normalizedPokemonName = normalizeImportedName(pokemon.name);
+
+    if (normalizedPokemonName === "nidoran femea") {
+      addNameAlias(pokemonByName, "Nidoran F", pokemon);
+      addNameAlias(pokemonByName, "Nidoran Female", pokemon);
+      addNameAlias(pokemonByName, "Nidoran Fêmea", pokemon);
+      addNameAlias(pokemonByName, "Nidoran♀", pokemon);
+    }
+
+    if (normalizedPokemonName === "nidoran macho") {
+      addNameAlias(pokemonByName, "Nidoran M", pokemon);
+      addNameAlias(pokemonByName, "Nidoran Male", pokemon);
+      addNameAlias(pokemonByName, "Nidoran Macho", pokemon);
+      addNameAlias(pokemonByName, "Nidoran♂", pokemon);
+    }
+
+    if (normalizedPokemonName === "mr mime") {
+      addNameAlias(pokemonByName, "Mr. Mime", pokemon);
+      addNameAlias(pokemonByName, "Mr Mime", pokemon);
+    }
+
+    if (normalizedPokemonName === "mime jr") {
+      addNameAlias(pokemonByName, "Mime Jr.", pokemon);
+      addNameAlias(pokemonByName, "Mime Jr", pokemon);
+    }
+
+    if (normalizedPokemonName === "ho oh") {
+      addNameAlias(pokemonByName, "Ho-Oh", pokemon);
+      addNameAlias(pokemonByName, "Ho Oh", pokemon);
+    }
+
+    if (normalizedPokemonName === "porygon z") {
+      addNameAlias(pokemonByName, "Porygon-Z", pokemon);
+      addNameAlias(pokemonByName, "Porygon Z", pokemon);
+    }
+
+    if (normalizedPokemonName === "type null") {
+      addNameAlias(pokemonByName, "Type: Null", pokemon);
+      addNameAlias(pokemonByName, "Type Null", pokemon);
+    }
+
+    if (normalizedPokemonName === "farfetchd") {
+      addNameAlias(pokemonByName, "Farfetch’d", pokemon);
+      addNameAlias(pokemonByName, "Farfetchd", pokemon);
+    }
+
+    if (normalizedPokemonName === "sirfetchd") {
+      addNameAlias(pokemonByName, "Sirfetch’d", pokemon);
+      addNameAlias(pokemonByName, "Sirfetchd", pokemon);
+    }
   });
 
   const updatedCollection: CollectionState = {
@@ -120,6 +185,10 @@ export async function importOwnedPokemonFile(
       cardImageUrl: "",
       ligaPokemonUrl: "",
       lowestPrice: 0,
+      purchasePrice: 0,
+      marketPrice: 0,
+      marketCondition: "NM",
+      marketUpdatedAt: "",
       owned: false,
       notes: "",
     };

@@ -1,9 +1,13 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useState, type ReactNode } from "react";
 import type {
   CollectionData,
   CollectionState,
   SelectedPokemon,
 } from "@/types/collection";
+import { formatCurrency } from "@/lib/format";
+import { fetchLigaPokemonNmPrice } from "@/lib/ligapokemon";
 
 type EditCardModalProps = {
   selectedPokemon: SelectedPokemon;
@@ -24,6 +28,8 @@ export function EditCardModal({
   onClear,
   onUpdate,
 }: EditCardModalProps) {
+  const [isUpdatingMarketPrice, setIsUpdatingMarketPrice] = useState(false);
+
   const savedPokemon = collection[selectedPokemon.id];
 
   const currentPokemon = {
@@ -32,9 +38,51 @@ export function EditCardModal({
     ligaPokemonUrl:
       savedPokemon?.ligaPokemonUrl || selectedPokemon.ligaPokemonUrl || "",
     lowestPrice: savedPokemon?.lowestPrice || selectedPokemon.lowestPrice || 0,
+    purchasePrice:
+      savedPokemon?.purchasePrice || selectedPokemon.purchasePrice || 0,
+    marketPrice: savedPokemon?.marketPrice || selectedPokemon.marketPrice || 0,
+    marketCondition:
+      savedPokemon?.marketCondition || selectedPokemon.marketCondition || "NM",
+    marketUpdatedAt:
+      savedPokemon?.marketUpdatedAt || selectedPokemon.marketUpdatedAt || "",
     owned: savedPokemon?.owned || selectedPokemon.owned || false,
     notes: savedPokemon?.notes || selectedPokemon.notes || "",
   };
+
+  const priceDifference =
+    Number(currentPokemon.marketPrice || 0) -
+    Number(currentPokemon.purchasePrice || 0);
+
+  const hasPriceDifference =
+    Number(currentPokemon.marketPrice || 0) > 0 &&
+    Number(currentPokemon.purchasePrice || 0) > 0;
+
+  async function handleUpdateMarketPrice() {
+    if (!currentPokemon.ligaPokemonUrl.trim()) {
+      alert("Cole primeiro o link da carta na Liga Pokémon.");
+      return;
+    }
+
+    try {
+      setIsUpdatingMarketPrice(true);
+
+      const result = await fetchLigaPokemonNmPrice(currentPokemon.ligaPokemonUrl);
+
+      onUpdate(selectedPokemon.id, "marketPrice", result.marketPrice);
+      onUpdate(selectedPokemon.id, "marketCondition", result.marketCondition);
+      onUpdate(selectedPokemon.id, "marketUpdatedAt", result.marketUpdatedAt);
+
+      alert("Valor NM atualizado com sucesso!");
+    } catch (error) {
+      alert(
+        error instanceof Error
+          ? error.message
+          : "Erro ao atualizar valor NM da Liga Pokémon."
+      );
+    } finally {
+      setIsUpdatingMarketPrice(false);
+    }
+  }
 
   return (
     <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/60 px-4 py-6">
@@ -98,16 +146,16 @@ export function EditCardModal({
                 />
               </Field>
 
-              <Field label="Menor preço">
+              <Field label="Preço que paguei">
                 <input
                   type="number"
                   min="0"
                   step="0.01"
-                  value={currentPokemon.lowestPrice || ""}
+                  value={currentPokemon.purchasePrice || ""}
                   onChange={(event) =>
                     onUpdate(
                       selectedPokemon.id,
-                      "lowestPrice",
+                      "purchasePrice",
                       Number(event.target.value)
                     )
                   }
@@ -132,6 +180,77 @@ export function EditCardModal({
                 className="premium-input w-full rounded-2xl px-4 py-3 text-sm"
               />
             </Field>
+
+            <section className="rounded-[1.5rem] border border-zinc-800 bg-zinc-900 p-4">
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="text-sm font-bold text-zinc-200">
+                    Valor atual da carta
+                  </p>
+                  <p className="mt-1 text-xs text-zinc-500">
+                    Busca o menor valor encontrado para condição NM na Liga Pokémon.
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={handleUpdateMarketPrice}
+                  disabled={isUpdatingMarketPrice}
+                  className="premium-button rounded-2xl px-4 py-3 text-sm disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {isUpdatingMarketPrice ? "Atualizando..." : "Atualizar valor NM"}
+                </button>
+              </div>
+
+              <div className="mt-4 grid gap-3 md:grid-cols-3">
+                <PriceBox
+                  label="Você pagou"
+                  value={
+                    currentPokemon.purchasePrice > 0
+                      ? formatCurrency(currentPokemon.purchasePrice)
+                      : "-"
+                  }
+                  tone="neutral"
+                />
+
+                <PriceBox
+                  label={`Atual ${currentPokemon.marketCondition || "NM"}`}
+                  value={
+                    currentPokemon.marketPrice > 0
+                      ? formatCurrency(currentPokemon.marketPrice)
+                      : "-"
+                  }
+                  tone="market"
+                />
+
+                <PriceBox
+                  label="Diferença"
+                  value={
+                    hasPriceDifference
+                      ? `${priceDifference >= 0 ? "+" : "-"}${formatCurrency(
+                          Math.abs(priceDifference)
+                        )}`
+                      : "-"
+                  }
+                  tone={
+                    !hasPriceDifference
+                      ? "neutral"
+                      : priceDifference >= 0
+                        ? "profit"
+                        : "loss"
+                  }
+                />
+              </div>
+
+              {currentPokemon.marketUpdatedAt && (
+                <p className="mt-3 text-xs text-zinc-500">
+                  Atualizado em:{" "}
+                  {new Date(currentPokemon.marketUpdatedAt).toLocaleString(
+                    "pt-BR"
+                  )}
+                </p>
+              )}
+            </section>
 
             <Field label="URL da imagem">
               <input
@@ -258,5 +377,27 @@ function Field({ label, children }: FieldProps) {
       <span className="text-sm font-semibold text-zinc-300">{label}</span>
       {children}
     </label>
+  );
+}
+
+type PriceBoxProps = {
+  label: string;
+  value: string;
+  tone: "neutral" | "market" | "profit" | "loss";
+};
+
+function PriceBox({ label, value, tone }: PriceBoxProps) {
+  const tones = {
+    neutral: "border-zinc-700 bg-zinc-950 text-zinc-300",
+    market: "border-yellow-400/30 bg-yellow-400/10 text-yellow-300",
+    profit: "border-emerald-400/30 bg-emerald-400/10 text-emerald-300",
+    loss: "border-red-400/30 bg-red-400/10 text-red-300",
+  };
+
+  return (
+    <div className={`rounded-2xl border p-4 ${tones[tone]}`}>
+      <p className="text-xs opacity-80">{label}</p>
+      <strong className="mt-1 block text-lg font-black">{value}</strong>
+    </div>
   );
 }

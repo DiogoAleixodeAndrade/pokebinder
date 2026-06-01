@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 import { pokemonForms } from "@/data/pokemonForms";
 import { AuthScreen } from "@/components/AuthScreen";
 import { EditCardModal } from "@/components/EditCardModal";
@@ -14,10 +14,10 @@ import { formatCurrency, normalizeText } from "@/lib/format";
 import {
   downloadCollectionBackup,
   getInitialCollectionState,
-  importCollectionBackup,
   loadCollectionFromStorage,
   saveCollectionToStorage,
 } from "@/lib/collection";
+import { importOwnedPokemonFile } from "@/lib/importOwnedPokemon";
 import {
   deleteAllCollectionItemsFromSupabase,
   deleteCollectionItemFromSupabase,
@@ -189,6 +189,10 @@ export function PokedexDashboard() {
         cardImageUrl: "",
         ligaPokemonUrl: "",
         lowestPrice: 0,
+        purchasePrice: 0,
+        marketPrice: 0,
+        marketCondition: "NM",
+        marketUpdatedAt: "",
         owned: false,
         notes: "",
       },
@@ -218,8 +222,45 @@ export function PokedexDashboard() {
     downloadCollectionBackup(collection);
   }
 
-  function importCollection(event: Parameters<typeof importCollectionBackup>[0]) {
-    importCollectionBackup(event, setCollection);
+  async function importCollection(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+
+    if (!file) return;
+
+    try {
+      const result = await importOwnedPokemonFile(
+        file,
+        mergedPokemonForms,
+        collection
+      );
+
+      setCollection(result.updatedCollection);
+      saveCollectionToStorage(result.updatedCollection);
+
+      const notFoundPreview = result.notFoundNames.slice(0, 10).join(", ");
+
+      alert(
+        [
+          "Importação concluída!",
+          `Pokémon marcados como adquiridos: ${result.matchedCount}`,
+          `Duplicados ignorados: ${result.duplicatedNames.length}`,
+          `Não encontrados: ${result.notFoundNames.length}`,
+          result.notFoundNames.length > 0
+            ? `Primeiros não encontrados: ${notFoundPreview}`
+            : "",
+        ]
+          .filter(Boolean)
+          .join("\n")
+      );
+    } catch (error) {
+      alert(
+        error instanceof Error
+          ? error.message
+          : "Erro ao importar a planilha."
+      );
+    } finally {
+      event.target.value = "";
+    }
   }
 
   async function resetCollection() {
@@ -290,12 +331,31 @@ export function PokedexDashboard() {
         cardImageUrl: "",
         ligaPokemonUrl: "",
         lowestPrice: 0,
+        purchasePrice: 0,
+        marketPrice: 0,
+        marketCondition: "NM",
+        marketUpdatedAt: "",
         owned: false,
         notes: "",
       }));
     }
 
-    return pokemonForms;
+    return pokemonForms.map((pokemon) => ({
+      id: pokemon.id,
+      name: pokemon.name,
+      formType: pokemon.formType,
+      searchName: pokemon.searchName,
+      selectedCard: pokemon.selectedCard || "",
+      cardImageUrl: pokemon.cardImageUrl || "",
+      ligaPokemonUrl: pokemon.ligaPokemonUrl || "",
+      lowestPrice: pokemon.lowestPrice || 0,
+      purchasePrice: 0,
+      marketPrice: 0,
+      marketCondition: "NM",
+      marketUpdatedAt: "",
+      owned: pokemon.owned || false,
+      notes: pokemon.notes || "",
+    }));
   }, [databasePokemonForms]);
 
   const mergedPokemonForms = useMemo(() => {
@@ -315,18 +375,19 @@ export function PokedexDashboard() {
     (pokemon) => pokemon.selectedCard.trim() !== ""
   ).length;
 
-  const totalCollectionValue = mergedPokemonForms.reduce(
-    (total, pokemon) => total + Number(pokemon.lowestPrice || 0),
-    0
-  );
-
-  const acquiredCollectionValue = mergedPokemonForms.reduce((total, pokemon) => {
+  const totalSpentValue = mergedPokemonForms.reduce((total, pokemon) => {
     if (!pokemon.owned) return total;
 
-    return total + Number(pokemon.lowestPrice || 0);
+    return total + Number(pokemon.purchasePrice || 0);
   }, 0);
 
-  const missingCollectionValue = totalCollectionValue - acquiredCollectionValue;
+  const currentMarketValue = mergedPokemonForms.reduce((total, pokemon) => {
+    if (!pokemon.owned) return total;
+
+    return total + Number(pokemon.marketPrice || pokemon.lowestPrice || 0);
+  }, 0);
+
+  const collectionProfitValue = currentMarketValue - totalSpentValue;
 
   const completionPercentage =
     mergedPokemonForms.length > 0
@@ -400,15 +461,14 @@ export function PokedexDashboard() {
                   </span>
 
                   <span
-                    className={`w-fit rounded-full border px-4 py-1.5 text-sm ${
-                      syncStatus === "success"
-                        ? "border-emerald-400/25 bg-emerald-400/10 text-emerald-300"
-                        : syncStatus === "error"
-                          ? "border-red-400/25 bg-red-400/10 text-red-300"
-                          : syncStatus === "loading"
-                            ? "border-yellow-400/25 bg-yellow-400/10 text-yellow-300"
-                            : "border-zinc-700 bg-zinc-900 text-zinc-400"
-                    }`}
+                    className={`w-fit rounded-full border px-4 py-1.5 text-sm ${syncStatus === "success"
+                      ? "border-emerald-400/25 bg-emerald-400/10 text-emerald-300"
+                      : syncStatus === "error"
+                        ? "border-red-400/25 bg-red-400/10 text-red-300"
+                        : syncStatus === "loading"
+                          ? "border-yellow-400/25 bg-yellow-400/10 text-yellow-300"
+                          : "border-zinc-700 bg-zinc-900 text-zinc-400"
+                      }`}
                   >
                     {syncStatus === "loading" && "Sincronizando..."}
                     {syncStatus === "success" && "Salvo no Supabase"}
@@ -517,24 +577,28 @@ export function PokedexDashboard() {
 
         <section className="grid gap-4 md:grid-cols-3">
           <ValueCard
-            title="Valor estimado total"
-            description="Soma dos menores preços cadastrados"
-            value={formatCurrency(totalCollectionValue)}
+            title="Total gasto"
+            description="Soma do que você pagou nas cartas adquiridas"
+            value={formatCurrency(totalSpentValue)}
+            valueClassName="text-sky-300"
+          />
+
+          <ValueCard
+            title="Valor atual NM"
+            description="Soma do menor valor NM atual das cartas adquiridas"
+            value={formatCurrency(currentMarketValue)}
             valueClassName="text-yellow-300"
           />
 
           <ValueCard
-            title="Valor adquirido"
-            description="Valor aproximado do que você já possui"
-            value={formatCurrency(acquiredCollectionValue)}
-            valueClassName="text-emerald-400"
-          />
-
-          <ValueCard
-            title="Valor faltante"
-            description="Estimativa do que ainda falta comprar"
-            value={formatCurrency(missingCollectionValue)}
-            valueClassName="text-red-400"
+            title={collectionProfitValue >= 0 ? "Lucro estimado" : "Prejuízo estimado"}
+            description="Diferença entre valor atual NM e total gasto"
+            value={`${collectionProfitValue >= 0 ? "+" : "-"}${formatCurrency(
+              Math.abs(collectionProfitValue)
+            )}`}
+            valueClassName={
+              collectionProfitValue >= 0 ? "text-emerald-400" : "text-red-400"
+            }
           />
         </section>
 

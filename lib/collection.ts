@@ -11,6 +11,10 @@ export function getInitialCollectionState(): CollectionState {
       cardImageUrl: pokemon.cardImageUrl,
       ligaPokemonUrl: pokemon.ligaPokemonUrl,
       lowestPrice: pokemon.lowestPrice,
+      purchasePrice: 0,
+      marketPrice: 0,
+      marketCondition: "NM",
+      marketUpdatedAt: "",
       owned: pokemon.owned,
       notes: "",
     };
