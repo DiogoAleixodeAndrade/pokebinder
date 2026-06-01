@@ -29,7 +29,9 @@ export function PokedexTable({
             <th className="px-6 py-5">Valor NM</th>
             <th className="px-6 py-5">Diferença</th>
             <th className="px-6 py-5">Status</th>
-            <th className="px-6 py-5">Ações</th>
+            <th className="sticky right-0 z-20 bg-zinc-950/95 px-6 py-5 text-right">
+              Ações
+            </th>
           </tr>
         </thead>
 
@@ -134,10 +136,10 @@ export function PokedexTable({
                 <td className="px-6 py-5">
                   <p
                     className={`text-sm font-black ${!hasDifference
-                        ? "text-zinc-500"
-                        : difference >= 0
-                          ? "text-emerald-300"
-                          : "text-red-300"
+                      ? "text-zinc-500"
+                      : difference >= 0
+                        ? "text-emerald-300"
+                        : "text-red-300"
                       }`}
                   >
                     {hasDifference
@@ -158,8 +160,8 @@ export function PokedexTable({
                   )}
                 </td>
 
-                <td className="px-6 py-5">
-                  <div className="flex gap-2">
+                <td className="sticky right-0 z-10 bg-zinc-950/95 px-6 py-5">
+                  <div className="flex justify-end gap-2">
                     <button
                       type="button"
                       onClick={() => onEdit(pokemon)}
