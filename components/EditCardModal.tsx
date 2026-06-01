@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import type {
   CollectionData,
   CollectionState,
   SelectedPokemon,
 } from "@/types/collection";
 import { formatCurrency } from "@/lib/format";
-import { fetchLigaPokemonNmPrice } from "@/lib/ligapokemon";
 
 type EditCardModalProps = {
   selectedPokemon: SelectedPokemon;
@@ -28,8 +27,6 @@ export function EditCardModal({
   onClear,
   onUpdate,
 }: EditCardModalProps) {
-  const [isUpdatingMarketPrice, setIsUpdatingMarketPrice] = useState(false);
-
   const savedPokemon = collection[selectedPokemon.id];
 
   const currentPokemon = {
@@ -56,33 +53,6 @@ export function EditCardModal({
   const hasPriceDifference =
     Number(currentPokemon.marketPrice || 0) > 0 &&
     Number(currentPokemon.purchasePrice || 0) > 0;
-
-  async function handleUpdateMarketPrice() {
-    if (!currentPokemon.ligaPokemonUrl.trim()) {
-      alert("Cole primeiro o link da carta na Liga Pokémon.");
-      return;
-    }
-
-    try {
-      setIsUpdatingMarketPrice(true);
-
-      const result = await fetchLigaPokemonNmPrice(currentPokemon.ligaPokemonUrl);
-
-      onUpdate(selectedPokemon.id, "marketPrice", result.marketPrice);
-      onUpdate(selectedPokemon.id, "marketCondition", result.marketCondition);
-      onUpdate(selectedPokemon.id, "marketUpdatedAt", result.marketUpdatedAt);
-
-      alert("Valor NM atualizado com sucesso!");
-    } catch (error) {
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Erro ao atualizar valor NM da Liga Pokémon."
-      );
-    } finally {
-      setIsUpdatingMarketPrice(false);
-    }
-  }
 
   return (
     <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/60 px-4 py-6">
@@ -188,18 +158,42 @@ export function EditCardModal({
                     Valor atual da carta
                   </p>
                   <p className="mt-1 text-xs text-zinc-500">
-                    Busca o menor valor encontrado para condição NM na Liga Pokémon.
+                    Informe manualmente o menor valor NM encontrado na Liga
+                    Pokémon.
                   </p>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={handleUpdateMarketPrice}
-                  disabled={isUpdatingMarketPrice}
-                  className="premium-button rounded-2xl px-4 py-3 text-sm disabled:cursor-not-allowed disabled:opacity-60"
-                >
-                  {isUpdatingMarketPrice ? "Atualizando..." : "Atualizar valor NM"}
-                </button>
+                <span className="w-fit rounded-full border border-yellow-400/25 bg-yellow-400/10 px-3 py-1 text-xs font-bold text-yellow-300">
+                  NM manual
+                </span>
+              </div>
+
+              <div className="mt-4">
+                <Field label="Valor atual NM">
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value={currentPokemon.marketPrice || ""}
+                    onChange={(event) => {
+                      onUpdate(
+                        selectedPokemon.id,
+                        "marketPrice",
+                        Number(event.target.value)
+                      );
+
+                      onUpdate(selectedPokemon.id, "marketCondition", "NM");
+
+                      onUpdate(
+                        selectedPokemon.id,
+                        "marketUpdatedAt",
+                        new Date().toISOString()
+                      );
+                    }}
+                    placeholder="0.00"
+                    className="premium-input w-full rounded-2xl px-4 py-3 text-sm"
+                  />
+                </Field>
               </div>
 
               <div className="mt-4 grid gap-3 md:grid-cols-3">
