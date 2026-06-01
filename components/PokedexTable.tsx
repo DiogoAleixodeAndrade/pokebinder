@@ -77,20 +77,28 @@ export function PokedexTable({
                       </button>
                     )}
 
-                    <div>
+                    <div className="flex flex-col gap-2">
                       <button
                         type="button"
                         onClick={() => onEdit(pokemon)}
-                        className="text-left font-bold text-zinc-100 transition hover:text-yellow-200"
+                        className="w-fit text-left font-bold text-zinc-100 transition hover:text-yellow-200"
                       >
                         {pokemon.name}
                       </button>
 
                       {pokemon.notes && (
-                        <p className="mt-1 max-w-xs truncate text-xs text-zinc-500">
+                        <p className="max-w-xs truncate text-xs text-zinc-500">
                           {pokemon.notes}
                         </p>
                       )}
+
+                      <button
+                        type="button"
+                        onClick={() => onEdit(pokemon)}
+                        className="w-fit rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-3 py-1.5 text-xs font-bold text-yellow-300 transition hover:bg-yellow-400/15"
+                      >
+                        Editar carta
+                      </button>
                     </div>
                   </div>
                 </td>

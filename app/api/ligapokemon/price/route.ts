@@ -1,12 +1,5 @@
 import { NextResponse } from "next/server";
 
-type LigaPriceResponse = {
-  marketPrice: number;
-  condition: string;
-  updatedAt: string;
-  sourceUrl: string;
-};
-
 function parseBrazilianCurrency(value: string) {
   const normalized = value
     .replace("R$", "")
@@ -54,51 +47,47 @@ export async function POST(request: Request) {
     }
 
     const response = await fetch(url, {
+      method: "GET",
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         Accept:
-          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+          "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+        Referer: "https://www.ligapokemon.com.br/",
       },
       cache: "no-store",
     });
 
     if (!response.ok) {
       return NextResponse.json(
-        { error: "Não consegui acessar a página da Liga Pokémon." },
+        {
+          error: `Não consegui acessar a página da Liga Pokémon. Status: ${response.status}`,
+        },
         { status: 502 }
       );
     }
 
     const html = await response.text();
 
-    /**
-     * Primeira versão:
-     * pega o menor preço encontrado na página.
-     *
-     * Depois a gente pode refinar para filtrar exatamente anúncios NM
-     * quando confirmarmos como a Liga renderiza a condição no HTML.
-     */
     const marketPrice = extractLowestNmPrice(html);
 
     if (marketPrice <= 0) {
       return NextResponse.json(
         {
           error:
-            "Não encontrei preço na página. A Liga pode estar carregando os valores via JavaScript.",
+            "Acessei a página, mas não encontrei preço no HTML. A Liga pode estar carregando os valores via JavaScript.",
         },
         { status: 404 }
       );
     }
 
-    const result: LigaPriceResponse = {
+    return NextResponse.json({
       marketPrice,
       condition: "NM",
       updatedAt: new Date().toISOString(),
       sourceUrl: url,
-    };
-
-    return NextResponse.json(result);
+    });
   } catch (error) {
     console.error("Erro ao buscar preço na Liga Pokémon:", error);
 
