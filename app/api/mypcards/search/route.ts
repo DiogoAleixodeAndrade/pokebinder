@@ -34,7 +34,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const searchUrl = `https://mypcards.com/pokemon/cards-avulsos?busca=${encodeURIComponent(
+    const searchUrl = `https://mypcards.com/pokemon?busca=${encodeURIComponent(
       query
     )}`;
 
