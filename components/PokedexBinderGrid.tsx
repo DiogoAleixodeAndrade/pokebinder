@@ -5,6 +5,7 @@ import type { PokemonCollectionItem } from "@/types/collection";
 import { getPokemonArtworkCandidates } from "@/lib/pokemonArtwork";
 import {
   getCardSearchQuery,
+  getLigaPokemonSearchUrl,
   getMyPcardsSearchUrl,
   getTcgPlayerSearchUrl,
 } from "@/lib/cardSources";
@@ -77,6 +78,7 @@ export function PokedexBinderGrid({
               pokemon.name
             );
 
+            const ligaPokemonUrl = getLigaPokemonSearchUrl(query);
             const myPcardsUrl = getMyPcardsSearchUrl(query);
             const tcgPlayerUrl = getTcgPlayerSearchUrl(query);
 
@@ -169,22 +171,31 @@ export function PokedexBinderGrid({
                   )}
 
                   <a
-                    href={myPcardsUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-2 py-2 text-center text-[11px] font-bold text-cyan-300 transition hover:bg-cyan-400/15"
-                  >
-                    MyP
-                  </a>
+  href={ligaPokemonUrl}
+  target="_blank"
+  rel="noreferrer"
+  className="rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-2 py-2 text-center text-[11px] font-bold text-yellow-300 transition hover:bg-yellow-400/15"
+>
+  Liga
+</a>
 
-                  <a
-                    href={tcgPlayerUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-xl border border-purple-400/30 bg-purple-400/10 px-2 py-2 text-center text-[11px] font-bold text-purple-300 transition hover:bg-purple-400/15"
-                  >
-                    TCG
-                  </a>
+<a
+  href={myPcardsUrl}
+  target="_blank"
+  rel="noreferrer"
+  className="rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-2 py-2 text-center text-[11px] font-bold text-cyan-300 transition hover:bg-cyan-400/15"
+>
+  MyP
+</a>
+
+<a
+  href={tcgPlayerUrl}
+  target="_blank"
+  rel="noreferrer"
+  className="rounded-xl border border-purple-400/30 bg-purple-400/10 px-2 py-2 text-center text-[11px] font-bold text-purple-300 transition hover:bg-purple-400/15"
+>
+  TCGP
+</a>
                 </div>
               </article>
             );
