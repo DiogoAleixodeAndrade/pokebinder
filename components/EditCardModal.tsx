@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import type {
   CollectionData,
   CollectionState,
   SelectedPokemon,
 } from "@/types/collection";
 import { formatCurrency } from "@/lib/format";
-import { searchMyPcardsPrice } from "@/lib/mypcards";
 
 type EditCardModalProps = {
   selectedPokemon: SelectedPokemon;
@@ -28,8 +27,6 @@ export function EditCardModal({
   onClear,
   onUpdate,
 }: EditCardModalProps) {
-  const [isSearchingMyPcards, setIsSearchingMyPcards] = useState(false);
-
   const savedPokemon = collection[selectedPokemon.id];
 
   const currentPokemon = {
@@ -57,34 +54,26 @@ export function EditCardModal({
     Number(currentPokemon.marketPrice || 0) > 0 &&
     Number(currentPokemon.purchasePrice || 0) > 0;
 
-  async function handleSearchMyPcards() {
-    const query = currentPokemon.selectedCard.trim() || selectedPokemon.name.trim();
+  function openMyPcardsSearch() {
+    const query =
+      currentPokemon.selectedCard.trim() || selectedPokemon.name.trim();
 
-    if (!query) {
-      alert("Informe o nome da carta antes de buscar no MyPcards.");
-      return;
-    }
+    const url = `https://mypcards.com/pokemon?busca=${encodeURIComponent(
+      query
+    )}`;
 
-    try {
-      setIsSearchingMyPcards(true);
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
 
-      const result = await searchMyPcardsPrice(query);
+  function openTcgPlayerSearch() {
+    const query =
+      currentPokemon.selectedCard.trim() || selectedPokemon.name.trim();
 
-      onUpdate(selectedPokemon.id, "marketPrice", result.lowestPrice);
-      onUpdate(selectedPokemon.id, "marketCondition", "NM");
-      onUpdate(selectedPokemon.id, "marketUpdatedAt", result.updatedAt);
-      onUpdate(selectedPokemon.id, "ligaPokemonUrl", result.searchUrl);
+    const url = `https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&q=${encodeURIComponent(
+      query
+    )}`;
 
-      alert(`Preço encontrado no MyPcards: ${formatCurrency(result.lowestPrice)}`);
-    } catch (error) {
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Erro ao buscar preço no MyPcards."
-      );
-    } finally {
-      setIsSearchingMyPcards(false);
-    }
+    window.open(url, "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -179,7 +168,7 @@ export function EditCardModal({
                     event.target.value
                   )
                 }
-                placeholder="Cole o link da carta na Liga Pokémon, MyPcards ou outra fonte"
+                placeholder="Cole o link da carta na Liga Pokémon, MyPcards, TCGPlayer ou outra fonte"
                 className="premium-input w-full rounded-2xl px-4 py-3 text-sm"
               />
             </Field>
@@ -192,7 +181,7 @@ export function EditCardModal({
                   </p>
                   <p className="mt-1 text-xs text-zinc-500">
                     Informe manualmente o menor valor NM encontrado na sua fonte
-                    de preço ou use a busca do MyPcards como sugestão.
+                    de preço. Use os botões de busca apenas como apoio.
                   </p>
                 </div>
 
@@ -203,11 +192,18 @@ export function EditCardModal({
 
                   <button
                     type="button"
-                    onClick={handleSearchMyPcards}
-                    disabled={isSearchingMyPcards}
-                    className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300 transition hover:bg-cyan-400/15 disabled:cursor-not-allowed disabled:opacity-60"
+                    onClick={openMyPcardsSearch}
+                    className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300 transition hover:bg-cyan-400/15"
                   >
-                    {isSearchingMyPcards ? "Buscando..." : "Buscar no MyPcards"}
+                    Abrir MyPcards
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={openTcgPlayerSearch}
+                    className="rounded-full border border-purple-400/30 bg-purple-400/10 px-3 py-1 text-xs font-bold text-purple-300 transition hover:bg-purple-400/15"
+                  >
+                    Abrir TCGPlayer
                   </button>
                 </div>
               </div>
@@ -369,16 +365,34 @@ export function EditCardModal({
               </div>
             )}
 
-            {currentPokemon.ligaPokemonUrl && (
-              <a
-                href={currentPokemon.ligaPokemonUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="premium-button mt-4 block rounded-2xl px-4 py-3 text-center text-sm"
+            <div className="mt-4 grid gap-2">
+              {currentPokemon.ligaPokemonUrl && (
+                <a
+                  href={currentPokemon.ligaPokemonUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="premium-button block rounded-2xl px-4 py-3 text-center text-sm"
+                >
+                  Abrir fonte salva
+                </a>
+              )}
+
+              <button
+                type="button"
+                onClick={openMyPcardsSearch}
+                className="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-4 py-3 text-sm font-bold text-cyan-300 transition hover:bg-cyan-400/15"
               >
-                Abrir fonte de preço
-              </a>
-            )}
+                Buscar no MyPcards
+              </button>
+
+              <button
+                type="button"
+                onClick={openTcgPlayerSearch}
+                className="rounded-2xl border border-purple-400/30 bg-purple-400/10 px-4 py-3 text-sm font-bold text-purple-300 transition hover:bg-purple-400/15"
+              >
+                Buscar no TCGPlayer
+              </button>
+            </div>
           </aside>
         </div>
 
