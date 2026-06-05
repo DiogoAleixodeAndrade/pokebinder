@@ -1,6 +1,8 @@
-import { useMemo, useState } from "react";
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
 import type { PokemonCollectionItem } from "@/types/collection";
-import { getPokemonArtworkUrl } from "@/lib/pokemonArtwork";
+import { getPokemonArtworkCandidates } from "@/lib/pokemonArtwork";
 import {
   getCardSearchQuery,
   getMyPcardsSearchUrl,
@@ -30,6 +32,10 @@ export function PokedexBinderGrid({
   const emptySlots = Array.from({
     length: Math.max(0, ITEMS_PER_PAGE - currentItems.length),
   });
+
+  useEffect(() => {
+    setPage(1);
+  }, [pokemonList]);
 
   return (
     <div className="p-5">
@@ -66,7 +72,6 @@ export function PokedexBinderGrid({
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {currentItems.map((pokemon) => {
             const showCard = pokemon.owned && pokemon.cardImageUrl;
-            const artworkUrl = getPokemonArtworkUrl(pokemon.dexNumber);
             const query = getCardSearchQuery(
               pokemon.selectedCard,
               pokemon.name
@@ -94,13 +99,12 @@ export function PokedexBinderGrid({
                       />
                     ) : (
                       <>
-                        <img
-                          src={artworkUrl}
-                          alt={pokemon.name}
-                          className="h-full w-full object-contain p-4 opacity-80"
+                        <PokemonArtworkFallback
+                          name={pokemon.name}
+                          dexNumber={pokemon.dexNumber}
                         />
 
-                        <div className="absolute inset-0 bg-black/25" />
+                        <div className="absolute inset-0 bg-black/20" />
 
                         <div className="absolute left-2 top-2 rounded-full border border-red-400/30 bg-red-400/15 px-2 py-1 text-[10px] font-bold text-red-300">
                           Faltando
@@ -205,5 +209,44 @@ export function PokedexBinderGrid({
         </div>
       </div>
     </div>
+  );
+}
+
+type PokemonArtworkFallbackProps = {
+  name: string;
+  dexNumber: number;
+};
+
+function PokemonArtworkFallback({ name, dexNumber }: PokemonArtworkFallbackProps) {
+  const candidates = useMemo(
+    () => getPokemonArtworkCandidates(name, dexNumber),
+    [name, dexNumber]
+  );
+
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const currentImage = candidates[imageIndex];
+
+  useEffect(() => {
+    setImageIndex(0);
+  }, [name, dexNumber]);
+
+  return (
+    <img
+      src={currentImage}
+      alt={name}
+      onError={() => {
+        setImageIndex((currentIndex) => {
+          const nextIndex = currentIndex + 1;
+
+          if (nextIndex >= candidates.length) {
+            return currentIndex;
+          }
+
+          return nextIndex;
+        });
+      }}
+      className="relative z-10 h-full w-full object-contain p-4 opacity-85"
+    />
   );
 }
