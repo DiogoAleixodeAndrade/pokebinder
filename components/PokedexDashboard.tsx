@@ -385,14 +385,18 @@ export function PokedexDashboard() {
   }, [basePokemonForms, collection]);
 
   const acquiredCards = mergedPokemonForms.filter(
-    (pokemon) => pokemon.owned
-  ).length;
+  (pokemon) => pokemon.owned
+).length;
 
-  const missingCards = mergedPokemonForms.length - acquiredCards;
+const missingCards = mergedPokemonForms.length - acquiredCards;
 
-  const selectedCards = mergedPokemonForms.filter(
-    (pokemon) => pokemon.selectedCard.trim() !== ""
-  ).length;
+const selectedCards = mergedPokemonForms.filter(
+  (pokemon) => pokemon.selectedCard.trim() !== ""
+).length;
+
+const cardsWithoutAveragePrice = mergedPokemonForms.filter((pokemon) => {
+  return pokemon.owned && Number(pokemon.averageMarketPrice || 0) <= 0;
+}).length;
 
   const totalSpentValue = mergedPokemonForms.reduce((total, pokemon) => {
     if (!pokemon.owned) return total;
@@ -608,8 +612,8 @@ export function PokedexDashboard() {
           />
 
           <StatsCard
-            title="Faltantes"
-            value={missingCards}
+            title="Sem média de preço"
+            value={cardsWithoutAveragePrice}
             valueClassName="text-red-400"
           />
         </section>
@@ -623,8 +627,8 @@ export function PokedexDashboard() {
           />
 
           <ValueCard
-            title="Valor atual NM"
-            description="Soma do menor valor NM atual das cartas adquiridas"
+            title="Valor médio atual"
+            description="Soma da média entre Liga, MyPcards e TCGPlayer convertido"
             value={formatCurrency(currentMarketValue)}
             valueClassName="text-yellow-300"
           />
@@ -632,10 +636,10 @@ export function PokedexDashboard() {
           <ValueCard
             title={
               collectionProfitValue >= 0
-                ? "Lucro estimado"
-                : "Prejuízo estimado"
+                ? "Lucro pela média"
+                : "Prejuízo pela média"
             }
-            description="Diferença entre valor atual NM e total gasto"
+            description="Diferença entre valor médio atual e total gasto"
             value={`${collectionProfitValue >= 0 ? "+" : "-"}${formatCurrency(
               Math.abs(collectionProfitValue)
             )}`}
