@@ -14,7 +14,10 @@ export function PokedexTable({
 }: PokedexTableProps) {
   function getCurrentMarketPrice(pokemon: PokemonCollectionItem) {
     return Number(
-      pokemon.averageMarketPrice || pokemon.marketPrice || pokemon.lowestPrice || 0
+      pokemon.averageMarketPrice ||
+        pokemon.marketPrice ||
+        pokemon.lowestPrice ||
+        0
     );
   }
 
@@ -24,7 +27,7 @@ export function PokedexTable({
 
   return (
     <div className="overflow-x-auto">
-      <table className="w-full min-w-[1180px] border-collapse text-left">
+      <table className="w-full min-w-[1280px] border-collapse text-left">
         <thead>
           <tr className="border-b border-zinc-800 bg-zinc-950/60 text-xs uppercase tracking-[0.18em] text-zinc-500">
             <th className="px-6 py-5">ID</th>
@@ -43,10 +46,12 @@ export function PokedexTable({
 
         <tbody>
           {pokemonList.map((pokemon) => {
+            const currentMarketPrice = getCurrentMarketPrice(pokemon);
             const difference = getDifference(pokemon);
+
             const hasDifference =
               Number(pokemon.purchasePrice || 0) > 0 &&
-              getCurrentMarketPrice(pokemon) > 0;
+              currentMarketPrice > 0;
 
             return (
               <tr
@@ -118,11 +123,18 @@ export function PokedexTable({
                 <td className="px-6 py-5">
                   <div className="max-w-xs">
                     <p
-                      className={`truncate text-sm ${pokemon.selectedCard ? "text-zinc-200" : "text-zinc-500"
-                        }`}
+                      className={`truncate text-sm ${
+                        pokemon.selectedCard ? "text-zinc-200" : "text-zinc-500"
+                      }`}
                     >
                       {pokemon.selectedCard || "Ainda não selecionado"}
                     </p>
+
+                    {pokemon.averageMarketPrice > 0 && (
+                      <p className="mt-1 text-[10px] text-zinc-500">
+                        Média entre Liga, MyPcards e TCGPlayer
+                      </p>
+                    )}
                   </div>
                 </td>
 
@@ -136,30 +148,32 @@ export function PokedexTable({
 
                 <td className="px-6 py-5">
                   <p className="text-sm font-black text-yellow-300">
-                    {getCurrentMarketPrice(pokemon) > 0
-                      ? formatCurrency(getCurrentMarketPrice(pokemon))
+                    {currentMarketPrice > 0
+                      ? formatCurrency(currentMarketPrice)
                       : "-"}
                   </p>
-                  {pokemon.marketUpdatedAt && (
+
+                  {pokemon.pricesUpdatedAt && (
                     <p className="mt-1 text-[10px] text-zinc-500">
-                      Atualizado
+                      Preços atualizados
                     </p>
                   )}
                 </td>
 
                 <td className="px-6 py-5">
                   <p
-                    className={`text-sm font-black ${!hasDifference
-                      ? "text-zinc-500"
-                      : difference >= 0
-                        ? "text-emerald-300"
-                        : "text-red-300"
-                      }`}
+                    className={`text-sm font-black ${
+                      !hasDifference
+                        ? "text-zinc-500"
+                        : difference >= 0
+                          ? "text-emerald-300"
+                          : "text-red-300"
+                    }`}
                   >
                     {hasDifference
                       ? `${difference >= 0 ? "+" : "-"}${formatCurrency(
-                        Math.abs(difference)
-                      )}`
+                          Math.abs(difference)
+                        )}`
                       : "-"}
                   </p>
                 </td>

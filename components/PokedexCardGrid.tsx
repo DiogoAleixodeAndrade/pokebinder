@@ -14,7 +14,10 @@ export function PokedexCardGrid({
 }: PokedexCardGridProps) {
   function getCurrentMarketPrice(pokemon: PokemonCollectionItem) {
     return Number(
-      pokemon.averageMarketPrice || pokemon.marketPrice || pokemon.lowestPrice || 0
+      pokemon.averageMarketPrice ||
+        pokemon.marketPrice ||
+        pokemon.lowestPrice ||
+        0
     );
   }
 
@@ -25,10 +28,12 @@ export function PokedexCardGrid({
   return (
     <div className="grid gap-5 p-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {pokemonList.map((pokemon) => {
+        const currentMarketPrice = getCurrentMarketPrice(pokemon);
         const difference = getDifference(pokemon);
+
         const hasDifference =
           Number(pokemon.purchasePrice || 0) > 0 &&
-          getCurrentMarketPrice(pokemon) > 0;
+          currentMarketPrice > 0;
 
         return (
           <article
@@ -108,8 +113,9 @@ export function PokedexCardGrid({
                 </p>
 
                 <p
-                  className={`mt-2 min-h-5 text-sm ${pokemon.selectedCard ? "text-zinc-200" : "text-zinc-500"
-                    }`}
+                  className={`mt-2 min-h-5 text-sm ${
+                    pokemon.selectedCard ? "text-zinc-200" : "text-zinc-500"
+                  }`}
                 >
                   {pokemon.selectedCard || "Ainda não selecionado"}
                 </p>
@@ -129,8 +135,8 @@ export function PokedexCardGrid({
                 <PriceMiniCard
                   label="Média NM"
                   value={
-                    getCurrentMarketPrice(pokemon) > 0
-                      ? formatCurrency(getCurrentMarketPrice(pokemon))
+                    currentMarketPrice > 0
+                      ? formatCurrency(currentMarketPrice)
                       : "-"
                   }
                   tone="market"
@@ -138,39 +144,53 @@ export function PokedexCardGrid({
               </div>
 
               <div
-                className={`rounded-2xl border p-4 ${!hasDifference
-                  ? "border-zinc-800 bg-zinc-950/60"
-                  : difference >= 0
-                    ? "border-emerald-400/20 bg-emerald-400/10"
-                    : "border-red-400/20 bg-red-400/10"
-                  }`}
+                className={`rounded-2xl border p-4 ${
+                  !hasDifference
+                    ? "border-zinc-800 bg-zinc-950/60"
+                    : difference >= 0
+                      ? "border-emerald-400/20 bg-emerald-400/10"
+                      : "border-red-400/20 bg-red-400/10"
+                }`}
               >
                 <p
-                  className={`text-xs ${!hasDifference
-                    ? "text-zinc-500"
-                    : difference >= 0
-                      ? "text-emerald-300"
-                      : "text-red-300"
-                    }`}
+                  className={`text-xs ${
+                    !hasDifference
+                      ? "text-zinc-500"
+                      : difference >= 0
+                        ? "text-emerald-300"
+                        : "text-red-300"
+                  }`}
                 >
                   Diferença
                 </p>
 
                 <p
-                  className={`mt-1 text-lg font-black ${!hasDifference
-                    ? "text-zinc-500"
-                    : difference >= 0
-                      ? "text-emerald-300"
-                      : "text-red-300"
-                    }`}
+                  className={`mt-1 text-lg font-black ${
+                    !hasDifference
+                      ? "text-zinc-500"
+                      : difference >= 0
+                        ? "text-emerald-300"
+                        : "text-red-300"
+                  }`}
                 >
                   {hasDifference
                     ? `${difference >= 0 ? "+" : "-"}${formatCurrency(
-                      Math.abs(difference)
-                    )}`
+                        Math.abs(difference)
+                      )}`
                     : "-"}
                 </p>
               </div>
+
+              {pokemon.averageMarketPrice > 0 && (
+                <div className="rounded-2xl border border-yellow-400/20 bg-yellow-400/10 p-4">
+                  <p className="text-xs font-bold text-yellow-300">
+                    Média calculada
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-zinc-400">
+                    Liga + MyPcards + TCGPlayer convertido em real.
+                  </p>
+                </div>
+              )}
 
               {pokemon.notes && (
                 <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
