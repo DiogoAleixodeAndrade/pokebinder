@@ -11,6 +11,15 @@ type CollectionItemFromDatabase = {
   market_price: number | null;
   market_condition: string | null;
   market_updated_at: string | null;
+
+  liga_price: number | null;
+  mypcards_price: number | null;
+  tcgplayer_price_usd: number | null;
+  tcgplayer_price_brl: number | null;
+  dollar_rate: number | null;
+  average_market_price: number | null;
+  prices_updated_at: string | null;
+
   owned: boolean | null;
   notes: string | null;
 };
@@ -29,6 +38,13 @@ export async function getCollectionItemsFromSupabase(userId: string) {
       market_price,
       market_condition,
       market_updated_at,
+      liga_price,
+      mypcards_price,
+      tcgplayer_price_usd,
+      tcgplayer_price_brl,
+      dollar_rate,
+      average_market_price,
+      prices_updated_at,
       owned,
       notes
       `
@@ -51,6 +67,15 @@ export async function getCollectionItemsFromSupabase(userId: string) {
       marketPrice: Number(item.market_price || 0),
       marketCondition: item.market_condition || "NM",
       marketUpdatedAt: item.market_updated_at || "",
+
+      ligaPrice: Number(item.liga_price || 0),
+      mypcardsPrice: Number(item.mypcards_price || 0),
+      tcgplayerPriceUsd: Number(item.tcgplayer_price_usd || 0),
+      tcgplayerPriceBrl: Number(item.tcgplayer_price_brl || 0),
+      dollarRate: Number(item.dollar_rate || 0),
+      averageMarketPrice: Number(item.average_market_price || 0),
+      pricesUpdatedAt: item.prices_updated_at || "",
+
       owned: Boolean(item.owned),
       notes: item.notes || "",
     };
@@ -72,6 +97,12 @@ export async function saveCollectionItemsToSupabase(
         item.lowestPrice > 0 ||
         item.purchasePrice > 0 ||
         item.marketPrice > 0 ||
+        item.ligaPrice > 0 ||
+        item.mypcardsPrice > 0 ||
+        item.tcgplayerPriceUsd > 0 ||
+        item.tcgplayerPriceBrl > 0 ||
+        item.dollarRate > 0 ||
+        item.averageMarketPrice > 0 ||
         item.owned ||
         item.notes.trim() !== ""
       );
@@ -79,6 +110,7 @@ export async function saveCollectionItemsToSupabase(
     .map(([pokemonFormId, item]) => ({
       user_id: userId,
       pokemon_form_id: Number(pokemonFormId),
+
       selected_card: item.selectedCard,
       card_image_url: item.cardImageUrl,
       liga_pokemon_url: item.ligaPokemonUrl,
@@ -87,6 +119,15 @@ export async function saveCollectionItemsToSupabase(
       market_price: item.marketPrice || 0,
       market_condition: item.marketCondition || "NM",
       market_updated_at: item.marketUpdatedAt || null,
+
+      liga_price: item.ligaPrice || 0,
+      mypcards_price: item.mypcardsPrice || 0,
+      tcgplayer_price_usd: item.tcgplayerPriceUsd || 0,
+      tcgplayer_price_brl: item.tcgplayerPriceBrl || 0,
+      dollar_rate: item.dollarRate || 0,
+      average_market_price: item.averageMarketPrice || 0,
+      prices_updated_at: item.pricesUpdatedAt || null,
+
       owned: item.owned,
       notes: item.notes,
       updated_at: new Date().toISOString(),

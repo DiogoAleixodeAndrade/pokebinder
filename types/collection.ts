@@ -7,6 +7,15 @@ export type CollectionData = {
   marketPrice: number;
   marketCondition: string;
   marketUpdatedAt: string;
+
+  ligaPrice: number;
+  mypcardsPrice: number;
+  tcgplayerPriceUsd: number;
+  tcgplayerPriceBrl: number;
+  dollarRate: number;
+  averageMarketPrice: number;
+  pricesUpdatedAt: string;
+
   owned: boolean;
   notes: string;
 };
@@ -28,6 +37,15 @@ export type SelectedPokemon = {
   marketPrice: number;
   marketCondition: string;
   marketUpdatedAt: string;
+
+  ligaPrice: number;
+  mypcardsPrice: number;
+  tcgplayerPriceUsd: number;
+  tcgplayerPriceBrl: number;
+  dollarRate: number;
+  averageMarketPrice: number;
+  pricesUpdatedAt: string;
+
   owned: boolean;
   notes: string;
 };

@@ -1,12 +1,17 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import type {
   CollectionData,
   CollectionState,
   SelectedPokemon,
 } from "@/types/collection";
 import { formatCurrency } from "@/lib/format";
+import { fetchUsdBrlRate } from "@/lib/exchange";
+import {
+  calculateAverageMarketPrice,
+  calculateTcgPlayerPriceBrl,
+} from "@/lib/pricing";
 
 type EditCardModalProps = {
   selectedPokemon: SelectedPokemon;
@@ -27,6 +32,8 @@ export function EditCardModal({
   onClear,
   onUpdate,
 }: EditCardModalProps) {
+  const [isFetchingDollar, setIsFetchingDollar] = useState(false);
+
   const savedPokemon = collection[selectedPokemon.id];
 
   const currentPokemon = {
@@ -42,17 +49,106 @@ export function EditCardModal({
       savedPokemon?.marketCondition || selectedPokemon.marketCondition || "NM",
     marketUpdatedAt:
       savedPokemon?.marketUpdatedAt || selectedPokemon.marketUpdatedAt || "",
+
+    ligaPrice: savedPokemon?.ligaPrice || selectedPokemon.ligaPrice || 0,
+    mypcardsPrice:
+      savedPokemon?.mypcardsPrice || selectedPokemon.mypcardsPrice || 0,
+    tcgplayerPriceUsd:
+      savedPokemon?.tcgplayerPriceUsd ||
+      selectedPokemon.tcgplayerPriceUsd ||
+      0,
+    tcgplayerPriceBrl:
+      savedPokemon?.tcgplayerPriceBrl ||
+      selectedPokemon.tcgplayerPriceBrl ||
+      0,
+    dollarRate: savedPokemon?.dollarRate || selectedPokemon.dollarRate || 0,
+    averageMarketPrice:
+      savedPokemon?.averageMarketPrice ||
+      selectedPokemon.averageMarketPrice ||
+      0,
+    pricesUpdatedAt:
+      savedPokemon?.pricesUpdatedAt || selectedPokemon.pricesUpdatedAt || "",
+
     owned: savedPokemon?.owned || selectedPokemon.owned || false,
     notes: savedPokemon?.notes || selectedPokemon.notes || "",
   };
 
   const priceDifference =
-    Number(currentPokemon.marketPrice || 0) -
+    Number(currentPokemon.averageMarketPrice || currentPokemon.marketPrice || 0) -
     Number(currentPokemon.purchasePrice || 0);
 
   const hasPriceDifference =
-    Number(currentPokemon.marketPrice || 0) > 0 &&
-    Number(currentPokemon.purchasePrice || 0) > 0;
+    Number(currentPokemon.averageMarketPrice || currentPokemon.marketPrice || 0) >
+      0 && Number(currentPokemon.purchasePrice || 0) > 0;
+
+  function updatePricingFields(nextValues: {
+    ligaPrice?: number;
+    mypcardsPrice?: number;
+    tcgplayerPriceUsd?: number;
+    dollarRate?: number;
+  }) {
+    const ligaPrice = nextValues.ligaPrice ?? currentPokemon.ligaPrice;
+    const mypcardsPrice =
+      nextValues.mypcardsPrice ?? currentPokemon.mypcardsPrice;
+    const tcgplayerPriceUsd =
+      nextValues.tcgplayerPriceUsd ?? currentPokemon.tcgplayerPriceUsd;
+    const dollarRate = nextValues.dollarRate ?? currentPokemon.dollarRate;
+
+    const { tcgplayerPriceBrl, averageMarketPrice } =
+      calculateAverageMarketPrice({
+        ligaPrice,
+        mypcardsPrice,
+        tcgplayerPriceUsd,
+        dollarRate,
+      });
+
+    const updatedAt = new Date().toISOString();
+
+    if (nextValues.ligaPrice !== undefined) {
+      onUpdate(selectedPokemon.id, "ligaPrice", ligaPrice);
+    }
+
+    if (nextValues.mypcardsPrice !== undefined) {
+      onUpdate(selectedPokemon.id, "mypcardsPrice", mypcardsPrice);
+    }
+
+    if (nextValues.tcgplayerPriceUsd !== undefined) {
+      onUpdate(selectedPokemon.id, "tcgplayerPriceUsd", tcgplayerPriceUsd);
+    }
+
+    if (nextValues.dollarRate !== undefined) {
+      onUpdate(selectedPokemon.id, "dollarRate", dollarRate);
+    }
+
+    onUpdate(selectedPokemon.id, "tcgplayerPriceBrl", tcgplayerPriceBrl);
+    onUpdate(selectedPokemon.id, "averageMarketPrice", averageMarketPrice);
+    onUpdate(selectedPokemon.id, "marketPrice", averageMarketPrice);
+    onUpdate(selectedPokemon.id, "marketCondition", "NM");
+    onUpdate(selectedPokemon.id, "marketUpdatedAt", updatedAt);
+    onUpdate(selectedPokemon.id, "pricesUpdatedAt", updatedAt);
+  }
+
+  async function handleFetchDollarRate() {
+    try {
+      setIsFetchingDollar(true);
+
+      const result = await fetchUsdBrlRate();
+
+      updatePricingFields({
+        dollarRate: result.dollarRate,
+      });
+
+      alert(`Cotação atualizada: US$ 1 = ${formatCurrency(result.dollarRate)}`);
+    } catch (error) {
+      alert(
+        error instanceof Error
+          ? error.message
+          : "Erro ao buscar cotação do dólar."
+      );
+    } finally {
+      setIsFetchingDollar(false);
+    }
+  }
 
   function openLigaPokemonSearch() {
     const query =
@@ -188,25 +284,21 @@ export function EditCardModal({
               <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div>
                   <p className="text-sm font-bold text-zinc-200">
-                    Valor atual da carta
+                    Preços por fonte
                   </p>
                   <p className="mt-1 text-xs text-zinc-500">
-                    Informe manualmente o menor valor NM encontrado na sua fonte
-                    de preço. Use os botões de busca apenas como apoio.
+                    Preencha Liga e MyPcards em real. No TCGPlayer, preencha em
+                    dólar e use a cotação do dia para converter.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  <span className="w-fit rounded-full border border-yellow-400/25 bg-yellow-400/10 px-3 py-1 text-xs font-bold text-yellow-300">
-                    NM manual
-                  </span>
-
                   <button
                     type="button"
                     onClick={openLigaPokemonSearch}
                     className="rounded-full border border-yellow-400/30 bg-yellow-400/10 px-3 py-1 text-xs font-bold text-yellow-300 transition hover:bg-yellow-400/15"
                   >
-                    Abrir Liga
+                    Liga
                   </button>
 
                   <button
@@ -214,7 +306,7 @@ export function EditCardModal({
                     onClick={openMyPcardsSearch}
                     className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300 transition hover:bg-cyan-400/15"
                   >
-                    Abrir MyPcards
+                    MyPcards
                   </button>
 
                   <button
@@ -222,55 +314,112 @@ export function EditCardModal({
                     onClick={openTcgPlayerSearch}
                     className="rounded-full border border-purple-400/30 bg-purple-400/10 px-3 py-1 text-xs font-bold text-purple-300 transition hover:bg-purple-400/15"
                   >
-                    Abrir TCGPlayer
+                    TCGPlayer
                   </button>
                 </div>
               </div>
 
-              <div className="mt-4">
-                <Field label="Valor atual NM">
+              <div className="mt-4 grid gap-4 md:grid-cols-2">
+                <Field label="Preço Liga Pokémon (R$)">
                   <input
                     type="number"
                     min="0"
                     step="0.01"
-                    value={currentPokemon.marketPrice || ""}
-                    onChange={(event) => {
-                      onUpdate(
-                        selectedPokemon.id,
-                        "marketPrice",
-                        Number(event.target.value)
-                      );
-
-                      onUpdate(selectedPokemon.id, "marketCondition", "NM");
-
-                      onUpdate(
-                        selectedPokemon.id,
-                        "marketUpdatedAt",
-                        new Date().toISOString()
-                      );
-                    }}
+                    value={currentPokemon.ligaPrice || ""}
+                    onChange={(event) =>
+                      updatePricingFields({
+                        ligaPrice: Number(event.target.value),
+                      })
+                    }
                     placeholder="0.00"
                     className="premium-input w-full rounded-2xl px-4 py-3 text-sm"
                   />
+                </Field>
+
+                <Field label="Preço MyPcards (R$)">
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value={currentPokemon.mypcardsPrice || ""}
+                    onChange={(event) =>
+                      updatePricingFields({
+                        mypcardsPrice: Number(event.target.value),
+                      })
+                    }
+                    placeholder="0.00"
+                    className="premium-input w-full rounded-2xl px-4 py-3 text-sm"
+                  />
+                </Field>
+
+                <Field label="Preço TCGPlayer (US$)">
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value={currentPokemon.tcgplayerPriceUsd || ""}
+                    onChange={(event) =>
+                      updatePricingFields({
+                        tcgplayerPriceUsd: Number(event.target.value),
+                      })
+                    }
+                    placeholder="0.00"
+                    className="premium-input w-full rounded-2xl px-4 py-3 text-sm"
+                  />
+                </Field>
+
+                <Field label="Cotação dólar">
+                  <div className="flex gap-2">
+                    <input
+                      type="number"
+                      min="0"
+                      step="0.0001"
+                      value={currentPokemon.dollarRate || ""}
+                      onChange={(event) =>
+                        updatePricingFields({
+                          dollarRate: Number(event.target.value),
+                        })
+                      }
+                      placeholder="0.0000"
+                      className="premium-input w-full rounded-2xl px-4 py-3 text-sm"
+                    />
+
+                    <button
+                      type="button"
+                      onClick={handleFetchDollarRate}
+                      disabled={isFetchingDollar}
+                      className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-sm font-bold text-emerald-300 transition hover:bg-emerald-400/15 disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      {isFetchingDollar ? "..." : "Hoje"}
+                    </button>
+                  </div>
                 </Field>
               </div>
 
               <div className="mt-4 grid gap-3 md:grid-cols-3">
                 <PriceBox
-                  label="Você pagou"
+                  label="TCG em R$"
                   value={
-                    currentPokemon.purchasePrice > 0
-                      ? formatCurrency(currentPokemon.purchasePrice)
-                      : "-"
+                    currentPokemon.tcgplayerPriceBrl > 0
+                      ? formatCurrency(currentPokemon.tcgplayerPriceBrl)
+                      : currentPokemon.tcgplayerPriceUsd > 0 &&
+                          currentPokemon.dollarRate > 0
+                        ? formatCurrency(
+                            calculateTcgPlayerPriceBrl(
+                              currentPokemon.tcgplayerPriceUsd,
+                              currentPokemon.dollarRate
+                            )
+                          )
+                        : "-"
                   }
                   tone="neutral"
                 />
 
                 <PriceBox
-                  label={`Atual ${currentPokemon.marketCondition || "NM"}`}
+                  label="Média das fontes"
                   value={
-                    currentPokemon.marketPrice > 0
-                      ? formatCurrency(currentPokemon.marketPrice)
+                    currentPokemon.averageMarketPrice > 0
+                      ? formatCurrency(currentPokemon.averageMarketPrice)
                       : "-"
                   }
                   tone="market"
@@ -281,8 +430,8 @@ export function EditCardModal({
                   value={
                     hasPriceDifference
                       ? `${priceDifference >= 0 ? "+" : "-"}${formatCurrency(
-                        Math.abs(priceDifference)
-                      )}`
+                          Math.abs(priceDifference)
+                        )}`
                       : "-"
                   }
                   tone={
@@ -295,10 +444,10 @@ export function EditCardModal({
                 />
               </div>
 
-              {currentPokemon.marketUpdatedAt && (
+              {currentPokemon.pricesUpdatedAt && (
                 <p className="mt-3 text-xs text-zinc-500">
-                  Atualizado em:{" "}
-                  {new Date(currentPokemon.marketUpdatedAt).toLocaleString(
+                  Preços atualizados em:{" "}
+                  {new Date(currentPokemon.pricesUpdatedAt).toLocaleString(
                     "pt-BR"
                   )}
                 </p>

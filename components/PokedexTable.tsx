@@ -12,8 +12,14 @@ export function PokedexTable({
   onEdit,
   formatCurrency,
 }: PokedexTableProps) {
+  function getCurrentMarketPrice(pokemon: PokemonCollectionItem) {
+    return Number(
+      pokemon.averageMarketPrice || pokemon.marketPrice || pokemon.lowestPrice || 0
+    );
+  }
+
   function getDifference(pokemon: PokemonCollectionItem) {
-    return Number(pokemon.marketPrice || 0) - Number(pokemon.purchasePrice || 0);
+    return getCurrentMarketPrice(pokemon) - Number(pokemon.purchasePrice || 0);
   }
 
   return (
@@ -26,7 +32,7 @@ export function PokedexTable({
             <th className="px-6 py-5">Tipo</th>
             <th className="px-6 py-5">Carta</th>
             <th className="px-6 py-5">Pago</th>
-            <th className="px-6 py-5">Valor NM</th>
+            <th className="px-6 py-5">Média NM</th>
             <th className="px-6 py-5">Diferença</th>
             <th className="px-6 py-5">Status</th>
             <th className="sticky right-0 z-20 bg-zinc-950/95 px-6 py-5 text-right">
@@ -40,7 +46,7 @@ export function PokedexTable({
             const difference = getDifference(pokemon);
             const hasDifference =
               Number(pokemon.purchasePrice || 0) > 0 &&
-              Number(pokemon.marketPrice || 0) > 0;
+              getCurrentMarketPrice(pokemon) > 0;
 
             return (
               <tr
@@ -130,8 +136,8 @@ export function PokedexTable({
 
                 <td className="px-6 py-5">
                   <p className="text-sm font-black text-yellow-300">
-                    {pokemon.marketPrice > 0
-                      ? formatCurrency(pokemon.marketPrice)
+                    {getCurrentMarketPrice(pokemon) > 0
+                      ? formatCurrency(getCurrentMarketPrice(pokemon))
                       : "-"}
                   </p>
                   {pokemon.marketUpdatedAt && (

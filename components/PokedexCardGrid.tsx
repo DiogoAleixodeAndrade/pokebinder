@@ -12,8 +12,14 @@ export function PokedexCardGrid({
   onEdit,
   formatCurrency,
 }: PokedexCardGridProps) {
+  function getCurrentMarketPrice(pokemon: PokemonCollectionItem) {
+    return Number(
+      pokemon.averageMarketPrice || pokemon.marketPrice || pokemon.lowestPrice || 0
+    );
+  }
+
   function getDifference(pokemon: PokemonCollectionItem) {
-    return Number(pokemon.marketPrice || 0) - Number(pokemon.purchasePrice || 0);
+    return getCurrentMarketPrice(pokemon) - Number(pokemon.purchasePrice || 0);
   }
 
   return (
@@ -22,7 +28,7 @@ export function PokedexCardGrid({
         const difference = getDifference(pokemon);
         const hasDifference =
           Number(pokemon.purchasePrice || 0) > 0 &&
-          Number(pokemon.marketPrice || 0) > 0;
+          getCurrentMarketPrice(pokemon) > 0;
 
         return (
           <article
@@ -121,10 +127,10 @@ export function PokedexCardGrid({
                 />
 
                 <PriceMiniCard
-                  label="Valor NM"
+                  label="Média NM"
                   value={
-                    pokemon.marketPrice > 0
-                      ? formatCurrency(pokemon.marketPrice)
+                    getCurrentMarketPrice(pokemon) > 0
+                      ? formatCurrency(getCurrentMarketPrice(pokemon))
                       : "-"
                   }
                   tone="market"
@@ -133,18 +139,18 @@ export function PokedexCardGrid({
 
               <div
                 className={`rounded-2xl border p-4 ${!hasDifference
-                    ? "border-zinc-800 bg-zinc-950/60"
-                    : difference >= 0
-                      ? "border-emerald-400/20 bg-emerald-400/10"
-                      : "border-red-400/20 bg-red-400/10"
+                  ? "border-zinc-800 bg-zinc-950/60"
+                  : difference >= 0
+                    ? "border-emerald-400/20 bg-emerald-400/10"
+                    : "border-red-400/20 bg-red-400/10"
                   }`}
               >
                 <p
                   className={`text-xs ${!hasDifference
-                      ? "text-zinc-500"
-                      : difference >= 0
-                        ? "text-emerald-300"
-                        : "text-red-300"
+                    ? "text-zinc-500"
+                    : difference >= 0
+                      ? "text-emerald-300"
+                      : "text-red-300"
                     }`}
                 >
                   Diferença
@@ -152,10 +158,10 @@ export function PokedexCardGrid({
 
                 <p
                   className={`mt-1 text-lg font-black ${!hasDifference
-                      ? "text-zinc-500"
-                      : difference >= 0
-                        ? "text-emerald-300"
-                        : "text-red-300"
+                    ? "text-zinc-500"
+                    : difference >= 0
+                      ? "text-emerald-300"
+                      : "text-red-300"
                     }`}
                 >
                   {hasDifference

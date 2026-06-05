@@ -199,6 +199,15 @@ export function PokedexDashboard() {
         marketPrice: 0,
         marketCondition: "NM",
         marketUpdatedAt: "",
+
+        ligaPrice: 0,
+        mypcardsPrice: 0,
+        tcgplayerPriceUsd: 0,
+        tcgplayerPriceBrl: 0,
+        dollarRate: 0,
+        averageMarketPrice: 0,
+        pricesUpdatedAt: "",
+
         owned: false,
         notes: "",
       },
@@ -394,7 +403,15 @@ export function PokedexDashboard() {
   const currentMarketValue = mergedPokemonForms.reduce((total, pokemon) => {
     if (!pokemon.owned) return total;
 
-    return total + Number(pokemon.marketPrice || pokemon.lowestPrice || 0);
+    return (
+      total +
+      Number(
+        pokemon.averageMarketPrice ||
+        pokemon.marketPrice ||
+        pokemon.lowestPrice ||
+        0
+      )
+    );
   }, 0);
 
   const collectionProfitValue = currentMarketValue - totalSpentValue;
@@ -484,12 +501,12 @@ export function PokedexDashboard() {
 
                   <span
                     className={`w-fit rounded-full border px-4 py-1.5 text-sm ${syncStatus === "success"
-                        ? "border-emerald-400/25 bg-emerald-400/10 text-emerald-300"
-                        : syncStatus === "error"
-                          ? "border-red-400/25 bg-red-400/10 text-red-300"
-                          : syncStatus === "loading"
-                            ? "border-yellow-400/25 bg-yellow-400/10 text-yellow-300"
-                            : "border-zinc-700 bg-zinc-900 text-zinc-400"
+                      ? "border-emerald-400/25 bg-emerald-400/10 text-emerald-300"
+                      : syncStatus === "error"
+                        ? "border-red-400/25 bg-red-400/10 text-red-300"
+                        : syncStatus === "loading"
+                          ? "border-yellow-400/25 bg-yellow-400/10 text-yellow-300"
+                          : "border-zinc-700 bg-zinc-900 text-zinc-400"
                       }`}
                   >
                     {syncStatus === "loading" && "Sincronizando..."}
