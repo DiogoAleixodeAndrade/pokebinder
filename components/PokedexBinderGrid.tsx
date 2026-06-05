@@ -42,181 +42,211 @@ export function PokedexBinderGrid({
     <div className="p-5">
       <div className="mb-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <h3 className="text-2xl font-black text-white">Visão Binder 4x4</h3>
+          <h3 className="text-2xl font-black text-white">Binder 4x4</h3>
           <p className="mt-1 text-sm text-zinc-400">
             Página {page} de {totalPages} • 16 espaços por página
           </p>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={() => setPage((prev) => Math.max(1, prev - 1))}
             disabled={page === 1}
-            className="rounded-2xl border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-bold text-zinc-300 disabled:opacity-40"
+            className="rounded-2xl border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:text-yellow-300 disabled:cursor-not-allowed disabled:opacity-40"
           >
             Anterior
           </button>
+
+          <div className="rounded-2xl border border-yellow-400/25 bg-yellow-400/10 px-4 py-2 text-sm font-black text-yellow-300">
+            {page}/{totalPages}
+          </div>
 
           <button
             type="button"
             onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}
             disabled={page === totalPages}
-            className="rounded-2xl border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-bold text-zinc-300 disabled:opacity-40"
+            className="rounded-2xl border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:text-yellow-300 disabled:cursor-not-allowed disabled:opacity-40"
           >
             Próxima
           </button>
         </div>
       </div>
 
-      <div className="rounded-[2rem] border border-zinc-800 bg-zinc-950/60 p-4 shadow-2xl shadow-black/30">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {currentItems.map((pokemon) => {
-            const showCard = pokemon.owned && pokemon.cardImageUrl;
-            const query = getCardSearchQuery(
-              pokemon.selectedCard,
-              pokemon.name
-            );
+      <div className="relative overflow-hidden rounded-[2.25rem] border border-zinc-800 bg-gradient-to-br from-zinc-950 via-zinc-950 to-zinc-900 p-4 shadow-2xl shadow-black/40">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(250,204,21,0.08),transparent_45%)]" />
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-14 border-r border-zinc-800/80 bg-zinc-950/80">
+          <div className="flex h-full flex-col items-center justify-around py-8">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <div
+                key={index}
+                className="h-5 w-5 rounded-full border border-zinc-700 bg-zinc-900 shadow-inner"
+              />
+            ))}
+          </div>
+        </div>
 
-            const ligaPokemonUrl = getLigaPokemonSearchUrl(query);
-            const myPcardsUrl = getMyPcardsSearchUrl(query);
-            const tcgPlayerUrl = getTcgPlayerSearchUrl(query);
+        <div className="relative ml-10 rounded-[1.75rem] border border-zinc-800/80 bg-zinc-900/45 p-4">
+          <div className="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-white/[0.025]" />
 
-            return (
-              <article
-                key={pokemon.id}
-                className="group overflow-hidden rounded-[1.5rem] border border-zinc-800 bg-zinc-900 p-3 text-left shadow-lg transition hover:scale-[1.01] hover:border-yellow-400/40"
-              >
-                <button
-                  type="button"
-                  onClick={() => onEdit(pokemon)}
-                  className="block w-full text-left"
+          <div className="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {currentItems.map((pokemon) => {
+              const showCard = pokemon.owned && pokemon.cardImageUrl;
+              const query = getCardSearchQuery(
+                pokemon.selectedCard,
+                pokemon.name
+              );
+
+              const ligaPokemonUrl = getLigaPokemonSearchUrl(query);
+              const myPcardsUrl = getMyPcardsSearchUrl(query);
+              const tcgPlayerUrl = getTcgPlayerSearchUrl(query);
+
+              return (
+                <article
+                  key={pokemon.id}
+                  className="group rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-2 shadow-inner shadow-white/5 transition hover:border-yellow-400/40 hover:bg-yellow-400/[0.035]"
                 >
-                  <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950">
-                    {showCard ? (
-                      <img
-                        src={pokemon.cardImageUrl}
-                        alt={pokemon.selectedCard || pokemon.name}
-                        className="h-full w-full object-contain"
-                      />
-                    ) : (
-                      <>
-                        <PokemonArtworkFallback
-                          name={pokemon.name}
-                          dexNumber={pokemon.dexNumber}
-                        />
+                  <div className="rounded-[1.35rem] border border-zinc-800 bg-zinc-950/85 p-2 shadow-lg shadow-black/30">
+                    <button
+                      type="button"
+                      onClick={() => onEdit(pokemon)}
+                      className="block w-full text-left"
+                    >
+                      <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950">
+                        <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-br from-white/10 via-transparent to-black/20 opacity-80" />
 
-                        <div className="absolute inset-0 bg-black/20" />
+                        {showCard ? (
+                          <img
+                            src={pokemon.cardImageUrl}
+                            alt={pokemon.selectedCard || pokemon.name}
+                            className="h-full w-full object-contain"
+                          />
+                        ) : (
+                          <>
+                            <PokemonArtworkFallback
+                              name={pokemon.name}
+                              dexNumber={pokemon.dexNumber}
+                            />
 
-                        <div className="absolute left-2 top-2 rounded-full border border-red-400/30 bg-red-400/15 px-2 py-1 text-[10px] font-bold text-red-300">
-                          Faltando
-                        </div>
-                      </>
-                    )}
+                            <div className="absolute inset-0 bg-black/20" />
 
-                    {pokemon.owned && (
-                      <div className="absolute right-2 top-2 rounded-full border border-emerald-400/30 bg-emerald-400/15 px-2 py-1 text-[10px] font-bold text-emerald-300">
-                        Tenho
+                            <div className="absolute left-2 top-2 z-30 rounded-full border border-red-400/30 bg-red-400/15 px-2 py-1 text-[10px] font-bold text-red-300">
+                              Faltando
+                            </div>
+                          </>
+                        )}
+
+                        {pokemon.owned && (
+                          <div className="absolute right-2 top-2 z-30 rounded-full border border-emerald-400/30 bg-emerald-400/15 px-2 py-1 text-[10px] font-bold text-emerald-300">
+                            Tenho
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
 
-                  <div className="mt-3">
-                    <p className="line-clamp-1 text-sm font-black text-white">
-                      {pokemon.name}
-                    </p>
+                      <div className="mt-3">
+                        <p className="line-clamp-1 text-sm font-black text-white">
+                          {pokemon.name}
+                        </p>
 
-                    <p className="mt-1 line-clamp-1 text-xs text-zinc-500">
-                      {pokemon.selectedCard || "Sem carta selecionada"}
-                    </p>
+                        <p className="mt-1 line-clamp-1 text-xs text-zinc-500">
+                          {pokemon.selectedCard || "Sem carta selecionada"}
+                        </p>
 
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      <span className="rounded-full border border-zinc-700 bg-zinc-950 px-2 py-1 text-[10px] text-zinc-300">
-                        #{String(pokemon.dexNumber).padStart(3, "0")}
-                      </span>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          <span className="rounded-full border border-zinc-700 bg-zinc-950 px-2 py-1 text-[10px] text-zinc-300">
+                            #{String(pokemon.dexNumber).padStart(3, "0")}
+                          </span>
 
-                      <span className="rounded-full border border-zinc-700 bg-zinc-950 px-2 py-1 text-[10px] text-zinc-400">
-                        Gen {pokemon.generation}
+                          <span className="rounded-full border border-zinc-700 bg-zinc-950 px-2 py-1 text-[10px] text-zinc-400">
+                            Gen {pokemon.generation}
+                          </span>
+                        </div>
+
+                        <p className="mt-2 line-clamp-1 text-[10px] text-zinc-500">
+                          {pokemon.formType}
+                        </p>
+                      </div>
+                    </button>
+
+                    <div className="mt-3 grid grid-cols-3 gap-2">
+                      <button
+                        type="button"
+                        onClick={() => onEdit(pokemon)}
+                        className="rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-2 py-2 text-[10px] font-bold text-yellow-300 transition hover:bg-yellow-400/15"
+                      >
+                        Editar
+                      </button>
+
+                      {pokemon.ligaPokemonUrl ? (
+                        <a
+                          href={pokemon.ligaPokemonUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-xl border border-zinc-700 bg-zinc-950 px-2 py-2 text-center text-[10px] font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:text-yellow-300"
+                        >
+                          Fonte
+                        </a>
+                      ) : (
+                        <span className="rounded-xl border border-zinc-800 bg-zinc-950 px-2 py-2 text-center text-[10px] font-bold text-zinc-600">
+                          Fonte
+                        </span>
+                      )}
+
+                      <a
+                        href={ligaPokemonUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-2 py-2 text-center text-[10px] font-bold text-yellow-300 transition hover:bg-yellow-400/15"
+                      >
+                        Liga
+                      </a>
+
+                      <a
+                        href={myPcardsUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-2 py-2 text-center text-[10px] font-bold text-cyan-300 transition hover:bg-cyan-400/15"
+                      >
+                        MyP
+                      </a>
+
+                      <a
+                        href={tcgPlayerUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-xl border border-purple-400/30 bg-purple-400/10 px-2 py-2 text-center text-[10px] font-bold text-purple-300 transition hover:bg-purple-400/15"
+                      >
+                        TCG
+                      </a>
+
+                      <span className="rounded-xl border border-zinc-800 bg-zinc-950 px-2 py-2 text-center text-[10px] font-bold text-zinc-600">
+                        Slot
                       </span>
                     </div>
+                  </div>
+                </article>
+              );
+            })}
 
-                    <p className="mt-2 line-clamp-1 text-[10px] text-zinc-500">
-                      {pokemon.formType}
+            {emptySlots.map((_, index) => (
+              <div
+                key={`empty-${index}`}
+                className="rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-2 shadow-inner shadow-white/5"
+              >
+                <div className="flex min-h-[320px] items-center justify-center rounded-[1.35rem] border border-dashed border-zinc-800 bg-zinc-950/65 p-4 text-center">
+                  <div>
+                    <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900 text-xl">
+                      🃏
+                    </div>
+
+                    <p className="text-xs font-bold text-zinc-600">
+                      Espaço vazio
                     </p>
                   </div>
-                </button>
-
-                <div className="mt-3 grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => onEdit(pokemon)}
-                    className="rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-2 py-2 text-[11px] font-bold text-yellow-300 transition hover:bg-yellow-400/15"
-                  >
-                    Editar
-                  </button>
-
-                  {pokemon.ligaPokemonUrl ? (
-                    <a
-                      href={pokemon.ligaPokemonUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="rounded-xl border border-zinc-700 bg-zinc-950 px-2 py-2 text-center text-[11px] font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:text-yellow-300"
-                    >
-                      Fonte
-                    </a>
-                  ) : (
-                    <span className="rounded-xl border border-zinc-800 bg-zinc-950 px-2 py-2 text-center text-[11px] font-bold text-zinc-600">
-                      Fonte
-                    </span>
-                  )}
-
-                  <a
-  href={ligaPokemonUrl}
-  target="_blank"
-  rel="noreferrer"
-  className="rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-2 py-2 text-center text-[11px] font-bold text-yellow-300 transition hover:bg-yellow-400/15"
->
-  Liga
-</a>
-
-<a
-  href={myPcardsUrl}
-  target="_blank"
-  rel="noreferrer"
-  className="rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-2 py-2 text-center text-[11px] font-bold text-cyan-300 transition hover:bg-cyan-400/15"
->
-  MyP
-</a>
-
-<a
-  href={tcgPlayerUrl}
-  target="_blank"
-  rel="noreferrer"
-  className="rounded-xl border border-purple-400/30 bg-purple-400/10 px-2 py-2 text-center text-[11px] font-bold text-purple-300 transition hover:bg-purple-400/15"
->
-  TCGP
-</a>
                 </div>
-              </article>
-            );
-          })}
-
-          {emptySlots.map((_, index) => (
-            <div
-              key={`empty-${index}`}
-              className="flex min-h-[320px] items-center justify-center rounded-[1.5rem] border border-dashed border-zinc-800 bg-zinc-950/50 p-4 text-center"
-            >
-              <div>
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900 text-xl">
-                  🃏
-                </div>
-
-                <p className="text-xs font-bold text-zinc-600">
-                  Espaço vazio
-                </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -228,7 +258,10 @@ type PokemonArtworkFallbackProps = {
   dexNumber: number;
 };
 
-function PokemonArtworkFallback({ name, dexNumber }: PokemonArtworkFallbackProps) {
+function PokemonArtworkFallback({
+  name,
+  dexNumber,
+}: PokemonArtworkFallbackProps) {
   const candidates = useMemo(
     () => getPokemonArtworkCandidates(name, dexNumber),
     [name, dexNumber]
