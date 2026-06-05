@@ -1,12 +1,13 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import type {
   CollectionData,
   CollectionState,
   SelectedPokemon,
 } from "@/types/collection";
 import { formatCurrency } from "@/lib/format";
+import { searchMyPcardsPrice } from "@/lib/mypcards";
 
 type EditCardModalProps = {
   selectedPokemon: SelectedPokemon;
@@ -27,6 +28,8 @@ export function EditCardModal({
   onClear,
   onUpdate,
 }: EditCardModalProps) {
+  const [isSearchingMyPcards, setIsSearchingMyPcards] = useState(false);
+
   const savedPokemon = collection[selectedPokemon.id];
 
   const currentPokemon = {
@@ -53,6 +56,36 @@ export function EditCardModal({
   const hasPriceDifference =
     Number(currentPokemon.marketPrice || 0) > 0 &&
     Number(currentPokemon.purchasePrice || 0) > 0;
+
+  async function handleSearchMyPcards() {
+    const query = currentPokemon.selectedCard.trim() || selectedPokemon.name.trim();
+
+    if (!query) {
+      alert("Informe o nome da carta antes de buscar no MyPcards.");
+      return;
+    }
+
+    try {
+      setIsSearchingMyPcards(true);
+
+      const result = await searchMyPcardsPrice(query);
+
+      onUpdate(selectedPokemon.id, "marketPrice", result.lowestPrice);
+      onUpdate(selectedPokemon.id, "marketCondition", "NM");
+      onUpdate(selectedPokemon.id, "marketUpdatedAt", result.updatedAt);
+      onUpdate(selectedPokemon.id, "ligaPokemonUrl", result.searchUrl);
+
+      alert(`Preço encontrado no MyPcards: ${formatCurrency(result.lowestPrice)}`);
+    } catch (error) {
+      alert(
+        error instanceof Error
+          ? error.message
+          : "Erro ao buscar preço no MyPcards."
+      );
+    } finally {
+      setIsSearchingMyPcards(false);
+    }
+  }
 
   return (
     <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/60 px-4 py-6">
@@ -158,13 +191,25 @@ export function EditCardModal({
                     Valor atual da carta
                   </p>
                   <p className="mt-1 text-xs text-zinc-500">
-                    Informe manualmente o menor valor NM encontrado na sua fonte de preço.
+                    Informe manualmente o menor valor NM encontrado na sua fonte
+                    de preço ou use a busca do MyPcards como sugestão.
                   </p>
                 </div>
 
-                <span className="w-fit rounded-full border border-yellow-400/25 bg-yellow-400/10 px-3 py-1 text-xs font-bold text-yellow-300">
-                  NM manual
-                </span>
+                <div className="flex flex-wrap gap-2">
+                  <span className="w-fit rounded-full border border-yellow-400/25 bg-yellow-400/10 px-3 py-1 text-xs font-bold text-yellow-300">
+                    NM manual
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={handleSearchMyPcards}
+                    disabled={isSearchingMyPcards}
+                    className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300 transition hover:bg-cyan-400/15 disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {isSearchingMyPcards ? "Buscando..." : "Buscar no MyPcards"}
+                  </button>
+                </div>
               </div>
 
               <div className="mt-4">
