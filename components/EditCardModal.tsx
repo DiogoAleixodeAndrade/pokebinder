@@ -54,6 +54,17 @@ export function EditCardModal({
     Number(currentPokemon.marketPrice || 0) > 0 &&
     Number(currentPokemon.purchasePrice || 0) > 0;
 
+  function openLigaPokemonSearch() {
+    const query =
+      currentPokemon.selectedCard.trim() || selectedPokemon.name.trim();
+
+    const url = `https://www.ligapokemon.com.br/?view=cards%2Fsearch&card=${encodeURIComponent(
+      query
+    )}`;
+
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
   function openMyPcardsSearch() {
     const query =
       currentPokemon.selectedCard.trim() || selectedPokemon.name.trim();
@@ -192,6 +203,14 @@ export function EditCardModal({
 
                   <button
                     type="button"
+                    onClick={openLigaPokemonSearch}
+                    className="rounded-full border border-yellow-400/30 bg-yellow-400/10 px-3 py-1 text-xs font-bold text-yellow-300 transition hover:bg-yellow-400/15"
+                  >
+                    Abrir Liga
+                  </button>
+
+                  <button
+                    type="button"
                     onClick={openMyPcardsSearch}
                     className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300 transition hover:bg-cyan-400/15"
                   >
@@ -262,8 +281,8 @@ export function EditCardModal({
                   value={
                     hasPriceDifference
                       ? `${priceDifference >= 0 ? "+" : "-"}${formatCurrency(
-                          Math.abs(priceDifference)
-                        )}`
+                        Math.abs(priceDifference)
+                      )}`
                       : "-"
                   }
                   tone={
@@ -376,6 +395,14 @@ export function EditCardModal({
                   Abrir fonte salva
                 </a>
               )}
+
+              <button
+                type="button"
+                onClick={openLigaPokemonSearch}
+                className="rounded-2xl border border-yellow-400/30 bg-yellow-400/10 px-4 py-3 text-sm font-bold text-yellow-300 transition hover:bg-yellow-400/15"
+              >
+                Buscar na Liga Pokémon
+              </button>
 
               <button
                 type="button"
