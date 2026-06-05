@@ -483,15 +483,14 @@ export function PokedexDashboard() {
                   </span>
 
                   <span
-                    className={`w-fit rounded-full border px-4 py-1.5 text-sm ${
-                      syncStatus === "success"
+                    className={`w-fit rounded-full border px-4 py-1.5 text-sm ${syncStatus === "success"
                         ? "border-emerald-400/25 bg-emerald-400/10 text-emerald-300"
                         : syncStatus === "error"
                           ? "border-red-400/25 bg-red-400/10 text-red-300"
                           : syncStatus === "loading"
                             ? "border-yellow-400/25 bg-yellow-400/10 text-yellow-300"
                             : "border-zinc-700 bg-zinc-900 text-zinc-400"
-                    }`}
+                      }`}
                   >
                     {syncStatus === "loading" && "Sincronizando..."}
                     {syncStatus === "success" && "Salvo no Supabase"}
@@ -694,8 +693,29 @@ export function PokedexDashboard() {
         <CardScannerModal
           pokemonList={mergedPokemonForms}
           onClose={() => setIsScannerOpen(false)}
-          onSelectPokemon={(pokemon) => {
-            setSelectedPokemon(pokemon);
+          onSelectPokemon={(pokemon, scannedCardName) => {
+            setCollection((currentCollection) => ({
+              ...currentCollection,
+              [pokemon.id]: {
+                ...currentCollection[pokemon.id],
+                selectedCard:
+                  currentCollection[pokemon.id]?.selectedCard ||
+                  scannedCardName ||
+                  pokemon.name,
+                owned: true,
+                notes:
+                  currentCollection[pokemon.id]?.notes ||
+                  "Cadastrado via scanner",
+              },
+            }));
+
+            setSelectedPokemon({
+              ...pokemon,
+              selectedCard: scannedCardName || pokemon.selectedCard || pokemon.name,
+              owned: true,
+              notes: pokemon.notes || "Cadastrado via scanner",
+            });
+
             setIsScannerOpen(false);
           }}
         />

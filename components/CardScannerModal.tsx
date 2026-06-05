@@ -7,8 +7,33 @@ import { findPokemonFromScannedText } from "@/lib/cardScanner";
 type CardScannerModalProps = {
   pokemonList: PokemonCollectionItem[];
   onClose: () => void;
-  onSelectPokemon: (pokemon: PokemonCollectionItem) => void;
+  onSelectPokemon: (pokemon: PokemonCollectionItem, scannedCardName: string) => void;
 };
+
+function getSuggestedCardName(text: string, pokemonName: string) {
+  const lines = text
+    .split(/\r?\n/g)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  const pokemonLine = lines.find((line) =>
+    line.toLowerCase().includes(pokemonName.toLowerCase())
+  );
+
+  const cardNumberLine = lines.find((line) =>
+    /\d{1,3}\s*\/\s*\d{1,3}/.test(line)
+  );
+
+  if (pokemonLine && cardNumberLine) {
+    return `${pokemonLine} ${cardNumberLine}`;
+  }
+
+  if (pokemonLine) {
+    return pokemonLine;
+  }
+
+  return pokemonName;
+}
 
 export function CardScannerModal({
   pokemonList,
@@ -17,6 +42,7 @@ export function CardScannerModal({
 }: CardScannerModalProps) {
   const [imagePreview, setImagePreview] = useState("");
   const [extractedText, setExtractedText] = useState("");
+  const [suggestedCardName, setSuggestedCardName] = useState("");
   const [matchedPokemon, setMatchedPokemon] =
     useState<PokemonCollectionItem | null>(null);
   const [isScanning, setIsScanning] = useState(false);
@@ -29,6 +55,7 @@ export function CardScannerModal({
 
     setImagePreview(URL.createObjectURL(file));
     setExtractedText("");
+    setSuggestedCardName("");
     setMatchedPokemon(null);
     setProgress(0);
 
@@ -50,6 +77,10 @@ export function CardScannerModal({
 
       setExtractedText(text);
       setMatchedPokemon(pokemon);
+
+      if (pokemon) {
+        setSuggestedCardName(getSuggestedCardName(text, pokemon.name));
+      }
     } catch (error) {
       console.error("Erro ao escanear carta:", error);
       alert("Não consegui ler a imagem. Tente uma foto mais clara da carta.");
@@ -66,10 +97,10 @@ export function CardScannerModal({
           <div>
             <p className="text-sm text-zinc-500">Scanner de carta</p>
             <h2 className="mt-1 text-3xl font-black text-white">
-              Identificar Pokémon
+              Identificar carta
             </h2>
             <p className="mt-2 text-sm text-zinc-400">
-              Envie uma foto da carta para tentar detectar o nome do Pokémon.
+              Envie uma foto da carta para tentar detectar o Pokémon e adiantar o cadastro.
             </p>
           </div>
 
@@ -142,12 +173,27 @@ export function CardScannerModal({
                   {matchedPokemon.formType} • Gen {matchedPokemon.generation}
                 </p>
 
+                <label className="mt-5 flex flex-col gap-2">
+                  <span className="text-sm font-semibold text-zinc-300">
+                    Nome sugerido da carta
+                  </span>
+
+                  <input
+                    type="text"
+                    value={suggestedCardName}
+                    onChange={(event) => setSuggestedCardName(event.target.value)}
+                    className="premium-input rounded-2xl px-4 py-3 text-sm"
+                  />
+                </label>
+
                 <button
                   type="button"
-                  onClick={() => onSelectPokemon(matchedPokemon)}
+                  onClick={() =>
+                    onSelectPokemon(matchedPokemon, suggestedCardName)
+                  }
                   className="premium-button mt-5 rounded-2xl px-5 py-3 text-sm"
                 >
-                  Usar este Pokémon
+                  Usar este Pokémon e abrir cadastro
                 </button>
               </div>
             )}
