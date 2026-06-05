@@ -54,13 +54,6 @@ function getBaseName(name) {
 function getFormPriority(name) {
   const lowerName = name.toLowerCase();
 
-  // Ordem desejada:
-  // 1. Pokémon normal
-  // 2. Forma regional
-  // 3. Mega evolução
-  // 4. Gigantamax
-  // 5. Outras formas/variações
-
   if (lowerName.includes("gigantamax")) return 4;
   if (lowerName.includes("mega")) return 3;
 
@@ -91,6 +84,18 @@ function getFormPriority(name) {
   if (isSpecial) return 5;
 
   return 1;
+}
+
+function getGeneration(dexNumber) {
+  if (dexNumber <= 151) return 1;
+  if (dexNumber <= 251) return 2;
+  if (dexNumber <= 386) return 3;
+  if (dexNumber <= 493) return 4;
+  if (dexNumber <= 649) return 5;
+  if (dexNumber <= 721) return 6;
+  if (dexNumber <= 809) return 7;
+  if (dexNumber <= 905) return 8;
+  return 9;
 }
 
 const rawContent = fs.readFileSync(rawPath, "utf-8");
@@ -127,21 +132,42 @@ decoratedNames.sort((a, b) => {
   return a.originalIndex - b.originalIndex;
 });
 
-const pokemonForms = decoratedNames.map((item, index) => ({
-  id: index + 1,
-  name: item.name,
-  formType: getFormType(item.name),
-  searchName: getSearchName(item.name),
-  selectedCard: "",
-  cardImageUrl: "",
-  ligaPokemonUrl: "",
-  lowestPrice: 0,
-  owned: false,
-  notes: "",
-}));
+const baseDexMap = new Map();
+let currentDexNumber = 0;
+
+const pokemonForms = decoratedNames.map((item, index) => {
+  if (!baseDexMap.has(item.baseName)) {
+    currentDexNumber += 1;
+    baseDexMap.set(item.baseName, currentDexNumber);
+  }
+
+  const dexNumber = baseDexMap.get(item.baseName);
+  const generation = getGeneration(dexNumber);
+
+  return {
+    id: index + 1,
+    dexNumber,
+    generation,
+    name: item.name,
+    formType: getFormType(item.name),
+    searchName: getSearchName(item.name),
+    selectedCard: "",
+    cardImageUrl: "",
+    ligaPokemonUrl: "",
+    lowestPrice: 0,
+    purchasePrice: 0,
+    marketPrice: 0,
+    marketCondition: "NM",
+    marketUpdatedAt: "",
+    owned: false,
+    notes: "",
+  };
+});
 
 const fileContent = `export type PokemonForm = {
   id: number;
+  dexNumber: number;
+  generation: number;
   name: string;
   formType: string;
   searchName: string;
@@ -149,6 +175,10 @@ const fileContent = `export type PokemonForm = {
   cardImageUrl: string;
   ligaPokemonUrl: string;
   lowestPrice: number;
+  purchasePrice: number;
+  marketPrice: number;
+  marketCondition: string;
+  marketUpdatedAt: string;
   owned: boolean;
   notes: string;
 };

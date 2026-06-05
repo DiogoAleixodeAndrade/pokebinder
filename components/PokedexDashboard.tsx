@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 import { pokemonForms } from "@/data/pokemonForms";
 import { AuthScreen } from "@/components/AuthScreen";
 import { EditCardModal } from "@/components/EditCardModal";
+import { PokedexBinderGrid } from "@/components/PokedexBinderGrid";
 import { PokedexCardGrid } from "@/components/PokedexCardGrid";
 import { PokedexTable } from "@/components/PokedexTable";
 import { PokedexToolbar } from "@/components/PokedexToolbar";
@@ -38,7 +39,10 @@ export function PokedexDashboard() {
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("todos");
   const [formTypeFilter, setFormTypeFilter] = useState("todos");
-  const [viewMode, setViewMode] = useState<"table" | "cards">("table");
+  const [generationFilter, setGenerationFilter] = useState("todas");
+  const [viewMode, setViewMode] = useState<"table" | "cards" | "binder">(
+    "table"
+  );
 
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncStatus, setSyncStatus] = useState<
@@ -324,6 +328,8 @@ export function PokedexDashboard() {
     if (databasePokemonForms.length > 0) {
       return databasePokemonForms.map((pokemon) => ({
         id: pokemon.id,
+        dexNumber: pokemon.dex_number || pokemon.id,
+        generation: pokemon.generation || 1,
         name: pokemon.name,
         formType: pokemon.form_type,
         searchName: pokemon.search_name,
@@ -342,6 +348,8 @@ export function PokedexDashboard() {
 
     return pokemonForms.map((pokemon) => ({
       id: pokemon.id,
+      dexNumber: pokemon.dexNumber,
+      generation: pokemon.generation,
       name: pokemon.name,
       formType: pokemon.formType,
       searchName: pokemon.searchName,
@@ -349,10 +357,10 @@ export function PokedexDashboard() {
       cardImageUrl: pokemon.cardImageUrl || "",
       ligaPokemonUrl: pokemon.ligaPokemonUrl || "",
       lowestPrice: pokemon.lowestPrice || 0,
-      purchasePrice: 0,
-      marketPrice: 0,
-      marketCondition: "NM",
-      marketUpdatedAt: "",
+      purchasePrice: pokemon.purchasePrice || 0,
+      marketPrice: pokemon.marketPrice || 0,
+      marketCondition: pokemon.marketCondition || "NM",
+      marketUpdatedAt: pokemon.marketUpdatedAt || "",
       owned: pokemon.owned || false,
       notes: pokemon.notes || "",
     }));
@@ -418,9 +426,21 @@ export function PokedexDashboard() {
       const matchesFormType =
         formTypeFilter === "todos" || pokemon.formType === formTypeFilter;
 
-      return matchesSearch && matchesStatus && matchesFormType;
+      const matchesGeneration =
+        generationFilter === "todas" ||
+        pokemon.generation === Number(generationFilter);
+
+      return (
+        matchesSearch && matchesStatus && matchesFormType && matchesGeneration
+      );
     });
-  }, [search, statusFilter, formTypeFilter, mergedPokemonForms]);
+  }, [
+    search,
+    statusFilter,
+    formTypeFilter,
+    generationFilter,
+    mergedPokemonForms,
+  ]);
 
   if (isLoadingAuth) {
     return (
@@ -461,14 +481,15 @@ export function PokedexDashboard() {
                   </span>
 
                   <span
-                    className={`w-fit rounded-full border px-4 py-1.5 text-sm ${syncStatus === "success"
-                      ? "border-emerald-400/25 bg-emerald-400/10 text-emerald-300"
-                      : syncStatus === "error"
-                        ? "border-red-400/25 bg-red-400/10 text-red-300"
-                        : syncStatus === "loading"
-                          ? "border-yellow-400/25 bg-yellow-400/10 text-yellow-300"
-                          : "border-zinc-700 bg-zinc-900 text-zinc-400"
-                      }`}
+                    className={`w-fit rounded-full border px-4 py-1.5 text-sm ${
+                      syncStatus === "success"
+                        ? "border-emerald-400/25 bg-emerald-400/10 text-emerald-300"
+                        : syncStatus === "error"
+                          ? "border-red-400/25 bg-red-400/10 text-red-300"
+                          : syncStatus === "loading"
+                            ? "border-yellow-400/25 bg-yellow-400/10 text-yellow-300"
+                            : "border-zinc-700 bg-zinc-900 text-zinc-400"
+                    }`}
                   >
                     {syncStatus === "loading" && "Sincronizando..."}
                     {syncStatus === "success" && "Salvo no Supabase"}
@@ -591,7 +612,11 @@ export function PokedexDashboard() {
           />
 
           <ValueCard
-            title={collectionProfitValue >= 0 ? "Lucro estimado" : "Prejuízo estimado"}
+            title={
+              collectionProfitValue >= 0
+                ? "Lucro estimado"
+                : "Prejuízo estimado"
+            }
             description="Diferença entre valor atual NM e total gasto"
             value={`${collectionProfitValue >= 0 ? "+" : "-"}${formatCurrency(
               Math.abs(collectionProfitValue)
@@ -607,6 +632,7 @@ export function PokedexDashboard() {
             search={search}
             statusFilter={statusFilter}
             formTypeFilter={formTypeFilter}
+            generationFilter={generationFilter}
             viewMode={viewMode}
             formTypes={formTypes}
             filteredCount={filteredPokemon.length}
@@ -618,6 +644,7 @@ export function PokedexDashboard() {
             onSearchChange={setSearch}
             onStatusFilterChange={setStatusFilter}
             onFormTypeFilterChange={setFormTypeFilter}
+            onGenerationFilterChange={setGenerationFilter}
             onViewModeChange={setViewMode}
             onExportCollection={exportCollection}
             onImportCollection={importCollection}
@@ -638,6 +665,13 @@ export function PokedexDashboard() {
               pokemonList={filteredPokemon}
               onEdit={setSelectedPokemon}
               formatCurrency={formatCurrency}
+            />
+          )}
+
+          {viewMode === "binder" && (
+            <PokedexBinderGrid
+              pokemonList={filteredPokemon}
+              onEdit={setSelectedPokemon}
             />
           )}
         </section>

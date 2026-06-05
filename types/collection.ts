@@ -15,6 +15,8 @@ export type CollectionState = Record<number, CollectionData>;
 
 export type SelectedPokemon = {
   id: number;
+  dexNumber: number;
+  generation: number;
   name: string;
   formType: string;
   searchName: string;
@@ -34,6 +36,8 @@ export type PokemonCollectionItem = SelectedPokemon;
 
 export type PokemonFormFromDatabase = {
   id: number;
+  dex_number: number | null;
+  generation: number | null;
   name: string;
   form_type: string;
   search_name: string;

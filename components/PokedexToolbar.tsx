@@ -4,7 +4,8 @@ type PokedexToolbarProps = {
   search: string;
   statusFilter: string;
   formTypeFilter: string;
-  viewMode: "table" | "cards";
+  generationFilter: string;
+  viewMode: "table" | "cards" | "binder";
   formTypes: string[];
   filteredCount: number;
   totalCount: number;
@@ -15,7 +16,8 @@ type PokedexToolbarProps = {
   onSearchChange: (value: string) => void;
   onStatusFilterChange: (value: string) => void;
   onFormTypeFilterChange: (value: string) => void;
-  onViewModeChange: (value: "table" | "cards") => void;
+  onGenerationFilterChange: (value: string) => void;
+  onViewModeChange: (value: "table" | "cards" | "binder") => void;
   onExportCollection: () => void;
   onImportCollection: (event: ChangeEvent<HTMLInputElement>) => void;
   onResetCollection: () => void | Promise<void>;
@@ -26,6 +28,7 @@ export function PokedexToolbar({
   search,
   statusFilter,
   formTypeFilter,
+  generationFilter,
   viewMode,
   formTypes,
   filteredCount,
@@ -37,6 +40,7 @@ export function PokedexToolbar({
   onSearchChange,
   onStatusFilterChange,
   onFormTypeFilterChange,
+  onGenerationFilterChange,
   onViewModeChange,
   onExportCollection,
   onImportCollection,
@@ -119,7 +123,7 @@ export function PokedexToolbar({
           <InfoPill label="Faltantes" value={missingCards} tone="danger" />
         </div>
 
-        <div className="grid gap-3 lg:grid-cols-[1.4fr_1fr_1fr_auto]">
+        <div className="grid gap-3 lg:grid-cols-[1.4fr_1fr_1fr_1fr_auto]">
           <div className="relative">
             <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500">
               🔎
@@ -159,6 +163,23 @@ export function PokedexToolbar({
             ))}
           </select>
 
+          <select
+            value={generationFilter}
+            onChange={(event) => onGenerationFilterChange(event.target.value)}
+            className="premium-input rounded-2xl px-4 py-3 text-sm"
+          >
+            <option value="todas">Todas as gerações</option>
+            <option value="1">Geração 1</option>
+            <option value="2">Geração 2</option>
+            <option value="3">Geração 3</option>
+            <option value="4">Geração 4</option>
+            <option value="5">Geração 5</option>
+            <option value="6">Geração 6</option>
+            <option value="7">Geração 7</option>
+            <option value="8">Geração 8</option>
+            <option value="9">Geração 9</option>
+          </select>
+
           <div className="flex rounded-2xl border border-zinc-700/80 bg-zinc-950/70 p-1">
             <button
               type="button"
@@ -182,6 +203,18 @@ export function PokedexToolbar({
               }`}
             >
               Cards
+            </button>
+
+            <button
+              type="button"
+              onClick={() => onViewModeChange("binder")}
+              className={`rounded-xl px-4 py-2.5 text-sm font-black transition ${
+                viewMode === "binder"
+                  ? "bg-yellow-400 text-zinc-950 shadow-lg shadow-yellow-950/20"
+                  : "text-zinc-400 hover:text-white"
+              }`}
+            >
+              Binder
             </button>
           </div>
         </div>

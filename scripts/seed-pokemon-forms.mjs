@@ -41,6 +41,8 @@ const pokemonForms = JSON.parse(match[1]);
 
 const rows = pokemonForms.map((pokemon) => ({
   id: pokemon.id,
+  dex_number: pokemon.dexNumber,
+  generation: pokemon.generation,
   name: pokemon.name,
   form_type: pokemon.formType,
   search_name: pokemon.searchName,

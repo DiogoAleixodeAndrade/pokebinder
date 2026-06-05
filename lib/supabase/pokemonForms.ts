@@ -4,7 +4,7 @@ import type { PokemonFormFromDatabase } from "@/types/collection";
 export async function getPokemonFormsFromSupabase() {
   const { data, error } = await supabase
     .from("pokemon_forms")
-    .select("id, name, form_type, search_name")
+    .select("id, dex_number, generation, name, form_type, search_name")
     .order("id", { ascending: true });
 
   if (error) {
