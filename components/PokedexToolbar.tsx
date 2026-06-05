@@ -22,6 +22,7 @@ type PokedexToolbarProps = {
   onImportCollection: (event: ChangeEvent<HTMLInputElement>) => void;
   onResetCollection: () => void | Promise<void>;
   onSyncCollection: () => void;
+  onOpenScanner: () => void;
 };
 
 export function PokedexToolbar({
@@ -46,6 +47,7 @@ export function PokedexToolbar({
   onImportCollection,
   onResetCollection,
   onSyncCollection,
+  onOpenScanner,
 }: PokedexToolbarProps) {
   return (
     <div className="border-b border-zinc-800/80 bg-zinc-950/35 p-5 backdrop-blur-xl md:p-6">
@@ -77,6 +79,14 @@ export function PokedexToolbar({
               className="rounded-2xl border border-yellow-400/30 bg-yellow-400/10 px-4 py-3 text-sm font-bold text-yellow-300 transition hover:bg-yellow-400/15 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isSyncing ? "Sincronizando..." : "Sincronizar agora"}
+            </button>
+
+            <button
+              type="button"
+              onClick={onOpenScanner}
+              className="rounded-2xl border border-purple-400/30 bg-purple-400/10 px-4 py-3 text-sm font-bold text-purple-300 transition hover:bg-purple-400/15"
+            >
+              Scanner
             </button>
 
             <button

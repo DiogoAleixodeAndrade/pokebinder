@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 import { pokemonForms } from "@/data/pokemonForms";
 import { AuthScreen } from "@/components/AuthScreen";
+import { CardScannerModal } from "@/components/CardScannerModal";
 import { EditCardModal } from "@/components/EditCardModal";
 import { PokedexBinderGrid } from "@/components/PokedexBinderGrid";
 import { PokedexCardGrid } from "@/components/PokedexCardGrid";
@@ -61,6 +62,7 @@ export function PokedexDashboard() {
   const [selectedPokemon, setSelectedPokemon] = useState<SelectedPokemon | null>(
     null
   );
+  const [isScannerOpen, setIsScannerOpen] = useState(false);
 
   const [collection, setCollection] = useState<CollectionState>(() =>
     getInitialCollectionState()
@@ -650,6 +652,7 @@ export function PokedexDashboard() {
             onImportCollection={importCollection}
             onResetCollection={resetCollection}
             onSyncCollection={syncCollectionWithSupabase}
+            onOpenScanner={() => setIsScannerOpen(true)}
           />
 
           {viewMode === "table" && (
@@ -684,6 +687,17 @@ export function PokedexDashboard() {
           onClose={() => setSelectedPokemon(null)}
           onClear={clearPokemonData}
           onUpdate={updatePokemonData}
+        />
+      )}
+
+      {isScannerOpen && (
+        <CardScannerModal
+          pokemonList={mergedPokemonForms}
+          onClose={() => setIsScannerOpen(false)}
+          onSelectPokemon={(pokemon) => {
+            setSelectedPokemon(pokemon);
+            setIsScannerOpen(false);
+          }}
         />
       )}
     </main>
