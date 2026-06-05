@@ -191,7 +191,7 @@ export function PokedexCardGrid({
                     rel="noreferrer"
                     className="rounded-2xl border border-zinc-700 bg-zinc-950/70 px-4 py-3 text-sm font-bold text-zinc-300 transition hover:border-yellow-400/50 hover:text-yellow-300"
                   >
-                    Liga
+                    Fonte
                   </a>
                 )}
               </div>

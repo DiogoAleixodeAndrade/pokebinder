@@ -135,7 +135,7 @@ export function EditCardModal({
               </Field>
             </div>
 
-            <Field label="Link da Liga Pokémon">
+            <Field label="Link da fonte de preço">
               <input
                 type="url"
                 value={currentPokemon.ligaPokemonUrl}
@@ -146,7 +146,7 @@ export function EditCardModal({
                     event.target.value
                   )
                 }
-                placeholder="Cole o link da carta na Liga Pokémon"
+                placeholder="Cole o link da carta na Liga Pokémon, MyPcards ou outra fonte"
                 className="premium-input w-full rounded-2xl px-4 py-3 text-sm"
               />
             </Field>
@@ -158,8 +158,7 @@ export function EditCardModal({
                     Valor atual da carta
                   </p>
                   <p className="mt-1 text-xs text-zinc-500">
-                    Informe manualmente o menor valor NM encontrado na Liga
-                    Pokémon.
+                    Informe manualmente o menor valor NM encontrado na sua fonte de preço.
                   </p>
                 </div>
 
@@ -332,7 +331,7 @@ export function EditCardModal({
                 rel="noreferrer"
                 className="premium-button mt-4 block rounded-2xl px-4 py-3 text-center text-sm"
               >
-                Abrir na Liga Pokémon
+                Abrir fonte de preço
               </a>
             )}
           </aside>
