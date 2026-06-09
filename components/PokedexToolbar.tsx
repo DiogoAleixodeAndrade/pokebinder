@@ -50,20 +50,20 @@ export function PokedexToolbar({
   onOpenScanner,
 }: PokedexToolbarProps) {
   return (
-    <div className="border-b border-zinc-800/80 bg-zinc-950/35 p-5 backdrop-blur-xl md:p-6">
-      <div className="flex flex-col gap-6">
+    <div className="border-b border-zinc-800/80 bg-zinc-950/35 p-4 backdrop-blur-xl md:p-6">
+      <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-yellow-400/25 bg-yellow-400/10 text-xl">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-yellow-400/25 bg-yellow-400/10 text-lg md:h-11 md:w-11 md:text-xl">
                 📚
               </div>
 
-              <div>
-                <h2 className="text-2xl font-black tracking-tight text-white">
+              <div className="min-w-0">
+                <h2 className="text-xl font-black tracking-tight text-white md:text-2xl">
                   Minha Pokédex
                 </h2>
-                <p className="mt-1 max-w-2xl text-sm leading-6 text-zinc-400">
+                <p className="mt-1 line-clamp-2 max-w-2xl text-xs leading-5 text-zinc-400 md:text-sm md:leading-6">
                   Escolha a carta desejada, marque como adquirida e acompanhe o
                   progresso da sua coleção em tempo real.
                 </p>
@@ -71,20 +71,20 @@ export function PokedexToolbar({
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
             <button
               type="button"
               onClick={onSyncCollection}
               disabled={isSyncing}
-              className="rounded-2xl border border-yellow-400/30 bg-yellow-400/10 px-4 py-3 text-sm font-bold text-yellow-300 transition hover:bg-yellow-400/15 disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-2xl border border-yellow-400/30 bg-yellow-400/10 px-3 py-2.5 text-xs font-bold text-yellow-300 transition hover:bg-yellow-400/15 disabled:cursor-not-allowed disabled:opacity-60 md:px-4 md:py-3 md:text-sm"
             >
-              {isSyncing ? "Sincronizando..." : "Sincronizar agora"}
+              {isSyncing ? "Sincronizando..." : "Sincronizar"}
             </button>
 
             <button
               type="button"
               onClick={onOpenScanner}
-              className="rounded-2xl border border-purple-400/30 bg-purple-400/10 px-4 py-3 text-sm font-bold text-purple-300 transition hover:bg-purple-400/15"
+              className="rounded-2xl border border-purple-400/30 bg-purple-400/10 px-3 py-2.5 text-xs font-bold text-purple-300 transition hover:bg-purple-400/15 md:px-4 md:py-3 md:text-sm"
             >
               Scanner
             </button>
@@ -92,13 +92,13 @@ export function PokedexToolbar({
             <button
               type="button"
               onClick={onExportCollection}
-              className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-sm font-bold text-emerald-300 transition hover:bg-emerald-400/15"
+              className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-3 py-2.5 text-xs font-bold text-emerald-300 transition hover:bg-emerald-400/15 md:px-4 md:py-3 md:text-sm"
             >
-              Exportar backup
+              Exportar
             </button>
 
-            <label className="cursor-pointer rounded-2xl border border-sky-400/30 bg-sky-400/10 px-4 py-3 text-sm font-bold text-sky-300 transition hover:bg-sky-400/15">
-              Importar meus Pokémon
+            <label className="cursor-pointer rounded-2xl border border-sky-400/30 bg-sky-400/10 px-3 py-2.5 text-center text-xs font-bold text-sky-300 transition hover:bg-sky-400/15 md:px-4 md:py-3 md:text-sm">
+              Importar
               <input
                 type="file"
                 accept=".xlsx,.xls,.csv,.txt"
@@ -110,14 +110,14 @@ export function PokedexToolbar({
             <button
               type="button"
               onClick={onResetCollection}
-              className="rounded-2xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm font-bold text-red-300 transition hover:bg-red-400/15"
+              className="col-span-2 rounded-2xl border border-red-400/30 bg-red-400/10 px-3 py-2.5 text-xs font-bold text-red-300 transition hover:bg-red-400/15 sm:col-span-1 md:px-4 md:py-3 md:text-sm"
             >
               Limpar tudo
             </button>
           </div>
         </div>
 
-        <div className="grid gap-3 md:grid-cols-3">
+        <div className="grid gap-2 md:grid-cols-3">
           <InfoPill
             label="Exibindo"
             value={`${filteredCount} de ${totalCount}`}
@@ -141,7 +141,7 @@ export function PokedexToolbar({
 
             <input
               type="text"
-              placeholder="Buscar Pokémon, forma, mega, gigantamax..."
+              placeholder="Buscar Pokémon, forma, mega..."
               value={search}
               onChange={(event) => onSearchChange(event.target.value)}
               className="premium-input w-full rounded-2xl py-3 pl-11 pr-4 text-sm placeholder:text-zinc-500"
@@ -149,22 +149,22 @@ export function PokedexToolbar({
           </div>
 
           <select
-  value={statusFilter}
-  onChange={(event) => onStatusFilterChange(event.target.value)}
-  className="premium-input rounded-2xl px-4 py-3 text-sm"
->
-  <option value="todos">Todos os status</option>
-  <option value="adquiridos">Adquiridos</option>
-  <option value="faltantes">Faltantes</option>
-  <option value="selecionados">Com carta selecionada</option>
-  <option value="nao-selecionados">Sem carta selecionada</option>
-  <option value="com-media">Com média de preço</option>
-  <option value="sem-media">Sem média de preço</option>
-  <option value="com-imagem">Com imagem</option>
-  <option value="sem-imagem">Sem imagem</option>
-  <option value="com-fonte">Com fonte salva</option>
-  <option value="sem-fonte">Sem fonte salva</option>
-</select>
+            value={statusFilter}
+            onChange={(event) => onStatusFilterChange(event.target.value)}
+            className="premium-input rounded-2xl px-4 py-3 text-sm"
+          >
+            <option value="todos">Todos os status</option>
+            <option value="adquiridos">Adquiridos</option>
+            <option value="faltantes">Faltantes</option>
+            <option value="selecionados">Com carta selecionada</option>
+            <option value="nao-selecionados">Sem carta selecionada</option>
+            <option value="com-media">Com média de preço</option>
+            <option value="sem-media">Sem média de preço</option>
+            <option value="com-imagem">Com imagem</option>
+            <option value="sem-imagem">Sem imagem</option>
+            <option value="com-fonte">Com fonte salva</option>
+            <option value="sem-fonte">Sem fonte salva</option>
+          </select>
 
           <select
             value={formTypeFilter}
@@ -196,11 +196,11 @@ export function PokedexToolbar({
             <option value="9">Geração 9</option>
           </select>
 
-          <div className="flex rounded-2xl border border-zinc-700/80 bg-zinc-950/70 p-1">
+          <div className="grid grid-cols-3 rounded-2xl border border-zinc-700/80 bg-zinc-950/70 p-1 lg:flex">
             <button
               type="button"
               onClick={() => onViewModeChange("table")}
-              className={`rounded-xl px-4 py-2.5 text-sm font-black transition ${
+              className={`rounded-xl px-3 py-2.5 text-sm font-black transition md:px-4 ${
                 viewMode === "table"
                   ? "bg-yellow-400 text-zinc-950 shadow-lg shadow-yellow-950/20"
                   : "text-zinc-400 hover:text-white"
@@ -212,7 +212,7 @@ export function PokedexToolbar({
             <button
               type="button"
               onClick={() => onViewModeChange("cards")}
-              className={`rounded-xl px-4 py-2.5 text-sm font-black transition ${
+              className={`rounded-xl px-3 py-2.5 text-sm font-black transition md:px-4 ${
                 viewMode === "cards"
                   ? "bg-yellow-400 text-zinc-950 shadow-lg shadow-yellow-950/20"
                   : "text-zinc-400 hover:text-white"
@@ -224,7 +224,7 @@ export function PokedexToolbar({
             <button
               type="button"
               onClick={() => onViewModeChange("binder")}
-              className={`rounded-xl px-4 py-2.5 text-sm font-black transition ${
+              className={`rounded-xl px-3 py-2.5 text-sm font-black transition md:px-4 ${
                 viewMode === "binder"
                   ? "bg-yellow-400 text-zinc-950 shadow-lg shadow-yellow-950/20"
                   : "text-zinc-400 hover:text-white"
