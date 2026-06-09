@@ -501,13 +501,13 @@ const cardsWithoutSource = mergedPokemonForms.filter((pokemon) => {
 
   return (
     <main className="min-h-screen text-white">
-      <section className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-8">
-        <header className="premium-card overflow-hidden rounded-[2rem]">
-          <div className="relative p-6 md:p-8">
+      <section className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-3 py-4 md:gap-8 md:px-6 md:py-8">
+        <header className="premium-card overflow-hidden rounded-[1.5rem] md:rounded-[2rem]">
+          <div className="relative p-4 md:p-8">
             <div className="pointer-events-none absolute right-0 top-0 h-40 w-40 rounded-full bg-yellow-400/10 blur-3xl" />
             <div className="pointer-events-none absolute bottom-0 left-1/3 h-36 w-36 rounded-full bg-blue-500/10 blur-3xl" />
 
-            <div className="relative flex flex-col gap-8">
+            <div className="relative flex flex-col gap-5 md:gap-8">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div className="flex flex-wrap gap-2">
                   <span className="w-fit rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-1.5 text-sm font-semibold text-yellow-300">
@@ -551,45 +551,45 @@ const cardsWithoutSource = mergedPokemonForms.filter((pokemon) => {
 
               <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
                 <div>
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-400/10 text-2xl shadow-2xl shadow-yellow-950/30">
+                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-400/10 text-xl shadow-2xl shadow-yellow-950/30 md:mb-4 md:h-14 md:w-14 md:text-2xl">
                     ⚡
                   </div>
 
-                  <h1 className="text-5xl font-black tracking-tight text-white md:text-7xl">
+                  <h1 className="text-4xl font-black tracking-tight text-white md:text-7xl">
                     Poké<span className="text-yellow-300">Binder</span>
                   </h1>
 
-                  <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300 md:text-lg">
+                  <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-300 md:mt-4 md:text-lg md:leading-7">
                     Seu binder digital para controlar cartas Pokémon TCG por
                     Pokédex, formas regionais, mega evoluções, gigantamax e
                     variações especiais.
                   </p>
 
-                  <div className="mt-5 flex flex-wrap gap-3 text-sm text-zinc-400">
-                    <span className="rounded-full border border-zinc-700 bg-zinc-950/60 px-4 py-2">
+                  <div className="mt-4 flex flex-wrap gap-2 text-xs text-zinc-400 md:mt-5 md:gap-3 md:text-sm">
+                    <span className="rounded-full border border-zinc-700 bg-zinc-950/60 px-3 py-1.5 md:px-4 md:py-2">
                       Conta: {user.email}
                     </span>
 
-                    <span className="rounded-full border border-zinc-700 bg-zinc-950/60 px-4 py-2">
+                    <span className="rounded-full border border-zinc-700 bg-zinc-950/60 px-3 py-1.5 md:px-4 md:py-2">
                       {mergedPokemonForms.length} formas cadastradas
                     </span>
 
-                    <span className="rounded-full border border-zinc-700 bg-zinc-950/60 px-4 py-2">
+                    <span className="rounded-full border border-zinc-700 bg-zinc-950/60 px-3 py-1.5 md:px-4 md:py-2">
                       {acquiredCards} adquiridas
                     </span>
                   </div>
                 </div>
 
-                <div className="rounded-[1.5rem] border border-zinc-800 bg-zinc-950/70 p-5">
+                <div className="rounded-[1.5rem] border border-zinc-800 bg-zinc-950/70 p-4 md:p-5">
                   <div className="flex items-center justify-between gap-4">
                     <div>
                       <p className="text-sm text-zinc-400">Progresso geral</p>
-                      <strong className="mt-1 block text-4xl font-black text-yellow-300">
+                      <strong className="mt-1 block text-3xl font-black text-yellow-300 md:text-4xl">
                         {completionPercentage}%
                       </strong>
                     </div>
 
-                    <div className="flex h-20 w-20 items-center justify-center rounded-full border border-yellow-400/30 bg-yellow-400/10 text-sm font-bold text-yellow-300">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-yellow-400/30 bg-yellow-400/10 text-xs font-bold text-yellow-300 md:h-20 md:w-20 md:text-sm">
                       {acquiredCards}/{mergedPokemonForms.length}
                     </div>
                   </div>
@@ -622,7 +622,7 @@ const cardsWithoutSource = mergedPokemonForms.filter((pokemon) => {
           </div>
         </header>
 
-        <section className="grid gap-4 md:grid-cols-3">
+        <section className="grid gap-3 md:grid-cols-3 md:gap-4">
           <StatsCard title="Total da coleção" value={mergedPokemonForms.length} />
 
           <StatsCard
