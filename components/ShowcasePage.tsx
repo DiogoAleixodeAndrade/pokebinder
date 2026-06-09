@@ -11,7 +11,8 @@ import { getCurrentUser } from "@/lib/supabase/auth";
 import { getCollectionItemsFromSupabase } from "@/lib/supabase/collectionItems";
 import type { CollectionState, PokemonCollectionItem } from "@/types/collection";
 
-const ITEMS_PER_PAGE = 12;
+const DEFAULT_ITEMS_PER_PAGE = 12;
+const PRINT_ITEMS_PER_PAGE = 9;
 
 export function ShowcasePage() {
   const [collection, setCollection] = useState<CollectionState>(() =>
@@ -19,6 +20,9 @@ export function ShowcasePage() {
   );
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  const [printMode, setPrintMode] = useState(false);
+
+  const itemsPerPage = printMode ? PRINT_ITEMS_PER_PAGE : DEFAULT_ITEMS_PER_PAGE;
 
   useEffect(() => {
     async function loadCollection() {
@@ -62,13 +66,13 @@ export function ShowcasePage() {
 
   const totalPages = Math.max(
     1,
-    Math.ceil(ownedPokemon.length / ITEMS_PER_PAGE)
+    Math.ceil(ownedPokemon.length / itemsPerPage)
   );
 
   const currentItems = useMemo(() => {
-    const start = (page - 1) * ITEMS_PER_PAGE;
-    return ownedPokemon.slice(start, start + ITEMS_PER_PAGE);
-  }, [ownedPokemon, page]);
+    const start = (page - 1) * itemsPerPage;
+return ownedPokemon.slice(start, start + itemsPerPage);
+  }, [ownedPokemon, page, itemsPerPage]);
 
   useEffect(() => {
     setPage(1);
@@ -76,7 +80,10 @@ export function ShowcasePage() {
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-6 md:px-8 md:py-10">
+      <section className={`mx-auto flex w-full max-w-6xl flex-col px-4 md:px-8 ${
+    printMode ? "gap-4 py-4" : "gap-6 py-6 md:py-10"
+  }`}>
+        {!printMode && (
         <header className="rounded-[1.75rem] border border-yellow-400/20 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black p-5 shadow-2xl shadow-black/50 md:rounded-[2rem] md:p-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
@@ -112,11 +119,24 @@ export function ShowcasePage() {
             </div>
           </div>
         </header>
+        )}
 
         <div className="flex flex-col gap-3 rounded-[1.75rem] border border-zinc-800 bg-zinc-900/50 p-4 md:flex-row md:items-center md:justify-between md:rounded-[2rem]">
           <p className="text-sm text-zinc-400">
             Página {page} de {totalPages}
           </p>
+
+          <button
+  type="button"
+  onClick={() => setPrintMode((current) => !current)}
+  className={`rounded-2xl border px-4 py-2 text-sm font-bold transition ${
+    printMode
+      ? "border-yellow-400/40 bg-yellow-400/15 text-yellow-300"
+      : "border-zinc-700 bg-zinc-950 text-zinc-300 hover:border-yellow-400/40 hover:text-yellow-300"
+  }`}
+>
+  {printMode ? "Sair do print" : "Modo print"}
+</button>
 
           <div className="flex items-center gap-2">
             <button
@@ -174,7 +194,11 @@ export function ShowcasePage() {
           </div>
         ) : (
           !isLoading && (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+  className={`grid gap-4 ${
+    printMode ? "grid-cols-1 sm:grid-cols-3" : "sm:grid-cols-2 lg:grid-cols-3"
+  }`}
+>
               {currentItems.map((pokemon) => (
                 <ShowcaseCard key={pokemon.id} pokemon={pokemon} />
               ))}
