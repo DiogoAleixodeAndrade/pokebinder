@@ -22,6 +22,9 @@ export function PokedexBinderGrid({
   onEdit,
 }: PokedexBinderGridProps) {
   const [page, setPage] = useState(1);
+  const [mobileLayout, setMobileLayout] = useState<"compact" | "large">(
+    "compact"
+  );
 
   const totalPages = Math.max(1, Math.ceil(pokemonList.length / ITEMS_PER_PAGE));
 
@@ -39,7 +42,7 @@ export function PokedexBinderGrid({
   }, [pokemonList]);
 
   return (
-    <div className="p-5">
+    <div className="p-4 md:p-5">
       <div className="mb-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
           <h3 className="text-2xl font-black text-white">Binder 4x4</h3>
@@ -48,34 +51,63 @@ export function PokedexBinderGrid({
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setPage((prev) => Math.max(1, prev - 1))}
-            disabled={page === 1}
-            className="rounded-2xl border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:text-yellow-300 disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            Anterior
-          </button>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setPage((prev) => Math.max(1, prev - 1))}
+              disabled={page === 1}
+              className="rounded-2xl border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:text-yellow-300 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Anterior
+            </button>
 
-          <div className="rounded-2xl border border-yellow-400/25 bg-yellow-400/10 px-4 py-2 text-sm font-black text-yellow-300">
-            {page}/{totalPages}
+            <div className="rounded-2xl border border-yellow-400/25 bg-yellow-400/10 px-4 py-2 text-sm font-black text-yellow-300">
+              {page}/{totalPages}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}
+              disabled={page === totalPages}
+              className="rounded-2xl border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:text-yellow-300 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Próxima
+            </button>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}
-            disabled={page === totalPages}
-            className="rounded-2xl border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:text-yellow-300 disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            Próxima
-          </button>
+          <div className="flex w-fit rounded-2xl border border-zinc-700/80 bg-zinc-950/70 p-1 md:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileLayout("compact")}
+              className={`rounded-xl px-4 py-2 text-sm font-black transition ${
+                mobileLayout === "compact"
+                  ? "bg-yellow-400 text-zinc-950"
+                  : "text-zinc-400"
+              }`}
+            >
+              2 colunas
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setMobileLayout("large")}
+              className={`rounded-xl px-4 py-2 text-sm font-black transition ${
+                mobileLayout === "large"
+                  ? "bg-yellow-400 text-zinc-950"
+                  : "text-zinc-400"
+              }`}
+            >
+              Grande
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="relative overflow-hidden rounded-[2.25rem] border border-zinc-800 bg-gradient-to-br from-zinc-950 via-zinc-950 to-zinc-900 p-4 shadow-2xl shadow-black/40">
+      <div className="relative overflow-hidden rounded-[1.5rem] border border-zinc-800 bg-gradient-to-br from-zinc-950 via-zinc-950 to-zinc-900 p-3 shadow-2xl shadow-black/40 md:rounded-[2.25rem] md:p-4">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(250,204,21,0.08),transparent_45%)]" />
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-14 border-r border-zinc-800/80 bg-zinc-950/80">
+
+        <div className="pointer-events-none absolute left-0 top-0 hidden h-full w-14 border-r border-zinc-800/80 bg-zinc-950/80 md:block">
           <div className="flex h-full flex-col items-center justify-around py-8">
             {Array.from({ length: 4 }).map((_, index) => (
               <div
@@ -86,10 +118,14 @@ export function PokedexBinderGrid({
           </div>
         </div>
 
-        <div className="relative ml-10 rounded-[1.75rem] border border-zinc-800/80 bg-zinc-900/45 p-4">
-          <div className="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-white/[0.025]" />
+        <div className="relative rounded-[1.25rem] border border-zinc-800/80 bg-zinc-900/45 p-2 md:ml-10 md:rounded-[1.75rem] md:p-4">
+          <div className="pointer-events-none absolute inset-0 rounded-[1.25rem] bg-white/[0.025] md:rounded-[1.75rem]" />
 
-          <div className="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div
+            className={`relative grid gap-3 md:gap-4 xl:grid-cols-4 ${
+              mobileLayout === "large" ? "grid-cols-1" : "grid-cols-2"
+            }`}
+          >
             {currentItems.map((pokemon) => {
               const showCard = pokemon.owned && pokemon.cardImageUrl;
               const query = getCardSearchQuery(
@@ -104,9 +140,9 @@ export function PokedexBinderGrid({
               return (
                 <article
                   key={pokemon.id}
-                  className="group rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-2 shadow-inner shadow-white/5 transition hover:border-yellow-400/40 hover:bg-yellow-400/[0.035]"
+                  className="group rounded-[1.1rem] border border-white/10 bg-white/[0.045] p-1.5 shadow-inner shadow-white/5 transition hover:border-yellow-400/40 hover:bg-yellow-400/[0.035] md:rounded-[1.5rem] md:p-2"
                 >
-                  <div className="rounded-[1.35rem] border border-zinc-800 bg-zinc-950/85 p-2 shadow-lg shadow-black/30">
+                  <div className="rounded-[1rem] border border-zinc-800 bg-zinc-950/85 p-2 shadow-lg shadow-black/30 md:rounded-[1.35rem]">
                     <button
                       type="button"
                       onClick={() => onEdit(pokemon)}
@@ -130,21 +166,21 @@ export function PokedexBinderGrid({
 
                             <div className="absolute inset-0 bg-black/20" />
 
-                            <div className="absolute left-2 top-2 z-30 rounded-full border border-red-400/30 bg-red-400/15 px-2 py-1 text-[10px] font-bold text-red-300">
+                            <div className="absolute left-2 top-2 z-30 rounded-full border border-red-400/30 bg-red-400/15 px-2 py-1 text-[9px] font-bold text-red-300 md:text-[10px]">
                               Faltando
                             </div>
                           </>
                         )}
 
                         {pokemon.owned && (
-                          <div className="absolute right-2 top-2 z-30 rounded-full border border-emerald-400/30 bg-emerald-400/15 px-2 py-1 text-[10px] font-bold text-emerald-300">
+                          <div className="absolute right-2 top-2 z-30 rounded-full border border-emerald-400/30 bg-emerald-400/15 px-2 py-1 text-[9px] font-bold text-emerald-300 md:text-[10px]">
                             Tenho
                           </div>
                         )}
                       </div>
 
                       <div className="mt-3">
-                        <p className="line-clamp-1 text-sm font-black text-white">
+                        <p className="line-clamp-1 text-sm font-black text-white md:text-base">
                           {pokemon.name}
                         </p>
 
@@ -152,7 +188,7 @@ export function PokedexBinderGrid({
                           {pokemon.selectedCard || "Sem carta selecionada"}
                         </p>
 
-                        <div className="mt-2 flex flex-wrap gap-2">
+                        <div className="mt-2 flex flex-wrap gap-1.5 md:gap-2">
                           <span className="rounded-full border border-zinc-700 bg-zinc-950 px-2 py-1 text-[10px] text-zinc-300">
                             #{String(pokemon.dexNumber).padStart(3, "0")}
                           </span>
@@ -168,13 +204,17 @@ export function PokedexBinderGrid({
                       </div>
                     </button>
 
-                    <div className="mt-3 grid grid-cols-3 gap-2">
+                    <div
+                      className={`mt-3 grid gap-1.5 md:grid-cols-3 md:gap-2 ${
+                        mobileLayout === "large" ? "grid-cols-3" : "grid-cols-2"
+                      }`}
+                    >
                       <button
                         type="button"
                         onClick={() => onEdit(pokemon)}
                         className="rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-2 py-2 text-[10px] font-bold text-yellow-300 transition hover:bg-yellow-400/15"
                       >
-                        Editar
+                        Edit
                       </button>
 
                       {pokemon.ligaPokemonUrl ? (
@@ -218,10 +258,6 @@ export function PokedexBinderGrid({
                       >
                         TCG
                       </a>
-
-                      <span className="rounded-xl border border-zinc-800 bg-zinc-950 px-2 py-2 text-center text-[10px] font-bold text-zinc-600">
-                        Slot
-                      </span>
                     </div>
                   </div>
                 </article>
@@ -231,9 +267,9 @@ export function PokedexBinderGrid({
             {emptySlots.map((_, index) => (
               <div
                 key={`empty-${index}`}
-                className="rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-2 shadow-inner shadow-white/5"
+                className="rounded-[1.1rem] border border-white/10 bg-white/[0.035] p-1.5 shadow-inner shadow-white/5 md:rounded-[1.5rem] md:p-2"
               >
-                <div className="flex min-h-[320px] items-center justify-center rounded-[1.35rem] border border-dashed border-zinc-800 bg-zinc-950/65 p-4 text-center">
+                <div className="flex min-h-[240px] items-center justify-center rounded-[1rem] border border-dashed border-zinc-800 bg-zinc-950/65 p-4 text-center md:min-h-[320px] md:rounded-[1.35rem]">
                   <div>
                     <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900 text-xl">
                       🃏
@@ -290,7 +326,7 @@ function PokemonArtworkFallback({
           return nextIndex;
         });
       }}
-      className="relative z-10 h-full w-full object-contain p-4 opacity-85"
+      className="relative z-10 h-full w-full object-contain p-3 opacity-85 md:p-4"
     />
   );
 }
