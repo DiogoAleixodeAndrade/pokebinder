@@ -29,20 +29,28 @@ export function PokedexBinderGrid({
     "control"
   );
 
-  const totalPages = Math.max(1, Math.ceil(pokemonList.length / ITEMS_PER_PAGE));
+  const [showOnlyOwned, setShowOnlyOwned] = useState(false);
 
-  const currentItems = useMemo(() => {
-    const start = (page - 1) * ITEMS_PER_PAGE;
-    return pokemonList.slice(start, start + ITEMS_PER_PAGE);
-  }, [page, pokemonList]);
+  const binderItems = useMemo(() => {
+  if (!showOnlyOwned) return pokemonList;
+
+  return pokemonList.filter((pokemon) => pokemon.owned);
+}, [pokemonList, showOnlyOwned]);
+
+const totalPages = Math.max(1, Math.ceil(binderItems.length / ITEMS_PER_PAGE));
+
+const currentItems = useMemo(() => {
+  const start = (page - 1) * ITEMS_PER_PAGE;
+  return binderItems.slice(start, start + ITEMS_PER_PAGE);
+}, [page, binderItems]);
 
   const emptySlots = Array.from({
     length: Math.max(0, ITEMS_PER_PAGE - currentItems.length),
   });
 
   useEffect(() => {
-    setPage(1);
-  }, [pokemonList]);
+  setPage(1);
+}, [pokemonList, showOnlyOwned]);
 
   return (
     <div className="p-4 md:p-5">
@@ -50,7 +58,7 @@ export function PokedexBinderGrid({
         <div>
           <h3 className="text-2xl font-black text-white">Binder 4x4</h3>
           <p className="mt-1 text-sm text-zinc-400">
-            Página {page} de {totalPages} • 16 espaços por página
+            Página {page} de {totalPages} • {binderItems.length} itens
           </p>
         </div>
 
@@ -129,6 +137,18 @@ export function PokedexBinderGrid({
             >
               Exposição
             </button>
+
+            <button
+  type="button"
+  onClick={() => setShowOnlyOwned((current) => !current)}
+  className={`w-fit rounded-2xl border px-4 py-2 text-sm font-black transition ${
+    showOnlyOwned
+      ? "border-emerald-400/40 bg-emerald-400/15 text-emerald-300"
+      : "border-zinc-700 bg-zinc-950/70 text-zinc-400 hover:text-white"
+  }`}
+>
+  {showOnlyOwned ? "Só adquiridos: ON" : "Só adquiridos"}
+</button>
           </div>
         </div>
       </div>
@@ -155,6 +175,16 @@ export function PokedexBinderGrid({
               mobileLayout === "large" ? "grid-cols-1" : "grid-cols-2"
             }`}
           >
+            {binderItems.length === 0 && (
+  <div className="col-span-full rounded-[1.5rem] border border-dashed border-zinc-800 bg-zinc-950/70 p-8 text-center">
+    <p className="text-lg font-black text-zinc-300">
+      Nenhum item para exibir
+    </p>
+    <p className="mt-2 text-sm text-zinc-500">
+      Desative o filtro “Só adquiridos” ou marque alguma carta como adquirida.
+    </p>
+  </div>
+)}
             {currentItems.map((pokemon) => {
               const showCard = pokemon.owned && pokemon.cardImageUrl;
               const query = getCardSearchQuery(
