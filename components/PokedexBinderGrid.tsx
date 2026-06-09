@@ -31,6 +31,8 @@ export function PokedexBinderGrid({
 
   const [showOnlyOwned, setShowOnlyOwned] = useState(false);
 
+  const [hideEmptySlots, setHideEmptySlots] = useState(false);
+
   const binderItems = useMemo(() => {
   if (!showOnlyOwned) return pokemonList;
 
@@ -44,9 +46,11 @@ const currentItems = useMemo(() => {
   return binderItems.slice(start, start + ITEMS_PER_PAGE);
 }, [page, binderItems]);
 
-  const emptySlots = Array.from({
-    length: Math.max(0, ITEMS_PER_PAGE - currentItems.length),
-  });
+  const emptySlots = hideEmptySlots
+  ? []
+  : Array.from({
+      length: Math.max(0, ITEMS_PER_PAGE - currentItems.length),
+    });
 
   useEffect(() => {
   setPage(1);
@@ -116,7 +120,10 @@ const currentItems = useMemo(() => {
           <div className="flex w-fit rounded-2xl border border-zinc-700/80 bg-zinc-950/70 p-1">
             <button
               type="button"
-              onClick={() => setBinderMode("control")}
+              onClick={() => {
+  setBinderMode("control");
+  setHideEmptySlots(false);
+}}
               className={`rounded-xl px-4 py-2 text-sm font-black transition ${
                 binderMode === "control"
                   ? "bg-yellow-400 text-zinc-950"
@@ -128,7 +135,10 @@ const currentItems = useMemo(() => {
 
             <button
               type="button"
-              onClick={() => setBinderMode("showcase")}
+              onClick={() => {
+  setBinderMode("showcase");
+  setHideEmptySlots(true);
+}}
               className={`rounded-xl px-4 py-2 text-sm font-black transition ${
                 binderMode === "showcase"
                   ? "bg-yellow-400 text-zinc-950"
@@ -148,6 +158,18 @@ const currentItems = useMemo(() => {
   }`}
 >
   {showOnlyOwned ? "Só adquiridos: ON" : "Só adquiridos"}
+</button>
+
+<button
+  type="button"
+  onClick={() => setHideEmptySlots((current) => !current)}
+  className={`w-fit rounded-2xl border px-4 py-2 text-sm font-black transition ${
+    hideEmptySlots
+      ? "border-sky-400/40 bg-sky-400/15 text-sky-300"
+      : "border-zinc-700 bg-zinc-950/70 text-zinc-400 hover:text-white"
+  }`}
+>
+  {hideEmptySlots ? "Vazios ocultos: ON" : "Ocultar vazios"}
 </button>
           </div>
         </div>
