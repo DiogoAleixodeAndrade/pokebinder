@@ -398,6 +398,14 @@ const cardsWithoutAveragePrice = mergedPokemonForms.filter((pokemon) => {
   return pokemon.owned && Number(pokemon.averageMarketPrice || 0) <= 0;
 }).length;
 
+const cardsWithoutImage = mergedPokemonForms.filter((pokemon) => {
+  return pokemon.owned && pokemon.cardImageUrl.trim() === "";
+}).length;
+
+const cardsWithoutSource = mergedPokemonForms.filter((pokemon) => {
+  return pokemon.owned && pokemon.ligaPokemonUrl.trim() === "";
+}).length;
+
   const totalSpentValue = mergedPokemonForms.reduce((total, pokemon) => {
     if (!pokemon.owned) return total;
 
@@ -438,13 +446,25 @@ const cardsWithoutAveragePrice = mergedPokemonForms.filter((pokemon) => {
       const matchesSearch = pokemon.searchName.includes(normalizedSearch);
 
       const matchesStatus =
-        statusFilter === "todos" ||
-        (statusFilter === "adquiridos" && pokemon.owned) ||
-        (statusFilter === "faltantes" && !pokemon.owned) ||
-        (statusFilter === "selecionados" &&
-          pokemon.selectedCard.trim() !== "") ||
-        (statusFilter === "nao-selecionados" &&
-          pokemon.selectedCard.trim() === "");
+  statusFilter === "todos" ||
+  (statusFilter === "adquiridos" && pokemon.owned) ||
+  (statusFilter === "faltantes" && !pokemon.owned) ||
+  (statusFilter === "selecionados" &&
+    pokemon.selectedCard.trim() !== "") ||
+  (statusFilter === "nao-selecionados" &&
+    pokemon.selectedCard.trim() === "") ||
+  (statusFilter === "com-media" &&
+    Number(pokemon.averageMarketPrice || 0) > 0) ||
+  (statusFilter === "sem-media" &&
+    Number(pokemon.averageMarketPrice || 0) <= 0) ||
+  (statusFilter === "com-imagem" &&
+    pokemon.cardImageUrl.trim() !== "") ||
+  (statusFilter === "sem-imagem" &&
+    pokemon.cardImageUrl.trim() === "") ||
+  (statusFilter === "com-fonte" &&
+    pokemon.ligaPokemonUrl.trim() !== "") ||
+  (statusFilter === "sem-fonte" &&
+    pokemon.ligaPokemonUrl.trim() === "");
 
       const matchesFormType =
         formTypeFilter === "todos" || pokemon.formType === formTypeFilter;

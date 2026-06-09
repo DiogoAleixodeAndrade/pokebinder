@@ -149,16 +149,22 @@ export function PokedexToolbar({
           </div>
 
           <select
-            value={statusFilter}
-            onChange={(event) => onStatusFilterChange(event.target.value)}
-            className="premium-input rounded-2xl px-4 py-3 text-sm"
-          >
-            <option value="todos">Todos os status</option>
-            <option value="adquiridos">Adquiridos</option>
-            <option value="faltantes">Faltantes</option>
-            <option value="selecionados">Com carta selecionada</option>
-            <option value="nao-selecionados">Sem carta selecionada</option>
-          </select>
+  value={statusFilter}
+  onChange={(event) => onStatusFilterChange(event.target.value)}
+  className="premium-input rounded-2xl px-4 py-3 text-sm"
+>
+  <option value="todos">Todos os status</option>
+  <option value="adquiridos">Adquiridos</option>
+  <option value="faltantes">Faltantes</option>
+  <option value="selecionados">Com carta selecionada</option>
+  <option value="nao-selecionados">Sem carta selecionada</option>
+  <option value="com-media">Com média de preço</option>
+  <option value="sem-media">Sem média de preço</option>
+  <option value="com-imagem">Com imagem</option>
+  <option value="sem-imagem">Sem imagem</option>
+  <option value="com-fonte">Com fonte salva</option>
+  <option value="sem-fonte">Sem fonte salva</option>
+</select>
 
           <select
             value={formTypeFilter}
