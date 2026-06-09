@@ -71,7 +71,7 @@ export function PokedexToolbar({
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+          <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-end">
             <button
               type="button"
               onClick={onSyncCollection}
