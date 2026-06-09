@@ -28,41 +28,52 @@ export function PokedexBinderGrid({
   const [binderMode, setBinderMode] = useState<"control" | "showcase">(
     "control"
   );
-
   const [showOnlyOwned, setShowOnlyOwned] = useState(false);
-
   const [hideEmptySlots, setHideEmptySlots] = useState(false);
 
+  function activatePrintMode() {
+    setBinderMode("showcase");
+    setShowOnlyOwned(true);
+    setHideEmptySlots(true);
+    setMobileLayout("large");
+    setPage(1);
+  }
+
   const binderItems = useMemo(() => {
-  if (!showOnlyOwned) return pokemonList;
+    if (!showOnlyOwned) return pokemonList;
 
-  return pokemonList.filter((pokemon) => pokemon.owned);
-}, [pokemonList, showOnlyOwned]);
+    return pokemonList.filter((pokemon) => pokemon.owned);
+  }, [pokemonList, showOnlyOwned]);
 
-const totalPages = Math.max(1, Math.ceil(binderItems.length / ITEMS_PER_PAGE));
+  const totalPages = Math.max(1, Math.ceil(binderItems.length / ITEMS_PER_PAGE));
 
-const currentItems = useMemo(() => {
-  const start = (page - 1) * ITEMS_PER_PAGE;
-  return binderItems.slice(start, start + ITEMS_PER_PAGE);
-}, [page, binderItems]);
+  const currentItems = useMemo(() => {
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    return binderItems.slice(start, start + ITEMS_PER_PAGE);
+  }, [page, binderItems]);
 
   const emptySlots = hideEmptySlots
-  ? []
-  : Array.from({
-      length: Math.max(0, ITEMS_PER_PAGE - currentItems.length),
-    });
+    ? []
+    : Array.from({
+        length: Math.max(0, ITEMS_PER_PAGE - currentItems.length),
+      });
 
   useEffect(() => {
-  setPage(1);
-}, [pokemonList, showOnlyOwned]);
+    setPage(1);
+  }, [pokemonList, showOnlyOwned]);
 
   return (
     <div className="p-4 md:p-5">
       <div className="mb-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <h3 className="text-2xl font-black text-white">Binder 4x4</h3>
+          <h3 className="text-2xl font-black text-white">
+            {binderMode === "showcase" ? "Minha coleção" : "Binder 4x4"}
+          </h3>
+
           <p className="mt-1 text-sm text-zinc-400">
-            Página {page} de {totalPages} • {binderItems.length} itens
+            {binderMode === "showcase"
+              ? `Página ${page} de ${totalPages} • ${binderItems.length} cartas na coleção`
+              : `Página ${page} de ${totalPages} • ${binderItems.length} itens`}
           </p>
         </div>
 
@@ -121,9 +132,10 @@ const currentItems = useMemo(() => {
             <button
               type="button"
               onClick={() => {
-  setBinderMode("control");
-  setHideEmptySlots(false);
-}}
+                setBinderMode("control");
+                setHideEmptySlots(false);
+                setShowOnlyOwned(false);
+              }}
               className={`rounded-xl px-4 py-2 text-sm font-black transition ${
                 binderMode === "control"
                   ? "bg-yellow-400 text-zinc-950"
@@ -136,9 +148,9 @@ const currentItems = useMemo(() => {
             <button
               type="button"
               onClick={() => {
-  setBinderMode("showcase");
-  setHideEmptySlots(true);
-}}
+                setBinderMode("showcase");
+                setHideEmptySlots(true);
+              }}
               className={`rounded-xl px-4 py-2 text-sm font-black transition ${
                 binderMode === "showcase"
                   ? "bg-yellow-400 text-zinc-950"
@@ -147,31 +159,39 @@ const currentItems = useMemo(() => {
             >
               Exposição
             </button>
-
-            <button
-  type="button"
-  onClick={() => setShowOnlyOwned((current) => !current)}
-  className={`w-fit rounded-2xl border px-4 py-2 text-sm font-black transition ${
-    showOnlyOwned
-      ? "border-emerald-400/40 bg-emerald-400/15 text-emerald-300"
-      : "border-zinc-700 bg-zinc-950/70 text-zinc-400 hover:text-white"
-  }`}
->
-  {showOnlyOwned ? "Só adquiridos: ON" : "Só adquiridos"}
-</button>
-
-<button
-  type="button"
-  onClick={() => setHideEmptySlots((current) => !current)}
-  className={`w-fit rounded-2xl border px-4 py-2 text-sm font-black transition ${
-    hideEmptySlots
-      ? "border-sky-400/40 bg-sky-400/15 text-sky-300"
-      : "border-zinc-700 bg-zinc-950/70 text-zinc-400 hover:text-white"
-  }`}
->
-  {hideEmptySlots ? "Vazios ocultos: ON" : "Ocultar vazios"}
-</button>
           </div>
+
+          <button
+            type="button"
+            onClick={() => setShowOnlyOwned((current) => !current)}
+            className={`w-fit rounded-2xl border px-4 py-2 text-sm font-black transition ${
+              showOnlyOwned
+                ? "border-emerald-400/40 bg-emerald-400/15 text-emerald-300"
+                : "border-zinc-700 bg-zinc-950/70 text-zinc-400 hover:text-white"
+            }`}
+          >
+            {showOnlyOwned ? "Só adquiridos: ON" : "Só adquiridos"}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setHideEmptySlots((current) => !current)}
+            className={`w-fit rounded-2xl border px-4 py-2 text-sm font-black transition ${
+              hideEmptySlots
+                ? "border-sky-400/40 bg-sky-400/15 text-sky-300"
+                : "border-zinc-700 bg-zinc-950/70 text-zinc-400 hover:text-white"
+            }`}
+          >
+            {hideEmptySlots ? "Vazios ocultos: ON" : "Ocultar vazios"}
+          </button>
+
+          <button
+            type="button"
+            onClick={activatePrintMode}
+            className="w-fit rounded-2xl border border-yellow-400/40 bg-yellow-400/15 px-4 py-2 text-sm font-black text-yellow-300 transition hover:bg-yellow-400/20"
+          >
+            Modo print
+          </button>
         </div>
       </div>
 
@@ -198,15 +218,17 @@ const currentItems = useMemo(() => {
             }`}
           >
             {binderItems.length === 0 && (
-  <div className="col-span-full rounded-[1.5rem] border border-dashed border-zinc-800 bg-zinc-950/70 p-8 text-center">
-    <p className="text-lg font-black text-zinc-300">
-      Nenhum item para exibir
-    </p>
-    <p className="mt-2 text-sm text-zinc-500">
-      Desative o filtro “Só adquiridos” ou marque alguma carta como adquirida.
-    </p>
-  </div>
-)}
+              <div className="col-span-full rounded-[1.5rem] border border-dashed border-zinc-800 bg-zinc-950/70 p-8 text-center">
+                <p className="text-lg font-black text-zinc-300">
+                  Nenhum item para exibir
+                </p>
+                <p className="mt-2 text-sm text-zinc-500">
+                  Desative o filtro “Só adquiridos” ou marque alguma carta como
+                  adquirida.
+                </p>
+              </div>
+            )}
+
             {currentItems.map((pokemon) => {
               const showCard = pokemon.owned && pokemon.cardImageUrl;
               const query = getCardSearchQuery(
