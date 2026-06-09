@@ -89,6 +89,13 @@ export function PokedexToolbar({
               Scanner
             </button>
 
+            <a
+              href="/showcase"
+              className="rounded-2xl border border-yellow-400/30 bg-yellow-400/10 px-3 py-2.5 text-center text-xs font-bold text-yellow-300 transition hover:bg-yellow-400/15 md:px-4 md:py-3 md:text-sm"
+            >
+              Showcase
+            </a>
+
             <button
               type="button"
               onClick={onExportCollection}
