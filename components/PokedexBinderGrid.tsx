@@ -25,6 +25,9 @@ export function PokedexBinderGrid({
   const [mobileLayout, setMobileLayout] = useState<"compact" | "large">(
     "compact"
   );
+  const [binderMode, setBinderMode] = useState<"control" | "showcase">(
+    "control"
+  );
 
   const totalPages = Math.max(1, Math.ceil(pokemonList.length / ITEMS_PER_PAGE));
 
@@ -51,7 +54,7 @@ export function PokedexBinderGrid({
           </p>
         </div>
 
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <div className="flex items-center gap-2">
             <button
               type="button"
@@ -101,6 +104,32 @@ export function PokedexBinderGrid({
               Grande
             </button>
           </div>
+
+          <div className="flex w-fit rounded-2xl border border-zinc-700/80 bg-zinc-950/70 p-1">
+            <button
+              type="button"
+              onClick={() => setBinderMode("control")}
+              className={`rounded-xl px-4 py-2 text-sm font-black transition ${
+                binderMode === "control"
+                  ? "bg-yellow-400 text-zinc-950"
+                  : "text-zinc-400"
+              }`}
+            >
+              Controle
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setBinderMode("showcase")}
+              className={`rounded-xl px-4 py-2 text-sm font-black transition ${
+                binderMode === "showcase"
+                  ? "bg-yellow-400 text-zinc-950"
+                  : "text-zinc-400"
+              }`}
+            >
+              Exposição
+            </button>
+          </div>
         </div>
       </div>
 
@@ -140,7 +169,9 @@ export function PokedexBinderGrid({
               return (
                 <article
                   key={pokemon.id}
-                  className="group rounded-[1.1rem] border border-white/10 bg-white/[0.045] p-1.5 shadow-inner shadow-white/5 transition hover:border-yellow-400/40 hover:bg-yellow-400/[0.035] md:rounded-[1.5rem] md:p-2"
+                  className={`group rounded-[1.1rem] border border-white/10 bg-white/[0.045] p-1.5 shadow-inner shadow-white/5 transition hover:border-yellow-400/40 hover:bg-yellow-400/[0.035] md:rounded-[1.5rem] md:p-2 ${
+                    binderMode === "showcase" ? "hover:scale-[1.01]" : ""
+                  }`}
                 >
                   <div className="rounded-[1rem] border border-zinc-800 bg-zinc-950/85 p-2 shadow-lg shadow-black/30 md:rounded-[1.35rem]">
                     <button
@@ -166,20 +197,28 @@ export function PokedexBinderGrid({
 
                             <div className="absolute inset-0 bg-black/20" />
 
-                            <div className="absolute left-2 top-2 z-30 rounded-full border border-red-400/30 bg-red-400/15 px-2 py-1 text-[9px] font-bold text-red-300 md:text-[10px]">
-                              Faltando
-                            </div>
+                            {binderMode === "control" && (
+                              <div className="absolute left-2 top-2 z-30 rounded-full border border-red-400/30 bg-red-400/15 px-2 py-1 text-[9px] font-bold text-red-300 md:text-[10px]">
+                                Faltando
+                              </div>
+                            )}
                           </>
                         )}
 
-                        {pokemon.owned && (
+                        {pokemon.owned && binderMode === "control" && (
                           <div className="absolute right-2 top-2 z-30 rounded-full border border-emerald-400/30 bg-emerald-400/15 px-2 py-1 text-[9px] font-bold text-emerald-300 md:text-[10px]">
                             Tenho
                           </div>
                         )}
                       </div>
 
-                      <div className="mt-3">
+                      <div
+                        className={
+                          binderMode === "showcase"
+                            ? "mt-3 text-center"
+                            : "mt-3"
+                        }
+                      >
                         <p className="line-clamp-1 text-sm font-black text-white md:text-base">
                           {pokemon.name}
                         </p>
@@ -188,7 +227,13 @@ export function PokedexBinderGrid({
                           {pokemon.selectedCard || "Sem carta selecionada"}
                         </p>
 
-                        <div className="mt-2 flex flex-wrap gap-1.5 md:gap-2">
+                        <div
+                          className={`mt-2 flex flex-wrap gap-1.5 md:gap-2 ${
+                            binderMode === "showcase"
+                              ? "justify-center"
+                              : "justify-start"
+                          }`}
+                        >
                           <span className="rounded-full border border-zinc-700 bg-zinc-950 px-2 py-1 text-[10px] text-zinc-300">
                             #{String(pokemon.dexNumber).padStart(3, "0")}
                           </span>
@@ -198,67 +243,73 @@ export function PokedexBinderGrid({
                           </span>
                         </div>
 
-                        <p className="mt-2 line-clamp-1 text-[10px] text-zinc-500">
-                          {pokemon.formType}
-                        </p>
+                        {binderMode === "control" && (
+                          <p className="mt-2 line-clamp-1 text-[10px] text-zinc-500">
+                            {pokemon.formType}
+                          </p>
+                        )}
                       </div>
                     </button>
 
-                    <div
-                      className={`mt-3 grid gap-1.5 md:grid-cols-3 md:gap-2 ${
-                        mobileLayout === "large" ? "grid-cols-3" : "grid-cols-2"
-                      }`}
-                    >
-                      <button
-                        type="button"
-                        onClick={() => onEdit(pokemon)}
-                        className="rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-2 py-2 text-[10px] font-bold text-yellow-300 transition hover:bg-yellow-400/15"
+                    {binderMode === "control" && (
+                      <div
+                        className={`mt-3 grid gap-1.5 md:grid-cols-3 md:gap-2 ${
+                          mobileLayout === "large"
+                            ? "grid-cols-3"
+                            : "grid-cols-2"
+                        }`}
                       >
-                        Edit
-                      </button>
+                        <button
+                          type="button"
+                          onClick={() => onEdit(pokemon)}
+                          className="rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-2 py-2 text-[10px] font-bold text-yellow-300 transition hover:bg-yellow-400/15"
+                        >
+                          Edit
+                        </button>
 
-                      {pokemon.ligaPokemonUrl ? (
+                        {pokemon.ligaPokemonUrl ? (
+                          <a
+                            href={pokemon.ligaPokemonUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="rounded-xl border border-zinc-700 bg-zinc-950 px-2 py-2 text-center text-[10px] font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:text-yellow-300"
+                          >
+                            Fonte
+                          </a>
+                        ) : (
+                          <span className="rounded-xl border border-zinc-800 bg-zinc-950 px-2 py-2 text-center text-[10px] font-bold text-zinc-600">
+                            Fonte
+                          </span>
+                        )}
+
                         <a
-                          href={pokemon.ligaPokemonUrl}
+                          href={ligaPokemonUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="rounded-xl border border-zinc-700 bg-zinc-950 px-2 py-2 text-center text-[10px] font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:text-yellow-300"
+                          className="rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-2 py-2 text-center text-[10px] font-bold text-yellow-300 transition hover:bg-yellow-400/15"
                         >
-                          Fonte
+                          Liga
                         </a>
-                      ) : (
-                        <span className="rounded-xl border border-zinc-800 bg-zinc-950 px-2 py-2 text-center text-[10px] font-bold text-zinc-600">
-                          Fonte
-                        </span>
-                      )}
 
-                      <a
-                        href={ligaPokemonUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-2 py-2 text-center text-[10px] font-bold text-yellow-300 transition hover:bg-yellow-400/15"
-                      >
-                        Liga
-                      </a>
+                        <a
+                          href={myPcardsUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-2 py-2 text-center text-[10px] font-bold text-cyan-300 transition hover:bg-cyan-400/15"
+                        >
+                          MyP
+                        </a>
 
-                      <a
-                        href={myPcardsUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-2 py-2 text-center text-[10px] font-bold text-cyan-300 transition hover:bg-cyan-400/15"
-                      >
-                        MyP
-                      </a>
-
-                      <a
-                        href={tcgPlayerUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="rounded-xl border border-purple-400/30 bg-purple-400/10 px-2 py-2 text-center text-[10px] font-bold text-purple-300 transition hover:bg-purple-400/15"
-                      >
-                        TCG
-                      </a>
-                    </div>
+                        <a
+                          href={tcgPlayerUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-xl border border-purple-400/30 bg-purple-400/10 px-2 py-2 text-center text-[10px] font-bold text-purple-300 transition hover:bg-purple-400/15"
+                        >
+                          TCG
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </article>
               );
